@@ -110,6 +110,11 @@
       color: inherit;
       grid-column: 1/2;
       grid-row: 1/2;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--primary-accent);
+      }
     }
 
     &-text {
@@ -149,6 +154,7 @@
 
   &__icons {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
     width: fit-content;
