@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'CML';
+  src:  url('./../fonts/icomoon/CML.eot?340sdp');
+  src:  url('./../fonts/icomoon/CML.eot?340sdp#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon/CML.ttf?340sdp') format('truetype'),
+    url('./../fonts/icomoon/CML.woff?340sdp') format('woff'),
+    url('./../fonts/icomoon/CML.svg?340sdp#CML') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'CML' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calc:before {
+  content: "\e900";
+}
+.icon-chevron-down:before {
+  content: "\e901";
+}
+.icon-circle-chevron-down:before {
+  content: "\e902";
+}
+.icon-download:before {
+  content: "\e903";
+}
+.icon-minus:before {
+  content: "\e904";
+}
+.icon-plus:before {
+  content: "\e905";
+}
+.icon-pochta:before {
+  content: "\e906";
+}
+.icon-telegram:before {
+  content: "\e907";
+}
+.icon-whatsapp:before {
+  content: "\e908";
+}
