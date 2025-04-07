@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     gap: 3rem;
   }
 
@@ -31,6 +32,28 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
+  }
+
+  &__calc {
+    gap: 2rem;
+
+    span {
+      display: block;
+      width: 3.2rem;
+      height: 3.2rem;
+      background-image: url(./../images/icon/calc.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+
+      span {
+        background-image: url(./../images/icon/calc-white.svg);
+      }
+    }
   }
 
   &__btn {
@@ -115,6 +138,17 @@
       &:hover {
         color: var(--primary-accent);
       }
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: inherit;
+      grid-column: 1/2;
+      grid-row: 1/2;
     }
 
     &-text {
@@ -224,11 +258,13 @@
   &--opened {
 
     &.burger span {
+      background-color: var(--white);
 
       &::before {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(45deg);
+        background-color: var(--white);
       }
 
       &::after {
@@ -236,6 +272,7 @@
         bottom: unset;
         left: 50%;
         transform: translate(-50%, -50%) rotate(-45deg);
+        background-color: var(--white);
       }
     }
   }
@@ -255,14 +292,15 @@
     align-items: center;
     width: 2rem;
     height: 0.2rem;
-    background-color: var(--white);
+    background-color: var(--primary-accent);
+    transition: all 0.3s ease;
 
     &::before {
       content: "";
       display: block;
       width: 100%;
       height: 0.2rem;
-      background-color: var(--white);
+      background-color: var(--primary-accent);
       position: absolute;
       top: -0.9rem;
       transition: all 0.3s ease;
@@ -273,7 +311,7 @@
       display: block;
       width: 100%;
       height: 0.2rem;
-      background-color: var(--white);
+      background-color: var(--primary-accent);
       position: absolute;
       bottom: -0.9rem;
       transition: all 0.3s ease;
@@ -294,7 +332,7 @@
       font-size: 1.4rem;
       color: var(--white);
       padding: 1.5rem 0;
-
+      overflow: hidden;
       position: relative;
 
       &::before {

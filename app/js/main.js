@@ -3,6 +3,35 @@
     /**
      * Инициализация слайдеров swiper
      */
+    var hero__slider = new Swiper(".hero__slider-init", {
+      slidesPerView: 1,
+      centeredSlides: true,
+      loop: true,
+      init: false,
+      speed: 600,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+    });
+
+    hero__slider.on("slideChange afterInit init", function () {
+      let currentSlide = this.activeIndex + 1;
+      document.querySelector('.swiper-fraction').innerHTML = `
+      <span class="swiper-fraction-current">
+      ${currentSlide < 10 ? currentSlide : currentSlide}
+      </span> 
+      / 
+      <span class="swiper-fraction-total">
+        ${this.slides.length}
+      </span>`;
+    });
+
+    hero__slider.init();
 
 
 
@@ -107,21 +136,6 @@
         head.classList.remove('fixed');
       }
     });
-
-
-
-    if (document.querySelector('.mix')) {
-      var mixer = mixitup('.tabs__items', {
-        animation: {
-          duration: 500,
-          effects: 'stagger(3ms) fade scale(0.4)',
-          easing: 'ease'
-        },
-        load: {
-          filter: '.mix-1'
-        }
-      });
-    }
 
   });
 })();
