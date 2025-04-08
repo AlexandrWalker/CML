@@ -34,28 +34,6 @@
     gap: 2rem;
   }
 
-  &__calc {
-    gap: 2rem;
-
-    span {
-      display: block;
-      width: 3.2rem;
-      height: 3.2rem;
-      background-image: url(./../images/icon/calc.svg);
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: center;
-      transition: all 0.3s ease;
-    }
-
-    &:hover {
-
-      span {
-        background-image: url(./../images/icon/calc-white.svg);
-      }
-    }
-  }
-
   &__btn {
     display: flex;
     justify-content: center;

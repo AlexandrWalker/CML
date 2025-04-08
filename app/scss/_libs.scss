@@ -31,7 +31,7 @@
     }
   }
 
-  &-fraction {
+  &-pagination-fraction {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -49,11 +49,11 @@
     right: 0;
     left: unset;
     z-index: 1;
+  }
 
-    &-current {
-      font-size: 10rem;
-      line-height: 80%;
-    }
+  &-pagination-current {
+    font-size: 10rem;
+    line-height: 80%;
   }
 }
 

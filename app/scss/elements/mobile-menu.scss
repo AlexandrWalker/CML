@@ -237,7 +237,7 @@
     &-title {
       font-weight: 300;
       font-size: 1.6rem;
-      line-height: 1.125;
+      line-height: 110%;
       text-transform: uppercase;
     }
 
@@ -251,7 +251,7 @@
     &-text {
       font-weight: 300;
       font-size: 1.6rem;
-      line-height: 1.125;
+      line-height: 110%;
       margin-top: -0.5rem;
     }
   }
@@ -267,7 +267,7 @@
       gap: 2rem;
       font-weight: 300;
       font-size: 1.6rem;
-      line-height: 1.125;
+      line-height: 110%;
 
       i {
         display: flex;
