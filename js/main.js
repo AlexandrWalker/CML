@@ -287,7 +287,72 @@
 
 
 
+    /**
+         * Активация любого количества модальных окон
+         */
+    function modalFunc() {
+      var modal__btn = document.querySelector('.modal__btn');
 
+      if (!modal__btn) {
+        return;
+      } else {
+
+        var close = document.querySelectorAll('.modal__close-btn');
+        var openBtn = document.querySelectorAll('.modal__btn');
+
+        Array.from(openBtn, openButton => {
+          openButton.addEventListener('click', e => {
+
+            let open = document.getElementsByClassName('open');
+
+            if (open.length > 0 && open[0] !== this) {
+              open[0].classList.remove('open');
+            }
+
+            let modalId = e.target.getAttribute('data-id');
+            console.log(modalId);
+            if (modalId) {
+              document.getElementById(modalId).classList.add('open');
+            } else {
+              return
+            }
+
+            let modalTitle = e.target.getAttribute('data-title');
+            if (modalTitle) {
+              document.getElementById("modal-title").innerHTML = modalTitle;
+            }
+
+            let modalText = e.target.getAttribute('data-text');
+            if (modalText) {
+              document.getElementById("modal-text").innerHTML = modalText;
+            }
+
+            Array.from(close, closeButton => {
+              closeButton.addEventListener('click', e => {
+                document.getElementById(modalId).classList.remove("open");
+              });
+
+              window.addEventListener('keydown', (e) => {
+                if (e.key === "Escape") {
+                  document.getElementById(modalId).classList.remove("open")
+                }
+              });
+
+              document.querySelector(".modal.open .modal__box").addEventListener('click', event => {
+                event._isClickWithInModal = true;
+              });
+
+              document.getElementById(modalId).addEventListener('click', event => {
+                if (event._isClickWithInModal) return;
+                event.currentTarget.classList.remove('open');
+              });
+            });
+          });
+        });
+      }
+    };
+
+    modalFunc();
 
 
     addEventListener('scroll', function () {
