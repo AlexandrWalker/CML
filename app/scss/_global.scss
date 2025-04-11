@@ -146,8 +146,8 @@ a {
 }
 
 .btn-red:hover {
-  --button-color: var(--primary-accent);
-  --button-border-color: var(--white);
+  --button-bgcolor: var(--primary-black);
+  --button-border-color: var(--primary-black);
 }
 
 .btn-outline {
@@ -223,50 +223,40 @@ a {
   }
 }
 
+.dots {
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--primary-accent);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+  }
+}
+
 .form {
 
-  &__wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  &__head {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  &__group {
+  &-group {
     position: relative;
-    width: 100%;
-
-    i {
-      color: var(--primary-accent);
-      font-size: 1.6rem;
-      line-height: 100%;
-      position: absolute;
-      right: 2rem;
-      top: 0.4rem;
-    }
-  }
-
-  &__bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    width: calc(33% - 1.3333rem);
   }
 
   &-input {
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 143%;
-    color: var(--white-50);
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 125%;
+    color: inherit;
     width: 100%;
-    padding: 0.2rem 5.6rem 2rem 2rem;
-    border: 0;
-    background: transparent;
-    border-bottom: 0.1rem solid var(--white-30);
+    height: 6rem;
+    padding: 1.4rem 3.2rem 1.4rem 2rem;
+    background: var(--primary-bg);
+    border-radius: var(--primary-border-r-5);
+    border: 0.1rem solid var(--primary-border-c-1);
     transition: all 0.3s ease;
 
     &::placeholder,
@@ -274,7 +264,7 @@ a {
     &::-moz-placeholder,
     &:-moz-placeholder,
     &:-ms-input-placeholder {
-      color: var(--white-50);
+      color: var(--primary-black-50);
     }
 
     &::placeholder {
@@ -284,11 +274,11 @@ a {
     &:hover,
     &:focus,
     &:active {
-      color: var(--white);
-      border-color: var(--white);
+      color: var(--primary-black);
+      border-color: var(--primary-black-lighten);
 
       &::placeholder {
-        color: var(--white);
+        color: var(--primary-black);
       }
     }
 
@@ -302,27 +292,18 @@ a {
     }
   }
 
-  &-title {
-    font-family: 'Winter Sans Trial';
-    font-weight: 800;
-    font-size: 3.4rem;
-    line-height: 100%;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--white);
-  }
-
   &-textarea {
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 143%;
-    color: var(--white-80);
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 125%;
+    color: inherit;
     width: 100%;
-    height: 20rem;
+    height: 14rem;
     overflow: hidden;
-    padding: 1rem 2rem;
-    background: transparent;
-    border: 0.1rem solid var(--white-30);
+    padding: 1.2rem 2.2rem;
+    background: var(--primary-bg);
+    border-radius: var(--primary-border-r-5);
+    border: 0.1rem solid var(--primary-border-c-1);
     resize: none;
     transition: all 0.3s ease;
 
@@ -331,19 +312,27 @@ a {
     &::-moz-placeholder,
     &:-moz-placeholder,
     &:-ms-input-placeholder {
-      color: var(--white-80);
+      color: var(--primary-black-50);
+    }
+
+    &::placeholder {
+      transition: all 0.3s ease;
     }
 
     &:hover,
     &:focus,
     &:active {
-      color: var(--white);
-      border-color: var(--white);
+      color: var(--primary-black);
+      border-color: var(--primary-black-lighten);
 
       &::placeholder {
-        color: var(--white);
+        color: var(--primary-black);
       }
     }
+  }
+
+  &-btn {
+    width: 100%;
   }
 
   &-checkbox {
@@ -352,15 +341,35 @@ a {
     height: 2.4rem;
     min-height: 2.4rem;
     padding: 0;
-    border: 0.4rem solid var(--white);
-    border-radius: 0;
-    background: var(--primary-black);
+    border: 0.4rem solid var(--primary-black);
+    border-radius: 50%;
+    background: var(--white);
     appearance: none;
     position: relative;
     cursor: pointer;
 
     &:checked {
       background: var(--primary-accent);
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-text {
+    font-weight: 300;
+    font-size: 1.4rem;
+    line-height: 115%;
+    text-decoration-line: underline;
+    color: inherit;
+    max-width: 48rem;
+
+    a {
+      color: var(--primary-accent);
     }
   }
 }
