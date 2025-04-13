@@ -35,21 +35,23 @@
       <div class="menu__head">
         <div class="container menu__head-container">
           <div class="header__btn" href="/">
-            Свяжитесь с нами
-            <div class="header__btn-wrap">
-              <div class="header__icons">
-                <div class="header__icons-item">
-                  <i class="icon-telegram"></i>
+            <div class="header__btn-flip">
+              Свяжитесь с нами
+              <div class="header__btn-wrap">
+                <div class="header__icons">
+                  <div class="header__icons-item">
+                    <i class="icon-telegram"></i>
+                  </div>
+                  <div class="header__icons-item">
+                    <i class="icon-whatsapp"></i>
+                  </div>
+                  <div class="header__icons-item">
+                    <i class="icon-pochta"></i>
+                  </div>
                 </div>
-                <div class="header__icons-item">
-                  <i class="icon-whatsapp"></i>
+                <div class="arrow">
+                  <i class="icon-chevron-down"></i>
                 </div>
-                <div class="header__icons-item">
-                  <i class="icon-pochta"></i>
-                </div>
-              </div>
-              <div class="arrow">
-                <i class="icon-chevron-down"></i>
               </div>
             </div>
             <ul class="header__dropdown">
@@ -253,12 +255,12 @@
             </p>
           </div>
           <div class="menu__download">
-            <a class="menu__download-item">
+            <a class="menu__download-item" href="/" download="">
               <i class="icon-download"></i>
               Скачать реквизиты компании
             </a>
-            <a class="menu__download-item">
-              <i class="icon-download"></i>
+            <a class="menu__download-item" href="/" download="">
+              <i class="icon-file-pdf"></i>
               Скачать презентацию
             </a>
           </div>
@@ -283,28 +285,28 @@
               </picture>
             </a>
             <div class="header__wrap">
-              <p class="header__calc btn modal__btn" data-id="modal-calc">
+              <p class="header__calc btn btn-calc modal__btn" data-id="modal-calc">
                 Рассчитайте стоимость
-                <span>
-
-                </span>
+                <i class="icon-calc"></i>
               </p>
               <div class="header__btn" href="/">
-                Свяжитесь с нами
-                <div class="header__btn-wrap">
-                  <div class="header__icons">
-                    <div class="header__icons-item">
-                      <i class="icon-telegram"></i>
+                <div class="header__btn-flip">
+                  Свяжитесь с нами
+                  <div class="header__btn-wrap">
+                    <div class="header__icons">
+                      <div class="header__icons-item">
+                        <i class="icon-telegram"></i>
+                      </div>
+                      <div class="header__icons-item">
+                        <i class="icon-whatsapp"></i>
+                      </div>
+                      <div class="header__icons-item">
+                        <i class="icon-pochta"></i>
+                      </div>
                     </div>
-                    <div class="header__icons-item">
-                      <i class="icon-whatsapp"></i>
+                    <div class="arrow">
+                      <i class="icon-chevron-down"></i>
                     </div>
-                    <div class="header__icons-item">
-                      <i class="icon-pochta"></i>
-                    </div>
-                  </div>
-                  <div class="arrow">
-                    <i class="icon-chevron-down"></i>
                   </div>
                 </div>
                 <ul class="header__dropdown">
@@ -601,7 +603,29 @@
                   <input class="form-input" type="text" placeholder="Место доставки">
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Тип перевозки">
+                  <div class="dropdown">
+                    <button class="dropdown__button" data-value="Тип перевозки" type="button">
+                      <span class="dropdown__button-text">Тип перевозки</span>
+                    </button>
+                    <ul class="dropdown__list dropdown__list-border">
+                      <li class="dropdown__list-item" data-value="Авиа">
+                        Авиа
+                      </li>
+                      <li class="dropdown__list-item" data-value="Авто">
+                        Авто
+                      </li>
+                      <li class="dropdown__list-item" data-value="Железнодорожная">
+                        Железнодорожная
+                      </li>
+                      <li class="dropdown__list-item" data-value="Морская">
+                        Морская
+                      </li>
+                      <li class="dropdown__list-item" data-value="Мультимодальная">
+                        Мультимодальная
+                      </li>
+                    </ul>
+                    <input type="text" name="select-category" value="all" class="dropdown__input-hidden">
+                  </div>
                 </div>
                 <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Масса, кг">
@@ -636,7 +660,8 @@
                 <div class="form-bottom">
                   <input class="form-checkbox" type="checkbox" required>
                   <p class="form-text">
-                    Нажимая кнопку «Рассчитать стоимость доставки», <a href="/">вы принимаете условия обработки пользовательских данных</a>
+                    Нажимая кнопку «Рассчитать стоимость доставки», <a href="/">вы принимаете условия обработки
+                      пользовательских данных</a>
                   </p>
                 </div>
               </div>
@@ -759,7 +784,10 @@
             </ul>
           </div>
         </div>
-        <div id="textcloud"></div>
+        <div class="cloud">
+          <div id="textcloud1"></div>
+          <div id="textcloud2"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1002,22 +1030,24 @@
             </ul>
           </div>
           <div class="footer__info">
-            <div class="header__btn" href="/">
-              Свяжитесь с нами
-              <div class="header__btn-wrap">
-                <div class="header__icons">
-                  <div class="header__icons-item">
-                    <i class="icon-telegram"></i>
+            <div class="header__btn">
+              <div class="header__btn-flip">
+                Свяжитесь с нами
+                <div class="header__btn-wrap">
+                  <div class="header__icons">
+                    <div class="header__icons-item">
+                      <i class="icon-telegram"></i>
+                    </div>
+                    <div class="header__icons-item">
+                      <i class="icon-whatsapp"></i>
+                    </div>
+                    <div class="header__icons-item">
+                      <i class="icon-pochta"></i>
+                    </div>
                   </div>
-                  <div class="header__icons-item">
-                    <i class="icon-whatsapp"></i>
+                  <div class="arrow">
+                    <i class="icon-chevron-down"></i>
                   </div>
-                  <div class="header__icons-item">
-                    <i class="icon-pochta"></i>
-                  </div>
-                </div>
-                <div class="arrow">
-                  <i class="icon-chevron-down"></i>
                 </div>
               </div>
               <ul class="header__dropdown">
@@ -1068,8 +1098,7 @@
             </div>
             <a class="footer__info-btn btn btn-calc" href="/">
               Рассчитайте стоимость
-              <span>
-              </span>
+              <i class="icon-calc"></i>
             </a>
             <a class="footer__info-download">
               Скачать реквизиты компании
@@ -1119,7 +1148,50 @@
     <button class="modal__close-btn">
     </button>
     <div class="modal__content">
-
+      <h3 class="modal__title">
+        Свяжитесь <br> с нами
+      </h3>
+      <ul class="header__dropdown">
+        <li class="header__dropdown-item">
+          <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
+          <p class="header__dropdown-text">Отдел продаж</p>
+          <div class="header__dropdown-icons">
+            <div class="header__dropdown-icon">
+              <i class="icon-telegram"></i>
+            </div>
+            <div class="header__dropdown-icon">
+              <i class="icon-whatsapp"></i>
+            </div>
+          </div>
+        </li>
+        <li class="header__dropdown-item">
+          <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
+          <p class="header__dropdown-text">Поддержка клиентов</p>
+          <div class="header__dropdown-icons">
+            <div class="header__dropdown-icon">
+              <i class="icon-telegram"></i>
+            </div>
+            <div class="header__dropdown-icon">
+              <i class="icon-whatsapp"></i>
+            </div>
+          </div>
+        </li>
+        <li class="header__dropdown-item">
+          <a class="header__dropdown-link" href="/">pochta@cml.com</a>
+          <p class="header__dropdown-text">Эл. почта</p>
+          <div class="header__dropdown-icons">
+            <div class="header__dropdown-icon">
+              <i class="icon-pochta"></i>
+            </div>
+          </div>
+        </li>
+        <li class="header__dropdown-item">
+          <p class="header__dropdown-link" href="/">
+            Принимаем звонки
+            пн - пт с 8:30 до 17:30 по Москве
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
@@ -1201,15 +1273,17 @@
   </div>
 </div>
 <!-- Плашки -->
-<section class="plate mob-block">
+<section class="plate planshet-block">
   <div class="container-fluid">
     <div class="plate__inner">
       <div class="plate__btns">
-        <!-- <button class="plate__btn btn btn-red modal__btn" data-id="modal-callback">
+        <button class="plate__btn btn btn-red mob-block modal__btn" data-id="modal-callback">
+          <i class="icon-headphones"></i>
           Связаться
-        </button> -->
-        <button class="plate__btn btn btn-red modal__btn" data-id="modal-calc">
+        </button>
+        <button class="plate__btn btn btn-calc modal__btn" data-id="modal-calc">
           Рассчитайте стоимость
+          <i class="icon-calc"></i>
         </button>
       </div>
     </div>
@@ -1236,7 +1310,10 @@
 <script src="./libs/gsap/ScrollTrigger.min.js" defer></script>
 <script src="./libs/swiper/swiper-bundle.min.js" defer></script>
 <script src="./libs/mixitup/mixitup.min.js"></script>
-<script src="./libs/SVG3DTagCloud.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+<script src="./../libs/SVG3DTagCloud.global.js" defer></script>
 <script src="./js/main.js" defer></script>
 </body>
 
