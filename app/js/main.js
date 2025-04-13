@@ -139,151 +139,502 @@
 
 
 
-    // let children = [
-    //   {
-    //     label: 'Dev Blog',
-    //     url: 'http://niklasknaack.blogspot.de/',
-    //     target: '_top',
-    //     tooltip: 'Lorem ipsum',
-    //   },
-    //   {
-    //     label: 'Flashforum',
-    //     url: 'http://www.flashforum.de/',
-    //     target: '_top',
-    //     tooltip: 'Dolor sit amet',
-    //   },
-    //   {
-    //     label: 'jQueryScript',
-    //     url: 'http://www.jqueryscript.net/',
-    //     target: '_top',
-    //     tooltip: 'Consetetur sadipscing',
-    //   },
-    //   {
-    //     label: 'Javascript-Forum',
-    //     url: 'http://forum.jswelt.de/',
-    //     target: '_top',
-    //     tooltip: 'Sed diam',
-    //   },
-    //   { label: 'JSFiddle', url: 'https://jsfiddle.net/user/NiklasKnaack/fiddles/', target: '_top' },
-    //   { label: 'CodePen', url: 'http://codepen.io/', target: '_top', tooltip: 'At vero' },
-    //   { label: 'three.js', url: 'http://threejs.org/', target: '_top', tooltip: 'Nonumy eirmod' },
-    //   {
-    //     label: 'WebGLStudio.js',
-    //     url: 'http://webglstudio.org/',
-    //     target: '_top',
-    //     tooltip: 'Stet clita',
-    //   },
-    //   { label: 'JS Compress', url: 'http://jscompress.com/', target: '_top', tooltip: 'Justo duo' },
-    //   { label: 'TinyPNG', url: 'https://tinypng.com/', target: '_top', tooltip: 'Ut wisi enim' },
-    //   { label: 'Can I Use', url: 'http://caniuse.com/', target: '_top', tooltip: 'Minim veniam' },
-    //   { label: 'URL shortener', url: 'https://goo.gl/', target: '_top', tooltip: 'Quis nostrud' },
-    //   {
-    //     label: 'HTML Encoder',
-    //     url: 'http://www.opinionatedgeek.com/DotNet/Tools/HTMLEncode/Encode.aspx',
-    //     target: '_top',
-    //   },
-    //   {
-    //     label: 'Twitter',
-    //     url: 'https://twitter.com/niklaswebdev',
-    //     target: '_top',
-    //     tooltip: 'Veniam isictus',
-    //   },
-    //   {
-    //     label: 'deviantART',
-    //     url: 'http://nkunited.deviantart.com/',
-    //     target: '_top',
-    //     tooltip: 'Autem insto',
-    //   },
-    //   { label: 'Gulp', url: 'http://gulpjs.com/', target: '_top', tooltip: 'Officia dolor' },
-    //   {
-    //     label: 'Browsersync',
-    //     url: 'https://www.browsersync.io/',
-    //     target: '_top',
-    //     tooltip: 'Digi tal',
-    //   },
-    //   { label: 'GitHub', url: 'https://github.com/', target: '_top', tooltip: 'Amet et quam' },
-    //   {
-    //     label: 'Shadertoy',
-    //     url: 'https://www.shadertoy.com/',
-    //     target: '_top',
-    //     tooltip: 'Meno equox',
-    //   },
-    //   {
-    //     label: 'Starling',
-    //     url: 'http://gamua.com/starling/',
-    //     target: '_top',
-    //     tooltip: 'Duis autem',
-    //   },
-    //   { label: 'jsPerf', url: 'http://jsperf.com/', target: '_top', tooltip: 'Soluta nobis' },
-    //   {
-    //     label: 'Foundation',
-    //     url: 'http://foundation.zurb.com/',
-    //     target: '_top',
-    //     tooltip: 'Blandit praesent',
-    //   },
-    //   { label: 'CreateJS', url: 'http://createjs.com/', target: '_top', tooltip: 'Dignissim qui' },
-    //   {
-    //     label: 'Velocity.js',
-    //     url: 'http://julian.com/research/velocity/',
-    //     target: '_top',
-    //     tooltip: 'Et iusto odio',
-    //   },
-    //   {
-    //     label: 'TweenLite',
-    //     url: 'https://greensock.com/docs/#/HTML5/GSAP/TweenLite/',
-    //     target: '_top',
-    //     tooltip: 'Facilisis at vero',
-    //   },
-    //   { label: 'jQuery', url: 'https://jquery.com/', target: '_top', tooltip: 'Dolore eu' },
-    //   {
-    //     label: 'jQuery Rain',
-    //     url: 'http://www.jqueryrain.com/',
-    //     target: '_top',
-    //     tooltip: 'In vulputate',
-    //   },
-    //   {
-    //     label: 'jQuery Plugins',
-    //     url: 'http://jquery-plugins.net/',
-    //     target: '_top',
-    //     tooltip: 'In vulputate',
-    //   },
-    // ];
+    /**
+     * Установка dropdown
+     */
+    if (document.querySelectorAll('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
+        const dropDownBtn = dropDownWrapper.querySelector('.dropdown__button');
+        const dropDownBtnText = dropDownWrapper.querySelector('.dropdown__button-text');
+        const dropDownList = dropDownWrapper.querySelector('.dropdown__list');
+        const dropDownListItems = dropDownList.querySelectorAll('.dropdown__list-item');
+        const dropDownInput = dropDownWrapper.querySelector('.dropdown__input-hidden');
 
-    // let settings1 = {
-    //   children: children,
-    //   width: 960,
-    //   height: 640,
-    //   radius: '65%',
-    //   radiusMin: 75,
-    //   isDrawSvgBg: true,
-    //   svgBgColor: 'linear-gradient(#e66465, #9198e5)',
-    //   opacityOver: 1.0,
-    //   opacityOut: 0.3,
-    //   opacitySpeed: 6,
-    //   fov: 800,
-    //   speed: 0.1,
-    //   fontFamily: 'Oswald, Arial, sans-serif',
-    //   fontSize: '15',
-    //   fontColor: '#fff',
-    //   fontWeight: 'normal', //bold
-    //   fontStyle: 'normal', //italic
-    //   fontStretch: 'narrower', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-    //   fontToUpperCase: true,
-    //   tooltipFontFamily: 'Oswald, Arial, sans-serif',
-    //   tooltipFontSize: '12',
-    //   tooltipFontColor: '#fff',
-    //   tooltipFontWeight: 'normal', //bold
-    //   tooltipFontStyle: 'italic', //italic
-    //   tooltipFontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-    //   tooltipFontToUpperCase: false,
-    //   tooltipTextAnchor: 'left',
-    //   tooltipDiffX: 10,
-    //   tooltipDiffY: 10,
-    //   animatingSpeed: 0.01,
-    //   animatingRadiusLimit: 1.3,
-    // };
+        dropDownBtn.addEventListener('click', function (e) {
+          dropDownList.classList.toggle('dropdown__list--visible');
+          this.classList.add('dropdown__button--active');
+        });
 
-    // new SVG3DTagCloud(document.getElementById('#textcloud'), settings1).build();
+        dropDownListItems.forEach(function (listItem) {
+          listItem.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dropDownBtnText.innerHTML = this.innerHTML;
+            dropDownBtn.dataset.value = this.dataset.value;
+            dropDownBtn.focus();
+            dropDownBtn.click();
+            dropDownInput.value = this.dataset.value;
+            dropDownList.classList.remove('dropdown__list--visible');
+          });
+        });
+
+        document.addEventListener('click', function (e) {
+          if (e.target !== dropDownBtn) {
+            dropDownBtn.classList.remove('dropdown__button--active');
+            dropDownList.classList.remove('dropdown__list--visible');
+          }
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Tab' || e.key === 'Escape') {
+            dropDownBtn.classList.remove('dropdown__button--active');
+            dropDownList.classList.remove('dropdown__list--visible');
+          }
+        });
+      });
+    }
+
+    let children1 = [
+      {
+        label: 'Россия',
+        url: '/',
+        target: '_top',
+      },
+    ]
+
+    let children2 = [
+      {
+        label: 'Россия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Нигерия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Новая Зеландия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Папуа — Новая Гвинея',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Чили',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: ' Бахрейн',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Нигер',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Норвегия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: ' Маврикий',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Мальта',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Перу',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Сьерра-Леоне',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Непал',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Бруней',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Ангола',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Гана',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Сирия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Доминиканка',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Мадагаскар',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Ливия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Венесуэла,',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Ливан',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Кипр Иордания',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Филиппины',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Панама',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Эфиопия',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: ' Лаос',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Гватемала',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Уругвай',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Ирландия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Гвинея',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Ливия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Танзания',
+        url: '/',
+        target: '_top'
+      },
+      {
+        label: 'Камерун',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Кувейт',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Швеция',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Австрия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Дания',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Кения',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Шри-Ланка',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Кот-д’Ивуар',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Аргентина',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Австралия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Йемен',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Бангладеш',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Бельгия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Эквадор',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Катар',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Нидерланды',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Швейцария',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Марокко',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Португалия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Венгрия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Бразилия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Сингапур',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: ' Словакия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Тунис',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Греция',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Болгария',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Словения',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Саудовская Аравия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Сербия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Мьянма',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Мексика',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Камбоджа',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Канада',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Испания',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Чехия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'США',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Оман',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Германия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Франция',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Латвия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Италия',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Тунис',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Литва',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Великобритания',
+        url: '/',
+        target: '_top',
+      },
+      {
+        label: 'Эстония',
+        url: '/',
+        target: '_top',
+      },
+    ];
+
+    let settings1 = {
+      children: children1,
+      width: '100%',
+      height: 515,
+      radius: '75%',
+      radiusMin: 75,
+      isDrawSvgBg: true,
+      svgBgColor: 'transparent',
+      opacityOver: 1.0,
+      opacityOut: 0.3,
+      opacitySpeed: 6,
+      fov: 800,
+      speed: 0.1,
+      fontFamily: 'inherit, sans-serif',
+      fontSize: '20',
+      fontColor: 'var(--primary-black)',
+      fontWeight: '800', //bold
+      fontStyle: 'normal', //italic
+      fontStretch: 'narrower', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+      fontToUpperCase: true,
+      animatingSpeed: 0.01,
+      animatingRadiusLimit: 1.3,
+    };
+
+    let settings2 = {
+      children: children2,
+      width: 1660,
+      height: 515,
+      radius: '100%',
+      radiusMin: 100,
+      isDrawSvgBg: true,
+      svgBgColor: 'transparent',
+      opacityOver: 1.0,
+      opacityOut: 0.3,
+      opacitySpeed: 6,
+      fov: 800,
+      speed: 0.1,
+      fontFamily: 'inherit, sans-serif',
+      fontSize: '20',
+      fontColor: 'var(--primary-black)',
+      fontWeight: '800', //bold
+      fontStyle: 'normal', //italic
+      fontStretch: 'narrower', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+      fontToUpperCase: true,
+      animatingSpeed: 0.01,
+      animatingRadiusLimit: 1.3,
+    };
+
+    new SVG3DTagCloud(document.getElementById('textcloud1'), settings1).build();
+
+    new SVG3DTagCloud(document.getElementById('textcloud2'), settings2).build();
 
 
 

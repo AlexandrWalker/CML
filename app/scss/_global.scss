@@ -163,31 +163,33 @@ a {
 }
 
 .btn {
+
   &-calc {
     gap: 2rem;
 
-    span {
-      display: block;
-      width: 3.2rem;
-      height: 3.2rem;
-      background-image: url(./../images/icon/calc.svg);
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: center;
+    i {
+      font-size: 3.2rem;
+      line-height: 100%;
+      color: var(--primary-black);
+      text-align: center;
       transition: all 0.3s ease;
     }
 
     &:hover {
 
-      span {
-        background-image: url(./../images/icon/calc-white.svg);
+      i {
+        color: var(--white);
       }
     }
   }
 }
 
+.planshet-block {
+  display: none !important;
+}
+
 .mob-block {
-  display: none;
+  display: none !important;
 }
 
 /* form-input */
@@ -243,7 +245,7 @@ a {
 
   &-group {
     position: relative;
-    width: calc(33% - 1.3333rem);
+    width: calc(33.33333% - 1.3333rem);
   }
 
   &-input {
@@ -265,6 +267,7 @@ a {
     &:-moz-placeholder,
     &:-ms-input-placeholder {
       color: var(--primary-black-50);
+      transition: all 0.3s ease;
     }
 
     &::placeholder {

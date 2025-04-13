@@ -1,16 +1,17 @@
 @font-face {
   font-family: 'CML';
-  src:  url('./../fonts/icomoon/CML.eot?340sdp');
-  src:  url('./../fonts/icomoon/CML.eot?340sdp#iefix') format('embedded-opentype'),
-    url('./../fonts/icomoon/CML.ttf?340sdp') format('truetype'),
-    url('./../fonts/icomoon/CML.woff?340sdp') format('woff'),
-    url('./../fonts/icomoon/CML.svg?340sdp#CML') format('svg');
+  src: url('./../fonts/icomoon/CML.eot?e7owgd');
+  src: url('./../fonts/icomoon/CML.eot?e7owgd#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon/CML.ttf?e7owgd') format('truetype'),
+    url('./../fonts/icomoon/CML.woff?e7owgd') format('woff'),
+    url('./../fonts/icomoon/CML.svg?e7owgd#CML') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'CML' !important;
   speak: never;
@@ -25,30 +26,50 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-calc:before {
+.icon-angle:before {
   content: "\e900";
 }
-.icon-chevron-down:before {
+
+.icon-calc:before {
   content: "\e901";
 }
-.icon-circle-chevron-down:before {
+
+.icon-chevron-down:before {
   content: "\e902";
 }
-.icon-download:before {
+
+.icon-circle-chevron-down:before {
   content: "\e903";
 }
-.icon-minus:before {
+
+.icon-download:before {
   content: "\e904";
 }
-.icon-plus:before {
+
+.icon-file-pdf:before {
   content: "\e905";
 }
-.icon-pochta:before {
+
+.icon-headphones:before {
   content: "\e906";
 }
-.icon-telegram:before {
+
+.icon-minus:before {
   content: "\e907";
 }
-.icon-whatsapp:before {
+
+.icon-plus:before {
   content: "\e908";
+}
+
+.icon-pochta:before {
+  content: "\e909";
+}
+
+.icon-telegram:before {
+  content: "\e90a";
+}
+
+.icon-whatsapp:before {
+  content: "\e90b";
 }
