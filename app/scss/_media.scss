@@ -15,6 +15,14 @@
     // padding-bottom: 6.4rem;
   }
 
+  section {
+    margin-bottom: 3rem;
+  }
+
+  .section__suptitle {
+    font-size: 1.6rem;
+  }
+
   .calc__content {
     gap: 2rem;
   }
@@ -63,6 +71,46 @@
 
   .form-textarea {
     font-size: 1.4rem;
+  }
+
+  .service__items {
+    gap: 1rem;
+  }
+
+  .service__item {
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .service__item-head {
+    width: 100%;
+    gap: 1.6rem;
+  }
+
+  .service__item-count {
+    font-size: 3rem;
+    width: 3.5rem;
+    text-align: center;
+  }
+
+  .service__item-title {
+    font-size: 1.6rem;
+  }
+
+  .service__item-text {
+    font-size: 1.6rem;
+    padding-left: 5.1rem;
+  }
+
+  .service__item-body {
+    width: 100%;
+  }
+
+  .service__item-icon {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
   }
 
   .section__title {
@@ -299,6 +347,60 @@
     gap: 1rem;
   }
 
+  .partner .section__head {
+    width: 50%;
+  }
+
+  .partner__head {
+    gap: 1.5rem;
+  }
+
+  .partner__head-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 50%;
+    padding-top: 2.8rem;
+  }
+
+  .partner__head-suptitle {
+    font-size: 1.4rem;
+  }
+
+  .partner__head-count {
+    font-size: 10rem;
+    line-height: 70%;
+    margin: 0;
+  }
+
+  .partner__item {
+    width: 33.33333%;
+    min-width: 33.33333%;
+    height: 13rem;
+  }
+
+  .partner__item-img {}
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-600%);
+    }
+  }
+
+  .request__inner {
+    padding: 3rem 2rem;
+  }
+
+  .request .calc__head {
+    align-items: center;
+    width: 100%;
+    max-width: 38rem;
+  }
+
   .footer__head {
     padding: 3rem 0;
   }
@@ -443,6 +545,46 @@
 
   .about__feat-text {
     font-size: 1.4rem;
+  }
+
+  .partner .section__title {
+    margin: 0;
+  }
+
+  .partner__head {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .partner .section__head {
+    width: 100%;
+  }
+
+  .partner__head-item {
+    padding: 0;
+    width: 100%;
+  }
+
+  .partner__item {
+    width: 50%;
+    min-width: 50%;
+    height: 9.6rem;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-900%);
+    }
+  }
+
+  .request__container {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
   }
 
   .footer__menu {
