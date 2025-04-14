@@ -6,7 +6,7 @@
   top: 0;
   bottom: 0;
   right: -100%;
-  z-index: 100;
+  z-index: 300;
   transition: all 0.5s ease;
 
   &.mobile-menu--opened {
@@ -25,6 +25,7 @@
 
       &.burger {
         border-color: var(--primary-accent);
+        background-color: var(--primary-accent);
       }
 
       .burger__text {

@@ -23,6 +23,31 @@
     font-size: 1.6rem;
   }
 
+  .wrapper {
+    padding-bottom: 6.4rem;
+  }
+
+  .icon-angle-item {
+    width: 2.062rem;
+    height: 2rem;
+  }
+
+  .icon-angle {
+    font-size: 1.3rem;
+  }
+
+  .modal {
+    padding-bottom: 6.4rem;
+  }
+
+  .modal .calc__inner {
+    padding: 0;
+  }
+
+  .calc__inner {
+    padding: 3rem 2rem;
+  }
+
   .calc__content {
     gap: 2rem;
   }
@@ -55,6 +80,11 @@
     height: 5rem;
   }
 
+  .modal .form-btn {
+    width: calc(50% - 0.5rem);
+    height: 5rem;
+  }
+
   .form-bottom {
     width: calc(50% - 0.5rem);
     margin: 0 0 0 auto;
@@ -79,8 +109,17 @@
 
   .service__item {
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
     position: relative;
+  }
+
+  .service__item:hover .icon-angle-first {
+    transform: translate(0.15rem, -0.15rem);
+  }
+
+  .service__item:hover .icon-angle-second {
+    transform: translate(-0.15rem, 0.15rem);
   }
 
   .service__item-head {
@@ -104,7 +143,7 @@
   }
 
   .service__item-body {
-    width: 100%;
+    width: calc(100% - 3rem);
   }
 
   .service__item-icon {
@@ -391,6 +430,47 @@
     }
   }
 
+  .faq__item-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  .faq__item-count {
+    font-size: 3.4rem;
+    width: 4rem;
+    min-width: 4rem;
+  }
+
+  .faq__item-title {
+    font-size: 1.6rem;
+  }
+
+  .faq__item-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .faq__item-btn i {
+    font-size: 1.6rem;
+  }
+
+  .faq__item {
+    padding-bottom: 2rem;
+  }
+
+  .faq__item-content {
+    padding: 0;
+  }
+
+  .faq__item-text {
+    font-size: 1.4rem;
+  }
+
   .request__inner {
     padding: 3rem 2rem;
   }
@@ -482,6 +562,10 @@
     }
   }
 
+  .calc__container {
+    padding: 0;
+  }
+
   .mob-block {
     display: flex !important;
   }
@@ -494,6 +578,10 @@
     width: 100%;
   }
 
+  .modal .form-btn {
+    width: 100%;
+  }
+
   .form-bottom {
     width: 100%;
     margin: 0;
@@ -501,6 +589,10 @@
 
   .header__btn {
     display: none;
+  }
+
+  .hero {
+    margin: 0;
   }
 
   .hero__item-title {
@@ -580,6 +672,10 @@
     100% {
       transform: translateX(-900%);
     }
+  }
+
+  .faq__items {
+    gap: 1.5rem;
   }
 
   .request__container {

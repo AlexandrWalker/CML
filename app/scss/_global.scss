@@ -101,6 +101,48 @@ a {
   }
 }
 
+/* icon */
+.icon {
+
+  &-angle {
+    font-size: 2.625rem;
+    line-height: 100%;
+    color: var(--primary-accent);
+
+    &-item {
+      position: relative;
+      width: 4.125rem;
+      height: 4rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+
+        .icon-angle-first {
+          transform: translate(0.3125rem, -0.3125rem);
+        }
+
+        .icon-angle-second {
+          transform: translate(-0.3125rem, 0.3125rem);
+        }
+      }
+    }
+
+    &-first {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 0.3s ease;
+    }
+
+    &-second {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
 /* buttons */
 .btn {
   --button-padding-x: 2rem;
