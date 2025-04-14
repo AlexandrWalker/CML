@@ -15,7 +15,8 @@
       // },
       pagination: {
         el: ".swiper-pagination",
-        type: "fraction",
+        clickable: true,
+        // type: "fraction",
       },
     });
 
@@ -46,6 +47,7 @@
     //     },
     //   },
     // });
+
 
 
     /**
@@ -183,458 +185,424 @@
       });
     }
 
-    let children1 = [
-      {
-        label: 'Россия',
-        url: '/',
-        target: '_top',
-      },
-    ]
+    // let children = [
+    //   {
+    //     label: 'Россия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Нигерия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Новая Зеландия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Папуа — Новая Гвинея',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Чили',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: ' Бахрейн',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Нигер',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Норвегия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: ' Маврикий',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Мальта',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Перу',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Сьерра-Леоне',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Непал',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Бруней',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Ангола',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Гана',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Сирия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Доминиканка',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Мадагаскар',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Ливия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Венесуэла,',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Ливан',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Кипр Иордания',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Филиппины',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Панама',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Эфиопия',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: ' Лаос',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Гватемала',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Уругвай',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Ирландия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Гвинея',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Ливия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Танзания',
+    //     url: '/',
+    //     target: '_top'
+    //   },
+    //   {
+    //     label: 'Камерун',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Кувейт',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Швеция',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Австрия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Дания',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Кения',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Шри-Ланка',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Кот-д’Ивуар',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Аргентина',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Австралия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Йемен',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Бангладеш',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Бельгия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Эквадор',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Катар',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Нидерланды',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Швейцария',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Марокко',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Португалия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Венгрия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Бразилия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Сингапур',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: ' Словакия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Тунис',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Греция',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Болгария',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Словения',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Саудовская Аравия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Сербия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Мьянма',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Мексика',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Камбоджа',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Канада',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Испания',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Чехия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'США',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Оман',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Германия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Франция',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Латвия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Италия',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Тунис',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Литва',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Великобритания',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    //   {
+    //     label: 'Эстония',
+    //     url: '/',
+    //     target: '_top',
+    //   },
+    // ];
 
-    let children2 = [
-      {
-        label: 'Россия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Нигерия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Новая Зеландия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Папуа — Новая Гвинея',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Чили',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: ' Бахрейн',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Нигер',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Норвегия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: ' Маврикий',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Мальта',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Перу',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Сьерра-Леоне',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Непал',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Бруней',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Ангола',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Гана',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Сирия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Доминиканка',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Мадагаскар',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Ливия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Венесуэла,',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Ливан',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Кипр Иордания',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Филиппины',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Панама',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Эфиопия',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: ' Лаос',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Гватемала',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Уругвай',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Ирландия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Гвинея',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Ливия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Танзания',
-        url: '/',
-        target: '_top'
-      },
-      {
-        label: 'Камерун',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Кувейт',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Швеция',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Австрия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Дания',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Кения',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Шри-Ланка',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Кот-д’Ивуар',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Аргентина',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Австралия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Йемен',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Бангладеш',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Бельгия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Эквадор',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Катар',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Нидерланды',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Швейцария',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Марокко',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Португалия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Венгрия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Бразилия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Сингапур',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: ' Словакия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Тунис',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Греция',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Болгария',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Словения',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Саудовская Аравия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Сербия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Мьянма',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Мексика',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Камбоджа',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Канада',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Испания',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Чехия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'США',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Оман',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Германия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Франция',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Латвия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Италия',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Тунис',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Литва',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Великобритания',
-        url: '/',
-        target: '_top',
-      },
-      {
-        label: 'Эстония',
-        url: '/',
-        target: '_top',
-      },
-    ];
+    // let settings = {
+    //   children: children,
+    //   width: 1660,
+    //   height: 515,
+    //   radius: '100%',
+    //   radiusMin: 100,
+    //   isDrawSvgBg: true,
+    //   svgBgColor: 'transparent',
+    //   opacityOver: 1.0,
+    //   opacityOut: 0.3,
+    //   opacitySpeed: 6,
+    //   fov: 800,
+    //   speed: 0.1,
+    //   fontFamily: 'inherit, sans-serif',
+    //   fontSize: '20',
+    //   fontColor: 'var(--primary-black)',
+    //   fontWeight: '800', //bold
+    //   fontStyle: 'normal', //italic
+    //   fontStretch: 'narrower', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+    //   fontToUpperCase: true,
+    //   animatingSpeed: 0.01,
+    //   animatingRadiusLimit: 1.3,
+    // };
 
-    let settings1 = {
-      children: children1,
-      width: '100%',
-      height: 515,
-      radius: '75%',
-      radiusMin: 75,
-      isDrawSvgBg: true,
-      svgBgColor: 'transparent',
-      opacityOver: 1.0,
-      opacityOut: 0.3,
-      opacitySpeed: 6,
-      fov: 800,
-      speed: 0.1,
-      fontFamily: 'inherit, sans-serif',
-      fontSize: '20',
-      fontColor: 'var(--primary-black)',
-      fontWeight: '800', //bold
-      fontStyle: 'normal', //italic
-      fontStretch: 'narrower', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-      fontToUpperCase: true,
-      animatingSpeed: 0.01,
-      animatingRadiusLimit: 1.3,
-    };
-
-    let settings2 = {
-      children: children2,
-      width: 1660,
-      height: 515,
-      radius: '100%',
-      radiusMin: 100,
-      isDrawSvgBg: true,
-      svgBgColor: 'transparent',
-      opacityOver: 1.0,
-      opacityOut: 0.3,
-      opacitySpeed: 6,
-      fov: 800,
-      speed: 0.1,
-      fontFamily: 'inherit, sans-serif',
-      fontSize: '20',
-      fontColor: 'var(--primary-black)',
-      fontWeight: '800', //bold
-      fontStyle: 'normal', //italic
-      fontStretch: 'narrower', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-      fontToUpperCase: true,
-      animatingSpeed: 0.01,
-      animatingRadiusLimit: 1.3,
-    };
-
-    new SVG3DTagCloud(document.getElementById('textcloud1'), settings1).build();
-
-    new SVG3DTagCloud(document.getElementById('textcloud2'), settings2).build();
+    // new SVG3DTagCloud(document.getElementById('textcloud1'), settings).build();
 
 
 
@@ -715,6 +683,99 @@
         head.classList.remove('fixed');
       }
     });
+
+    // const test = document.querySelectorAll(".work__item");
+
+    // test.addEventListener( "mouseover", (event) => {
+    //     // highlight the mouseover target
+    //     event.target.classList.toggle('work__item-active');
+
+    //     // reset the color after a short delay
+    //     setTimeout(() => {
+    //       event.target.style.color = "";
+    //     }, 500);
+    //   },
+    //   false,
+    // );
+
+
+
+    /**
+ * Управляет переключением вкладок на странице.
+ * Добавляет и удаляет классы активности для кнопок и панелей вкладок.
+ * Поддерживает вложенные табы любой глубины и сохраняет активное состояние у вложенных табов при переключении внешних.
+ */
+    function tabsFunc() {
+      document.querySelectorAll('.tabs').forEach((tabsContainer) => {
+        tabsContainer.addEventListener('click', (event) => {
+          const tabsBtn = event.target.closest('.tabs__btn');
+          if (!tabsBtn || !tabsContainer.contains(tabsBtn)) return;
+
+          // Останавливаем всплытие, чтобы вложенные табы не влияли на родительские
+          event.stopPropagation();
+
+          // Ищем ближайший контейнер, к которому принадлежит нажатая кнопка
+          const currentTabsContainer = tabsBtn.closest('.tabs');
+          if (!currentTabsContainer) return;
+
+          // Сбрасываем активные состояния кнопок и панелей только внутри текущего уровня
+          const tabsBtns = Array.from(currentTabsContainer.querySelectorAll('.tabs__btn'));
+          const tabsPanels = Array.from(currentTabsContainer.querySelectorAll('.tabs__panel'));
+
+          tabsBtns.forEach((btn) => {
+            if (btn.closest('.tabs') === currentTabsContainer) {
+              btn.classList.remove('tabs__btn--active');
+            }
+          });
+
+          tabsPanels.forEach((panel) => {
+            if (panel.closest('.tabs') === currentTabsContainer) {
+              panel.classList.remove('tabs__panel--active');
+            }
+          });
+
+          // Устанавливаем активное состояние для выбранной вкладки
+          tabsBtn.classList.add('tabs__btn--active');
+          const targetPanel = currentTabsContainer.querySelector(
+            `.tabs__panel[data-tab="${tabsBtn.dataset.tab}"]`,
+          );
+          if (targetPanel) {
+            /* HACK */
+            targetPanel.classList.add('tabs__panel--active');
+          }
+        });
+      });
+    };
+
+    tabsFunc();
+
+
+
+    var workItem = document.querySelectorAll('.work__item'),
+      workActive = document.getElementsByClassName('work__item-active');
+
+    Array.from(workItem).forEach(function (item, i, workItem) {
+      item.addEventListener('mouseover', function (e) {
+        if (workActive.length > 0 && workActive[0] !== this) {
+          workActive[0].classList.remove('work__item-active');
+        }
+        this.classList.add('work__item-active');
+      });
+    });
+
+    const case__acc = document.querySelectorAll('.case__acc');
+
+    window.addEventListener('resize', function (event) {
+      if (this.window.innerWidth >= 769) {
+        if (case__acc.length > 0) {
+          case__acc[0].classList.remove('tabs__panel');
+        }
+      } else {
+
+      }
+    }, true);
+
+
 
   });
 })();
