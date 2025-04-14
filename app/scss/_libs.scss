@@ -31,6 +31,41 @@
     }
   }
 
+  &-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-bullet {
+      background-color: var(--white);
+      opacity: 1;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+
+      &:hover {
+        background-color: var(--primary-accent);
+      }
+
+      &-active {
+        background-color: var(--primary-accent);
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 5rem;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 0.5rem;
+  }
+
   &-pagination-fraction {
     display: flex;
     justify-content: center;
