@@ -9,10 +9,10 @@
       loop: true,
       // init: false,
       speed: 600,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
+      // autoplay: {
+      //   delay: 5000,
+      //   disableOnInteraction: false
+      // },
       pagination: {
         el: ".swiper-pagination",
         type: "fraction",
@@ -661,7 +661,6 @@
             }
 
             let modalId = e.target.getAttribute('data-id');
-            console.log(modalId);
             if (modalId) {
               document.getElementById(modalId).classList.add('open');
             } else {
