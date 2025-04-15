@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="./libs/lenis/lenis.min.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/icomoon-style.css">
+  <link rel="stylesheet" href="./libs/splitting/splitting.css">
+  <link rel="stylesheet" href="./libs/splitting/splitting-cells.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -564,7 +566,7 @@
                       <i class="icon-circle-chevron-down"></i>
                     </a>
                   </div>
-                  <img class="hero__img" src="./images/main/hero-3.png" alt="">
+                  <img class="hero__img cube" src="./images/main/hero-3.png" alt="">
                 </div>
               </div>
               <div class="swiper-progress"></div>
@@ -588,10 +590,10 @@
       <div class="calc__inner">
         <div class="section__head">
           <h3 class="section__suptitle">Калькулятор</h3>
-          <h2 class="section__title">
+          <h2 class="section__title" data-splitting="chars">
             Рассчитайте
             <br>
-            <span>стоимость доставки</span>
+            <span class="section__title-accent">стоимость доставки</span>
           </h2>
         </div>
         <form action="#" method="get">
@@ -683,8 +685,8 @@
       <div class="service__inner">
         <div class="section__head">
           <h3 class="section__suptitle">Наши услуги</h3>
-          <h2 class="section__title">
-            <span>Мы позаботимся о поиске</span>, <br> приобретении и доставке грузов
+          <h2 id="titleTarget" class="section__title" data-splitting>
+            <span class="section__title-accent">Мы позаботимся о поиске</span>, <br> приобретении и доставке грузов
           </h2>
         </div>
         <div class="service__body">
@@ -817,10 +819,10 @@
 
         <div class="section__head">
           <h3 class="section__suptitle">Это не к нам</h3>
-          <h2 class="section__title">
-            5 услуг <span>которые мы </span>
+          <h2 class="section__title" data-splitting>
+            5 услуг <span class="section__title-accent">которые мы </span>
             <br>
-            не <span>оказываем</span>
+            не <span class="section__title-accent">оказываем</span>
           </h2>
         </div>
 
@@ -855,10 +857,10 @@
       <div class="transport__inner">
         <div class="section__head">
           <h3 class="section__suptitle">виды транспорта</h3>
-          <h2 class="section__title">
+          <h2 class="section__title" data-splitting>
             Объединяем страны,
             <br>
-            <span>преодолеваем границы</span>
+            <span class="section__title-accent">преодолеваем границы</span>
           </h2>
         </div>
         <div class="transport__items">
@@ -1421,8 +1423,8 @@
       <div class="about__inner">
         <div class="section__head">
           <h3 class="section__suptitle">О компании</h3>
-          <h2 class="section__title">
-            На нас <span>можно положиться</span>
+          <h2 class="section__title" data-splitting>
+            На нас <span class="section__title-accent">можно положиться</span>
           </h2>
         </div>
         <div class="about__body">
@@ -1446,7 +1448,7 @@
           <div class="about__feat">
             <div class="about__feat-item">
               <p class="about__feat-count">
-                <span>6</span> лет
+                <span class="number">6</span> лет
               </p>
               <p class="about__feat-text">
                 на рынке услуг грузоперевозок
@@ -1454,7 +1456,7 @@
             </div>
             <div class="about__feat-item">
               <p class="about__feat-count">
-                <span>20</span> тыс. тонн
+                <span class="number">20</span> тыс. тонн
               </p>
               <p class="about__feat-text">
                 доставлено грузов
@@ -1462,7 +1464,7 @@
             </div>
             <div class="about__feat-item">
               <p class="about__feat-count">
-                <span>98%</span>
+                <span class="number">98</span>%
               </p>
               <p class="about__feat-text">
                 наших клиентов возвращаются к нам за новыми услугами
@@ -1470,7 +1472,7 @@
             </div>
             <div class="about__feat-item">
               <p class="about__feat-count">
-                <span>4,7</span>
+                <span class="numberFraction">4.7</span>
               </p>
               <p class="about__feat-text">
                 рейтинг компании по опросам наших клиентов.
@@ -1486,8 +1488,8 @@
       <div class="work__inner">
         <div class="section__head">
           <h3 class="section__suptitle">КАК МЫ РАБОТАЕМ</h3>
-          <h2 class="section__title">
-            <span>Варианты работы</span>
+          <h2 class="section__title" data-splitting>
+            <span class="section__title-accent">Варианты работы</span>
             <br>
             с нами
           </h2>
@@ -1638,8 +1640,8 @@
       <div class="case__inner tabs">
         <div class="section__head">
           <h3 class="section__suptitle">Выполненные проекты</h3>
-          <h2 class="section__title">
-            <span>Кейсы</span>
+          <h2 class="section__title" data-splitting>
+            <span class="section__title-accent">Кейсы</span>
           </h2>
         </div>
         <div class="case__head">
@@ -1661,221 +1663,260 @@
             Все кейсы
           </a>
         </div>
-        <div class="case__body">
-          <div class="case__acc tabs__panel tabs__panel--active" data-tab="tab-1">
-            <div class="case__content">
-              <div class="case__items">
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      01
-                    </span>
-                    <p class="case__item-title">
-                      Задача
+        <div class="case__body" data-skip="true">
+          <div class="case__acc tabs__panel tabs__panel--active accordion" data-tab="tab-1">
+            <div class="case__acc-item">
+              <p class="case__acc-title">
+                Доставка буровой установки из Китая
+              </p>
+              <i class="case__acc-icon icon-circle-chevron-down"></i>
+            </div>
+            <div class="case__acc-content">
+              <div class="case__content">
+                <div class="case__items">
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        01
+                      </span>
+                      <p class="case__item-title">
+                        Задача
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Найти поставщика в Китае, проинспектировать готовый груз, организовать полное сопровождение груза
+                      от
+                      склада в Китае до склада клиента в г. Новосибирск.
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Найти поставщика в Китае, проинспектировать готовый груз, организовать полное сопровождение груза от
-                    склада в Китае до склада клиента в г. Новосибирск.
-                  </p>
-                </div>
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      02
-                    </span>
-                    <p class="case__item-title">
-                      Проблема
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        02
+                      </span>
+                      <p class="case__item-title">
+                        Проблема
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Проблема заключалась в необходимости перевозки оборудования без жидкостей, хотя для проверки
+                      требовался полный запуск с их заливкой. Также возникли сложности с загрузкой из-за больших
+                      габаритов
+                      оборудования: оно почти вплотную прилегало к стенкам контейнера, что позволяло загружать его
+                      только
+                      самоходом, усложняя процесс.
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Проблема заключалась в необходимости перевозки оборудования без жидкостей, хотя для проверки
-                    требовался полный запуск с их заливкой. Также возникли сложности с загрузкой из-за больших габаритов
-                    оборудования: оно почти вплотную прилегало к стенкам контейнера, что позволяло загружать его только
-                    самоходом, усложняя процесс.
-                  </p>
-                </div>
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      03
-                    </span>
-                    <p class="case__item-title">
-                      Решение
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        03
+                      </span>
+                      <p class="case__item-title">
+                        Решение
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Нашли поставщика в Китае, организовали оплату товара, проверили груз с клиентом и обеспечили его
+                      выезд на завод для тестового запуска оборудования. Оформили все документы для таможни. Перед
+                      загрузкой и выгрузкой залили необходимые жидкости, оборудование самоходом переместилось в
+                      контейнер,
+                      после чего жидкости слили. При выгрузке процесс повторился: жидкости залили, и оборудование
+                      самостоятельно выехало из контейнера.
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Нашли поставщика в Китае, организовали оплату товара, проверили груз с клиентом и обеспечили его
-                    выезд на завод для тестового запуска оборудования. Оформили все документы для таможни. Перед
-                    загрузкой и выгрузкой залили необходимые жидкости, оборудование самоходом переместилось в контейнер,
-                    после чего жидкости слили. При выгрузке процесс повторился: жидкости залили, и оборудование
-                    самостоятельно выехало из контейнера.
-                  </p>
                 </div>
+                <img class="case__img" src="./images/main/Доставка буровой установки из Китая.png"
+                  alt="Доставка буровой установки из Китая">
               </div>
-              <img class="case__img" src="./images/main/Доставка буровой установки из Китая.png"
-                alt="Доставка буровой установки из Китая">
             </div>
           </div>
-          <div class="case__acc tabs__panel" data-tab="tab-2">
-            <div class="case__content">
-              <div class="case__items">
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      01
-                    </span>
-                    <p class="case__item-title">
-                      Задача
+          <div class="case__acc tabs__panel accordion" data-tab="tab-2">
+            <div class="case__acc-item">
+              <p class="case__acc-title">
+                Авиадоставка Амортизаторов для спецтехники
+              </p>
+              <i class="case__acc-icon icon-circle-chevron-down"></i>
+            </div>
+            <div class="case__acc-content">
+              <div class="case__content">
+                <div class="case__items">
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        01
+                      </span>
+                      <p class="case__item-title">
+                        Задача
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Организовать авиаперевозку амортизаторов из Индонезии в Москву.
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Организовать авиаперевозку амортизаторов из Индонезии в Москву.
-                  </p>
-                </div>
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      02
-                    </span>
-                    <p class="case__item-title">
-                      Проблема
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        02
+                      </span>
+                      <p class="case__item-title">
+                        Проблема
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Негабаритный груз из Индонезии было сложно перевезти из-за ограничений по самолетам и отсутствия
+                      прямых рейсов. Искали быстрый маршрут, включая морскую перевозку до Китая с авиаперегрузкой, но
+                      главным была своевременная доставка с соблюдением стандартов
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Негабаритный груз из Индонезии было сложно перевезти из-за ограничений по самолетам и отсутствия
-                    прямых рейсов. Искали быстрый маршрут, включая морскую перевозку до Китая с авиаперегрузкой, но
-                    главным была своевременная доставка с соблюдением стандартов
-                  </p>
-                </div>
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      03
-                    </span>
-                    <p class="case__item-title">
-                      Решение
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        03
+                      </span>
+                      <p class="case__item-title">
+                        Решение
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      благодаря нашей разветвленной агентской сети мы смогли найти подходящий самолет, способный принять
+                      данный груз. Более того, нам удалось разработать маршрут, который обеспечил максимально быстрые
+                      сроки доставки. С учетом запланированного авиатранзита мы смогли оперативно перегрузить груз и
+                      доставить его в Москву в кратчайшие сроки
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    благодаря нашей разветвленной агентской сети мы смогли найти подходящий самолет, способный принять
-                    данный груз. Более того, нам удалось разработать маршрут, который обеспечил максимально быстрые
-                    сроки доставки. С учетом запланированного авиатранзита мы смогли оперативно перегрузить груз и
-                    доставить его в Москву в кратчайшие сроки
-                  </p>
                 </div>
+                <img class="case__img" src="./images/main/Авиадоставка Амортизаторов для спецтехники.png"
+                  alt="Авиадоставка Амортизаторов для спецтехники">
               </div>
-              <img class="case__img" src="./images/main/Авиадоставка Амортизаторов для спецтехники.png"
-                alt="Авиадоставка Амортизаторов для спецтехники">
             </div>
           </div>
-          <div class="case__acc tabs__panel" data-tab="tab-3">
-            <div class="case__content">
-              <div class="case__items">
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      01
-                    </span>
-                    <p class="case__item-title">
-                      Задача
+          <div class="case__acc tabs__panel accordion" data-tab="tab-3">
+            <div class="case__acc-item">
+              <p class="case__acc-title">
+                Автодоставка драконьих лодок
+              </p>
+              <i class="case__acc-icon icon-circle-chevron-down"></i>
+            </div>
+            <div class="case__acc-content">
+              <div class="case__content">
+                <div class="case__items">
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        01
+                      </span>
+                      <p class="case__item-title">
+                        Задача
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Организовать автодоставку драконьих лодок из Китая в г. Барнаул, сопроводить груз и оказать
+                      таможенное оформление
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Организовать автодоставку драконьих лодок из Китая в г. Барнаул, сопроводить груз и оказать
-                    таможенное оформление
-                  </p>
-                </div>
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      02
-                    </span>
-                    <p class="case__item-title">
-                      Проблема
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        02
+                      </span>
+                      <p class="case__item-title">
+                        Проблема
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Лодки можно перевозить только в собранном виде. При доставке из Китая требовалась перегрузка на
+                      границе. Из-за хрупкости и высокой стоимости (ручная работа) важно было избежать повреждений.
+                      Сложность усугублялась количеством (14 шт.) – перевозка навалом исключалась. Нужно было найти
+                      способ
+                      доставить их быстро с минимальными перегрузками.
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Лодки можно перевозить только в собранном виде. При доставке из Китая требовалась перегрузка на
-                    границе. Из-за хрупкости и высокой стоимости (ручная работа) важно было избежать повреждений.
-                    Сложность усугублялась количеством (14 шт.) – перевозка навалом исключалась. Нужно было найти способ
-                    доставить их быстро с минимальными перегрузками.
-                  </p>
-                </div>
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      03
-                    </span>
-                    <p class="case__item-title">
-                      Решение
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        03
+                      </span>
+                      <p class="case__item-title">
+                        Решение
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Нами были проработаны разные варианты размещения груза и по итогу вместе с китайскими партнерам
+                      разработано и сделано специальное крепление в виде каркаса на колесах, где располагались лодки в
+                      несколько ярусов, что позволило задействовать весь объем машины и сэкономить деньги клиента. По
+                      итогу лодки пришли в целости и сохранности, доставлены были за 15 дней до склада клиента.
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Нами были проработаны разные варианты размещения груза и по итогу вместе с китайскими партнерам
-                    разработано и сделано специальное крепление в виде каркаса на колесах, где располагались лодки в
-                    несколько ярусов, что позволило задействовать весь объем машины и сэкономить деньги клиента. По
-                    итогу лодки пришли в целости и сохранности, доставлены были за 15 дней до склада клиента.
-                  </p>
                 </div>
+                <img class="case__img" src="./images/main/Автодоставка драконьих лодок.png"
+                  alt="Автодоставка драконьих лодок">
               </div>
-              <img class="case__img" src="./images/main/Автодоставка драконьих лодок.png"
-                alt="Автодоставка драконьих лодок">
             </div>
           </div>
-          <div class="case__acc tabs__panel" data-tab="tab-4">
-            <div class="case__content">
-              <div class="case__items">
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      01
-                    </span>
-                    <p class="case__item-title">
-                      Задача
+          <div class="case__acc tabs__panel accordion" data-tab="tab-4">
+            <div class="case__acc-item">
+              <p class="case__acc-title">
+                Доставка кокосового угля
+              </p>
+              <i class="case__acc-icon icon-circle-chevron-down"></i>
+            </div>
+            <div class="case__acc-content">
+              <div class="case__content">
+                <div class="case__items">
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        01
+                      </span>
+                      <p class="case__item-title">
+                        Задача
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      организовать доставку и таможенное оформление термопластавтоматов, аналогов которых нет в России.
+                      Сопроводить полное таможенное оформление с нулевой таможенной пошлиной и нулевым таможенным НДС.
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    организовать доставку и таможенное оформление термопластавтоматов, аналогов которых нет в России.
-                    Сопроводить полное таможенное оформление с нулевой таможенной пошлиной и нулевым таможенным НДС.
-                  </p>
-                </div>
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      02
-                    </span>
-                    <p class="case__item-title">
-                      Проблема
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        02
+                      </span>
+                      <p class="case__item-title">
+                        Проблема
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Составление полной технической документации для оборудования.
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Составление полной технической документации для оборудования.
-                  </p>
-                </div>
-                <div class="case__item">
-                  <div class="case__item-head">
-                    <span class="case__item-count">
-                      03
-                    </span>
-                    <p class="case__item-title">
-                      Решение
+                  <div class="case__item">
+                    <div class="case__item-head">
+                      <span class="case__item-count">
+                        03
+                      </span>
+                      <p class="case__item-title">
+                        Решение
+                      </p>
+                    </div>
+                    <p class="case__item-text">
+                      Нами была проделана масштабная работа по подготовке данного оборудования к отправке, зафрахтовано
+                      несколько контейнеров, организована погрузка оборудования с креплением груза в контейнерах. Также
+                      совместно с китайскими партнерами была сделана подробная техническая документация, разработаны
+                      схемы
+                      и технические паспорта.
+                      <br><br>
+                      Как итог, груз доставлен без задержек, таможенное оформление благодаря нашим опытным брокерам было
+                      оформлено за сутки без единого запроса со стороны таможенных органов. Клиент получил оборудование
+                      не
+                      имеющие аналогов в Росси с экономией больше 3-х миллионов рублей.
                     </p>
                   </div>
-                  <p class="case__item-text">
-                    Нами была проделана масштабная работа по подготовке данного оборудования к отправке, зафрахтовано
-                    несколько контейнеров, организована погрузка оборудования с креплением груза в контейнерах. Также
-                    совместно с китайскими партнерами была сделана подробная техническая документация, разработаны схемы
-                    и технические паспорта.
-                    <br><br>
-                    Как итог, груз доставлен без задержек, таможенное оформление благодаря нашим опытным брокерам было
-                    оформлено за сутки без единого запроса со стороны таможенных органов. Клиент получил оборудование не
-                    имеющие аналогов в Росси с экономией больше 3-х миллионов рублей.
-                  </p>
                 </div>
+                <img class="case__img" src="./images/main/Мультимодальная перевозка термопластавтоматов.png"
+                  alt="Мультимодальная перевозка термопластавтоматов">
               </div>
-              <img class="case__img" src="./images/main/Мультимодальная перевозка термопластавтоматов.png"
-                alt="Мультимодальная перевозка термопластавтоматов">
             </div>
           </div>
         </div>
@@ -1889,8 +1930,8 @@
         <div class="partner__head">
           <div class="section__head">
             <h3 class="section__suptitle">С кем мы работаем</h3>
-            <h2 class="section__title">
-              <span>Наши партнеры — лидеры рынка:</span> вместе мы создаем успешные бизнес-истории!
+            <h2 class="section__title" data-splitting>
+              <span class="section__title-accent">Наши партнеры — лидеры рынка:</span> вместе мы создаем успешные бизнес-истории!
             </h2>
           </div>
           <div class="partner__head-item">
@@ -1898,7 +1939,7 @@
               Довольных клиентов с 2019 года
             </p>
             <p class="partner__head-count">
-              1000+
+              <span class="number numberPartner">1000</span>+
             </p>
           </div>
         </div>
@@ -1984,7 +2025,7 @@
       <div class="faq__inner">
         <div class="section__head">
           <h3 class="section__suptitle">FAQ</h3>
-          <h2 class="section__title">
+          <h2 class="section__title" data-splitting>
             Ответы на частые вопросы
           </h2>
         </div>
@@ -2121,7 +2162,7 @@
       <div class="request__inner">
         <div class="section__head">
           <h3 class="section__suptitle">обратная связь</h3>
-          <h2 class="section__title">
+          <h2 class="section__title" data-splitting>
             Оставьте заявку
             на сотрудничество
           </h2>
@@ -2579,31 +2620,31 @@
   </div>
 </section>
 
-<!-- <section id="warning-plate" class="warning">
+<section id="warning-plate" class="warning">
   <div class="container warning__container">
     <div class="warning__inner">
       <p class="warning__text">
         Этот сайт использует файлы сооkіе для хранения данных.
         Продолжая использовать сайт, вы даете свое согласие на работу с этими файлами.
       </p>
-      <button id="warning-btn" class="warning__btn btn btn-red">
+      <button id="warning-btn" class="warning__btn btn">
         Принять и закрыть
       </button>
     </div>
   </div>
-</section> -->
+</section>
 <!-- scipts -->
 <script src="./libs/lenis/lenis.min.js"></script>
-<script src="./libs/gsap/gsap.min.js" defer></script>
-<script src="./libs/gsap/ScrollSmoother.min.js" defer></script>
-<script src="./libs/gsap/ScrollTrigger.min.js" defer></script>
-<script src="./libs/swiper/swiper-bundle.min.js" defer></script>
-<script src="./libs/mixitup/mixitup.min.js"></script>
+<script src="./libs/gsap/gsap.min.js"></script>
+<script src="./libs/gsap/ScrollSmoother.min.js"></script>
+<script src="./libs/gsap/ScrollTrigger.min.js"></script>
+<script src="./libs/gsap/tweenmax.min.js"></script>
+<script src="./libs/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-<script src="./libs/SVG3DTagCloud.global.js" defer></script>
-<script src="./js/main.js" defer></script>
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./libs/splitting/splitting.js"></script>
+<script src="./js/main.js"></script>
 </body>
 
 </html>
