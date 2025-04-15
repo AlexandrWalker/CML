@@ -113,6 +113,44 @@
   }
 }
 
+.cube {
+  animation: shake-vertical-fourth 10s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite both;
+}
+
+@keyframes shake-vertical-fourth {
+
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+  }
+
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  80% {
+    -webkit-transform: translateY(14px);
+    transform: translateY(14px);
+  }
+
+  90% {
+    -webkit-transform: translateY(-14px);
+    transform: translateY(-14px);
+  }
+}
+
 .calc {
 
   &__inner {
@@ -692,6 +730,7 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    transition: all 0.5s ease;
   }
 
   &__items {
@@ -749,6 +788,13 @@
     width: 54rem;
     height: 51.2rem;
     object-fit: cover;
+  }
+
+  &__acc {
+
+    &-item {
+      display: none;
+    }
   }
 }
 
@@ -953,13 +999,6 @@
   &__inner {
     padding: 5rem;
     background-color: var(--white);
-  }
-
-  .form-group {
-
-    &:nth-child(3) {
-      width: 100%;
-    }
   }
 
   .form-btn {

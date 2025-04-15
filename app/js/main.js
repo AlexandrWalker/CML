@@ -9,10 +9,10 @@
       loop: false,
       init: false,
       speed: 600,
-      // autoplay: {
-      //   delay: 5000,
-      //   disableOnInteraction: false
-      // },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -44,6 +44,18 @@
     //               ' of ' +
     //               '<span class="' + totalClass + '"></span>';
     //     },
+    //   },
+    // });
+
+
+
+    // var work__items = new Swiper(".work__items", {
+    //   slidesPerView: 'auto',
+    //   spaceBetween: 0,
+    //   slidesPerGroup: 1,
+    //   speed: 600,
+    //   mousewheel: {
+    //     forceToAxis: true,
     //   },
     // });
 
@@ -752,17 +764,195 @@
       });
     });
 
+
+
     const case__acc = document.querySelectorAll('.case__acc');
 
-    window.addEventListener('resize', function (event) {
-      if (this.window.innerWidth >= 769) {
-        if (case__acc.length > 0) {
-          case__acc[0].classList.remove('tabs__panel');
+    if (case__acc) {
+      window.addEventListener('resize', function (event) {
+        if (window.innerWidth < 769) {
+          for (let i = 0; i < case__acc.length; i++) {
+            case__acc[i].classList.add('accordion');
+            case__acc[i].classList.remove('tabs__panel');
+          }
+        } else {
+          for (let i = 0; i < case__acc.length; i++) {
+            case__acc[i].classList.remove('accordion');
+            case__acc[i].classList.add('tabs__panel');
+          }
         }
-      } else {
+      }, true);
+    }
 
-      }
-    }, true);
+
+
+    document.getElementById('warning-btn').addEventListener('click', event => {
+      document.getElementById('warning-plate').style.display = 'none';
+    });
+
+    gsap.registerPlugin(ScrollTrigger, TweenLite, TweenMax);
+
+    function scrolled1() {
+      $(function () {
+        $('.numberFraction').each(function () {
+          $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+          }, {
+            duration: 3000,
+            easing: 'swing',
+            step: function (now) {
+              $(this).text(now.toFixed(1));
+            }
+          });
+        });
+      });
+    }
+
+    function scrolled2() {
+      $(function () {
+        $('.number').each(function () {
+          $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+          }, {
+            duration: 3000,
+            easing: 'swing',
+            step: function (now) {
+              $(this).text(Math.ceil(now));
+            }
+          });
+        });
+      });
+    }
+
+    function scrolled3() {
+      $(function () {
+        $('.numberPartner').each(function () {
+          $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+          }, {
+            duration: 3000,
+            easing: 'swing',
+            step: function (now) {
+              $(this).text(Math.ceil(now));
+            }
+          });
+        });
+      });
+    }
+
+    ScrollTrigger.create({
+      trigger: '.about__feat',
+      onEnter: scrolled2,
+    });
+
+    ScrollTrigger.create({
+      trigger: '.about__feat',
+      onEnter: scrolled1,
+    });
+
+    ScrollTrigger.create({
+      trigger: '.partner__head',
+      onEnter: scrolled3,
+    });
+
+    Splitting();
+
+
+    // function asdd(asd) {
+    //   const asdTitle = asd.querySelector('.section__title');
+    //   Splitting(asdTitle)
+    // }
+
+    function asdd() {
+      const char = document.querySelectorAll('.char');
+      char.forEach(element => {
+        element.classList.add('animate');
+      });
+    }
+
+    ScrollTrigger.create({
+      trigger: '.section__head',
+      onEnter: asdd(),
+      // onEnter: asdd(asd),
+    });
+
+
+
+    // gsap.to('.about__feat', {
+    //   scrollTrigger: {
+    //     trigger: '.about__feat',
+    //     start: 'top top',
+    //     // scrub: true,
+    //     // end: 'bottom bottom',
+    //     // toggleClass: 'active',
+    //   },
+    //   onStart: () => scrolled1(),
+    //   // onComplete: () => removeClass(items[0]),
+    // });
+
+    // gsap.to('.partner__head-count', {
+    //   scrollTrigger: {
+    //     trigger: '.partner__head-count',
+    //     start: 'top top',
+    //   },
+    //   onStart: () => scrolled2(),
+    // });
+
+
+    // ScrollTrigger.create({
+    //   trigger: 'titleTarget',
+    //   start: 'top top',
+    //   end: 'bottom bottom',
+    //   onToggle: (self) => console.log('toggled, isActive:', self.isActive),
+    //   onUpdate: (self) => {
+    //     console.log(
+    //       'progress:',
+    //       self.progress.toFixed(3),
+    //       'direction:',
+    //       self.direction,
+    //       'velocity',
+    //       self.getVelocity()
+    //     );
+    //   }
+    // });
+
+
+
+    // function counter() {
+    //   const items = document.querySelectorAll(".number");
+
+    //   for (let i = 0; i < items.length; i++) {
+    //     var Cont = { val: 0 },
+    //       NewVal = items[i].textContent;
+
+    //     console.log(items[i].textContent);
+
+    //     TweenLite.to(Cont, 2, {
+    //       val: NewVal,
+    //       roundProps: "val",
+    //       onUpdate: function () {
+    //         items[i].innerHTML = Cont.val;
+    //         console.log();
+    //       }
+    //     });
+    //   }
+    // }
+
+
+
+    // counter();
+
+
+
+    // const items = document.querySelector(".numberFirst");
+
+    // gsap.from(items, {
+    //   innerText: 0,
+    //   duration: 5,
+    //   snap: {
+    //     innerText: 1,
+    //   },
+    // });
 
 
 

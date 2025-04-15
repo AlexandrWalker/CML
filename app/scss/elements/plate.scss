@@ -57,12 +57,11 @@
 
 .warning {
   position: fixed;
-  bottom: 0;
+  bottom: 3.5rem;
   left: 0;
   right: 0;
   z-index: 99;
   margin: 0;
-  background-color: var(--primary-black);
   color: var(--white);
 
   &__inner {
@@ -70,7 +69,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem 7rem;
-    padding: 2rem 0;
+    padding: 2rem 4rem;
+    background-color: var(--primary-black);
   }
 
   &__text {
