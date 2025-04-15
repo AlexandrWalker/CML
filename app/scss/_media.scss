@@ -80,11 +80,6 @@
     height: 5rem;
   }
 
-  .modal .form-btn {
-    width: calc(50% - 0.5rem);
-    height: 5rem;
-  }
-
   .form-bottom {
     width: calc(50% - 0.5rem);
     margin: 0 0 0 auto;
@@ -101,6 +96,11 @@
 
   .form-textarea {
     font-size: 1.4rem;
+  }
+
+  .modal .form-btn {
+    width: calc(50% - 0.5rem);
+    height: 5rem;
   }
 
   .service__items {
@@ -196,6 +196,20 @@
     background-color: var(--primary-black);
   }
 
+  .menu__close:hover.burger {
+    border-color: var(--white);
+    background-color: var(--white);
+  }
+
+  .menu__close:hover .burger__text {
+    color: var(--primary-black);
+  }
+
+  .menu__close:hover.burger span::before,
+  .menu__close:hover.burger span::after {
+    background-color: var(--primary-accent);
+  }
+
   .nav {
     display: none;
   }
@@ -278,13 +292,28 @@
     width: calc(50% - 0.5rem);
   }
 
+  .hero__container {
+    background-image: url(./../images/main/hero-bg-mob.png);
+  }
+
   .hero__blocks {
     flex-direction: column;
     gap: 3rem;
+    margin-bottom: 4rem;
   }
 
   .hero__block {
     gap: 2rem;
+    width: 100%;
+  }
+
+  .hero__block:nth-child(1) {
+    max-width: 30rem;
+    width: 100%;
+  }
+
+  .hero__block:nth-child(2) {
+    max-width: 26.5rem;
     width: 100%;
   }
 
@@ -304,6 +333,14 @@
     font-size: 1.4rem;
   }
 
+  .hero__item {
+    max-width: 42.3rem;
+    width: 100%;
+    padding-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
   .hero__item-title span {
     font-size: 3rem;
   }
@@ -311,6 +348,36 @@
   .hero__item-title {
     font-size: 5rem;
     margin-bottom: 3rem;
+  }
+
+  .hero__item-down {
+    margin: auto 0 0;
+  }
+
+  .hero__slider-item {
+    height: 100%;
+  }
+
+  .hero__img {
+    width: 47.6rem;
+    height: 51.2rem;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    bottom: 3rem;
+    z-index: 1;
+  }
+
+  .fraction {
+    width: 9rem;
+    height: fit-content;
+    font-size: 4rem;
+    padding: 2.1rem 0;
+  }
+
+  .fraction-current {
+    font-size: 6rem;
+    // line-height: 90%;
   }
 
   .feat__items {
@@ -344,6 +411,18 @@
 
   .transport__item-list li {
     font-size: 1.6rem;
+  }
+
+  .transport__item .icon-angle-item {
+    top: unset;
+    bottom: 1rem;
+    right: 1rem;
+    width: 1.6rem;
+    height: 1.5rem;
+  }
+
+  .transport__item .icon-angle {
+    font-size: 1rem;
   }
 
   .about::before {
@@ -713,21 +792,24 @@
     display: flex !important;
   }
 
+  .modal .form-group,
   .form-group {
     width: 100%;
   }
 
+  .modal .form-btn,
   .form-btn {
     width: 100%;
   }
 
-  .modal .form-btn {
-    width: 100%;
-  }
-
+  .modal .form-bottom,
   .form-bottom {
     width: 100%;
     margin: 0;
+  }
+
+  .modal .form-btn {
+    width: 100%;
   }
 
   .header__btn {
@@ -738,12 +820,88 @@
     margin: 0;
   }
 
+  .hero__item {
+    padding: 3rem 0 1.5rem;
+    max-width: 100%;
+  }
+
   .hero__item-title {
     font-size: 4rem;
+    margin-bottom: 2rem;
   }
 
   .hero__item-title span {
     font-size: 3rem;
+  }
+
+  .hero__item-btn {
+    margin-bottom: 25.8rem;
+  }
+
+  .hero__slider-item {
+    padding: 0;
+  }
+
+  .hero__blocks {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero__block:nth-child(1) {
+    max-width: 100%;
+  }
+
+  .hero__block:nth-child(2) {
+    max-width: 75%;
+  }
+
+  .hero__item-down {
+    display: none;
+  }
+
+  .hero__img {
+    width: 25rem;
+    height: 26.9rem;
+    right: 6rem;
+  }
+
+  .hero__bg-small {
+    background-image: url(./../images/main/hero-bg-mob-small.png);
+  }
+
+  .swiper-progress {
+    background-color: var(--primary-bg);
+  }
+
+  .swiper .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper .swiper-pagination-custom,
+  .swiper .swiper-pagination-fraction {
+    top: unset;
+    bottom: 1rem;
+    background-color: var(--primary-black-lighten);
+    height: 1.4rem;
+  }
+
+  .swiper-pagination-bullet {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .fraction {
+    width: 8rem;
+    bottom: 2.4rem;
+    font-size: 2.4rem;
+    padding: 2rem 0;
+  }
+
+  .fraction-current {
+    font-size: 5rem;
   }
 
   .menu .header__btn {
@@ -998,6 +1156,11 @@
 @media (max-width: 480px) {}
 
 @media (max-width: 360px) {
+
+  .hero__img {
+    right: 50%;
+    transform: translateX(50%);
+  }
 
   .footer .header__btn-flip {
     gap: 1rem;

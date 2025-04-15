@@ -6,8 +6,8 @@
     var hero__slider = new Swiper(".hero__slider-init", {
       slidesPerView: 1,
       centeredSlides: true,
-      loop: true,
-      // init: false,
+      loop: false,
+      init: false,
       speed: 600,
       // autoplay: {
       //   delay: 5000,
@@ -16,23 +16,22 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
-        // type: "fraction",
       },
     });
 
-    // hero__slider.on("slideChange afterInit init", function () {
-    //   let currentSlide = this.activeIndex + 1;
-    //   document.querySelector('.swiper-fraction').innerHTML = `
-    //   <span class="swiper-fraction-current">
-    //   ${currentSlide < 10 ? currentSlide : currentSlide}
-    //   </span> 
-    //   / 
-    //   <span class="swiper-fraction-total">
-    //     ${this.slides.length}
-    //   </span>`;
-    // });
+    hero__slider.on("slideChange afterInit init", function () {
+      let currentSlide = this.activeIndex + 1;
+      document.querySelector('.fraction').innerHTML = `
+      <span class="fraction-current">
+      ${currentSlide < 10 ? currentSlide : currentSlide}
+      </span> 
+      / 
+      <span class="fraction-total">
+        ${this.slides.length}
+      </span>`;
+    });
 
-    // hero__slider.init();
+    hero__slider.init();
 
 
     /* trash */
@@ -633,16 +632,6 @@
               document.getElementById(modalId).classList.add('open');
             } else {
               return
-            }
-
-            let modalTitle = e.target.getAttribute('data-title');
-            if (modalTitle) {
-              document.getElementById("modal-title").innerHTML = modalTitle;
-            }
-
-            let modalText = e.target.getAttribute('data-text');
-            if (modalText) {
-              document.getElementById("modal-text").innerHTML = modalText;
             }
 
             Array.from(close, closeButton => {

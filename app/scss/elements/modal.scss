@@ -172,6 +172,10 @@
     }
   }
 
+  .dropdown__button {
+    color: var(--primary-black-50);
+    border-color: var(--primary-black-50);
+  }
 
   .checkbox__text {
     color: var(--primary-black-50);
@@ -225,4 +229,57 @@
     color: var(--primary-black);
     padding: 2rem 2rem 0;
   }
+}
+
+.modal .calc__inner {
+  padding: 3rem 2rem;
+}
+
+.modal .calc__content {
+  gap: 2rem;
+}
+
+.modal .calc__block {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal .calc__head {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.modal .calc__head-text {
+  font-size: 1.6rem;
+}
+
+.modal .calc__body {
+  gap: 1rem;
+}
+
+.modal .form-group {
+  width: calc(50% - 0.5rem);
+}
+
+.modal .form-btn {
+  width: calc(50% - 0.5rem);
+  height: 5rem;
+}
+
+.modal .form-bottom {
+  width: calc(50% - 0.5rem);
+  margin: 0 0 0 auto;
+}
+
+.modal .form-text {
+  font-size: 1rem;
+}
+
+.modal .form-input {
+  font-size: 1.4rem;
+  height: 5rem;
+}
+
+.modal .form-textarea {
+  font-size: 1.4rem;
 }

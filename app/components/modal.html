@@ -80,7 +80,29 @@
                   <input class="form-input" type="text" placeholder="Место доставки">
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Тип перевозки">
+                  <div class="dropdown">
+                    <button class="dropdown__button" data-value="Тип перевозки" type="button">
+                      <span class="dropdown__button-text">Тип перевозки</span>
+                    </button>
+                    <ul class="dropdown__list dropdown__list-border">
+                      <li class="dropdown__list-item" data-value="Авиа">
+                        Авиа
+                      </li>
+                      <li class="dropdown__list-item" data-value="Авто">
+                        Авто
+                      </li>
+                      <li class="dropdown__list-item" data-value="Железнодорожная">
+                        Железнодорожная
+                      </li>
+                      <li class="dropdown__list-item" data-value="Морская">
+                        Морская
+                      </li>
+                      <li class="dropdown__list-item" data-value="Мультимодальная">
+                        Мультимодальная
+                      </li>
+                    </ul>
+                    <input type="text" name="select-category" value="all" class="dropdown__input-hidden">
+                  </div>
                 </div>
                 <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Масса, кг">

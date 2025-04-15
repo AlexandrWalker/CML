@@ -113,7 +113,7 @@ a {
       position: relative;
       width: 4.125rem;
       height: 4rem;
-      transition: all 0.3s ease;
+      transition: all 0.4s linear;
 
       &:hover {
 
@@ -477,6 +477,12 @@ a {
       background-color: var(--primary-black);
       font-weight: 800;
       color: var(--white);
+    }
+
+    &:not(.tabs__btn--active):hover {
+      color: var(--primary-accent);
+      border-color: var(--primary-accent);
+      background-color: transparent;
     }
   }
 

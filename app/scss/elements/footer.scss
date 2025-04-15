@@ -35,6 +35,10 @@
       line-height: 120%;
       text-transform: uppercase;
       color: var(--primary-accent);
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     &-link {

@@ -65,28 +65,28 @@
   .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 0.5rem;
   }
+}
 
-  &-pagination-fraction {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 13rem;
-    height: fit-content;
-    padding: 2.5rem 0;
-    background-color: var(--primary-accent);
-    font-weight: 300;
-    font-size: 5rem;
-    line-height: 100%;
-    vertical-align: bottom;
-    position: absolute;
-    top: unset;
-    bottom: 1rem;
-    right: 0;
-    left: unset;
-    z-index: 1;
-  }
+.fraction {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 13rem;
+  height: 13rem;
+  padding: 2.5rem 0;
+  background-color: var(--primary-accent);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 100%;
+  vertical-align: bottom;
+  position: absolute;
+  top: unset;
+  bottom: 1rem;
+  right: 0;
+  left: unset;
+  z-index: 1;
 
-  &-pagination-current {
+  &-current {
     font-size: 10rem;
     line-height: 80%;
   }

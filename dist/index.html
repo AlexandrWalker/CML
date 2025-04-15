@@ -186,7 +186,7 @@
             </li>
             <li class="menu__list-item accordion">
               <span class="menu__list-title">
-                Кейсы
+                Выполненные проекты
                 <i class="icon-circle-chevron-down"></i>
               </span>
               <div class="menu__list-content">
@@ -475,7 +475,7 @@
               <div class="swiper-progress"></div>
             </div>
             <div class="swiper-slide">
-              <div class="container hero__container">
+              <div class="container hero__container hero__bg-small">
                 <div class="hero__slider-item">
                   <div class="hero__item">
                     <h2 class="hero__item-title">
@@ -517,13 +517,13 @@
                       <i class="icon-circle-chevron-down"></i>
                     </a>
                   </div>
-                  <img class="hero__img" src="./images/main/hero-1.png" alt="">
+                  <img class="hero__img" src="./images/main/hero-2.png" alt="">
                 </div>
               </div>
               <div class="swiper-progress"></div>
             </div>
             <div class="swiper-slide">
-              <div class="container hero__container">
+              <div class="container hero__container hero__bg-small">
                 <div class="hero__slider-item">
                   <div class="hero__item">
                     <h2 class="hero__item-title">
@@ -564,14 +564,20 @@
                       <i class="icon-circle-chevron-down"></i>
                     </a>
                   </div>
-                  <img class="hero__img" src="./images/main/hero-1.png" alt="">
+                  <img class="hero__img" src="./images/main/hero-3.png" alt="">
                 </div>
               </div>
               <div class="swiper-progress"></div>
             </div>
           </div>
           <div class="swiper-pagination"></div>
-          <!-- <div class="swiper-fraction"></div> -->
+
+          <div class="fraction">
+            <span class="fraction-current"></span>
+            /
+            <span class="fraction-total"></span>
+          </div>
+
         </div>
       </div>
     </div>
@@ -865,6 +871,10 @@
               <li>от 150$ за куб</li>
               <li>от 7 дней</li>
             </ul>
+            <span class="transport__item-icon icon-angle-item">
+              <i class="icon-angle-first icon-angle"></i>
+              <i class="icon-angle-second icon-angle"></i>
+            </span>
           </div>
           <div class="transport__item">
             <h6 class="transport__item-title">
@@ -876,6 +886,10 @@
               <li>от 100$ за куб</li>
               <li>от 15 дней</li>
             </ul>
+            <span class="transport__item-icon icon-angle-item">
+              <i class="icon-angle-first icon-angle"></i>
+              <i class="icon-angle-second icon-angle"></i>
+            </span>
           </div>
           <div class="transport__item">
             <h6 class="transport__item-title">
@@ -887,6 +901,10 @@
               <li>от 2,5$ за кг</li>
               <li>от 3 дней</li>
             </ul>
+            <span class="transport__item-icon icon-angle-item">
+              <i class="icon-angle-first icon-angle"></i>
+              <i class="icon-angle-second icon-angle"></i>
+            </span>
           </div>
           <div class="transport__item">
             <h6 class="transport__item-title">
@@ -897,6 +915,10 @@
               <li>от 130$ за куб</li>
               <li>от 14 дней</li>
             </ul>
+            <span class="transport__item-icon icon-angle-item">
+              <i class="icon-angle-first icon-angle"></i>
+              <i class="icon-angle-second icon-angle"></i>
+            </span>
           </div>
           <div class="transport__item">
             <h6 class="transport__item-title">
@@ -907,6 +929,10 @@
               <li>от 120$ за куб</li>
               <li>от 20 дней</li>
             </ul>
+            <span class="transport__item-icon icon-angle-item">
+              <i class="icon-angle-first icon-angle"></i>
+              <i class="icon-angle-second icon-angle"></i>
+            </span>
           </div>
         </div>
         <div class="cloud">
@@ -1489,7 +1515,7 @@
 
           <div class="work__items">
 
-            <a class="work__item work__item-active" href="/">
+            <a class="work__item work__item-active" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Индивидуальный подход
@@ -1509,7 +1535,7 @@
               </div>
             </a>
 
-            <a class="work__item" href="/">
+            <a class="work__item" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Готовим документы для таможенного оформления
@@ -1527,7 +1553,7 @@
               </div>
             </a>
 
-            <a class="work__item" href="/">
+            <a class="work__item" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Учитываем все риски на этапе расчета
@@ -1548,7 +1574,7 @@
               </div>
             </a>
 
-            <a class="work__item" href="/">
+            <a class="work__item" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Возим всеми видами транспорта
@@ -1566,7 +1592,7 @@
               </div>
             </a>
 
-            <a class="work__item" href="/">
+            <a class="work__item" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Конкурентные цены
@@ -2466,7 +2492,29 @@
                   <input class="form-input" type="text" placeholder="Место доставки">
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Тип перевозки">
+                  <div class="dropdown">
+                    <button class="dropdown__button" data-value="Тип перевозки" type="button">
+                      <span class="dropdown__button-text">Тип перевозки</span>
+                    </button>
+                    <ul class="dropdown__list dropdown__list-border">
+                      <li class="dropdown__list-item" data-value="Авиа">
+                        Авиа
+                      </li>
+                      <li class="dropdown__list-item" data-value="Авто">
+                        Авто
+                      </li>
+                      <li class="dropdown__list-item" data-value="Железнодорожная">
+                        Железнодорожная
+                      </li>
+                      <li class="dropdown__list-item" data-value="Морская">
+                        Морская
+                      </li>
+                      <li class="dropdown__list-item" data-value="Мультимодальная">
+                        Мультимодальная
+                      </li>
+                    </ul>
+                    <input type="text" name="select-category" value="all" class="dropdown__input-hidden">
+                  </div>
                 </div>
                 <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Масса, кг">
@@ -2554,7 +2602,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
   crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-<script src="./../libs/SVG3DTagCloud.global.js" defer></script>
+<script src="./libs/SVG3DTagCloud.global.js" defer></script>
 <script src="./js/main.js" defer></script>
 </body>
 
