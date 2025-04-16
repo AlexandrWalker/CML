@@ -61,12 +61,12 @@
                 <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
                 <p class="header__dropdown-text">Отдел продаж</p>
                 <div class="header__dropdown-icons">
-                  <div class="header__dropdown-icon">
+                  <a class="header__dropdown-icon" href="/">
                     <i class="icon-telegram"></i>
-                  </div>
-                  <div class="header__dropdown-icon">
+                  </a>
+                  <a class="header__dropdown-icon" href="/">
                     <i class="icon-whatsapp"></i>
-                  </div>
+                  </a>
                 </div>
                 <div class="arrow">
                   <i class="icon-chevron-down"></i>
@@ -76,25 +76,25 @@
                 <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
                 <p class="header__dropdown-text">Поддержка клиентов</p>
                 <div class="header__dropdown-icons">
-                  <div class="header__dropdown-icon">
+                  <a class="header__dropdown-icon" href="/">
                     <i class="icon-telegram"></i>
-                  </div>
-                  <div class="header__dropdown-icon">
+                  </a>
+                  <a class="header__dropdown-icon" href="/">
                     <i class="icon-whatsapp"></i>
-                  </div>
+                  </a>
                 </div>
               </li>
               <li class="header__dropdown-item">
                 <a class="header__dropdown-link" href="/">pochta@cml.com</a>
                 <p class="header__dropdown-text">Эл. почта</p>
                 <div class="header__dropdown-icons">
-                  <div class="header__dropdown-icon">
+                  <a class="header__dropdown-icon" href="/">
                     <i class="icon-pochta"></i>
-                  </div>
+                  </a>
                 </div>
               </li>
               <li class="header__dropdown-item">
-                <p class="header__dropdown-link" href="/">
+                <p class="header__dropdown-link">
                   Принимаем звонки
                   пн - пт с 8:30 до 17:30 по Москве
                 </p>
@@ -316,12 +316,12 @@
                     <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
                     <p class="header__dropdown-text">Отдел продаж</p>
                     <div class="header__dropdown-icons">
-                      <div class="header__dropdown-icon">
+                      <a class="header__dropdown-icon" href="/">
                         <i class="icon-telegram"></i>
-                      </div>
-                      <div class="header__dropdown-icon">
+                      </a>
+                      <a class="header__dropdown-icon" href="/">
                         <i class="icon-whatsapp"></i>
-                      </div>
+                      </a>
                     </div>
                     <div class="arrow">
                       <i class="icon-chevron-down"></i>
@@ -331,25 +331,25 @@
                     <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
                     <p class="header__dropdown-text">Поддержка клиентов</p>
                     <div class="header__dropdown-icons">
-                      <div class="header__dropdown-icon">
+                      <a class="header__dropdown-icon" href="/">
                         <i class="icon-telegram"></i>
-                      </div>
-                      <div class="header__dropdown-icon">
+                      </a>
+                      <a class="header__dropdown-icon" href="/">
                         <i class="icon-whatsapp"></i>
-                      </div>
+                      </a>
                     </div>
                   </li>
                   <li class="header__dropdown-item">
                     <a class="header__dropdown-link" href="/">pochta@cml.com</a>
                     <p class="header__dropdown-text">Эл. почта</p>
                     <div class="header__dropdown-icons">
-                      <div class="header__dropdown-icon">
+                      <a class="header__dropdown-icon" href="/">
                         <i class="icon-pochta"></i>
-                      </div>
+                      </a>
                     </div>
                   </li>
                   <li class="header__dropdown-item">
-                    <p class="header__dropdown-title" href="/">
+                    <p class="header__dropdown-title">
                       Принимаем звонки
                       <br>
                       пн - пт с 8:30 до 17:30 по Москве
@@ -427,7 +427,7 @@
                 <div class="hero__slider-item">
                   <div class="hero__item">
                     <h2 class="hero__item-title">
-                      <span>Международные</span>
+                      <span class="section__title-accent">Международные</span>
                       грузоперевозки
                     </h2>
                     <div class="hero__blocks">
@@ -467,7 +467,7 @@
                     <a class="hero__item-btn btn btn-white" href="/">
                       Получить консультацию
                     </a>
-                    <a class="hero__item-down" href="/">
+                    <a class="hero__item-down" href="#calc">
                       <i class="icon-circle-chevron-down"></i>
                     </a>
                   </div>
@@ -515,11 +515,17 @@
                     <a class="hero__item-btn btn btn-white" href="/">
                       Получить консультацию
                     </a>
-                    <a class="hero__item-down" href="/">
+                    <a class="hero__item-down" href="#calc">
                       <i class="icon-circle-chevron-down"></i>
                     </a>
                   </div>
-                  <img class="hero__img" src="./images/main/hero-2.png" alt="">
+
+                  <div class="canvas-wrap hero__img">
+                    <div id="canvas"></div>
+                    <div class="plane">
+                      <img class="flag" src="./images/main/hero-2.png" alt="">
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="swiper-progress"></div>
@@ -562,7 +568,7 @@
                     <a class="hero__item-btn btn btn-white" href="/">
                       Получить консультацию
                     </a>
-                    <a class="hero__item-down" href="/">
+                    <a class="hero__item-down" href="#calc">
                       <i class="icon-circle-chevron-down"></i>
                     </a>
                   </div>
@@ -572,6 +578,7 @@
               <div class="swiper-progress"></div>
             </div>
           </div>
+
           <div class="swiper-pagination"></div>
 
           <div class="fraction">
@@ -585,7 +592,7 @@
     </div>
   </section>
   <!-- Калькулятор -->
-  <section class="calc">
+  <section id="calc" class="calc">
     <div class="container calc__container">
       <div class="calc__inner">
         <div class="section__head">
@@ -617,19 +624,19 @@
                     </button>
                     <ul class="dropdown__list dropdown__list-border">
                       <li class="dropdown__list-item" data-value="Авиа">
-                        Авиа
+                        Авиа доставка
                       </li>
                       <li class="dropdown__list-item" data-value="Авто">
-                        Авто
+                        Авто доставка
                       </li>
                       <li class="dropdown__list-item" data-value="Железнодорожная">
-                        Железнодорожная
+                        Железнодорожная доставка
                       </li>
                       <li class="dropdown__list-item" data-value="Морская">
-                        Морская
+                        Морская доставка
                       </li>
                       <li class="dropdown__list-item" data-value="Мультимодальная">
-                        Мультимодальная
+                        Мультимодальная доставка
                       </li>
                     </ul>
                     <input type="text" name="select-category" value="all" class="dropdown__input-hidden">
@@ -685,7 +692,7 @@
       <div class="service__inner">
         <div class="section__head">
           <h3 class="section__suptitle">Наши услуги</h3>
-          <h2 id="titleTarget" class="section__title" data-splitting>
+          <h2 class="section__title" data-splitting>
             <span class="section__title-accent">Мы позаботимся о поиске</span>, <br> приобретении и доставке грузов
           </h2>
         </div>
@@ -1664,7 +1671,7 @@
           </a>
         </div>
         <div class="case__body" data-skip="true">
-          <div class="case__acc tabs__panel tabs__panel--active accordion" data-tab="tab-1">
+          <div class="case__acc tabs__panel tabs__panel--first tabs__panel--active accordion" data-tab="tab-1">
             <div class="case__acc-item">
               <p class="case__acc-title">
                 Доставка буровой установки из Китая
@@ -1931,7 +1938,8 @@
           <div class="section__head">
             <h3 class="section__suptitle">С кем мы работаем</h3>
             <h2 class="section__title" data-splitting>
-              <span class="section__title-accent">Наши партнеры — лидеры рынка:</span> вместе мы создаем успешные бизнес-истории!
+              <span class="section__title-accent">Наши партнеры — лидеры рынка:</span> вместе мы создаем успешные
+              бизнес-истории!
             </h2>
           </div>
           <div class="partner__head-item">
@@ -2363,12 +2371,12 @@
                   <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
                   <p class="header__dropdown-text">Отдел продаж</p>
                   <div class="header__dropdown-icons">
-                    <div class="header__dropdown-icon">
+                    <a class="header__dropdown-icon" href="/">
                       <i class="icon-telegram"></i>
-                    </div>
-                    <div class="header__dropdown-icon">
+                    </a>
+                    <a class="header__dropdown-icon" href="/">
                       <i class="icon-whatsapp"></i>
-                    </div>
+                    </a>
                   </div>
                   <div class="arrow">
                     <i class="icon-chevron-down"></i>
@@ -2378,25 +2386,25 @@
                   <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
                   <p class="header__dropdown-text">Поддержка клиентов</p>
                   <div class="header__dropdown-icons">
-                    <div class="header__dropdown-icon">
+                    <a class="header__dropdown-icon" href="/">
                       <i class="icon-telegram"></i>
-                    </div>
-                    <div class="header__dropdown-icon">
+                    </a>
+                    <a class="header__dropdown-icon" href="/">
                       <i class="icon-whatsapp"></i>
-                    </div>
+                    </a>
                   </div>
                 </li>
                 <li class="header__dropdown-item">
                   <a class="header__dropdown-link" href="/">pochta@cml.com</a>
                   <p class="header__dropdown-text">Эл. почта</p>
                   <div class="header__dropdown-icons">
-                    <div class="header__dropdown-icon">
+                    <a class="header__dropdown-icon" href="/">
                       <i class="icon-pochta"></i>
-                    </div>
+                    </a>
                   </div>
                 </li>
                 <li class="header__dropdown-item">
-                  <p class="header__dropdown-title" href="/">
+                  <p class="header__dropdown-title">
                     Принимаем звонки
                     <br>
                     пн - пт с 8:30 до 17:30 по Москве
@@ -2644,6 +2652,8 @@
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./libs/splitting/splitting.js"></script>
+<script src="./libs/curtains.min.js"></script>
+<script src="./libs/flag.js"></script>
 <script src="./js/main.js"></script>
 </body>
 
