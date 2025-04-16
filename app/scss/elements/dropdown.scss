@@ -76,12 +76,17 @@
       color: var(--primary-black-lighten);
       padding: 0;
       cursor: pointer;
+      transition: all 0.3s ease;
 
       &:not(:last-child) {
         margin-bottom: 1.5rem;
       }
 
       &--active {
+        color: var(--primary-accent);
+      }
+
+      &:hover {
         color: var(--primary-accent);
       }
     }

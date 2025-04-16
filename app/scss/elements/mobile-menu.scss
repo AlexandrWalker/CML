@@ -1,12 +1,13 @@
 .menu {
   max-width: 81rem;
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   position: fixed;
   top: 0;
   bottom: 0;
   right: -100%;
   z-index: 300;
+  overflow-y: scroll;
   transition: all 0.5s ease;
 
   &.mobile-menu--opened {
@@ -123,7 +124,6 @@
     position: relative;
     z-index: 102;
     height: 100%;
-    overflow-y: scroll;
   }
 
   &__list {
@@ -154,6 +154,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem 2rem;
       width: 100%;
       font-weight: 800;
       font-size: 4.5rem;

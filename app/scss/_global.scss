@@ -410,12 +410,16 @@ a {
     font-weight: 300;
     font-size: 1.4rem;
     line-height: 115%;
-    text-decoration-line: underline;
     color: inherit;
     max-width: 48rem;
 
     a {
       color: var(--primary-accent);
+      text-decoration-line: underline;
+
+      &:hover {
+        text-decoration-line: none;
+      }
     }
   }
 }
@@ -501,6 +505,30 @@ a {
       visibility: visible;
       height: auto;
       transition: opacity 0.3s ease;
+
+      .case__item {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .case__img {
+        transform: scale(1);
+        transition-delay: 0.2s;
+      }
+    }
+  }
+}
+
+.accordion {
+
+  &.active {
+    .case__item {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .case__img {
+      transform: translateY(0);
     }
   }
 }

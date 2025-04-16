@@ -6,13 +6,14 @@
     var hero__slider = new Swiper(".hero__slider-init", {
       slidesPerView: 1,
       centeredSlides: true,
-      loop: false,
+      loop: true,
       init: false,
       speed: 600,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
+      effect: "fade",
+      // autoplay: {
+      //   delay: 8000,
+      //   disableOnInteraction: false
+      // },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -20,7 +21,9 @@
     });
 
     hero__slider.on("slideChange afterInit init", function () {
-      let currentSlide = this.activeIndex + 1;
+
+      let currentSlide = this.realIndex + 1;
+
       document.querySelector('.fraction').innerHTML = `
       <span class="fraction-current">
       ${currentSlide < 10 ? currentSlide : currentSlide}
@@ -32,32 +35,6 @@
     });
 
     hero__slider.init();
-
-
-    /* trash */
-    // const swiper = new Swiper('.swiper', {
-    //   //...
-    //   pagination: {
-    //     //...
-    //     renderFraction: function (currentClass, totalClass) {
-    //       return '<span class="' + currentClass + '"></span>' +
-    //               ' of ' +
-    //               '<span class="' + totalClass + '"></span>';
-    //     },
-    //   },
-    // });
-
-
-
-    // var work__items = new Swiper(".work__items", {
-    //   slidesPerView: 'auto',
-    //   spaceBetween: 0,
-    //   slidesPerGroup: 1,
-    //   speed: 600,
-    //   mousewheel: {
-    //     forceToAxis: true,
-    //   },
-    // });
 
 
 
@@ -92,7 +69,7 @@
      */
     const lenis = new Lenis({
       anchors: {
-        offset: 100,
+        offset: -200,
         onComplete: () => {
           console.log('scrolled to anchor')
         }
@@ -685,27 +662,13 @@
       }
     });
 
-    // const test = document.querySelectorAll(".work__item");
-
-    // test.addEventListener( "mouseover", (event) => {
-    //     // highlight the mouseover target
-    //     event.target.classList.toggle('work__item-active');
-
-    //     // reset the color after a short delay
-    //     setTimeout(() => {
-    //       event.target.style.color = "";
-    //     }, 500);
-    //   },
-    //   false,
-    // );
-
 
 
     /**
- * Управляет переключением вкладок на странице.
- * Добавляет и удаляет классы активности для кнопок и панелей вкладок.
- * Поддерживает вложенные табы любой глубины и сохраняет активное состояние у вложенных табов при переключении внешних.
- */
+     * Управляет переключением вкладок на странице.
+     * Добавляет и удаляет классы активности для кнопок и панелей вкладок.
+     * Поддерживает вложенные табы любой глубины и сохраняет активное состояние у вложенных табов при переключении внешних.
+     */
     function tabsFunc() {
       document.querySelectorAll('.tabs').forEach((tabsContainer) => {
         tabsContainer.addEventListener('click', (event) => {
@@ -767,6 +730,8 @@
 
 
     const case__acc = document.querySelectorAll('.case__acc');
+    const tabsPanelActive = document.querySelector('.tabs__panel--active');
+    const tabsPanelFirst = document.querySelector('.tabs__panel--first');
 
     if (case__acc) {
       window.addEventListener('resize', function (event) {
@@ -774,11 +739,17 @@
           for (let i = 0; i < case__acc.length; i++) {
             case__acc[i].classList.add('accordion');
             case__acc[i].classList.remove('tabs__panel');
+            if (tabsPanelFirst) {
+              tabsPanelFirst.classList.remove('tabs__panel--active');
+            }
           }
         } else {
           for (let i = 0; i < case__acc.length; i++) {
             case__acc[i].classList.remove('accordion');
             case__acc[i].classList.add('tabs__panel');
+            if (tabsPanelFirst) {
+              tabsPanelFirst.classList.add('tabs__panel--active');
+            }
           }
         }
       }, true);
@@ -790,7 +761,7 @@
       document.getElementById('warning-plate').style.display = 'none';
     });
 
-    gsap.registerPlugin(ScrollTrigger, TweenLite, TweenMax);
+    gsap.registerPlugin(ScrollTrigger);
 
     function scrolled1() {
       $(function () {
@@ -798,7 +769,7 @@
           $(this).prop('Counter', 0).animate({
             Counter: $(this).text()
           }, {
-            duration: 3000,
+            duration: 2000,
             easing: 'swing',
             step: function (now) {
               $(this).text(now.toFixed(1));
@@ -814,7 +785,7 @@
           $(this).prop('Counter', 0).animate({
             Counter: $(this).text()
           }, {
-            duration: 3000,
+            duration: 2000,
             easing: 'swing',
             step: function (now) {
               $(this).text(Math.ceil(now));
@@ -830,7 +801,7 @@
           $(this).prop('Counter', 0).animate({
             Counter: $(this).text()
           }, {
-            duration: 3000,
+            duration: 2000,
             easing: 'swing',
             step: function (now) {
               $(this).text(Math.ceil(now));
@@ -841,13 +812,13 @@
     }
 
     ScrollTrigger.create({
-      trigger: '.about__feat',
-      onEnter: scrolled2,
+      trigger: '.numberFraction',
+      onEnter: scrolled1,
     });
 
     ScrollTrigger.create({
-      trigger: '.about__feat',
-      onEnter: scrolled1,
+      trigger: '.numberFraction',
+      onEnter: scrolled2,
     });
 
     ScrollTrigger.create({
@@ -856,7 +827,6 @@
     });
 
     Splitting();
-
 
     // function asdd(asd) {
     //   const asdTitle = asd.querySelector('.section__title');
@@ -874,6 +844,94 @@
       trigger: '.section__head',
       onEnter: asdd(),
       // onEnter: asdd(asd),
+    });
+
+
+
+    const titleItems = document.querySelectorAll(".section__head");
+    const faqItems = document.querySelectorAll(".faq__item");
+    const serviceItems = document.querySelectorAll(".service__item");
+    const calcItems = document.querySelectorAll(".calc__block");
+    const aboutItem = document.querySelector(".about__img");
+    const bannerItem = document.querySelector(".banner");
+
+    for (let i = 0; i < titleItems.length; i++) {
+      gsap.from(titleItems[i], {
+        opacity: 0,
+        x: -50,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: titleItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        }
+      });
+    }
+
+    for (let i = 0; i < faqItems.length; i++) {
+      gsap.from(faqItems[i], {
+        opacity: 0,
+        x: -50,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: faqItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        }
+      });
+    }
+
+    for (let i = 0; i < serviceItems.length; i++) {
+      gsap.from(serviceItems[i], {
+        opacity: 0,
+        x: -50,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: serviceItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        }
+      });
+    }
+
+    for (let i = 0; i < calcItems.length; i++) {
+      gsap.from(calcItems[i], {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: calcItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        }
+      });
+    }
+
+    gsap.from(aboutItem, {
+      opacity: 0,
+      y: 50,
+      scrollTrigger: {
+        trigger: aboutItem,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    gsap.from(bannerItem, {
+      opacity: 0,
+      y: 50,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: bannerItem,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse",
+      }
     });
 
 
@@ -898,7 +956,6 @@
     //   onStart: () => scrolled2(),
     // });
 
-
     // ScrollTrigger.create({
     //   trigger: 'titleTarget',
     //   start: 'top top',
@@ -915,8 +972,6 @@
     //     );
     //   }
     // });
-
-
 
     // function counter() {
     //   const items = document.querySelectorAll(".number");
@@ -938,11 +993,7 @@
     //   }
     // }
 
-
-
     // counter();
-
-
 
     // const items = document.querySelector(".numberFirst");
 
@@ -953,8 +1004,6 @@
     //     innerText: 1,
     //   },
     // });
-
-
 
   });
 })();

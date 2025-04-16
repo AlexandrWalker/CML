@@ -60,7 +60,7 @@
   bottom: 3.5rem;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 400;
   margin: 0;
   color: var(--white);
 
@@ -74,8 +74,7 @@
   }
 
   &__text {
-    font-family: 'Roboto';
-    font-weight: 400;
+    font-weight: 300;
     font-size: 2rem;
     line-height: 115%;
     color: var(--white);

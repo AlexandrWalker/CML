@@ -1,0 +1,49 @@
+.notfound {
+  margin: 6rem 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 25rem;
+    line-height: 72%;
+    text-transform: uppercase;
+
+    span {
+      color: var(--primary-accent);
+    }
+  }
+
+  &__text {
+    font-weight: 800;
+    font-size: 4.5rem;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    a {
+      color: var(--primary-accent);
+      text-decoration-line: underline;
+
+      &:hover {
+        text-decoration-line: none;
+      }
+    }
+  }
+
+  &__img {
+    width: 72rem;
+    height: 70rem;
+    object-fit: cover;
+  }
+}
