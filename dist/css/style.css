@@ -673,13 +673,12 @@ a:hover {
 .header__logo {
   width: auto;
   height: 6rem;
-  object-fit: contain;
   flex-shrink: 0;
 }
 .header__logo-img {
   width: auto;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .header__wrap {
   display: flex;
@@ -931,6 +930,12 @@ a.header__dropdown-icon:hover {
 .nav {
   background-color: var(--primary-accent);
 }
+.nav__container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
 .nav__list {
   display: flex;
   justify-content: space-between;
@@ -1161,14 +1166,14 @@ a.header__dropdown-icon:hover {
 .menu {
   max-width: 81rem;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   top: 0;
   bottom: 0;
   right: -100%;
   z-index: 300;
-  overflow-y: scroll;
   transition: all 0.5s ease;
+  background-color: var(--primary-bg);
 }
 .menu.mobile-menu--opened {
   right: 0;
@@ -1259,6 +1264,7 @@ a.header__dropdown-icon:hover {
   position: relative;
   z-index: 102;
   height: 100%;
+  overflow-y: scroll;
 }
 .menu__list-item {
   padding-bottom: 2rem;
@@ -2754,11 +2760,35 @@ a.header__dropdown-icon:hover {
 }
 @media (max-width: 768px) {
   .head {
-    height: 8rem;
+    height: 11.68rem;
   }
   .nav {
     background-color: var(--white);
-    display: none;
+  }
+  .nav .container {
+    padding: 0;
+  }
+  .nav__container {
+    overflow-y: scroll;
+  }
+  .nav__list {
+    flex-direction: row;
+    width: fit-content;
+    padding: 0 2rem;
+  }
+  .nav__list-link {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    color: var(--primary-black);
+    white-space: nowrap;
+  }
+  .nav__list li {
+    gap: 1rem;
+  }
+  .nav__list li::before {
+    background-color: var(--primary-accent);
+    width: 0.8rem;
+    height: 0.8rem;
   }
   section {
     margin-bottom: 3rem;
@@ -2767,7 +2797,7 @@ a.header__dropdown-icon:hover {
     font-size: 1.6rem;
   }
   .wrapper {
-    padding-top: 8rem;
+    padding-top: 11.68rem;
     padding-bottom: 6.4rem;
   }
   .icon-angle-item {
@@ -2891,6 +2921,8 @@ a.header__dropdown-icon:hover {
   }
   .header__btn {
     height: 4.4rem;
+  }
+  .header__btn-flip {
     border-color: var(--primary-white);
   }
   .header__icons-item {

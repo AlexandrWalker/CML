@@ -10,10 +10,10 @@
       init: false,
       speed: 600,
       effect: "fade",
-      // autoplay: {
-      //   delay: 8000,
-      //   disableOnInteraction: false
-      // },
+      autoplay: {
+        delay: 8000,
+        disableOnInteraction: false
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -801,7 +801,7 @@
           $(this).prop('Counter', 0).animate({
             Counter: $(this).text()
           }, {
-            duration: 2000,
+            duration: 3000,
             easing: 'swing',
             step: function (now) {
               $(this).text(Math.ceil(now));
