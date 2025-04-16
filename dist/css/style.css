@@ -706,15 +706,11 @@ a:hover {
   border: 0.1rem solid var(--primary-white-10);
   border-radius: var(--primary-border-r-5);
   transition: all 0.3s ease;
-  transform: translateY(0) rotateX(0);
 }
 .header__btn-wrap {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-.header__btn:hover .header__btn-flip {
-  transform: translateY(-50%) rotateX(90deg);
 }
 .header__btn:hover .header__dropdown {
   top: 0;
@@ -724,7 +720,7 @@ a:hover {
 }
 .header__dropdown {
   position: absolute;
-  top: 100%;
+  top: 0;
   right: 0;
   left: 0;
   z-index: 2;
@@ -1078,6 +1074,7 @@ a.header__dropdown-icon:hover {
   line-height: 110%;
   margin-bottom: 3rem;
   cursor: pointer;
+  color: inherit;
   text-align: right;
 }
 .footer__info-download:hover i {

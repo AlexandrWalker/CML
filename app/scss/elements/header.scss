@@ -60,7 +60,7 @@
       border: 0.1rem solid var(--primary-white-10);
       border-radius: var(--primary-border-r-5);
       transition: all 0.3s ease;
-      transform: translateY(0) rotateX(0);
+      // transform: translateY(0) rotateX(0);
     }
 
     &-wrap {
@@ -72,7 +72,7 @@
     &:hover {
 
       .header__btn-flip {
-        transform: translateY(-50%) rotateX(90deg);
+        // transform: translateY(-50%) rotateX(90deg);
       }
 
       .header__dropdown {
@@ -86,7 +86,7 @@
 
   &__dropdown {
     position: absolute;
-    top: 100%;
+    top: 0;
     right: 0;
     left: 0;
     z-index: 2;
