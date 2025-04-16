@@ -94,15 +94,18 @@
       const overlay = document.querySelector('.menu__overlay');
       const elements = document.querySelectorAll('.menu__list-link');
       const head = document.querySelector('.head');
+
       /**
        * Переключает видимость меню.
        */
-      const toggleMenu = () => {
+      const toggleMenu = (e) => {
+        e.stopPropagation();
         const isOpened = burger.classList.toggle('burger--opened');
         menu.classList.toggle('mobile-menu--opened', isOpened);
         document.body.classList.toggle('no-scroll');
         head.classList.toggle('head--active');
       };
+
       /**
        * Закрывает меню.
        */
@@ -111,16 +114,19 @@
         menu.classList.remove('mobile-menu--opened');
         document.body.classList.remove('no-scroll');
       };
+
       // Открытие/закрытие меню по клику на бургер
       burger.addEventListener('click', toggleMenu);
 
       [closeButton, overlay].forEach((element) => element.addEventListener('click', closeMenu));
+
       // Закрытие меню при клике вне области меню и бургера
       document.addEventListener('click', (event) => {
         if (!menu.contains(event.target) && !burger.contains(event.target)) {
           closeMenu();
         }
       });
+
       // Закрытие меню по клику на пункты меню
       elements.forEach((element) => element.addEventListener('click', closeMenu));
     };
@@ -801,7 +807,7 @@
           $(this).prop('Counter', 0).animate({
             Counter: $(this).text()
           }, {
-            duration: 3000,
+            duration: 4000,
             easing: 'swing',
             step: function (now) {
               $(this).text(Math.ceil(now));
