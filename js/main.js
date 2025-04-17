@@ -10,10 +10,10 @@
       init: false,
       speed: 600,
       effect: "fade",
-      autoplay: {
-        delay: 8000,
-        disableOnInteraction: false
-      },
+      // autoplay: {
+      //   delay: 8000,
+      //   disableOnInteraction: false
+      // },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -84,6 +84,12 @@
 
 
 
+    // document.querySelector('.wrapper').classList.add('scroll-container');
+    // const scroll = new LocomotiveScroll({
+    //   el: document.querySelector('.scroll-container'),
+    //   smooth: true
+    // });
+
     /**
      * Управляет поведением меню-бургера.
      */
@@ -102,8 +108,10 @@
         e.stopPropagation();
         const isOpened = burger.classList.toggle('burger--opened');
         menu.classList.toggle('mobile-menu--opened', isOpened);
+        // document.documentElement.classList.toggle('no-scroll');
         document.body.classList.toggle('no-scroll');
         head.classList.toggle('head--active');
+        // lenis.stop();
       };
 
       /**
@@ -112,7 +120,9 @@
       const closeMenu = () => {
         burger.classList.remove('burger--opened');
         menu.classList.remove('mobile-menu--opened');
+        // document.documentElement.classList.remove('no-scroll');
         document.body.classList.remove('no-scroll');
+        // lenis.start();
       };
 
       // Открытие/закрытие меню по клику на бургер
@@ -179,6 +189,387 @@
       });
     }
 
+
+
+    /**
+         * Активация любого количества модальных окон
+         */
+    function modalFunc() {
+      var modal__btn = document.querySelector('.modal__btn');
+
+      if (!modal__btn) {
+        return;
+      } else {
+
+        var close = document.querySelectorAll('.modal__close-btn');
+        var openBtn = document.querySelectorAll('.modal__btn');
+
+        Array.from(openBtn, openButton => {
+          openButton.addEventListener('click', e => {
+
+            let open = document.getElementsByClassName('open');
+
+            if (open.length > 0 && open[0] !== this) {
+              open[0].classList.remove('open');
+            }
+
+            let modalId = e.target.getAttribute('data-id');
+            if (modalId) {
+              document.getElementById(modalId).classList.add('open');
+            } else {
+              return
+            }
+
+            Array.from(close, closeButton => {
+              closeButton.addEventListener('click', e => {
+                document.getElementById(modalId).classList.remove("open");
+              });
+
+              window.addEventListener('keydown', (e) => {
+                if (e.key === "Escape") {
+                  document.getElementById(modalId).classList.remove("open")
+                }
+              });
+
+              document.querySelector(".modal.open .modal__box").addEventListener('click', event => {
+                event._isClickWithInModal = true;
+              });
+
+              document.getElementById(modalId).addEventListener('click', event => {
+                if (event._isClickWithInModal) return;
+                event.currentTarget.classList.remove('open');
+              });
+            });
+          });
+        });
+      }
+    };
+
+    modalFunc();
+
+
+    addEventListener('scroll', function () {
+      const scrollPosition = window.scrollY;
+      const head = this.document.querySelector('.head');
+
+      if (scrollPosition > 0 && scrollPosition !== 0) {
+        head.classList.add('fixed');
+      } else {
+        head.classList.remove('fixed');
+      }
+
+      var h = document.getElementById('first-section').offsetHeight;
+      var plate = document.querySelector('.plate');
+
+      if (scrollPosition > h && scrollPosition !== h) {
+        plate.classList.add('show');
+      } else {
+        plate.classList.remove('show');
+      }
+    });
+
+
+
+    /**
+     * Управляет переключением вкладок на странице.
+     * Добавляет и удаляет классы активности для кнопок и панелей вкладок.
+     * Поддерживает вложенные табы любой глубины и сохраняет активное состояние у вложенных табов при переключении внешних.
+     */
+    function tabsFunc() {
+      document.querySelectorAll('.tabs').forEach((tabsContainer) => {
+        tabsContainer.addEventListener('click', (event) => {
+          const tabsBtn = event.target.closest('.tabs__btn');
+          if (!tabsBtn || !tabsContainer.contains(tabsBtn)) return;
+
+          // Останавливаем всплытие, чтобы вложенные табы не влияли на родительские
+          event.stopPropagation();
+
+          // Ищем ближайший контейнер, к которому принадлежит нажатая кнопка
+          const currentTabsContainer = tabsBtn.closest('.tabs');
+          if (!currentTabsContainer) return;
+
+          // Сбрасываем активные состояния кнопок и панелей только внутри текущего уровня
+          const tabsBtns = Array.from(currentTabsContainer.querySelectorAll('.tabs__btn'));
+          const tabsPanels = Array.from(currentTabsContainer.querySelectorAll('.tabs__panel'));
+
+          tabsBtns.forEach((btn) => {
+            if (btn.closest('.tabs') === currentTabsContainer) {
+              btn.classList.remove('tabs__btn--active');
+            }
+          });
+
+          tabsPanels.forEach((panel) => {
+            if (panel.closest('.tabs') === currentTabsContainer) {
+              panel.classList.remove('tabs__panel--active');
+            }
+          });
+
+          // Устанавливаем активное состояние для выбранной вкладки
+          tabsBtn.classList.add('tabs__btn--active');
+          const targetPanel = currentTabsContainer.querySelector(
+            `.tabs__panel[data-tab="${tabsBtn.dataset.tab}"]`,
+          );
+          if (targetPanel) {
+            /* HACK */
+            targetPanel.classList.add('tabs__panel--active');
+          }
+        });
+      });
+    };
+
+    tabsFunc();
+
+
+
+    const case__acc = document.querySelectorAll('.case__acc');
+    const tabsPanelActive = document.querySelector('.tabs__panel--active');
+    const tabsPanelFirst = document.querySelector('.tabs__panel--first');
+
+    if (case__acc) {
+      window.addEventListener('resize', function (event) {
+        if (window.innerWidth < 769) {
+          for (let i = 0; i < case__acc.length; i++) {
+            case__acc[i].classList.add('accordion');
+            case__acc[i].classList.remove('tabs__panel');
+            if (tabsPanelFirst) {
+              tabsPanelFirst.classList.remove('tabs__panel--active');
+            }
+          }
+        } else {
+          for (let i = 0; i < case__acc.length; i++) {
+            case__acc[i].classList.remove('accordion');
+            case__acc[i].classList.add('tabs__panel');
+            if (tabsPanelFirst) {
+              tabsPanelFirst.classList.add('tabs__panel--active');
+            }
+          }
+        }
+      }, true);
+    }
+
+
+
+    var headerItem = document.querySelectorAll('.header__btn'),
+      headerActive = document.getElementsByClassName('header__btn-active');
+
+    if (headerItem) {
+      Array.from(headerItem).forEach(function (hItem, i, headerItem) {
+        hItem.addEventListener('click', function (e) {
+          if (headerActive.length > 0 && headerActive[0] !== this) {
+            headerActive[0].classList.remove('header__btn-active');
+            document.querySelector('.menu__body').classList.remove('down');
+          }
+          this.classList.toggle('header__btn-active');
+          document.querySelector('.menu__body').classList.toggle('down');
+
+        });
+
+      });
+    }
+
+
+
+    document.getElementById('warning-btn').addEventListener('click', event => {
+      document.getElementById('warning-plate').style.display = 'none';
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    function scrolled1() {
+      $(function () {
+        $('.numberFraction').each(function () {
+          $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+          }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+              $(this).text(now.toFixed(1));
+            }
+          });
+        });
+      });
+    }
+
+    function scrolled2() {
+      $(function () {
+        $('.number').each(function () {
+          $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+          }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+              $(this).text(Math.ceil(now));
+            }
+          });
+        });
+      });
+    }
+
+    function scrolled3() {
+      $(function () {
+        $('.numberPartner').each(function () {
+          $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+          }, {
+            duration: 4000,
+            easing: 'swing',
+            step: function (now) {
+              $(this).text(Math.ceil(now));
+            }
+          });
+        });
+      });
+    }
+
+    ScrollTrigger.create({
+      trigger: '.numberFraction',
+      onEnter: scrolled1,
+    });
+
+    ScrollTrigger.create({
+      trigger: '.numberFraction',
+      onEnter: scrolled2,
+    });
+
+    ScrollTrigger.create({
+      trigger: '.partner__head',
+      onEnter: scrolled3,
+    });
+
+    // function asdd(asd) {
+    //   const asdTitle = asd.querySelector('.section__title');
+    //   Splitting(asdTitle)
+    // }
+
+    function asdd() {
+      const char = document.querySelectorAll('.char');
+      char.forEach(element => {
+        element.classList.add('animate');
+      });
+    }
+
+    ScrollTrigger.create({
+      trigger: '.section__head',
+      onEnter: asdd(),
+      // onEnter: asdd(asd),
+    });
+
+
+
+
+    const faqItems = document.querySelectorAll(".faq__item");
+    const serviceItems = document.querySelectorAll(".service__item");
+    const calcItems = document.querySelectorAll(".calc__block");
+    const aboutItem = document.querySelector(".about__img");
+    const bannerItem = document.querySelector(".banner");
+
+    // for (let i = 0; i < titleItems.length; i++) {
+    //   gsap.from(titleItems[i], {
+    //     opacity: 0,
+    //     x: -50,
+    //     duration: 0.5,
+    //     scrollTrigger: {
+    //       trigger: titleItems[i],
+    //       start: "top 80%",
+    //       end: "bottom 20%",
+    //       toggleActions: "play none none reverse",
+    //     }
+    //   });
+    // }
+
+    for (let i = 0; i < faqItems.length; i++) {
+      gsap.from(faqItems[i], {
+        opacity: 0,
+        x: -50,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: faqItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        }
+      });
+    }
+
+    for (let i = 0; i < serviceItems.length; i++) {
+      gsap.from(serviceItems[i], {
+        opacity: 0,
+        x: -50,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: serviceItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        }
+      });
+    }
+
+    for (let i = 0; i < calcItems.length; i++) {
+      gsap.from(calcItems[i], {
+        opacity: 0,
+        y: 50,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: calcItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        }
+      });
+    }
+
+    gsap.from(aboutItem, {
+      opacity: 0,
+      y: 50,
+      scrollTrigger: {
+        trigger: aboutItem,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    gsap.from(bannerItem, {
+      opacity: 0,
+      y: 50,
+      duration: 0.3,
+      scrollTrigger: {
+        trigger: bannerItem,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+
+
+    const titleItems = document.querySelectorAll(".section__head");
+    const target = document.querySelectorAll('.section__title');
+
+    for (let i = 0; i < target.length; i++) {
+
+      const text = new SplitType(target[i], { types: 'lines, words' })
+
+      gsap.from(text.words, {
+        opacity: 0,
+        x: -50,
+        duration: 0.3,
+        stagger: { amount: 0.2 },
+        scrollTrigger: {
+          trigger: titleItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        }
+      })
+    }
+
+    /**
+     * trash
+     */
     // let children = [
     //   {
     //     label: 'Россия',
@@ -597,348 +988,6 @@
     // };
 
     // new SVG3DTagCloud(document.getElementById('textcloud1'), settings).build();
-
-
-
-    /**
-         * Активация любого количества модальных окон
-         */
-    function modalFunc() {
-      var modal__btn = document.querySelector('.modal__btn');
-
-      if (!modal__btn) {
-        return;
-      } else {
-
-        var close = document.querySelectorAll('.modal__close-btn');
-        var openBtn = document.querySelectorAll('.modal__btn');
-
-        Array.from(openBtn, openButton => {
-          openButton.addEventListener('click', e => {
-
-            let open = document.getElementsByClassName('open');
-
-            if (open.length > 0 && open[0] !== this) {
-              open[0].classList.remove('open');
-            }
-
-            let modalId = e.target.getAttribute('data-id');
-            if (modalId) {
-              document.getElementById(modalId).classList.add('open');
-            } else {
-              return
-            }
-
-            Array.from(close, closeButton => {
-              closeButton.addEventListener('click', e => {
-                document.getElementById(modalId).classList.remove("open");
-              });
-
-              window.addEventListener('keydown', (e) => {
-                if (e.key === "Escape") {
-                  document.getElementById(modalId).classList.remove("open")
-                }
-              });
-
-              document.querySelector(".modal.open .modal__box").addEventListener('click', event => {
-                event._isClickWithInModal = true;
-              });
-
-              document.getElementById(modalId).addEventListener('click', event => {
-                if (event._isClickWithInModal) return;
-                event.currentTarget.classList.remove('open');
-              });
-            });
-          });
-        });
-      }
-    };
-
-    modalFunc();
-
-
-    addEventListener('scroll', function () {
-      const scrollPosition = window.scrollY;
-      const head = this.document.querySelector('.head');
-
-      if (scrollPosition > 0 && scrollPosition !== 0) {
-        head.classList.add('fixed');
-      } else {
-        head.classList.remove('fixed');
-      }
-    });
-
-
-
-    /**
-     * Управляет переключением вкладок на странице.
-     * Добавляет и удаляет классы активности для кнопок и панелей вкладок.
-     * Поддерживает вложенные табы любой глубины и сохраняет активное состояние у вложенных табов при переключении внешних.
-     */
-    function tabsFunc() {
-      document.querySelectorAll('.tabs').forEach((tabsContainer) => {
-        tabsContainer.addEventListener('click', (event) => {
-          const tabsBtn = event.target.closest('.tabs__btn');
-          if (!tabsBtn || !tabsContainer.contains(tabsBtn)) return;
-
-          // Останавливаем всплытие, чтобы вложенные табы не влияли на родительские
-          event.stopPropagation();
-
-          // Ищем ближайший контейнер, к которому принадлежит нажатая кнопка
-          const currentTabsContainer = tabsBtn.closest('.tabs');
-          if (!currentTabsContainer) return;
-
-          // Сбрасываем активные состояния кнопок и панелей только внутри текущего уровня
-          const tabsBtns = Array.from(currentTabsContainer.querySelectorAll('.tabs__btn'));
-          const tabsPanels = Array.from(currentTabsContainer.querySelectorAll('.tabs__panel'));
-
-          tabsBtns.forEach((btn) => {
-            if (btn.closest('.tabs') === currentTabsContainer) {
-              btn.classList.remove('tabs__btn--active');
-            }
-          });
-
-          tabsPanels.forEach((panel) => {
-            if (panel.closest('.tabs') === currentTabsContainer) {
-              panel.classList.remove('tabs__panel--active');
-            }
-          });
-
-          // Устанавливаем активное состояние для выбранной вкладки
-          tabsBtn.classList.add('tabs__btn--active');
-          const targetPanel = currentTabsContainer.querySelector(
-            `.tabs__panel[data-tab="${tabsBtn.dataset.tab}"]`,
-          );
-          if (targetPanel) {
-            /* HACK */
-            targetPanel.classList.add('tabs__panel--active');
-          }
-        });
-      });
-    };
-
-    tabsFunc();
-
-
-
-    var workItem = document.querySelectorAll('.work__item'),
-      workActive = document.getElementsByClassName('work__item-active');
-
-    Array.from(workItem).forEach(function (item, i, workItem) {
-      item.addEventListener('mouseover', function (e) {
-        if (workActive.length > 0 && workActive[0] !== this) {
-          workActive[0].classList.remove('work__item-active');
-        }
-        this.classList.add('work__item-active');
-      });
-    });
-
-
-
-    const case__acc = document.querySelectorAll('.case__acc');
-    const tabsPanelActive = document.querySelector('.tabs__panel--active');
-    const tabsPanelFirst = document.querySelector('.tabs__panel--first');
-
-    if (case__acc) {
-      window.addEventListener('resize', function (event) {
-        if (window.innerWidth < 769) {
-          for (let i = 0; i < case__acc.length; i++) {
-            case__acc[i].classList.add('accordion');
-            case__acc[i].classList.remove('tabs__panel');
-            if (tabsPanelFirst) {
-              tabsPanelFirst.classList.remove('tabs__panel--active');
-            }
-          }
-        } else {
-          for (let i = 0; i < case__acc.length; i++) {
-            case__acc[i].classList.remove('accordion');
-            case__acc[i].classList.add('tabs__panel');
-            if (tabsPanelFirst) {
-              tabsPanelFirst.classList.add('tabs__panel--active');
-            }
-          }
-        }
-      }, true);
-    }
-
-
-
-    document.getElementById('warning-btn').addEventListener('click', event => {
-      document.getElementById('warning-plate').style.display = 'none';
-    });
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    function scrolled1() {
-      $(function () {
-        $('.numberFraction').each(function () {
-          $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-          }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function (now) {
-              $(this).text(now.toFixed(1));
-            }
-          });
-        });
-      });
-    }
-
-    function scrolled2() {
-      $(function () {
-        $('.number').each(function () {
-          $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-          }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function (now) {
-              $(this).text(Math.ceil(now));
-            }
-          });
-        });
-      });
-    }
-
-    function scrolled3() {
-      $(function () {
-        $('.numberPartner').each(function () {
-          $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-          }, {
-            duration: 4000,
-            easing: 'swing',
-            step: function (now) {
-              $(this).text(Math.ceil(now));
-            }
-          });
-        });
-      });
-    }
-
-    ScrollTrigger.create({
-      trigger: '.numberFraction',
-      onEnter: scrolled1,
-    });
-
-    ScrollTrigger.create({
-      trigger: '.numberFraction',
-      onEnter: scrolled2,
-    });
-
-    ScrollTrigger.create({
-      trigger: '.partner__head',
-      onEnter: scrolled3,
-    });
-
-    Splitting();
-
-    // function asdd(asd) {
-    //   const asdTitle = asd.querySelector('.section__title');
-    //   Splitting(asdTitle)
-    // }
-
-    function asdd() {
-      const char = document.querySelectorAll('.char');
-      char.forEach(element => {
-        element.classList.add('animate');
-      });
-    }
-
-    ScrollTrigger.create({
-      trigger: '.section__head',
-      onEnter: asdd(),
-      // onEnter: asdd(asd),
-    });
-
-
-
-    const titleItems = document.querySelectorAll(".section__head");
-    const faqItems = document.querySelectorAll(".faq__item");
-    const serviceItems = document.querySelectorAll(".service__item");
-    const calcItems = document.querySelectorAll(".calc__block");
-    const aboutItem = document.querySelector(".about__img");
-    const bannerItem = document.querySelector(".banner");
-
-    for (let i = 0; i < titleItems.length; i++) {
-      gsap.from(titleItems[i], {
-        opacity: 0,
-        x: -50,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: titleItems[i],
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        }
-      });
-    }
-
-    for (let i = 0; i < faqItems.length; i++) {
-      gsap.from(faqItems[i], {
-        opacity: 0,
-        x: -50,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: faqItems[i],
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        }
-      });
-    }
-
-    for (let i = 0; i < serviceItems.length; i++) {
-      gsap.from(serviceItems[i], {
-        opacity: 0,
-        x: -50,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: serviceItems[i],
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        }
-      });
-    }
-
-    for (let i = 0; i < calcItems.length; i++) {
-      gsap.from(calcItems[i], {
-        opacity: 0,
-        y: 50,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: calcItems[i],
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        }
-      });
-    }
-
-    gsap.from(aboutItem, {
-      opacity: 0,
-      y: 50,
-      scrollTrigger: {
-        trigger: aboutItem,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
-      }
-    });
-
-    gsap.from(bannerItem, {
-      opacity: 0,
-      y: 50,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: bannerItem,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
-      }
-    });
 
 
 
