@@ -21,10 +21,11 @@
   <title>CML Company</title>
   <!-- styles -->
   <link rel="stylesheet" href="./libs/lenis/lenis.min.css">
+  <link rel="stylesheet" href="./libs/locomotive/locomotive-scroll.min.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/icomoon-style.css">
-  <link rel="stylesheet" href="./libs/splitting/splitting.css">
-  <link rel="stylesheet" href="./libs/splitting/splitting-cells.css">
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -50,70 +51,14 @@
                 <i class="icon-calc"></i>
               </p>
               <div class="header__btn">
-                <div class="header__btn-flip">
+                <div class="header__btn-head">
                   Свяжитесь с нами
-                  <div class="header__btn-wrap">
-                    <div class="header__icons">
-                      <div class="header__icons-item">
-                        <i class="icon-telegram"></i>
-                      </div>
-                      <div class="header__icons-item">
-                        <i class="icon-whatsapp"></i>
-                      </div>
-                      <div class="header__icons-item">
-                        <i class="icon-pochta"></i>
-                      </div>
-                    </div>
-                    <div class="arrow">
-                      <i class="icon-chevron-down"></i>
-                    </div>
-                  </div>
                 </div>
-                <ul class="header__dropdown">
-                  <li class="header__dropdown-item">
-                    <a class="header__dropdown-link" href="tel:+71234567890">+7 123 456-78-90</a>
-                    <p class="header__dropdown-text">Отдел продаж</p>
-                    <div class="header__dropdown-icons">
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-telegram"></i>
-                      </a>
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-whatsapp"></i>
-                      </a>
-                    </div>
-                    <div class="arrow">
-                      <i class="icon-chevron-down"></i>
-                    </div>
-                  </li>
-                  <li class="header__dropdown-item">
-                    <a class="header__dropdown-link" href="tel:+71234567890">+7 123 456-78-90</a>
-                    <p class="header__dropdown-text">Поддержка клиентов</p>
-                    <div class="header__dropdown-icons">
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-telegram"></i>
-                      </a>
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-whatsapp"></i>
-                      </a>
-                    </div>
-                  </li>
-                  <li class="header__dropdown-item">
-                    <a class="header__dropdown-link" href="emailto:pochta@cml.com">pochta@cml.com</a>
-                    <p class="header__dropdown-text">Эл. почта</p>
-                    <div class="header__dropdown-icons">
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-pochta"></i>
-                      </a>
-                    </div>
-                  </li>
-                  <li class="header__dropdown-item">
-                    <p class="header__dropdown-title">
-                      Принимаем звонки
-                      <br>
-                      пн - пт с 8:30 до 17:30 по Москве
-                    </p>
-                  </li>
-                </ul>
+                <div class="header__btn-icon arrow">
+                  <i class="icon-chevron-down"></i>
+                </div>
+                <!-- Свяжитесь с нами -->
+                <!--=include contact-us.html-->
               </div>
               <button id="burger" class="burger">
                 <p class="burger__text">Меню</p>
@@ -127,6 +72,11 @@
         <div class="container nav__container">
           <div class="nav__inner">
             <ul class="nav__list">
+              <li>
+                <a class="nav__list-link" href="/CML/404.html">
+                  Доставка грузов "под ключ"
+                </a>
+              </li>
               <li>
                 <a class="nav__list-link" href="/CML/404.html">
                   Международные перевозки
@@ -149,22 +99,12 @@
               </li>
               <li>
                 <a class="nav__list-link" href="/CML/404.html">
-                  Авиаперевозки
+                  Перевод платежей
                 </a>
               </li>
               <li>
                 <a class="nav__list-link" href="/CML/404.html">
-                  Автомобильные перевозки
-                </a>
-              </li>
-              <li>
-                <a class="nav__list-link" href="/CML/404.html">
-                  Ж/Д перевозки
-                </a>
-              </li>
-              <li>
-                <a class="nav__list-link" href="/CML/404.html">
-                  Морские перевозки
+                  Поиск и проверка поставщиков
                 </a>
               </li>
             </ul>

@@ -69,8 +69,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .header__btn-flip {
-      justify-content: space-between;
+    .header__btn-head {
       border-color: var(--primary-accent);
     }
 
@@ -94,9 +93,13 @@
       color: inherit;
       text-align: right;
 
-      &:hover i {
-        background-color: var(--primary-accent);
-        color: var(--white);
+      &:hover {
+        text-decoration-line: underline;
+
+        i {
+          background-color: var(--primary-accent);
+          color: var(--white);
+        }
       }
 
       i {
@@ -115,12 +118,24 @@
       }
     }
 
+    &-links {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     &-link {
       font-weight: 300;
       font-size: 1.6rem;
       line-height: 110%;
       text-decoration-line: underline;
-      color: var(--primary-accent);
+      color: inherit;
+      text-align: right;
+
+      &:hover {
+        color: var(--primary-accent);
+        text-decoration-line: none;
+      }
     }
   }
 

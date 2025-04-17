@@ -21,10 +21,11 @@
   <title>CML Company</title>
   <!-- styles -->
   <link rel="stylesheet" href="./libs/lenis/lenis.min.css">
+  <link rel="stylesheet" href="./libs/locomotive/locomotive-scroll.min.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/icomoon-style.css">
-  <link rel="stylesheet" href="./libs/splitting/splitting.css">
-  <link rel="stylesheet" href="./libs/splitting/splitting-cells.css">
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -37,67 +38,55 @@
       <div class="menu__head">
         <div class="container menu__head-container">
           <div class="header__btn">
-            <div class="header__btn-flip">
+            <div class="header__btn-head">
               Свяжитесь с нами
-              <div class="header__btn-wrap">
-                <div class="header__icons">
-                  <div class="header__icons-item">
-                    <i class="icon-telegram"></i>
-                  </div>
-                  <div class="header__icons-item">
-                    <i class="icon-whatsapp"></i>
-                  </div>
-                  <div class="header__icons-item">
-                    <i class="icon-pochta"></i>
-                  </div>
-                </div>
-                <div class="arrow">
-                  <i class="icon-chevron-down"></i>
-                </div>
-              </div>
             </div>
+            <div class="header__btn-icon arrow">
+              <i class="icon-chevron-down"></i>
+            </div>
+            <!-- Свяжитесь с нами -->
             <ul class="header__dropdown">
               <li class="header__dropdown-item">
-                <a class="header__dropdown-link" href="tel:+71234567890">+7 123 456-78-90</a>
-                <p class="header__dropdown-text">Отдел продаж</p>
-                <div class="header__dropdown-icons">
-                  <a class="header__dropdown-icon" href="/">
-                    <i class="icon-telegram"></i>
-                  </a>
-                  <a class="header__dropdown-icon" href="/">
-                    <i class="icon-whatsapp"></i>
-                  </a>
-                </div>
-                <div class="arrow">
-                  <i class="icon-chevron-down"></i>
+                <div class="header__dropdown-wrap">
+                  <a class="header__dropdown-link" href="tel:+79538877200">+7-953-887-72-00</a>
+                  <p class="header__dropdown-text">Телефон для связи</p>
                 </div>
               </li>
               <li class="header__dropdown-item">
-                <a class="header__dropdown-link" href="tel:+71234567890">+7 123 456-78-90</a>
-                <p class="header__dropdown-text">Поддержка клиентов</p>
-                <div class="header__dropdown-icons">
-                  <a class="header__dropdown-icon" href="/">
-                    <i class="icon-telegram"></i>
+                <div class="header__dropdown-social">
+                  <a class="header__dropdown-link" href="">
+                    <span class="header__dropdown-icon" href="/">
+                      <i class="icon-whatsapp"></i>
+                    </span>
+                    WhatsApp
                   </a>
-                  <a class="header__dropdown-icon" href="/">
-                    <i class="icon-whatsapp"></i>
+                  <a class="header__dropdown-link" href="">
+                    <span class="header__dropdown-icon" href="/">
+                      <i class="icon-telegram"></i>
+                    </span>
+                    Telegram
                   </a>
                 </div>
               </li>
               <li class="header__dropdown-item">
-                <a class="header__dropdown-link" href="emailto:pochta@cml.com">pochta@cml.com</a>
-                <p class="header__dropdown-text">Эл. почта</p>
-                <div class="header__dropdown-icons">
-                  <a class="header__dropdown-icon" href="/">
-                    <i class="icon-pochta"></i>
+                <div class="header__dropdown-wrap">
+                  <a class="header__dropdown-link underline" href="emailto:info@cml-company.ru">
+                    info@cml-company.ru
                   </a>
+                  <p class="header__dropdown-text">Эл. почта</p>
                 </div>
               </li>
               <li class="header__dropdown-item">
-                <p class="header__dropdown-link">
-                  Принимаем звонки
-                  пн - пт с 8:30 до 17:30 по Москве
-                </p>
+                <div class="header__dropdown-wrap">
+                  <p class="header__dropdown-title">
+                    Режим работы:
+                  </p>
+                  <p class="header__dropdown-text">
+                    пн – пт 10:00-18:00 по Новосибирску
+                    <br>
+                    обед 13:00-14:00
+                  </p>
+                </div>
               </li>
             </ul>
           </div>
@@ -116,10 +105,32 @@
       <div class="menu__body">
         <div class="container menu__body-container">
           <ul class="menu__list">
-            <li class="menu__list-item">
-              <a class="menu__list-link" href="/CML/">
-                Главная
-              </a>
+            <li class="menu__list-item accordion">
+              <span class="menu__list-title">
+                О компании
+                <i class="icon-circle-chevron-down"></i>
+              </span>
+              <div class="menu__list-content">
+                <div class="menu__list-wrap">
+                  <ul>
+                    <li>
+                      <a href="/CML/404.html">
+                        История
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
+                        Отзывы
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
+                        Пресс-центр
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
             <li class="menu__list-item accordion">
               <span class="menu__list-title">
@@ -131,7 +142,47 @@
                   <ul>
                     <li>
                       <a href="/CML/404.html">
+                        Доставка грузов "под ключ"
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
+                        Перевод платежей
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
+                        Поиск и проверка поставщиков
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
                         Международные перевозки
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
+                        Авиа
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
+                        Автомобильные
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
+                        Железнодорожные
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
+                        Контейнерные
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/CML/404.html">
+                        Сборные грузы
                       </a>
                     </li>
                     <li>
@@ -149,81 +200,21 @@
                         Страхование грузов
                       </a>
                     </li>
-                    <li>
-                      <a href="/CML/404.html">
-                        Авиаперевозки
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/CML/404.html">
-                        Автомобильные перевозки
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/CML/404.html">
-                        Ж/Д перевозки
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/CML/404.html">
-                        Морские перевозки
-                      </a>
-                    </li>
                   </ul>
                   <a class="btn btn-outline" href="/CML/404.html">
                     Все услуги
                   </a>
                 </div>
               </div>
-            </li>
-            <li class="menu__list-item">
-              <a class="menu__list-link" href="/CML/404.html">
-                Отзывы
-              </a>
-            </li>
-            <li class="menu__list-item">
-              <a class="menu__list-link" href="/CML/404.html">
-                Пресс-центр
-              </a>
             </li>
             <li class="menu__list-item accordion">
-              <span class="menu__list-title">
-                Выполненные проекты
-                <i class="icon-circle-chevron-down"></i>
-              </span>
-              <div class="menu__list-content">
-                <div class="menu__list-wrap">
-                  <ul>
-                    <li>
-                      <a href="/CML/404.html">
-                        Доставка буровой установки из Китая
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/CML/404.html">
-                        Авиадоставка Амортизаторов для спецтехники
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/CML/404.html">
-                        Автодоставка драконьих лодок
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/CML/404.html">
-                        Доставка кокосового угля
-                      </a>
-                    </li>
-                  </ul>
-                  <a class="btn btn-outline" href="/CML/404.html">
-                    Все услуги
-                  </a>
-                </div>
-              </div>
+              <a class="menu__list-link" href="/CML/404.html">
+                Реализованные проекты
+              </a>
             </li>
             <li class="menu__list-item">
               <a class="menu__list-link" href="/CML/404.html">
-                История
+                База знаний
               </a>
             </li>
             <li class="menu__list-item">
@@ -242,7 +233,7 @@
               Телефон:
             </p>
             <a class="menu__foot-link" href="tel:+79538877200">
-              +7 953 887 72 00
+              +7-953-887-72-00
             </a>
           </div>
           <div class="menu__foot-wrap">
@@ -253,7 +244,7 @@
               Новосибирск, ул Добролюбова, 16
             </p>
             <p class="menu__foot-text">
-              Режим работы с 10:00 до 18:00 по будням
+              Режим работы: пн – пт 10:00-18:00 по Новосибирску, обед 13:00-14:00
             </p>
           </div>
           <div class="menu__download">
@@ -292,68 +283,55 @@
                 <i class="icon-calc"></i>
               </p>
               <div class="header__btn">
-                <div class="header__btn-flip">
+                <div class="header__btn-head">
                   Свяжитесь с нами
-                  <div class="header__btn-wrap">
-                    <div class="header__icons">
-                      <div class="header__icons-item">
-                        <i class="icon-telegram"></i>
-                      </div>
-                      <div class="header__icons-item">
-                        <i class="icon-whatsapp"></i>
-                      </div>
-                      <div class="header__icons-item">
-                        <i class="icon-pochta"></i>
-                      </div>
-                    </div>
-                    <div class="arrow">
-                      <i class="icon-chevron-down"></i>
-                    </div>
-                  </div>
                 </div>
+                <div class="header__btn-icon arrow">
+                  <i class="icon-chevron-down"></i>
+                </div>
+                <!-- Свяжитесь с нами -->
                 <ul class="header__dropdown">
                   <li class="header__dropdown-item">
-                    <a class="header__dropdown-link" href="tel:+71234567890">+7 123 456-78-90</a>
-                    <p class="header__dropdown-text">Отдел продаж</p>
-                    <div class="header__dropdown-icons">
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-telegram"></i>
-                      </a>
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-whatsapp"></i>
-                      </a>
-                    </div>
-                    <div class="arrow">
-                      <i class="icon-chevron-down"></i>
+                    <div class="header__dropdown-wrap">
+                      <a class="header__dropdown-link" href="tel:+79538877200">+7-953-887-72-00</a>
+                      <p class="header__dropdown-text">Телефон для связи</p>
                     </div>
                   </li>
                   <li class="header__dropdown-item">
-                    <a class="header__dropdown-link" href="tel:+71234567890">+7 123 456-78-90</a>
-                    <p class="header__dropdown-text">Поддержка клиентов</p>
-                    <div class="header__dropdown-icons">
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-telegram"></i>
+                    <div class="header__dropdown-social">
+                      <a class="header__dropdown-link" href="">
+                        <span class="header__dropdown-icon" href="/">
+                          <i class="icon-whatsapp"></i>
+                        </span>
+                        WhatsApp
                       </a>
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-whatsapp"></i>
+                      <a class="header__dropdown-link" href="">
+                        <span class="header__dropdown-icon" href="/">
+                          <i class="icon-telegram"></i>
+                        </span>
+                        Telegram
                       </a>
                     </div>
                   </li>
                   <li class="header__dropdown-item">
-                    <a class="header__dropdown-link" href="emailto:pochta@cml.com">pochta@cml.com</a>
-                    <p class="header__dropdown-text">Эл. почта</p>
-                    <div class="header__dropdown-icons">
-                      <a class="header__dropdown-icon" href="/">
-                        <i class="icon-pochta"></i>
+                    <div class="header__dropdown-wrap">
+                      <a class="header__dropdown-link underline" href="emailto:info@cml-company.ru">
+                        info@cml-company.ru
                       </a>
+                      <p class="header__dropdown-text">Эл. почта</p>
                     </div>
                   </li>
                   <li class="header__dropdown-item">
-                    <p class="header__dropdown-title">
-                      Принимаем звонки
-                      <br>
-                      пн - пт с 8:30 до 17:30 по Москве
-                    </p>
+                    <div class="header__dropdown-wrap">
+                      <p class="header__dropdown-title">
+                        Режим работы:
+                      </p>
+                      <p class="header__dropdown-text">
+                        пн – пт 10:00-18:00 по Новосибирску
+                        <br>
+                        обед 13:00-14:00
+                      </p>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -369,6 +347,11 @@
         <div class="container nav__container">
           <div class="nav__inner">
             <ul class="nav__list">
+              <li>
+                <a class="nav__list-link" href="/CML/404.html">
+                  Доставка грузов "под ключ"
+                </a>
+              </li>
               <li>
                 <a class="nav__list-link" href="/CML/404.html">
                   Международные перевозки
@@ -391,22 +374,12 @@
               </li>
               <li>
                 <a class="nav__list-link" href="/CML/404.html">
-                  Авиаперевозки
+                  Перевод платежей
                 </a>
               </li>
               <li>
                 <a class="nav__list-link" href="/CML/404.html">
-                  Автомобильные перевозки
-                </a>
-              </li>
-              <li>
-                <a class="nav__list-link" href="/CML/404.html">
-                  Ж/Д перевозки
-                </a>
-              </li>
-              <li>
-                <a class="nav__list-link" href="/CML/404.html">
-                  Морские перевозки
+                  Поиск и проверка поставщиков
                 </a>
               </li>
             </ul>
@@ -417,7 +390,7 @@
 <!-- Содержимое сайта -->
 <main class="main">
   <!-- Главный блок -->
-  <section class="hero">
+  <section id="first-section" class="hero">
     <div class="container-fluid">
       <div class="hero__inner">
         <div class="swiper hero__slider hero__slider-init">
@@ -464,9 +437,9 @@
                         </div>
                       </div>
                     </div>
-                    <a class="hero__item-btn btn btn-white" href="/">
+                    <span class="hero__item-btn btn btn-white modal__btn" data-id="modal-bid">
                       Получить консультацию
-                    </a>
+                    </span>
                     <a class="hero__item-down" href="#calc">
                       <i class="icon-circle-chevron-down"></i>
                     </a>
@@ -512,9 +485,9 @@
                         </div>
                       </div>
                     </div>
-                    <a class="hero__item-btn btn btn-white" href="/">
+                    <span class="hero__item-btn btn btn-white modal__btn" data-id="modal-bid">
                       Получить консультацию
-                    </a>
+                    </span>
                     <a class="hero__item-down" href="#calc">
                       <i class="icon-circle-chevron-down"></i>
                     </a>
@@ -565,9 +538,9 @@
                         </div>
                       </div>
                     </div>
-                    <a class="hero__item-btn btn btn-white" href="/">
+                    <span class="hero__item-btn btn btn-white modal__btn" data-id="modal-bid">
                       Получить консультацию
-                    </a>
+                    </span>
                     <a class="hero__item-down" href="#calc">
                       <i class="icon-circle-chevron-down"></i>
                     </a>
@@ -597,7 +570,7 @@
       <div class="calc__inner">
         <div class="section__head">
           <h3 class="section__suptitle">Калькулятор</h3>
-          <h2 class="section__title" data-splitting="chars">
+          <h2 class="section__title">
             Рассчитайте
             <br>
             <span class="section__title-accent">стоимость доставки</span>
@@ -651,7 +624,7 @@
                 <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Наименование">
                 </div>
-                <textarea class="form-textarea" name="" id="" placeholder="При заполнении поле выглядит так"></textarea>
+                <textarea class="form-textarea" name="" id="" placeholder="Описание груза"></textarea>
               </div>
             </div>
             <div class="calc__block">
@@ -692,7 +665,7 @@
       <div class="service__inner">
         <div class="section__head">
           <h3 class="section__suptitle">Наши услуги</h3>
-          <h2 class="section__title" data-splitting>
+          <h2 class="section__title">
             <span class="section__title-accent">Мы позаботимся о поиске</span>, <br> приобретении и доставке грузов
           </h2>
         </div>
@@ -826,7 +799,7 @@
 
         <div class="section__head">
           <h3 class="section__suptitle">Это не к нам</h3>
-          <h2 class="section__title" data-splitting>
+          <h2 class="section__title">
             5 услуг <span class="section__title-accent">которые мы </span>
             <br>
             не <span class="section__title-accent">оказываем</span>
@@ -835,23 +808,33 @@
 
         <div class="feat__items">
           <div class="feat__item">
-            <img class="feat__item-img" src="./images/main/feat-1.png" alt="">
+            <div class="feat__item-wrap">
+              <img class="feat__item-img" src="./images/main/feat-1.png" alt="">
+            </div>
             <p class="feat__item-title">Не возим посылки</p>
           </div>
           <div class="feat__item">
-            <img class="feat__item-img" src="./images/main/feat-2.png" alt="">
+            <div class="feat__item-wrap">
+              <img class="feat__item-img" src="./images/main/feat-2.png" alt="">
+            </div>
             <p class="feat__item-title">Не работаем с физическими лицами</p>
           </div>
           <div class="feat__item">
-            <img class="feat__item-img" src="./images/main/feat-3.png" alt="">
+            <div class="feat__item-wrap">
+              <img class="feat__item-img" src="./images/main/feat-3.png" alt="">
+            </div>
             <p class="feat__item-title">Не работаем со странами ЕАЭС</p>
           </div>
           <div class="feat__item">
-            <img class="feat__item-img" src="./images/main/feat-4.png" alt="">
+            <div class="feat__item-wrap">
+              <img class="feat__item-img" src="./images/main/feat-4.png" alt="">
+            </div>
             <p class="feat__item-title">Не занимаемся перевозками внутри РФ</p>
           </div>
           <div class="feat__item">
-            <img class="feat__item-img" src="./images/main/feat-5.png" alt="">
+            <div class="feat__item-wrap">
+              <img class="feat__item-img" src="./images/main/feat-5.png" alt="">
+            </div>
             <p class="feat__item-title">Не занимаемся неофициальными перевозками</p>
           </div>
         </div>
@@ -864,7 +847,7 @@
       <div class="transport__inner">
         <div class="section__head">
           <h3 class="section__suptitle">виды транспорта</h3>
-          <h2 class="section__title" data-splitting>
+          <h2 class="section__title">
             Объединяем страны,
             <br>
             <span class="section__title-accent">преодолеваем границы</span>
@@ -1430,7 +1413,7 @@
       <div class="about__inner">
         <div class="section__head">
           <h3 class="section__suptitle">О компании</h3>
-          <h2 class="section__title" data-splitting>
+          <h2 class="section__title">
             На нас <span class="section__title-accent">можно положиться</span>
           </h2>
         </div>
@@ -1495,7 +1478,7 @@
       <div class="work__inner">
         <div class="section__head">
           <h3 class="section__suptitle">КАК МЫ РАБОТАЕМ</h3>
-          <h2 class="section__title" data-splitting>
+          <h2 class="section__title">
             <span class="section__title-accent">Варианты работы</span>
             <br>
             с нами
@@ -1524,7 +1507,7 @@
 
           <div class="work__items">
 
-            <a class="work__item work__item-active" href="#!">
+            <a class="work__item work__item-1 work__item-active" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Индивидуальный подход
@@ -1544,7 +1527,7 @@
               </div>
             </a>
 
-            <a class="work__item" href="#!">
+            <a class="work__item work__item-2" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Готовим документы для таможенного оформления
@@ -1562,7 +1545,7 @@
               </div>
             </a>
 
-            <a class="work__item" href="#!">
+            <a class="work__item work__item-3" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Учитываем все риски на этапе расчета
@@ -1583,7 +1566,7 @@
               </div>
             </a>
 
-            <a class="work__item" href="#!">
+            <a class="work__item work__item-4" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Возим всеми видами транспорта
@@ -1601,7 +1584,7 @@
               </div>
             </a>
 
-            <a class="work__item" href="#!">
+            <a class="work__item work__item-5" href="#!">
               <div class="work__item-content">
                 <h6 class="work__item-title">
                   Конкурентные цены
@@ -1632,9 +1615,9 @@
               <p class="banner__text">
                 Пройдите опрос что бы утонить все детали заказа и выявить ваши потребности
               </p>
-              <a class="banner__btn btn" href="/">
+              <span class="banner__btn btn modal__btn" data-id="modal-bid">
                 Получить консультацию
-              </a>
+              </span>
             </div>
           </div>
         </div>
@@ -1647,7 +1630,7 @@
       <div class="case__inner tabs">
         <div class="section__head">
           <h3 class="section__suptitle">Выполненные проекты</h3>
-          <h2 class="section__title" data-splitting>
+          <h2 class="section__title">
             <span class="section__title-accent">Кейсы</span>
           </h2>
         </div>
@@ -1671,7 +1654,7 @@
           </a>
         </div>
         <div class="case__body" data-skip="true">
-          <div class="case__acc tabs__panel tabs__panel--first tabs__panel--active accordion" data-tab="tab-1">
+          <div class="case__acc tabs__panel tabs__panel--first tabs__panel--active accordion active" data-tab="tab-1">
             <div class="case__acc-item">
               <p class="case__acc-title">
                 Доставка буровой установки из Китая
@@ -1937,7 +1920,7 @@
         <div class="partner__head">
           <div class="section__head">
             <h3 class="section__suptitle">С кем мы работаем</h3>
-            <h2 class="section__title" data-splitting>
+            <h2 class="section__title">
               <span class="section__title-accent">Наши партнеры — лидеры рынка:</span> вместе мы создаем успешные
               бизнес-истории!
             </h2>
@@ -2033,7 +2016,7 @@
       <div class="faq__inner">
         <div class="section__head">
           <h3 class="section__suptitle">FAQ</h3>
-          <h2 class="section__title" data-splitting>
+          <h2 class="section__title">
             Ответы на частые вопросы
           </h2>
         </div>
@@ -2170,7 +2153,7 @@
       <div class="request__inner">
         <div class="section__head">
           <h3 class="section__suptitle">обратная связь</h3>
-          <h2 class="section__title" data-splitting>
+          <h2 class="section__title">
             Оставьте заявку
             на сотрудничество
           </h2>
@@ -2252,6 +2235,11 @@
               </li>
               <li>
                 <a class="footer__menu-link" href="/CML/404.html">
+                  Доставка грузов "под ключ"
+                </a>
+              </li>
+              <li>
+                <a class="footer__menu-link" href="/CML/404.html">
                   Перевод платежей
                 </a>
               </li>
@@ -2267,22 +2255,22 @@
               </li>
               <li>
                 <a class="footer__menu-link accent-text" href="/CML/404.html">
-                  Авиа перевозки
+                  Авиа
                 </a>
               </li>
               <li>
                 <a class="footer__menu-link accent-text" href="/CML/404.html">
-                  Авто перевозки
+                  Автомобильные
                 </a>
               </li>
               <li>
                 <a class="footer__menu-link accent-text" href="/CML/404.html">
-                  Железнодорожные перевозки
+                  Железнодорожные
                 </a>
               </li>
               <li>
                 <a class="footer__menu-link accent-text" href="/CML/404.html">
-                  Контейнерные перевозки
+                  Контейнерные
                 </a>
               </li>
               <li>
@@ -2311,31 +2299,12 @@
             <ul class="footer__menu-list">
               <li>
                 <a class="footer__menu-title" href="/CML/404.html">
-                  Полезная информация
-                </a>
-              </li>
-              <li>
-                <a class="footer__menu-link" href="/CML/404.html">
-                  Размеры контейнеров
-                </a>
-              </li>
-              <li>
-                <a class="footer__menu-link" href="/CML/404.html">
-                  Справочник ВЭД
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer__menu-item">
-            <ul class="footer__menu-list">
-              <li>
-                <a class="footer__menu-title" href="/CML/404.html">
                   Реализованные проекты
                 </a>
               </li>
               <li>
                 <a class="footer__menu-title" href="/CML/404.html">
-                  Партнёрам
+                  База знаний
                 </a>
               </li>
               <li>
@@ -2347,68 +2316,55 @@
           </div>
           <div class="footer__info">
             <div class="header__btn">
-              <div class="header__btn-flip">
+              <div class="header__btn-head">
                 Свяжитесь с нами
-                <div class="header__btn-wrap">
-                  <div class="header__icons">
-                    <div class="header__icons-item">
-                      <i class="icon-telegram"></i>
-                    </div>
-                    <div class="header__icons-item">
-                      <i class="icon-whatsapp"></i>
-                    </div>
-                    <div class="header__icons-item">
-                      <i class="icon-pochta"></i>
-                    </div>
-                  </div>
-                  <div class="arrow">
-                    <i class="icon-chevron-down"></i>
-                  </div>
-                </div>
               </div>
+              <div class="header__btn-icon arrow">
+                <i class="icon-chevron-down"></i>
+              </div>
+              <!-- Свяжитесь с нами -->
               <ul class="header__dropdown">
                 <li class="header__dropdown-item">
-                  <a class="header__dropdown-link" href="tel:+71234567890">+7 123 456-78-90</a>
-                  <p class="header__dropdown-text">Отдел продаж</p>
-                  <div class="header__dropdown-icons">
-                    <a class="header__dropdown-icon" href="/">
-                      <i class="icon-telegram"></i>
-                    </a>
-                    <a class="header__dropdown-icon" href="/">
-                      <i class="icon-whatsapp"></i>
-                    </a>
-                  </div>
-                  <div class="arrow">
-                    <i class="icon-chevron-down"></i>
+                  <div class="header__dropdown-wrap">
+                    <a class="header__dropdown-link" href="tel:+79538877200">+7-953-887-72-00</a>
+                    <p class="header__dropdown-text">Телефон для связи</p>
                   </div>
                 </li>
                 <li class="header__dropdown-item">
-                  <a class="header__dropdown-link" href="tel:+71234567890">+7 123 456-78-90</a>
-                  <p class="header__dropdown-text">Поддержка клиентов</p>
-                  <div class="header__dropdown-icons">
-                    <a class="header__dropdown-icon" href="/">
-                      <i class="icon-telegram"></i>
+                  <div class="header__dropdown-social">
+                    <a class="header__dropdown-link" href="">
+                      <span class="header__dropdown-icon" href="/">
+                        <i class="icon-whatsapp"></i>
+                      </span>
+                      WhatsApp
                     </a>
-                    <a class="header__dropdown-icon" href="/">
-                      <i class="icon-whatsapp"></i>
+                    <a class="header__dropdown-link" href="">
+                      <span class="header__dropdown-icon" href="/">
+                        <i class="icon-telegram"></i>
+                      </span>
+                      Telegram
                     </a>
                   </div>
                 </li>
                 <li class="header__dropdown-item">
-                  <a class="header__dropdown-link" href="emailto:pochta@cml.com">pochta@cml.com</a>
-                  <p class="header__dropdown-text">Эл. почта</p>
-                  <div class="header__dropdown-icons">
-                    <a class="header__dropdown-icon" href="/">
-                      <i class="icon-pochta"></i>
+                  <div class="header__dropdown-wrap">
+                    <a class="header__dropdown-link underline" href="emailto:info@cml-company.ru">
+                      info@cml-company.ru
                     </a>
+                    <p class="header__dropdown-text">Эл. почта</p>
                   </div>
                 </li>
                 <li class="header__dropdown-item">
-                  <p class="header__dropdown-title">
-                    Принимаем звонки
-                    <br>
-                    пн - пт с 8:30 до 17:30 по Москве
-                  </p>
+                  <div class="header__dropdown-wrap">
+                    <p class="header__dropdown-title">
+                      Режим работы:
+                    </p>
+                    <p class="header__dropdown-text">
+                      пн – пт 10:00-18:00 по Новосибирску
+                      <br>
+                      обед 13:00-14:00
+                    </p>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -2420,9 +2376,14 @@
               Скачать реквизиты компании
               <i class="icon-download"></i>
             </a>
-            <a class="footer__info-link" href="/" download="/">
-              Политика конфиденциальности
-            </a>
+            <div class="footer__info-links">
+              <a class="footer__info-link" href="/">
+                Политика конфиденциальности
+              </a>
+              <a class="footer__info-link" href="/">
+                Карта сайта
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -2435,7 +2396,7 @@
             Новосибирск, ул Добролюбова, 16
           </h6>
           <p class="footer__body-text">
-            Режим работы с 10:00 до 18:00 по будням
+            Режим работы: пн – пт 10:00-18:00 по Новосибирску, обед 13:00-14:00
           </p>
         </div>
       </div>
@@ -2448,9 +2409,8 @@
           © 2025 CML COMPANY
         </p>
         <p class="footer__foot-text">
-          Разработка и продвижение сайта -
           <a href="/">
-            Once&Twice
+            Разработка и продвижение сайта - Once&Twice
           </a>
         </p>
       </div>
@@ -2467,45 +2427,49 @@
       <h3 class="modal__title">
         Свяжитесь <br> с нами
       </h3>
+      <!-- Свяжитесь с нами -->
       <ul class="header__dropdown">
         <li class="header__dropdown-item">
-          <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
-          <p class="header__dropdown-text">Отдел продаж</p>
-          <div class="header__dropdown-icons">
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-telegram"></i>
+          <div class="header__dropdown-wrap">
+            <a class="header__dropdown-link" href="tel:+79538877200">+7-953-887-72-00</a>
+            <p class="header__dropdown-text">Телефон для связи</p>
+          </div>
+        </li>
+        <li class="header__dropdown-item">
+          <div class="header__dropdown-social">
+            <a class="header__dropdown-link" href="">
+              <span class="header__dropdown-icon" href="/">
+                <i class="icon-whatsapp"></i>
+              </span>
+              WhatsApp
             </a>
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-whatsapp"></i>
+            <a class="header__dropdown-link" href="">
+              <span class="header__dropdown-icon" href="/">
+                <i class="icon-telegram"></i>
+              </span>
+              Telegram
             </a>
           </div>
         </li>
         <li class="header__dropdown-item">
-          <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
-          <p class="header__dropdown-text">Поддержка клиентов</p>
-          <div class="header__dropdown-icons">
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-telegram"></i>
+          <div class="header__dropdown-wrap">
+            <a class="header__dropdown-link underline" href="emailto:info@cml-company.ru">
+              info@cml-company.ru
             </a>
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-whatsapp"></i>
-            </a>
+            <p class="header__dropdown-text">Эл. почта</p>
           </div>
         </li>
         <li class="header__dropdown-item">
-          <a class="header__dropdown-link" href="/">pochta@cml.com</a>
-          <p class="header__dropdown-text">Эл. почта</p>
-          <div class="header__dropdown-icons">
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-pochta"></i>
-            </a>
+          <div class="header__dropdown-wrap">
+            <p class="header__dropdown-title">
+              Режим работы:
+            </p>
+            <p class="header__dropdown-text">
+              пн – пт 10:00-18:00 по Новосибирску
+              <br>
+              обед 13:00-14:00
+            </p>
           </div>
-        </li>
-        <li class="header__dropdown-item">
-          <p class="header__dropdown-link" href="/">
-            Принимаем звонки
-            пн - пт с 8:30 до 17:30 по Москве
-          </p>
         </li>
       </ul>
     </div>
@@ -2574,7 +2538,7 @@
                 <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Наименование">
                 </div>
-                <textarea class="form-textarea" name="" id="" placeholder="При заполнении поле выглядит так"></textarea>
+                <textarea class="form-textarea" name="" id="" placeholder="Описание груза"></textarea>
               </div>
             </div>
             <div class="calc__block">
@@ -2604,6 +2568,48 @@
                 </div>
               </div>
             </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-bid">
+  <div class="modal__box">
+    <button class="modal__close-btn">
+    </button>
+    <div class="modal__content">
+      <div class="section__head">
+        <h3 class="section__suptitle">Обратная связь</h3>
+        <h2 class="section__title">
+          Хотите доставить груз из другой страны?
+        </h2>
+      </div>
+      <div class="modal__bid">
+        <p class="modal__bid-text">
+          Оставьте заявку и наш менеджер свяжется с вами в ближайшее время
+        </p>
+        <form action="#" method="get">
+
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Имя">
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Телефон">
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Эл.почта">
+          </div>
+          <button class="form-btn btn btn-red">
+            Получить консультацию
+          </button>
+          <div class="form-bottom">
+            <input class="form-checkbox" type="checkbox" required>
+            <p class="form-text">
+              Нажимая кнопку «Рассчитать стоимость доставки», <a href="/">вы принимаете условия обработки
+                пользовательских данных</a>
+            </p>
           </div>
         </form>
       </div>
@@ -2651,7 +2657,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./libs/splitting/splitting.js"></script>
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
 <script src="./libs/curtains.min.js"></script>
 <script src="./libs/flag.js"></script>
 <script src="./js/main.js"></script>

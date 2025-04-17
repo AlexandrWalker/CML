@@ -62,17 +62,34 @@
   .header__btn {
     justify-content: space-between;
     width: 100%;
+  }
+
+  .header__btn-head {
+    border-color: var(--primary-black-50);
+    color: var(--primary-black);
+    width: 100%;
+  }
+
+  .header__btn-icon {
     color: var(--primary-black);
   }
 
-  .header__btn-flip {
-    border-color: var(--primary-black-50);
-    width: 100%;
+  .header__btn-active {
+    height: fit-content;
   }
 
-  .header__dropdown {
+  .header__btn-active .header__btn-head {
+    line-height: 0;
+  }
+
+  .header__btn-active .header__dropdown {
+    height: fit-content;
+    // position: relative;
+  }
+
+  .header__dropdown-item {
     width: 100%;
-    border: 0.1rem solid var(--primary-black-50);
+    border-color: var(--primary-black-50);
   }
 
   .header__icons-item {
@@ -246,6 +263,12 @@
 
   &__body {
     flex: 1 0 auto;
+    transition: margin-top 0.3s ease;
+
+    &.down {
+      // transform: translateY(25rem);
+      margin-top: 25rem;
+    }
   }
 
   &__foot {

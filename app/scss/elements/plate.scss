@@ -7,6 +7,18 @@
   margin: 0;
   background-color: var(--primary-black);
   min-height: 6.4rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10rem);
+  transition: all 0.3s linear;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+  }
 
   &__inner {
     padding: 0.7rem 2rem;

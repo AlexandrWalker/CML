@@ -6,47 +6,8 @@
       <h3 class="modal__title">
         Свяжитесь <br> с нами
       </h3>
-      <ul class="header__dropdown">
-        <li class="header__dropdown-item">
-          <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
-          <p class="header__dropdown-text">Отдел продаж</p>
-          <div class="header__dropdown-icons">
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-telegram"></i>
-            </a>
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-whatsapp"></i>
-            </a>
-          </div>
-        </li>
-        <li class="header__dropdown-item">
-          <a class="header__dropdown-link" href="/">+7 123 456-78-90</a>
-          <p class="header__dropdown-text">Поддержка клиентов</p>
-          <div class="header__dropdown-icons">
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-telegram"></i>
-            </a>
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-whatsapp"></i>
-            </a>
-          </div>
-        </li>
-        <li class="header__dropdown-item">
-          <a class="header__dropdown-link" href="/">pochta@cml.com</a>
-          <p class="header__dropdown-text">Эл. почта</p>
-          <div class="header__dropdown-icons">
-            <a class="header__dropdown-icon" href="/">
-              <i class="icon-pochta"></i>
-            </a>
-          </div>
-        </li>
-        <li class="header__dropdown-item">
-          <p class="header__dropdown-link" href="/">
-            Принимаем звонки
-            пн - пт с 8:30 до 17:30 по Москве
-          </p>
-        </li>
-      </ul>
+      <!-- Свяжитесь с нами -->
+      <!--=include contact-us.html-->
     </div>
   </div>
 </div>
@@ -113,7 +74,7 @@
                 <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Наименование">
                 </div>
-                <textarea class="form-textarea" name="" id="" placeholder="При заполнении поле выглядит так"></textarea>
+                <textarea class="form-textarea" name="" id="" placeholder="Описание груза"></textarea>
               </div>
             </div>
             <div class="calc__block">
@@ -143,6 +104,48 @@
                 </div>
               </div>
             </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-bid">
+  <div class="modal__box">
+    <button class="modal__close-btn">
+    </button>
+    <div class="modal__content">
+      <div class="section__head">
+        <h3 class="section__suptitle">Обратная связь</h3>
+        <h2 class="section__title">
+          Хотите доставить груз из другой страны?
+        </h2>
+      </div>
+      <div class="modal__bid">
+        <p class="modal__bid-text">
+          Оставьте заявку и наш менеджер свяжется с вами в ближайшее время
+        </p>
+        <form action="#" method="get">
+
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Имя">
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Телефон">
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Эл.почта">
+          </div>
+          <button class="form-btn btn btn-red">
+            Получить консультацию
+          </button>
+          <div class="form-bottom">
+            <input class="form-checkbox" type="checkbox" required>
+            <p class="form-text">
+              Нажимая кнопку «Рассчитать стоимость доставки», <a href="/">вы принимаете условия обработки
+                пользовательских данных</a>
+            </p>
           </div>
         </form>
       </div>
