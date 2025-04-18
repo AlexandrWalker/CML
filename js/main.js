@@ -390,16 +390,20 @@
     ScrollTrigger.create({
       trigger: '.numberFraction',
       onEnter: scrolled1,
+      toggleActions: "play none none none",
     });
+
 
     ScrollTrigger.create({
       trigger: '.numberFraction',
       onEnter: scrolled2,
+      toggleActions: "play none none none",
     });
 
     ScrollTrigger.create({
       trigger: '.partner__head',
       onEnter: scrolled3,
+      toggleActions: "play none none none",
     });
 
     // function asdd() {
@@ -431,7 +435,7 @@
     //       trigger: titleItems[i],
     //       start: "top 80%",
     //       end: "bottom 20%",
-    //       toggleActions: "play none none reverse",
+    //       toggleActions: "play none none none",
     //     }
     //   });
     // }
@@ -445,9 +449,9 @@
           trigger: faqItems[i],
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         }
-      });
+      });3.
     }
 
     for (let i = 0; i < serviceItems.length; i++) {
@@ -459,7 +463,7 @@
           trigger: serviceItems[i],
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         }
       });
     }
@@ -473,7 +477,7 @@
           trigger: calcItems[i],
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         }
       });
     }
@@ -485,7 +489,7 @@
         trigger: aboutItem,
         start: "top 80%",
         end: "bottom 20%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       }
     });
 
@@ -497,7 +501,7 @@
         trigger: bannerItem,
         start: "top 80%",
         end: "bottom 20%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       }
     });
 
@@ -519,7 +523,7 @@
           trigger: titleItems[i],
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         }
       })
     }
@@ -580,7 +584,7 @@
       window.addEventListener('resize', function (event) {
         if (window.innerWidth < 769 && window.innerWidth !== 769) {
           itemsContainer.addEventListener('scroll', scrollItems);
-          
+
           case__acc[0].classList.add('active');
 
           for (let i = 0; i < case__acc.length; i++) {
@@ -591,16 +595,7 @@
             }
           }
         } else {
-          items.forEach(element => {
-            element.addEventListener('mouseover', function () {
-              if (itemsActive.length > 0 && itemsActive[0] !== this) {
-                itemsActive[0].classList.remove('work__item-active');
-              }
-              this.classList.add('work__item-active');
-            });
-          });
-
-          for (let i = 0; i < case__acc.length; i++) {
+                    for (let i = 0; i < case__acc.length; i++) {
             case__acc[i].classList.remove('accordion');
             case__acc[i].classList.add('tabs__panel');
             if (tabsPanelFirst) {
@@ -611,6 +606,17 @@
       }, true);
     }
 
+
+
+    items.forEach(element => {
+      element.addEventListener('mouseover', function () {
+        if (itemsActive.length > 0 && itemsActive[0] !== this) {
+          itemsActive[0].classList.remove('work__item-active');
+        }
+        this.classList.add('work__item-active');
+      });
+    });
+    
 
 
     const map = [
