@@ -69,7 +69,7 @@
      */
     const lenis = new Lenis({
       anchors: {
-        offset: -200,
+        offset: -150,
         onComplete: () => {
           console.log('scrolled to anchor')
         }
@@ -451,7 +451,7 @@
           end: "bottom 20%",
           toggleActions: "play none none none",
         }
-      });3.
+      }); 3.
     }
 
     for (let i = 0; i < serviceItems.length; i++) {
@@ -583,7 +583,6 @@
     if (case__acc) {
       window.addEventListener('resize', function (event) {
         if (window.innerWidth < 769 && window.innerWidth !== 769) {
-          itemsContainer.addEventListener('scroll', scrollItems);
 
           case__acc[0].classList.add('active');
 
@@ -594,19 +593,24 @@
               tabsPanelFirst.classList.remove('tabs__panel--active');
             }
           }
+
         } else {
-                    for (let i = 0; i < case__acc.length; i++) {
+
+          for (let i = 0; i < case__acc.length; i++) {
             case__acc[i].classList.remove('accordion');
             case__acc[i].classList.add('tabs__panel');
             if (tabsPanelFirst) {
               tabsPanelFirst.classList.add('tabs__panel--active');
             }
           }
+
         }
       }, true);
     }
 
-
+    if (window.innerWidth < 769 && window.innerWidth !== 769) {
+      itemsContainer.addEventListener('scroll', scrollItems);
+    }
 
     items.forEach(element => {
       element.addEventListener('mouseover', function () {
@@ -616,7 +620,7 @@
         this.classList.add('work__item-active');
       });
     });
-    
+
 
 
     const map = [
