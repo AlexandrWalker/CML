@@ -1090,6 +1090,10 @@
     right: 6rem;
   }
 
+  .canvas-wrap.hero__img {
+    display: none;
+  }
+
   .hero__bg-small {
     background-image: url(./../images/main/hero-bg-mob-small.png);
   }

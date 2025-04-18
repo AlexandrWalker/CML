@@ -631,7 +631,7 @@
       padding: 5rem 6rem 5rem 5rem;
       position: relative;
       background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) -34.23%, rgba(255, 255, 255, 0) 100%), var(--white);
-      transition: all 0.3s ease;
+      transition: all 0.1s ease;
     }
 
     &-title {
@@ -639,7 +639,7 @@
       font-size: 2.4rem;
       line-height: 120%;
       color: var(--primary-accent);
-      transition: all 0.3s ease;
+      transition: all 0.1s ease;
     }
 
     &-text {
@@ -647,7 +647,7 @@
       font-size: 1.6rem;
       line-height: 120%;
       color: var(--primary-black);
-      transition: all 0.3s ease;
+      transition: all 0.1s ease;
     }
 
     &-count {
