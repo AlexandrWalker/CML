@@ -580,6 +580,8 @@
       window.addEventListener('resize', function (event) {
         if (window.innerWidth < 769 && window.innerWidth !== 769) {
           itemsContainer.addEventListener('scroll', scrollItems);
+          
+          case__acc[0].classList.add('active');
 
           for (let i = 0; i < case__acc.length; i++) {
             case__acc[i].classList.add('accordion');

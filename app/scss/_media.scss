@@ -233,6 +233,22 @@
     height: 4.4rem;
   }
 
+  .footer .header__btn {
+    height: 5rem;
+  }
+
+  .footer .header__btn-icon {
+    top: 1.2rem;
+  }
+
+  .footer__info-btn {
+    height: 5rem;
+  }
+
+  .modal__btn i {
+    font-size: 2.4rem;
+  }
+
   .head .header__btn-icon,
   .header__btn-icon {
     top: 1rem;
@@ -1342,6 +1358,18 @@
     width: 100%;
   }
 
+  .footer .header__btn-icon {
+    top: 1.8rem;
+  }
+
+  .footer__info-btn {
+    height: 6rem;
+  }
+
+  .modal__btn i {
+    font-size: 3.2rem;
+  }
+
   .footer__body {
     flex-direction: column-reverse;
   }
@@ -1365,6 +1393,10 @@
 
   .footer .header__icons-item {
     background-color: var(--primary-accent);
+  }
+
+  .footer__info-link {
+    text-align: left;
   }
 
   /* 404 */
