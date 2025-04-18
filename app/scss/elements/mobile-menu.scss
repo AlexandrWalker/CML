@@ -10,7 +10,7 @@
   z-index: 300;
   transition: all 0.5s ease;
   background-color: var(--primary-bg);
-
+  overflow-y: scroll;
 
   &.mobile-menu--opened {
     right: 0;
@@ -142,8 +142,8 @@
     backdrop-filter: blur(21.4px);
     position: relative;
     z-index: 102;
-    height: 100%;
-    overflow-y: scroll;
+    height: fit-content;
+    min-height: 100dvh;
   }
 
   &__list {
@@ -287,6 +287,13 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
+
+      &:first-child {
+        
+        .menu__foot-link:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     &-title {

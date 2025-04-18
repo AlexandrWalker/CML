@@ -18,7 +18,6 @@ body {
   line-height: 120%;
   color: var(--primary-black);
   background: var(--primary-bg);
-  overflow-x: hidden;
 }
 
 // @media (prefers-reduced-motion: no-preference) {
@@ -29,6 +28,7 @@ body {
 
 section {
   margin-bottom: 5rem;
+  overflow-x: hidden;
 }
 
 .wrapper {

@@ -600,11 +600,11 @@
   &__item {
     overflow: hidden;
     width: calc((100% - 54rem) / 4);
-    // transition: all 0.4s ease;
-    transition: all 0.4s linear;
+    transition: all 0.3s cubic-bezier(0.5, 0.5, 0.5, 0.5);
 
     &-active {
       width: 54rem;
+      
 
       .work__item-count {
         background-color: var(--primary-accent);
@@ -629,9 +629,8 @@
       height: 36.2rem;
       padding: 5rem 6rem 5rem 5rem;
       position: relative;
-      transition: all 0.5s ease;
       background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) -34.23%, rgba(255, 255, 255, 0) 100%), var(--white);
-
+      transition: all 0.3s ease;
     }
 
     &-title {
@@ -664,7 +663,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      transition: all 0.3s ease;
+      // transition: all 0.3s ease;
     }
 
     &-icon {
