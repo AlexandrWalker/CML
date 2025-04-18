@@ -2440,6 +2440,9 @@ a:hover {
   line-height: 110%;
 }
 
+.work {
+  overflow: hidden;
+}
 .work__body {
   display: flex;
   flex-direction: column;
