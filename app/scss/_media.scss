@@ -673,7 +673,8 @@
     cursor: pointer;
     border-radius: var(--primary-border-r-5);
     border: 0.1rem solid transparent;
-    transition: all 0.5s ease;
+    // transition: all 0.5s ease;
+    transition: all 0.8s ease;
     background-color: var(--white);
   }
 
@@ -710,7 +711,8 @@
     display: grid;
     grid-template-rows: 0fr;
     overflow: hidden;
-    transition: all 0.5s ease;
+    // transition: all 0.5s ease;
+    transition: all 0.8s ease;
   }
 
   .case__acc.active .case__content {
@@ -763,13 +765,13 @@
 
   .case__img {
     transform: scale(1);
-    transform: translateX(-5rem);
+    transform: unset;
     opacity: 0;
     transition: all 0.3s linear;
   }
 
   .case__item {
-    transform: translateX(-5rem);
+    transform: unset;
     transition: all 0.3s linear;
   }
 
@@ -1196,6 +1198,7 @@
     display: block;
     width: 26.2rem;
     min-width: 26.2rem;
+    position: relative;
   }
 
   .work__item-active {
@@ -1203,19 +1206,44 @@
   }
 
   .work__item-active .work__item-content {
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) -34.23%, rgba(255, 255, 255, 0) 100%), var(--primary-black);
+    // background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) -34.23%, rgba(255, 255, 255, 0) 100%), var(--primary-black);
+    background: transparent;
+  }
+
+  .work__item.work__item-active::before {
+    width: 100%;
+    transition-delay: 0.1s;
+  }
+
+  .work__item::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: var(--primary-black);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transition: all 0.5s ease;
   }
 
   .work__item-active .work__item-title {
     color: var(--white);
+    transition-delay: 0.1s;
   }
 
   .work__item-active .work__item-text {
     color: var(--white);
+    transition-delay: 0.1s;
   }
 
   .work__item-content {
     width: 26.2rem;
+    z-index: 2;
+    background: transparent;
   }
 
   .banner {
