@@ -92,6 +92,10 @@
     border-color: var(--primary-black-50);
   }
 
+  .header__dropdown-item:last-child {
+    border-color: var(--primary-black-50);
+  }
+
   .header__icons-item {
     background-color: var(--primary-accent);
   }
@@ -289,7 +293,7 @@
       gap: 1rem;
 
       &:first-child {
-        
+
         .menu__foot-link:hover {
           text-decoration: underline;
         }

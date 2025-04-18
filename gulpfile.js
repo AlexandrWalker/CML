@@ -93,6 +93,9 @@ function building() {
     'app/js/*.js',
     '!app/js/main.min.js',
 
+    'app/docs/*.doc',
+    'app/docs/*.docx',
+
     'app/images/**/*.*',
     'app/images/*.*',
     '!app/images/src/**/*.*',

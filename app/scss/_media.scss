@@ -233,8 +233,13 @@
     height: 4.4rem;
   }
 
-  .head .header__btn-icon {
+  .head .header__btn-icon,
+  .header__btn-icon {
     top: 1rem;
+  }
+
+  .menu .header__btn-active .header__btn-icon {
+    top: 1.8rem;
   }
 
   // .header__btn-head {
@@ -277,6 +282,10 @@
 
   .menu__head-container {
     flex-direction: column-reverse;
+  }
+
+  .menu__body.down {
+    margin-top: 31rem;
   }
 
   .menu__list-title,
@@ -555,8 +564,9 @@
 
   .work__item-content {
     width: 35.7rem;
-    height: 27rem;
-    padding: 2rem;
+    // height: 27rem;
+    height: 100%;
+    padding: 2rem 2rem 7rem;
     gap: 1rem;
   }
 
