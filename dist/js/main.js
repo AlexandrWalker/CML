@@ -622,491 +622,198 @@
     });
 
 
-
     const map = [
-      {
-        name: 'Россия',
-        size: 'extraBig',
-        opacity: 1
-      },
+      { name: 'Россия', size: 'extraBig', opacity: 1 },
+      { name: 'ОАЭ', size: 'big', opacity: 1 },
+      { name: 'Турция', size: 'big', opacity: 1 },
+      { name: 'Иран', size: 'big', opacity: 1 },
+      { name: 'Израиль', size: 'big', opacity: 1 },
+      { name: 'Япония', size: 'big', opacity: 1 },
+      { name: 'Гонконг', size: 'big', opacity: 1 },
+      { name: 'Малайзия', size: 'big', opacity: 1 },
+      { name: 'Индонезия', size: 'big', opacity: 1 },
+      { name: 'Китай', size: 'big', opacity: 1 },
+      { name: 'Индия', size: 'big', opacity: 1 },
+      { name: 'ЮАР', size: 'big', opacity: 1 },
+      { name: 'Польша', size: 'big', opacity: 1 },
+      { name: 'Египет', size: 'big', opacity: 1 },
+      { name: 'Таиланд', size: 'big', opacity: 1 },
+      { name: 'Вьетнам', size: 'big', opacity: 1 },
+      { name: 'Корея', size: 'big', opacity: 1 },
+      { name: 'Сербия', size: 'mid', opacity: 0.8 },
+      { name: 'Мьянма', size: 'mid', opacity: 0.8 },
+      { name: 'Мексика', size: 'mid', opacity: 0.8 },
+      { name: 'Камбоджа', size: 'mid', opacity: 0.8 },
+      { name: 'Канада', size: 'mid', opacity: 0.8 },
+      { name: 'Испания', size: 'mid', opacity: 0.8 },
+      { name: 'Чехия', size: 'mid', opacity: 0.8 },
+      { name: 'США', size: 'mid', opacity: 0.8 },
+      { name: 'Оман', size: 'mid', opacity: 0.8 },
+      { name: 'Германия', size: 'mid', opacity: 0.8 },
+      { name: 'Франция', size: 'mid', opacity: 0.8 },
+      { name: 'Латвия', size: 'mid', opacity: 0.8 },
+      { name: 'Италия', size: 'mid', opacity: 0.8 },
+      { name: 'Тунис', size: 'mid', opacity: 0.8 },
+      { name: 'Литва', size: 'mid', opacity: 0.8 },
+      { name: 'Великобритания', size: 'mid', opacity: 0.8 },
+      { name: 'Эстония', size: 'mid', opacity: 0.8 },
+      { name: 'Швеция', size: 'small', opacity: 0.7 },
+      { name: 'Австрия', size: 'small', opacity: 0.7 },
+      { name: 'Дания', size: 'small', opacity: 0.7 },
+      { name: 'Кения', size: 'small', opacity: 0.7 },
+      { name: 'Шри-Ланка', size: 'small', opacity: 0.7 },
+      { name: 'Кот-д’Ивуар', size: 'small', opacity: 0.7 },
+      { name: 'Аргентина', size: 'small', opacity: 0.7 },
+      { name: 'Австралия', size: 'small', opacity: 0.7 },
+      { name: 'Йемен', size: 'small', opacity: 0.7 },
+      { name: 'Бангладеш', size: 'small', opacity: 0.7 },
+      { name: 'Бельгия', size: 'small', opacity: 0.7 },
+      { name: 'Эквадор', size: 'small', opacity: 0.7 },
+      { name: 'Катар', size: 'small', opacity: 0.7 },
+      { name: 'Нидерланды', size: 'small', opacity: 0.7 },
+      { name: 'Швейцария', size: 'small', opacity: 0.7 },
+      { name: 'Марокко', size: 'small', opacity: 0.7 },
+      { name: 'Португалия', size: 'small', opacity: 0.7 },
+      { name: 'Венгрия', size: 'small', opacity: 0.7 },
+      { name: 'Бразилия', size: 'small', opacity: 0.7 },
+      { name: 'Сингапур', size: 'small', opacity: 0.7 },
+      { name: 'Словакия', size: 'small', opacity: 0.7 },
+      { name: 'Греция', size: 'small', opacity: 0.7 },
+      { name: 'Болгария', size: 'small', opacity: 0.7 },
+      { name: 'Словения', size: 'small', opacity: 0.7 },
+      { name: 'Саудовская Аравия', size: 'small', opacity: 0.7 },
+      { name: 'Нигерия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Новая Зеландия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Папуа — Новая Гвинея', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Чили', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Бахрейн', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Нигер', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Норвегия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Маврикий', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Мальта', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Перу', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Сьерра-Леоне', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Непал', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Бруней', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Ангола', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Гана', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Сирия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Доминиканка', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Мадагаскар', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Ливия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Венесуэла,', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Ливан', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Кипр Иордания', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Филиппины', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Панама', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Эфиопия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Лаос', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Гватемала', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Уругвай', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Ирландия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Гвинея', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Танзания', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Камерун', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Кувейт', size: 'extraSmall', opacity: 0.5 }
+    ];
 
+    console.log(map.length);
 
+    function createTagCloud() {
 
-      {
-        name: 'ОАЭ',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Турция',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Иран',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Израиль',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Япония',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Гонконг',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Малайзия',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Индонезия',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Китай',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Индия',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'ЮАР',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Польша',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Египет',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Таиланд',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Вьетнам',
-        size: 'big',
-        opacity: 1,
-      },
-      {
-        name: 'Корея',
-        size: 'big',
-        opacity: 1,
-      },
+      const cloud = document.getElementById('tagCloud');
 
+      cloud.innerHTML = '';
 
+      const cloudWidth = cloud.offsetWidth;
+      const cloudHeight = cloud.offsetHeight;
 
-      {
-        name: 'Сербия',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Мьянма',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Мексика',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Камбоджа',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Канада',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Испания',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Чехия',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'США',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Оман',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Германия',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Франция',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Латвия',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Италия',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Тунис',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Литва',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Великобритания',
-        size: 'mid',
-        opacity: 0.8,
-      },
-      {
-        name: 'Эстония',
-        size: 'mid',
-        opacity: 0.8,
-      },
+      // Сортируем теги по размеру (от больших к маленьким)
+      const sortedTags = [...map].sort((a, b) => {
+        const sizeOrder = { extraBig: 5, big: 4, mid: 3, small: 2, extraSmall: 1 };
+        return sizeOrder[b.size] - sizeOrder[a.size];
+      });
 
+      // Массив для хранения размещенных тегов и их координат
+      const placedTags = [];
 
+      sortedTags.forEach(tag => {
 
-      {
-        name: 'Швеция',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Австрия',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Дания',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Кения',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Шри-Ланка',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Кот-д’Ивуар',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Аргентина',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Австралия',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Йемен',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Бангладеш',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Бельгия',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Эквадор',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Катар',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Нидерланды',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Швейцария',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Марокко',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Португалия',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Венгрия',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Бразилия',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Сингапур',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Словакия',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Тунис',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Греция',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Болгария',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Словения',
-        size: 'small',
-        opacity: 0.7,
-      },
-      {
-        name: 'Саудовская Аравия',
-        size: 'small',
-        opacity: 0.7,
-      },
+        const tagElement = document.createElement('div');
+        tagElement.className = `tag ${tag.size}`;
+        tagElement.textContent = tag.name;
+        tagElement.style.opacity = tag.opacity;
 
+        // Временно добавляем элемент для измерения его размеров
+        tagElement.style.visibility = 'hidden';
+        tagElement.style.position = 'absolute';
+        cloud.appendChild(tagElement);
 
+        const tagWidth = tagElement.offsetWidth;
+        const tagHeight = tagElement.offsetHeight;
 
-      {
-        name: 'Нигерия',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Новая Зеландия',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Папуа — Новая Гвинея',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Чили',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Бахрейн',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Нигер',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Норвегия',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Маврикий',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Мальта',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Перу',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Сьерра-Леоне',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Непал',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Бруней',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Ангола',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Гана',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Сирия',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Доминиканка',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Мадагаскар',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Ливия',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Венесуэла,',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Ливан',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Кипр Иордания',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Филиппины',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Панама',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Эфиопия',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Лаос',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Гватемала',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Уругвай',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Ирландия',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Гвинея',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Ливия',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Танзания',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Камерун',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-      {
-        name: 'Кувейт',
-        size: 'extraSmall',
-        opacity: 0.5,
-      },
-    ]
+        // Пытаемся найти свободное место для тега
+        let placed = false;
+        let attempts = 100; // Максимальное количество попыток
+
+        while (!placed && attempts > 0) {
+          attempts--;
+
+          // Генерируем случайные координаты
+          let left = Math.random() * (100 - (tagWidth / cloudWidth * 100));
+          let top = Math.random() * (100 - (tagHeight / cloudHeight * 100));
+
+          // Проверяем, не пересекается ли текущий тег с уже размещенными
+          const overlaps = placedTags.some(placedTag => {
+            return (
+              left < placedTag.left + placedTag.width &&
+              left + tagWidth / cloudWidth * 100 > placedTag.left &&
+              top < placedTag.top + placedTag.height &&
+              top + tagHeight / cloudHeight * 100 > placedTag.top
+            );
+          });
+
+          if (!overlaps) {
+
+            // Если не пересекается, размещаем тег
+            tagElement.style.left = `${left}%`;
+            tagElement.style.top = `${top}%`;
+            tagElement.style.visibility = 'visible';
+
+            // Сохраняем информацию о размещенном теге
+            placedTags.push({
+              left: left,
+              top: top,
+              width: tagWidth / cloudWidth * 100,
+              height: tagHeight / cloudHeight * 100
+            });
+
+            placed = true;
+          }
+        }
+
+        // Если не удалось разместить после всех попыток, просто размещаем в случайном месте
+        if (!placed) {
+
+          const left = Math.random() * (100 - (tagWidth / cloudWidth * 100));
+          const top = Math.random() * (100 - (tagHeight / cloudHeight * 100));
+
+          tagElement.style.left = `${left}%`;
+          tagElement.style.top = `${top}%`;
+          tagElement.style.visibility = 'visible';
+        }
+
+      });
+
+      console.log(placedTags.length);
+    }
+
+    // Создаем облако тегов после загрузки страницы
+    window.onload = createTagCloud;
+
+    // Пересоздаем облако при изменении размера окна
+    window.onresize = createTagCloud;
+
 
   });
 })();
