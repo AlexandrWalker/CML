@@ -321,7 +321,8 @@
     font-size: 1.4rem;
   }
 
-  .menu__foot-link {
+  .menu__foot-link,
+  .menu__foot-wrap:nth-child(2) .menu__foot-link {
     font-size: 2.4rem;
   }
 
@@ -1000,6 +1001,26 @@
     width: 100%;
     height: auto;
   }
+
+  .extraBig {
+    font-size: 2.4rem;
+  }
+  
+  .big {
+    font-size: 2rem;
+  }
+  
+  .mid {
+    font-size: 1.6rem;
+  }
+  
+  .small {
+    font-size: 1.4rem;
+  }
+  
+  .extraSmall {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 660px) {}
@@ -1461,6 +1482,10 @@
   .hero__img {
     right: 50%;
     transform: translateX(50%);
+  }
+
+  .hero__img.flag {
+    right: 12%;
   }
 
   // .footer .header__btn-head {

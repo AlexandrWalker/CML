@@ -139,45 +139,14 @@
       // transition-delay: 0.3s;
     }
   }
-
-  .canvas-wrap {
-    position: relative;
-    top: 5rem;
-  }
-
-  #canvas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: contrast(1.2);
-  }
-
-  #canvas canvas {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  .plane {
-    width: 100%;
-    height: 69.2rem;
-    // width: 100%;
-    // height: 100%;
-    // aspect-ratio: 740/692;
-  }
-
-  .plane img {
-    display: none;
-  }
 }
 
 .cube {
   animation: shake-vertical-fourth 10s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite both;
+}
+
+.flag {
+  animation: shake-vertical-two 5s linear infinite both;
 }
 
 @keyframes shake-vertical-fourth {
@@ -206,6 +175,26 @@
 
   90% {
     transform: translateY(-1.4rem);
+  }
+}
+
+@keyframes shake-vertical-two {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(1.5rem);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-1.5rem);
   }
 }
 
@@ -395,6 +384,7 @@
 }
 
 .transport {
+  overflow: hidden;
 
   &__items {
     display: flex;
@@ -601,11 +591,10 @@
   &__item {
     overflow: hidden;
     width: calc((100% - 54rem) / 4);
-    transition: all 0.3s cubic-bezier(0.5, 0.5, 0.5, 0.5);
+    transition: all 0.5s ease;
 
     &-active {
       width: 54rem;
-      
 
       .work__item-count {
         background-color: var(--primary-accent);
@@ -804,6 +793,7 @@
 }
 
 .case {
+  overflow: hidden;
 
   &__head {
     display: flex;
@@ -996,6 +986,7 @@
     padding-bottom: 3rem;
     // border-bottom: 0.1rem solid var(--primary-black-50);
     position: relative;
+    overflow: hidden;
 
     &::before {
       content: "";
@@ -1139,52 +1130,52 @@
 
 /* cloud */
 .tag-cloud {
-	position: relative;
-	width: 100%;
-	height: 45.5rem;
-	border-radius: 6rem;
+  position: relative;
+  width: 100%;
+  height: 45.5rem;
+  border-radius: 6rem;
 }
 
 .tag {
-	position: absolute;
-	white-space: nowrap;
-	cursor: default;
-	transition: transform 0.2s;
+  position: absolute;
+  white-space: nowrap;
+  cursor: default;
+  transition: transform 0.2s;
   line-height: 100%;
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .tag:hover {
-	transform: scale(1.1);
-	z-index: 100;
+  transform: scale(1.1);
+  z-index: 100;
 }
 
 .extraBig {
-	font-size: 6rem;
-	font-weight: bold;
-	color: #C62826;
+  font-size: 6rem;
+  font-weight: bold;
+  color: #C62826;
 }
 
 .big {
-	font-size: 4rem;
-	font-weight: bold;
-	color: #2A2626;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #2A2626;
 }
 
 .mid {
-	font-size: 3rem;
-	color: #434146;
-	opacity: .8;
+  font-size: 3rem;
+  color: #434146;
+  opacity: .8;
 }
 
 .small {
-	font-size: 2rem;
-	color: #434146;
-	opacity: .7;
+  font-size: 2rem;
+  color: #434146;
+  opacity: .7;
 }
 
 .extraSmall {
-	font-size: 1.4rem;
-	color: #434146;
-	opacity: .5;
+  font-size: 1.4rem;
+  color: #434146;
+  opacity: .5;
 }

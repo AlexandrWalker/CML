@@ -2,13 +2,13 @@
     padding: 0;
     margin: 0;
     border: 0;
+    outline: 1px solid;
+    outline-color: transparent;
 }
 *,*:before,*:after{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    outline: none;
-    outline-color: transparent;
 }
 :focus, :active{outline: none;}
 a:focus, a:active{outline: none;}
