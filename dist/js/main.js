@@ -743,12 +743,11 @@
       { name: 'Кувейт', size: 'extraSmall', opacity: 0.5 }
     ];
 
-    console.log(map.length);
+    // Объект для хранения данных о движении тегов
+    const tagMovements = {};
 
     function createTagCloud() {
-
       const cloud = document.getElementById('tagCloud');
-
       cloud.innerHTML = '';
 
       const cloudWidth = cloud.offsetWidth;
@@ -756,15 +755,15 @@
 
       // Сортируем теги по размеру (от больших к маленьким)
       const sortedTags = [...map].sort((a, b) => {
-        const sizeOrder = { extraBig: 5, big: 4, mid: 3, small: 2, extraSmall: 1 };
-        return sizeOrder[b.size] - sizeOrder[a.size];
+        const sizes = { 'extraBig': 4, 'big': 3, 'mid': 2, 'small': 1, 'extraSmall': 0 };
+        return sizes[b.size] - sizes[a.size];
       });
 
-      // Массив для хранения размещенных тегов и их координат
+      // Массив для хранения размещенных тегов
       const placedTags = [];
 
+      // Создаем элементы тегов
       sortedTags.forEach(tag => {
-
         const tagElement = document.createElement('div');
         tagElement.className = `tag ${tag.size}`;
         tagElement.textContent = tag.name;
@@ -772,73 +771,235 @@
 
         // Временно добавляем элемент для измерения его размеров
         tagElement.style.visibility = 'hidden';
-        tagElement.style.position = 'absolute';
         cloud.appendChild(tagElement);
 
-        const tagWidth = tagElement.offsetWidth;
-        const tagHeight = tagElement.offsetHeight;
+        const tagRect = tagElement.getBoundingClientRect();
+        const tagWidth = tagRect.width;
+        const tagHeight = tagRect.height;
 
-        // Пытаемся найти свободное место для тега
+        cloud.removeChild(tagElement);
+
+        // Пытаемся разместить тег без пересечений
         let placed = false;
-        let attempts = 100; // Максимальное количество попыток
+        let attempts = 0;
+        const maxAttempts = 200;
 
-        while (!placed && attempts > 0) {
-          attempts--;
+        let tagWidthPercent = 0;
+        let tagHeightPercent = 0;
 
-          // Генерируем случайные координаты
-          let left = Math.random() * (100 - (tagWidth / cloudWidth * 100));
-          let top = Math.random() * (100 - (tagHeight / cloudHeight * 100));
+        while (!placed && attempts < maxAttempts) {
+          attempts++;
 
-          // Проверяем, не пересекается ли текущий тег с уже размещенными
-          const overlaps = placedTags.some(placedTag => {
-            return (
-              left < placedTag.left + placedTag.width &&
-              left + tagWidth / cloudWidth * 100 > placedTag.left &&
-              top < placedTag.top + placedTag.height &&
-              top + tagHeight / cloudHeight * 100 > placedTag.top
-            );
+          // Генерируем случайные координаты в процентах
+          let leftPercent, topPercent;
+
+          // Для первых 20 тегов используем более точное размещение
+          if (attempts < 20) {
+            const angle = (attempts / 20) * 2 * Math.PI;
+            const distance = 0.3 + (attempts % 10) * 0.05;
+
+            leftPercent = 50 + distance * Math.cos(angle) * 50;
+            topPercent = 50 + distance * Math.sin(angle) * 50;
+          } else {
+            // Случайное размещение для остальных попыток
+            leftPercent = 10 + Math.random() * 80;
+            topPercent = 10 + Math.random() * 80;
+          }
+
+          // Корректируем позицию, чтобы тег полностью помещался в облако
+          tagWidthPercent = (tagWidth / cloudWidth) * 100;
+          tagHeightPercent = (tagHeight / cloudHeight) * 100;
+
+          leftPercent = Math.max(tagWidthPercent / 2, Math.min(100 - tagWidthPercent / 2, leftPercent));
+          topPercent = Math.max(tagHeightPercent / 2, Math.min(100 - tagHeightPercent / 2, topPercent));
+
+          // Проверяем пересечения с другими тегами
+          const collision = checkCollision(placedTags, {
+            left: leftPercent,
+            top: topPercent,
+            width: tagWidthPercent,
+            height: tagHeightPercent
           });
 
-          if (!overlaps) {
-
-            // Если не пересекается, размещаем тег
-            tagElement.style.left = `${left}%`;
-            tagElement.style.top = `${top}%`;
+          if (!collision) {
+            placed = true;
+            tagElement.style.left = `${leftPercent}%`;
+            tagElement.style.top = `${topPercent}%`;
             tagElement.style.visibility = 'visible';
+            cloud.appendChild(tagElement);
 
-            // Сохраняем информацию о размещенном теге
+            // Добавляем тег в массив размещенных
             placedTags.push({
-              left: left,
-              top: top,
-              width: tagWidth / cloudWidth * 100,
-              height: tagHeight / cloudHeight * 100
+              left: leftPercent,
+              top: topPercent,
+              width: tagWidthPercent,
+              height: tagHeightPercent,
+              element: tagElement
             });
 
-            placed = true;
+            console.log(tagWidthPercent);
+            console.log(tagHeightPercent);
+
+            // Инициализируем движение для этого тега
+            initTagMovement(tagElement, tagWidthPercent, tagHeightPercent);
           }
         }
 
-        // Если не удалось разместить после всех попыток, просто размещаем в случайном месте
+        // Если тег не поместился после всех попыток, размещаем его в любом случае
         if (!placed) {
 
-          const left = Math.random() * (100 - (tagWidth / cloudWidth * 100));
-          const top = Math.random() * (100 - (tagHeight / cloudHeight * 100));
+          // Находим наименее плотную область
+          const bestPosition = findBestPosition(placedTags, tagWidthPercent, tagHeightPercent);
 
-          tagElement.style.left = `${left}%`;
-          tagElement.style.top = `${top}%`;
+          tagElement.style.left = `${bestPosition.left}%`;
+          tagElement.style.top = `${bestPosition.top}%`;
           tagElement.style.visibility = 'visible';
-        }
+          cloud.appendChild(tagElement);
 
+          placedTags.push({
+            left: bestPosition.left,
+            top: bestPosition.top,
+            width: tagWidthPercent,
+            height: tagHeightPercent,
+            element: tagElement
+          });
+
+          // Инициализируем движение для этого тега
+          initTagMovement(tagElement, tagWidthPercent, tagHeightPercent);
+        }
       });
 
-      console.log(placedTags.length);
+      console.log(`Размещено тегов: ${placedTags.length} из ${sortedTags.length}`);
     }
 
-    // Создаем облако тегов после загрузки страницы
-    window.onload = createTagCloud;
+    function initTagMovement(tagElement, tagWidthPercent, tagHeightPercent) {
+      // Генерируем случайное направление и скорость
+      const angle = Math.random() * 2 * Math.PI;
+      const speed = 0.02 + Math.random() * 0.03; // Скорость движения (0.02-0.05% за кадр)
 
-    // Пересоздаем облако при изменении размера окна
-    window.onresize = createTagCloud;
+      // Сохраняем данные о движении
+      tagMovements[tagElement.textContent] = {
+        dx: Math.cos(angle) * speed,
+        dy: Math.sin(angle) * speed,
+        widthPercent: tagWidthPercent,
+        heightPercent: tagHeightPercent,
+        element: tagElement
+      };
+    }
+
+    function animateTags() {
+      const cloud = document.getElementById('tagCloud');
+      const cloudWidth = cloud.offsetWidth;
+      const cloudHeight = cloud.offsetHeight;
+
+      for (const tagName in tagMovements) {
+        const movement = tagMovements[tagName];
+        const tagElement = movement.element;
+
+        // Получаем текущие координаты
+        let currentLeft = parseFloat(tagElement.style.left);
+        let currentTop = parseFloat(tagElement.style.top);
+
+        // Вычисляем новые координаты
+        let newLeft = currentLeft + movement.dx;
+        let newTop = currentTop + movement.dy;
+
+        // Проверяем границы облака с учетом размера тега
+        const halfWidth = movement.widthPercent / 2;
+        const halfHeight = movement.heightPercent / 2;
+
+        // Проверка левой и правой границы
+        if (newLeft - halfWidth < 0) {
+          newLeft = halfWidth;
+          movement.dx = -movement.dx; // Рикошет
+        } else if (newLeft + halfWidth > 100) {
+          newLeft = 100 - halfWidth;
+          movement.dx = -movement.dx; // Рикошет
+        }
+
+        // Проверка верхней и нижней границы
+        if (newTop - halfHeight < 0) {
+          newTop = halfHeight;
+          movement.dy = -movement.dy; // Рикошет
+        } else if (newTop + halfHeight > 100) {
+          newTop = 100 - halfHeight;
+          movement.dy = -movement.dy; // Рикошет
+        }
+
+        // Обновляем позицию тега
+        tagElement.style.left = `${newLeft}%`;
+        tagElement.style.top = `${newTop}%`;
+      }
+
+      // Продолжаем анимацию
+      requestAnimationFrame(animateTags);
+    }
+
+    function checkCollision(placedTags, newTag) {
+      // Увеличиваем зону проверки для лучшего разделения тегов
+      const padding = 1.5; // 1.5% от размера облака
+
+      for (const tag of placedTags) {
+        // Проверяем пересечение прямоугольников с учетом padding
+        if (!(newTag.left + newTag.width / 2 + padding < tag.left - tag.width / 2 - padding ||
+          newTag.left - newTag.width / 2 - padding > tag.left + tag.width / 2 + padding ||
+          newTag.top + newTag.height / 2 + padding < tag.top - tag.height / 2 - padding ||
+          newTag.top - newTag.height / 2 - padding > tag.top + tag.height / 2 + padding)) {
+          return true; // Найдено пересечение
+        }
+      }
+      return false; // Пересечений нет
+    }
+
+    function findBestPosition(placedTags, tagWidthPercent, tagHeightPercent) {
+      // Если нет размещенных тегов, размещаем в центре
+      if (placedTags.length === 0) {
+        return { left: 50, top: 50 };
+      }
+
+      // Ищем позицию с минимальным пересечением
+      let bestPosition = { left: 10, top: 10 };
+      let minCollisions = Infinity;
+
+      // Проверяем несколько возможных позиций
+      for (let left = 10; left <= 90; left += 10) {
+        for (let top = 10; top <= 90; top += 10) {
+          let collisions = 0;
+
+          for (const tag of placedTags) {
+            if (!(left + tagWidthPercent / 2 < tag.left - tag.width / 2 ||
+              left - tagWidthPercent / 2 > tag.left + tag.width / 2 ||
+              top + tagHeightPercent / 2 < tag.top - tag.height / 2 ||
+              top - tagHeightPercent / 2 > tag.top + tag.height / 2)) {
+              collisions++;
+            }
+          }
+
+          if (collisions < minCollisions) {
+            minCollisions = collisions;
+            bestPosition = { left, top };
+          }
+        }
+      }
+
+      return bestPosition;
+    }
+
+    // Инициализируем облако тегов после загрузки страницы
+    window.addEventListener('load', () => {
+      createTagCloud();
+      // Запускаем анимацию движения тегов
+      requestAnimationFrame(animateTags);
+    });
+
+    // Оптимизированная обработка изменения размера окна
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        createTagCloud();
+      }, 200);
+    });
 
 
 

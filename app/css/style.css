@@ -4126,6 +4126,9 @@ a:hover {
   .notfound__text {
     font-size: 3rem;
   }
+  .tag-cloud {
+    display: none;
+  }
 }
 @media (max-width: 360px) {
   .hero__img {
