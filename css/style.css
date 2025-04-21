@@ -37,14 +37,14 @@
   padding: 0;
   margin: 0;
   border: 0;
+  outline: 1px solid;
+  outline-color: transparent;
 }
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  outline: none;
-  outline-color: transparent;
 }
 
 :focus, :active {
@@ -237,6 +237,7 @@ body {
 section {
   margin-bottom: 5rem;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .wrapper {
@@ -1372,7 +1373,9 @@ a:hover {
 }
 .menu__list-item {
   padding-bottom: 2rem;
+  border: 0;
   border-bottom: 0.1rem solid var(--primary-black-50);
+  overflow: hidden;
 }
 .menu__list-item:not(:last-child) {
   margin-bottom: 2rem;
@@ -1478,7 +1481,7 @@ a:hover {
 .menu__foot-wrap:first-child .menu__foot-link:hover {
   text-decoration: underline;
 }
-.menu__foot-wrap:last-child .menu__foot-link {
+.menu__foot-wrap:nth-child(2) .menu__foot-link {
   font-size: 2.8rem;
 }
 .menu__foot-title {
@@ -2113,36 +2116,13 @@ a:hover {
   opacity: 1;
   transform: translateY(0);
 }
-.hero .canvas-wrap {
-  position: relative;
-  top: 5rem;
-}
-.hero #canvas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  filter: contrast(1.2);
-}
-.hero #canvas canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
-.hero .plane {
-  width: 100%;
-  height: 69.2rem;
-}
-.hero .plane img {
-  display: none;
-}
 
 .cube {
   animation: shake-vertical-fourth 10s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite both;
+}
+
+.flag {
+  animation: shake-vertical-two 5s linear infinite both;
 }
 
 @keyframes shake-vertical-fourth {
@@ -2160,6 +2140,20 @@ a:hover {
   }
   90% {
     transform: translateY(-1.4rem);
+  }
+}
+@keyframes shake-vertical-two {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(1.5rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-1.5rem);
   }
 }
 .calc__inner {
@@ -2311,6 +2305,9 @@ a:hover {
   line-height: 120%;
 }
 
+.transport {
+  overflow: hidden;
+}
 .transport__items {
   display: flex;
   gap: 2rem;
@@ -2481,7 +2478,7 @@ a:hover {
 .work__item {
   overflow: hidden;
   width: calc((100% - 54rem) / 4);
-  transition: all 0.3s cubic-bezier(0.5, 0.5, 0.5, 0.5);
+  transition: all 0.5s ease;
 }
 .work__item-active {
   width: 54rem;
@@ -2626,6 +2623,9 @@ a:hover {
   height: auto;
 }
 
+.case {
+  overflow: hidden;
+}
 .case__head {
   display: flex;
   justify-content: space-between;
@@ -2776,6 +2776,7 @@ a:hover {
   cursor: pointer;
   padding-bottom: 3rem;
   position: relative;
+  overflow: hidden;
 }
 .faq__item::before {
   content: "";
@@ -3219,7 +3220,8 @@ a:hover {
   .menu__foot-title {
     font-size: 1.4rem;
   }
-  .menu__foot-link {
+  .menu__foot-link,
+  .menu__foot-wrap:nth-child(2) .menu__foot-link {
     font-size: 2.4rem;
   }
   .menu__inner {
@@ -3754,6 +3756,21 @@ a:hover {
     width: 100%;
     height: auto;
   }
+  .extraBig {
+    font-size: 2.4rem;
+  }
+  .big {
+    font-size: 2rem;
+  }
+  .mid {
+    font-size: 1.6rem;
+  }
+  .small {
+    font-size: 1.4rem;
+  }
+  .extraSmall {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 600px) {
   #modal-calc .modal__box {
@@ -4113,6 +4130,9 @@ a:hover {
   .hero__img {
     right: 50%;
     transform: translateX(50%);
+  }
+  .hero__img.flag {
+    right: 12%;
   }
   .footer__info-btn {
     --button-padding-x: 1rem;

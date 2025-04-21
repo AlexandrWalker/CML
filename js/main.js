@@ -10,10 +10,10 @@
       init: false,
       speed: 600,
       effect: "fade",
-      autoplay: {
-        delay: 8000,
-        disableOnInteraction: false
-      },
+      // autoplay: {
+      //   delay: 8000,
+      //   disableOnInteraction: false
+      // },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -241,27 +241,6 @@
 
 
 
-    addEventListener('scroll', function () {
-      const scrollPosition = window.scrollY;
-      const head = this.document.querySelector('.head');
-      const h = document.getElementById('first-section').offsetHeight;
-      const plate = document.querySelector('.plate');
-
-      if (scrollPosition > 0 && scrollPosition !== 0) {
-        head.classList.add('fixed');
-      } else {
-        head.classList.remove('fixed');
-      }
-
-      if (scrollPosition > h && scrollPosition !== h) {
-        plate.classList.add('show');
-      } else {
-        plate.classList.remove('show');
-      }
-    });
-
-
-
     /**
      * Управляет переключением вкладок на странице.
      * Добавляет и удаляет классы активности для кнопок и панелей вкладок.
@@ -406,18 +385,6 @@
       toggleActions: "play none none none",
     });
 
-    // function asdd() {
-    //   const char = document.querySelectorAll('.char');
-    //   char.forEach(element => {
-    //     element.classList.add('animate');
-    //   });
-    // }
-
-    // ScrollTrigger.create({
-    //   trigger: '.section__head',
-    //   onEnter: asdd(),
-    // });
-
 
 
     const faqItems = document.querySelectorAll(".faq__item");
@@ -425,20 +392,6 @@
     const calcItems = document.querySelectorAll(".calc__block");
     const aboutItem = document.querySelector(".about__img");
     const bannerItem = document.querySelector(".banner");
-
-    // for (let i = 0; i < titleItems.length; i++) {
-    //   gsap.from(titleItems[i], {
-    //     opacity: 0,
-    //     x: -50,
-    //     duration: 0.5,
-    //     scrollTrigger: {
-    //       trigger: titleItems[i],
-    //       start: "top 80%",
-    //       end: "bottom 20%",
-    //       toggleActions: "play none none none",
-    //     }
-    //   });
-    // }
 
     for (let i = 0; i < faqItems.length; i++) {
       gsap.from(faqItems[i], {
@@ -504,6 +457,49 @@
         toggleActions: "play none none none",
       }
     });
+
+    const head = this.document.querySelector('.head');
+    const h = document.getElementById('first-section').offsetHeight;
+    const plate = document.getElementById('plate');
+    const classToAdd = 'show';
+
+    window.addEventListener('scroll', function () {
+      const verticalScrollPosition = 0;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition !== verticalScrollPosition) {
+        plate.classList.remove(classToAdd);
+      }
+    });
+
+    window.addEventListener('scroll', debounce(function () {
+      const verticalScrollPosition = window.pageYOffset;
+      const isActive = plate.classList.contains(classToAdd);
+
+      if (verticalScrollPosition > 0 && verticalScrollPosition !== 0) {
+        head.classList.add('fixed');
+      } else {
+        head.classList.remove('fixed');
+      }
+
+      if (verticalScrollPosition > h && !isActive) {
+        plate.classList.add(classToAdd);
+      } else {
+        plate.classList.remove(classToAdd);
+      }
+    }, 100));
+
+    function debounce(func, delay) {
+      let timer;
+      return function () {
+        const context = this;
+        const args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          func.apply(context, args);
+        }, delay);
+      }
+    }
 
 
 
@@ -576,6 +572,21 @@
 
 
 
+    items.forEach(element => {
+      element.addEventListener('mouseover', function () {
+        if (itemsActive.length > 0 && itemsActive[0] !== this) {
+          itemsActive[0].classList.remove('work__item-active');
+        }
+        this.classList.add('work__item-active');
+      });
+      element.addEventListener('mouseout', function () {
+        items[0].classList.add('work__item-active');
+        this.classList.remove('work__item-active');
+      });
+    });
+
+
+
     const case__acc = document.querySelectorAll('.case__acc');
     const tabsPanelActive = document.querySelector('.tabs__panel--active');
     const tabsPanelFirst = document.querySelector('.tabs__panel--first');
@@ -612,16 +623,31 @@
       itemsContainer.addEventListener('scroll', scrollItems);
     }
 
-    items.forEach(element => {
-      element.addEventListener('mouseover', function () {
-        if (itemsActive.length > 0 && itemsActive[0] !== this) {
-          itemsActive[0].classList.remove('work__item-active');
-        }
-        this.classList.add('work__item-active');
-      });
-    });
 
 
+    /* Квиз */
+    (function (w, d, s, o) {
+      var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js'; j.onload = function () {
+        if (document.readyState !== 'loading') Marquiz.init(o);
+        else document.addEventListener("DOMContentLoaded", function () {
+          Marquiz.init(o);
+        });
+      };
+      d.head.insertBefore(j, d.head.firstElementChild);
+    })(window, document, 'script', {
+      host: '//quiz.marquiz.ru',
+      region: 'ru',
+      id: '6746e81ec17b29002647f133',
+      autoOpen: false,
+      autoOpenFreq: 'once',
+      openOnExit: false,
+      disableOnMobile: false
+    }
+    );
+
+
+
+    /* Карта */
     const map = [
       { name: 'Россия', size: 'extraBig', opacity: 1 },
       { name: 'ОАЭ', size: 'big', opacity: 1 },
@@ -813,6 +839,7 @@
 
     // Пересоздаем облако при изменении размера окна
     window.onresize = createTagCloud;
+
 
 
   });
