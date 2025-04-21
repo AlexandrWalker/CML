@@ -1323,10 +1323,12 @@ a:hover {
 }
 .menu .header__dropdown-item {
   width: 100%;
-  border-color: var(--primary-black-50);
+  border: 0.1rem solid var(--primary-black-50);
+  border-bottom: none;
 }
 .menu .header__dropdown-item:last-child {
-  border-color: var(--primary-black-50);
+  border: 0.1rem solid var(--primary-black-50);
+  border-bottom: 0.1rem solid var(--primary-black-50);
 }
 .menu .header__icons-item {
   background-color: var(--primary-accent);
