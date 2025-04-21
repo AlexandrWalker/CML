@@ -87,13 +87,19 @@
     // position: relative;
   }
 
+  .header__dropdown {
+    // overflow: visible;
+  }
+
   .header__dropdown-item {
     width: 100%;
-    border-color: var(--primary-black-50);
+    border: 0.1rem solid var(--primary-black-50);
+    border-bottom: none;
   }
 
   .header__dropdown-item:last-child {
-    border-color: var(--primary-black-50);
+    border: 0.1rem solid var(--primary-black-50);
+    border-bottom: 0.1rem solid var(--primary-black-50);
   }
 
   .header__icons-item {
