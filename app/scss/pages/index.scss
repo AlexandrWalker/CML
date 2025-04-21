@@ -1133,6 +1133,7 @@
   width: 100%;
   height: 45.5rem;
   border-radius: 6rem;
+  overflow: hidden;
 }
 
 .tag {
@@ -1152,29 +1153,34 @@
 .extraBig {
   font-size: 6rem;
   font-weight: bold;
-  color: #C62826;
+  color: var(--primary-accent);
+  z-index: 5;
 }
 
 .big {
   font-size: 4rem;
   font-weight: bold;
-  color: #2A2626;
+  color: var(--primary-black);
+  z-index: 4;
 }
 
 .mid {
   font-size: 3rem;
   color: #434146;
   opacity: .8;
+  z-index: 3;
 }
 
 .small {
   font-size: 2rem;
   color: #434146;
   opacity: .7;
+  z-index: 2;
 }
 
 .extraSmall {
   font-size: 1.4rem;
   color: #434146;
   opacity: .5;
+  z-index: 1;
 }
