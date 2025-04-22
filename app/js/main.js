@@ -439,6 +439,7 @@
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
+          preventOverlaps: true,
         }
       }); 3.
     }
@@ -453,6 +454,7 @@
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
+          preventOverlaps: true,
         }
       });
     }
@@ -467,6 +469,7 @@
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
+          preventOverlaps: true,
         }
       });
     }
@@ -479,6 +482,7 @@
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none none",
+        preventOverlaps: true,
       }
     });
 
@@ -491,6 +495,7 @@
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none none",
+        preventOverlaps: true,
       }
     });
 
