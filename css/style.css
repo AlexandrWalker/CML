@@ -3063,9 +3063,17 @@ a:hover {
   .form-text {
     font-size: 1rem;
   }
+  .form-title {
+    font-size: 1rem;
+    margin-top: -0.3rem;
+  }
   .form-input {
     font-size: 1.4rem;
     height: 5rem;
+    padding: 1rem 3.2rem 1rem 2rem;
+  }
+  .form-title + input {
+    padding-top: 2.4rem;
   }
   .form-textarea {
     font-size: 1.4rem;
