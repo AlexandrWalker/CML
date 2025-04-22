@@ -3878,6 +3878,8 @@ a:hover {
     width: calc(100% + 4rem);
     margin-left: -2rem;
     padding: 0 2rem;
+    scroll-snap-type: x proximity;
+    scroll-snap-stop: always;
   }
   .work__items::-webkit-scrollbar {
     width: 0;
@@ -3890,6 +3892,8 @@ a:hover {
     width: 26.2rem;
     min-width: 26.2rem;
     position: relative;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
   .work__item-active {
     width: 26.2rem;

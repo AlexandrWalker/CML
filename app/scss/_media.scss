@@ -1005,19 +1005,19 @@
   .extraBig {
     font-size: 2.4rem;
   }
-  
+
   .big {
     font-size: 2rem;
   }
-  
+
   .mid {
     font-size: 1.6rem;
   }
-  
+
   .small {
     font-size: 1.4rem;
   }
-  
+
   .extraSmall {
     font-size: 1.2rem;
   }
@@ -1206,7 +1206,8 @@
     width: calc(100% + 4rem);
     margin-left: -2rem;
     padding: 0 2rem;
-    // scroll-snap-type: ;
+    scroll-snap-type: x proximity;
+    scroll-snap-stop: always;
   }
 
   .work__items::-webkit-scrollbar {
@@ -1221,6 +1222,8 @@
     width: 26.2rem;
     min-width: 26.2rem;
     position: relative;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 
   .work__item-active {
