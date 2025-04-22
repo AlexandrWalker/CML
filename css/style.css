@@ -423,9 +423,9 @@ a:hover {
 .error {
   display: none;
   font-size: 1rem;
-  line-height: 200%;
-  padding-left: 2rem;
+  line-height: 120%;
   color: var(--primary-accent);
+  margin-top: 0.4rem;
 }
 
 .checkbox {
@@ -489,16 +489,22 @@ a:hover {
 .form-input:hover, .form-input:focus, .form-input:active {
   color: var(--primary-black);
   border-color: var(--primary-black-lighten);
+  background-color: var(--white);
 }
 .form-input:hover::placeholder, .form-input:focus::placeholder, .form-input:active::placeholder {
   color: var(--primary-black);
 }
-.form-input:invalid {
+.form-title {
+  position: absolute;
+  top: 1.2rem;
+  left: 2rem;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 1.2rem;
   color: var(--primary-accent);
-  border-color: var(--primary-accent);
 }
-.form-input:invalid ~ .error {
-  display: block;
+.form-title + input {
+  padding-top: 3rem;
 }
 .form-textarea {
   font-weight: 800;
@@ -1356,6 +1362,7 @@ a:hover {
   font-size: 2.2rem;
   color: var(--primary-accent);
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 .menu__list-wrap {
   display: flex;
@@ -1650,7 +1657,7 @@ a:hover {
   transform: scale(1);
   max-height: 100%;
   height: fit-content;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .modal#modal-social .modal__box {
   padding: 3rem 2rem;
@@ -1678,10 +1685,6 @@ a:hover {
 .modal .form-textarea:hover::placeholder, .modal .form-textarea:focus::placeholder, .modal .form-textarea:active::placeholder, .modal .form-input:hover::placeholder, .modal .form-input:focus::placeholder, .modal .form-input:active::placeholder {
   color: var(--primary-black);
 }
-.modal .form-textarea:invalid, .modal .form-input:invalid {
-  color: var(--primary-accent);
-  border-color: var(--primary-accent);
-}
 .modal .form-checkbox {
   border-color: var(--primary-black);
   background: transparent;
@@ -1693,6 +1696,9 @@ a:hover {
   color: var(--primary-black-50);
   border-color: var(--primary-black-50);
   height: 5rem;
+}
+.modal .dropdown__button + .dropdown__list-border {
+  border-color: var(--primary-black-50);
 }
 .modal .checkbox__text {
   color: var(--primary-black-50);
@@ -2164,13 +2170,13 @@ a:hover {
     transform: translateY(0);
   }
   25% {
-    transform: translateY(1.5rem);
+    transform: translateY(2rem);
   }
   50% {
     transform: translateY(0);
   }
   75% {
-    transform: translateY(-1.5rem);
+    transform: translateY(-2rem);
   }
 }
 .calc__inner {
@@ -2523,23 +2529,7 @@ a:hover {
   flex-direction: row;
 }
 .work__item {
-  overflow: hidden;
-  width: calc((100% - 54rem) / 4);
-  transition: all 0.5s ease;
-}
-.work__item-active {
-  width: 54rem;
-}
-.work__item-active .work__item-count {
-  background-color: var(--primary-accent);
-}
-.work__item-active .icon-angle-first {
-  transform: translate(0.3125rem, -0.3125rem);
-  transition-delay: 0.3s;
-}
-.work__item-active .icon-angle-second {
-  transform: translate(-0.3125rem, 0.3125rem);
-  transition-delay: 0.3s;
+  width: 100%;
 }
 .work__item-content {
   display: flex;
@@ -2595,6 +2585,26 @@ a:hover {
 }
 .work__item-icon .icon-angle {
   font-size: 2.1rem;
+}
+.work__slide {
+  overflow: hidden;
+  width: calc((100% - 54rem) / 4) !important;
+  height: auto;
+  transition: all 0.5s ease;
+}
+.work__slide-active {
+  width: 54rem !important;
+}
+.work__slide-active .work__item-count {
+  background-color: var(--primary-accent);
+}
+.work__slide-active .icon-angle-first {
+  transform: translate(0.3125rem, -0.3125rem);
+  transition-delay: 0.3s;
+}
+.work__slide-active .icon-angle-second {
+  transform: translate(-0.3125rem, 0.3125rem);
+  transition-delay: 0.3s;
 }
 
 .banner {
@@ -2902,6 +2912,7 @@ a:hover {
 }
 
 /* cloud */
+/* flag */
 .notfound {
   margin: 6rem 0;
 }
@@ -2983,6 +2994,9 @@ a:hover {
     width: 0.8rem;
     height: 0.8rem;
   }
+  .nav__list-link::after {
+    border-bottom-color: var(--primary-black);
+  }
   section {
     margin-bottom: 3rem;
   }
@@ -2991,7 +3005,6 @@ a:hover {
   }
   .wrapper {
     padding-top: 11.68rem;
-    padding-bottom: 6.4rem;
   }
   .icon-angle-item {
     width: 2.062rem;
@@ -3396,11 +3409,11 @@ a:hover {
     padding: 2rem 2rem 7rem;
     gap: 1rem;
   }
-  .work__item {
-    width: calc((100% - 35.7rem) / 4);
+  .work__slide {
+    width: calc((100% - 35.7rem) / 4) !important;
   }
-  .work__item-active {
-    width: 35.7rem;
+  .work__slide-active {
+    width: 35.7rem !important;
   }
   .work__item-title {
     font-size: 1.6rem;
@@ -3685,6 +3698,9 @@ a:hover {
   .footer__info-download {
     text-align: left;
   }
+  .footer__foot {
+    padding-bottom: 6.4rem;
+  }
   .warning {
     bottom: 3rem;
   }
@@ -3765,7 +3781,7 @@ a:hover {
   .modal .form-btn {
     width: 100%;
   }
-  .header__btn:not(.menu .header__btn) {
+  .head .header__btn {
     display: none;
   }
   .hero {
@@ -3805,9 +3821,6 @@ a:hover {
     width: 25rem;
     height: 26.9rem;
     right: 6rem;
-  }
-  .canvas-wrap.hero__img {
-    display: none;
   }
   .hero__bg-small {
     background-image: url(./../images/main/hero-bg-mob-small.png);
@@ -3873,13 +3886,10 @@ a:hover {
     width: 100%;
   }
   .work__items {
-    overflow-x: scroll;
     width: 100%;
     width: calc(100% + 4rem);
     margin-left: -2rem;
     padding: 0 2rem;
-    scroll-snap-type: x proximity;
-    scroll-snap-stop: always;
   }
   .work__items::-webkit-scrollbar {
     width: 0;
@@ -3887,21 +3897,27 @@ a:hover {
     padding: 0;
     margin: 0;
   }
+  .work .swiper-slide {
+    width: 26.2rem !important;
+    min-width: 26.2rem !important;
+    height: auto;
+  }
   .work__item {
     display: block;
-    width: 26.2rem;
-    min-width: 26.2rem;
+    width: 100%;
+    height: 100%;
     position: relative;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
   }
-  .work__item-active {
+  .work .swiper-slide-active {
     width: 26.2rem;
   }
-  .work__item-active .work__item-content {
+  .work .swiper-slide-active .work__item-content {
     background: transparent;
   }
-  .work__item.work__item-active::before {
+  .work .swiper-slide-active .work__item-count {
+    background-color: var(--primary-accent);
+  }
+  .work .swiper-slide-active .work__item::before {
     width: 100%;
     transition-delay: 0.1s;
   }
@@ -3919,11 +3935,11 @@ a:hover {
     z-index: 1;
     transition: all 0.5s ease;
   }
-  .work__item-active .work__item-title {
+  .work .swiper-slide-active .work__item-title {
     color: var(--white);
     transition-delay: 0.1s;
   }
-  .work__item-active .work__item-text {
+  .work .swiper-slide-active .work__item-text {
     color: var(--white);
     transition-delay: 0.1s;
   }
