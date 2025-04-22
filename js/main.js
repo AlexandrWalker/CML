@@ -99,6 +99,10 @@
      * Управляет поведением меню-бургера.
      */
     function burgerNav() {
+      const headerBtn = document.querySelector('.header__btn');
+      const menuBody = document.querySelector('.menu__body');
+      const menuListItem = document.querySelector('.menu__list-item accordion active');
+      var menuAccordionActive = document.getElementsByClassName('active');
       const burger = document.getElementById('burger');
       const menu = document.getElementById('mobile-menu');
       const closeButton = document.querySelector('.menu__close');
@@ -111,6 +115,15 @@
        */
       const toggleMenu = (e) => {
         e.stopPropagation();
+        if (headerBtn.classList.contains('header__btn-active')) {
+          headerBtn.classList.remove('header__btn-active')
+        }
+        if (menuBody.classList.contains('down')) {
+          menuBody.classList.remove('down')
+        }
+        if (menuAccordionActive.length > 0 && menuAccordionActive[0] !== this) {
+          menuAccordionActive[0].classList.remove('active');
+        }
         const isOpened = burger.classList.toggle('burger--opened');
         menu.classList.toggle('mobile-menu--opened', isOpened);
         head.classList.toggle('head--active');
@@ -125,8 +138,6 @@
         menu.classList.remove('mobile-menu--opened');
         lenis.start();
       };
-
-
 
       // Открытие/закрытие меню по клику на бургер
       burger.addEventListener('click', toggleMenu);
@@ -317,7 +328,6 @@
           document.querySelector('.menu__body').classList.toggle('down');
 
         });
-
       });
     }
 
