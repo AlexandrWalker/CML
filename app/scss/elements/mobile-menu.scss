@@ -1,19 +1,25 @@
 .menu {
-  max-width: 81rem;
   width: 100%;
-  // height: 100vh;
+  height: 100vh;
   height: 100%;
   position: fixed;
   top: 0;
   bottom: 0;
-  right: -100%;
+  right: 0;
   z-index: 300;
-  transition: all 0.5s ease;
-  background-color: var(--primary-bg);
-  overflow-y: scroll;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
 
   &.mobile-menu--opened {
-    right: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    .menu__inner {
+      right: 0;
+    }
 
     .menu__overlay {
       opacity: 1;
@@ -55,94 +61,6 @@
     visibility: hidden;
   }
 
-  .container {
-    padding: 0 9rem 0 14rem;
-  }
-
-  .header__btn {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .header__btn-head {
-    border-color: var(--primary-black-50);
-    color: var(--primary-black);
-    width: 100%;
-  }
-
-  .header__btn-icon {
-    color: var(--primary-black);
-  }
-
-  .header__btn-active {
-    height: fit-content;
-  }
-
-  .header__btn-active .header__btn-head {
-    line-height: 0;
-  }
-
-  .header__btn-active .header__dropdown {
-    height: fit-content;
-    // position: relative;
-  }
-
-  .header__dropdown {
-    // overflow: visible;
-  }
-
-  .header__dropdown-item {
-    width: 100%;
-    border: 0.1rem solid var(--primary-black-50);
-    border-bottom: none;
-  }
-
-  .header__dropdown-item:last-child {
-    border: 0.1rem solid var(--primary-black-50);
-    border-bottom: 0.1rem solid var(--primary-black-50);
-  }
-
-  .header__icons-item {
-    background-color: var(--primary-accent);
-  }
-
-  .burger {
-    color: var(--primary-black);
-    border-color: var(--primary-black-50);
-
-    span {
-      background-color: transparent;
-    }
-
-    span::before,
-    span::after {
-      background-color: var(--primary-black);
-      transition: all 0.5s ease;
-    }
-
-    &--opened.burger span {
-      background-color: transparent;
-    }
-
-    span {
-
-      &::before {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-        background-color: var(--primary-accent);
-      }
-
-      &::after {
-        top: 50%;
-        bottom: unset;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        background-color: var(--primary-accent);
-      }
-    }
-  }
-
   &__inner {
     display: flex;
     flex-direction: column;
@@ -150,10 +68,16 @@
     padding-top: 2rem;
     background-color: var(--white-90);
     backdrop-filter: blur(21.4px);
-    position: relative;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -100%;
     z-index: 102;
-    height: fit-content;
-    min-height: 100dvh;
+    height: 100vh;
+    max-width: 81rem;
+    width: 100%;
+    transition: all 0.5s ease;
+    overflow-y: scroll;
   }
 
   &__list {
@@ -373,6 +297,94 @@
         line-height: 100%;
         color: var(--primary-black);
         transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .container {
+    padding: 0 9rem 0 14rem;
+  }
+
+  .header__btn {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .header__btn-head {
+    border-color: var(--primary-black-50);
+    color: var(--primary-black);
+    width: 100%;
+  }
+
+  .header__btn-icon {
+    color: var(--primary-black);
+  }
+
+  .header__btn-active {
+    height: fit-content;
+  }
+
+  .header__btn-active .header__btn-head {
+    line-height: 0;
+  }
+
+  .header__btn-active .header__dropdown {
+    height: fit-content;
+    // position: relative;
+  }
+
+  .header__dropdown {
+    // overflow: visible;
+  }
+
+  .header__dropdown-item {
+    width: 100%;
+    border: 0.1rem solid var(--primary-black-50);
+    border-bottom: none;
+  }
+
+  .header__dropdown-item:last-child {
+    border: 0.1rem solid var(--primary-black-50);
+    border-bottom: 0.1rem solid var(--primary-black-50);
+  }
+
+  .header__icons-item {
+    background-color: var(--primary-accent);
+  }
+
+  .burger {
+    color: var(--primary-black);
+    border-color: var(--primary-black-50);
+
+    span {
+      background-color: transparent;
+    }
+
+    span::before,
+    span::after {
+      background-color: var(--primary-black);
+      transition: all 0.5s ease;
+    }
+
+    &--opened.burger span {
+      background-color: transparent;
+    }
+
+    span {
+
+      &::before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: var(--primary-accent);
+      }
+
+      &::after {
+        top: 50%;
+        bottom: unset;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background-color: var(--primary-accent);
       }
     }
   }

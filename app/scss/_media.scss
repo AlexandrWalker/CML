@@ -77,7 +77,7 @@
     font-size: 1.3rem;
   }
 
-  .modal {
+  .modal:not(.modal#modal-calc) {
     // height: calc(100vh - 6.4rem);
     padding-bottom: 6.4rem;
   }
@@ -1029,7 +1029,7 @@
   #modal-calc .modal__box {
     margin: 0;
     width: 100%;
-    padding-bottom: 9.4rem;
+    // padding-bottom: 9.4rem;
   }
 
   .calc__container {
@@ -1060,7 +1060,7 @@
     width: 100%;
   }
 
-  .header__btn {
+  .header__btn:not(.menu .header__btn) {
     display: none;
   }
 
@@ -1206,6 +1206,7 @@
     width: calc(100% + 4rem);
     margin-left: -2rem;
     padding: 0 2rem;
+    // scroll-snap-type: ;
   }
 
   .work__items::-webkit-scrollbar {

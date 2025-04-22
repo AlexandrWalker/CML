@@ -322,7 +322,7 @@
       $(function () {
         $('.numberFraction').each(function () {
           $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
+            Counter: $(this).data('value')
           }, {
             duration: 2000,
             easing: 'swing',
@@ -338,7 +338,7 @@
       $(function () {
         $('.number').each(function () {
           $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
+            Counter: $(this).data('value')
           }, {
             duration: 2000,
             easing: 'swing',
@@ -647,360 +647,367 @@
 
 
 
+    var flag=document.querySelector(".flag");
+    TweenMax.set(flag, {x: 65})
+    TweenMax.to(flag, 2, {x: 0, repeat:-1,ease:Linear.easeNone});
+
+
+
     /* Карта */
     const map = [
-      {name: 'Россия', size: 'extraBig', opacity: 1},
-      {name: 'ОАЭ', size: 'big', opacity: 1},
-      {name: 'Турция', size: 'big', opacity: 1},
-      {name: 'Иран', size: 'big', opacity: 1},
-      {name: 'Израиль', size: 'big', opacity: 1},
-      {name: 'Япония', size: 'big', opacity: 1},
-      {name: 'Гонконг', size: 'big', opacity: 1},
-      {name: 'Малайзия', size: 'big', opacity: 1},
-      {name: 'Индонезия', size: 'big', opacity: 1},
-      {name: 'Китай', size: 'big', opacity: 1},
-      {name: 'Индия', size: 'big', opacity: 1},
-      {name: 'ЮАР', size: 'big', opacity: 1},
-      {name: 'Польша', size: 'big', opacity: 1},
-      {name: 'Египет', size: 'big', opacity: 1},
-      {name: 'Таиланд', size: 'big', opacity: 1},
-      {name: 'Вьетнам', size: 'big', opacity: 1},
-      {name: 'Корея', size: 'big', opacity: 1},
-      {name: 'Сербия', size: 'mid', opacity: 0.8},
-      {name: 'Мьянма', size: 'mid', opacity: 0.8},
-      {name: 'Мексика', size: 'mid', opacity: 0.8},
-      {name: 'Камбоджа', size: 'mid', opacity: 0.8},
-      {name: 'Канада', size: 'mid', opacity: 0.8},
-      {name: 'Испания', size: 'mid', opacity: 0.8},
-      {name: 'Чехия', size: 'mid', opacity: 0.8},
-      {name: 'США', size: 'mid', opacity: 0.8},
-      {name: 'Оман', size: 'mid', opacity: 0.8},
-      {name: 'Германия', size: 'mid', opacity: 0.8},
-      {name: 'Франция', size: 'mid', opacity: 0.8},
-      {name: 'Латвия', size: 'mid', opacity: 0.8},
-      {name: 'Италия', size: 'mid', opacity: 0.8},
-      {name: 'Тунис', size: 'mid', opacity: 0.8},
-      {name: 'Литва', size: 'mid', opacity: 0.8},
-      {name: 'Великобритания', size: 'mid', opacity: 0.8},
-      {name: 'Эстония', size: 'mid', opacity: 0.8},
-      {name: 'Швеция', size: 'small', opacity: 0.7},
-      {name: 'Австрия', size: 'small', opacity: 0.7},
-      {name: 'Дания', size: 'small', opacity: 0.7},
-      {name: 'Кения', size: 'small', opacity: 0.7},
-      {name: 'Шри-Ланка', size: 'small', opacity: 0.7},
-      {name: 'Кот-д’Ивуар', size: 'small', opacity: 0.7},
-      {name: 'Аргентина', size: 'small', opacity: 0.7},
-      {name: 'Австралия', size: 'small', opacity: 0.7},
-      {name: 'Йемен', size: 'small', opacity: 0.7},
-      {name: 'Бангладеш', size: 'small', opacity: 0.7},
-      {name: 'Бельгия', size: 'small', opacity: 0.7},
-      {name: 'Эквадор', size: 'small', opacity: 0.7},
-      {name: 'Катар', size: 'small', opacity: 0.7},
-      {name: 'Нидерланды', size: 'small', opacity: 0.7},
-      {name: 'Швейцария', size: 'small', opacity: 0.7},
-      {name: 'Марокко', size: 'small', opacity: 0.7},
-      {name: 'Португалия', size: 'small', opacity: 0.7},
-      {name: 'Венгрия', size: 'small', opacity: 0.7},
-      {name: 'Бразилия', size: 'small', opacity: 0.7},
-      {name: 'Сингапур', size: 'small', opacity: 0.7},
-      {name: 'Словакия', size: 'small', opacity: 0.7},
-      {name: 'Греция', size: 'small', opacity: 0.7},
-      {name: 'Болгария', size: 'small', opacity: 0.7},
-      {name: 'Словения', size: 'small', opacity: 0.7},
-      {name: 'Саудовская Аравия', size: 'small', opacity: 0.7},
-      {name: 'Нигерия', size: 'extraSmall', opacity: 0.5},
-      {name: 'Новая Зеландия', size: 'extraSmall', opacity: 0.5},
-      {name: 'Папуа — Новая Гвинея', size: 'extraSmall', opacity: 0.5},
-      {name: 'Чили', size: 'extraSmall', opacity: 0.5},
-      {name: 'Бахрейн', size: 'extraSmall', opacity: 0.5},
-      {name: 'Нигер', size: 'extraSmall', opacity: 0.5},
-      {name: 'Норвегия', size: 'extraSmall', opacity: 0.5},
-      {name: 'Маврикий', size: 'extraSmall', opacity: 0.5},
-      {name: 'Мальта', size: 'extraSmall', opacity: 0.5},
-      {name: 'Перу', size: 'extraSmall', opacity: 0.5},
-      {name: 'Сьерра-Леоне', size: 'extraSmall', opacity: 0.5},
-      {name: 'Непал', size: 'extraSmall', opacity: 0.5},
-      {name: 'Бруней', size: 'extraSmall', opacity: 0.5},
-      {name: 'Ангола', size: 'extraSmall', opacity: 0.5},
-      {name: 'Гана', size: 'extraSmall', opacity: 0.5},
-      {name: 'Сирия', size: 'extraSmall', opacity: 0.5},
-      {name: 'Доминиканка', size: 'extraSmall', opacity: 0.5},
-      {name: 'Мадагаскар', size: 'extraSmall', opacity: 0.5},
-      {name: 'Ливия', size: 'extraSmall', opacity: 0.5},
-      {name: 'Венесуэла', size: 'extraSmall', opacity: 0.5},
-      {name: 'Ливан', size: 'extraSmall', opacity: 0.5},
-      {name: 'Кипр Иордания', size: 'extraSmall', opacity: 0.5},
-      {name: 'Филиппины', size: 'extraSmall', opacity: 0.5},
-      {name: 'Панама', size: 'extraSmall', opacity: 0.5},
-      {name: 'Эфиопия', size: 'extraSmall', opacity: 0.5},
-      {name: 'Лаос', size: 'extraSmall', opacity: 0.5},
-      {name: 'Гватемала', size: 'extraSmall', opacity: 0.5},
-      {name: 'Уругвай', size: 'extraSmall', opacity: 0.5},
-      {name: 'Ирландия', size: 'extraSmall', opacity: 0.5},
-      {name: 'Гвинея', size: 'extraSmall', opacity: 0.5},
-      {name: 'Танзания', size: 'extraSmall', opacity: 0.5},
-      {name: 'Камерун', size: 'extraSmall', opacity: 0.5},
-      {name: 'Кувейт', size: 'extraSmall', opacity: 0.5},
-  ];
+      { name: 'Россия', size: 'extraBig', opacity: 1 },
+      { name: 'ОАЭ', size: 'big', opacity: 1 },
+      { name: 'Турция', size: 'big', opacity: 1 },
+      { name: 'Иран', size: 'big', opacity: 1 },
+      { name: 'Израиль', size: 'big', opacity: 1 },
+      { name: 'Япония', size: 'big', opacity: 1 },
+      { name: 'Гонконг', size: 'big', opacity: 1 },
+      { name: 'Малайзия', size: 'big', opacity: 1 },
+      { name: 'Индонезия', size: 'big', opacity: 1 },
+      { name: 'Китай', size: 'big', opacity: 1 },
+      { name: 'Индия', size: 'big', opacity: 1 },
+      { name: 'ЮАР', size: 'big', opacity: 1 },
+      { name: 'Польша', size: 'big', opacity: 1 },
+      { name: 'Египет', size: 'big', opacity: 1 },
+      { name: 'Таиланд', size: 'big', opacity: 1 },
+      { name: 'Вьетнам', size: 'big', opacity: 1 },
+      { name: 'Корея', size: 'big', opacity: 1 },
+      { name: 'Сербия', size: 'mid', opacity: 0.8 },
+      { name: 'Мьянма', size: 'mid', opacity: 0.8 },
+      { name: 'Мексика', size: 'mid', opacity: 0.8 },
+      { name: 'Камбоджа', size: 'mid', opacity: 0.8 },
+      { name: 'Канада', size: 'mid', opacity: 0.8 },
+      { name: 'Испания', size: 'mid', opacity: 0.8 },
+      { name: 'Чехия', size: 'mid', opacity: 0.8 },
+      { name: 'США', size: 'mid', opacity: 0.8 },
+      { name: 'Оман', size: 'mid', opacity: 0.8 },
+      { name: 'Германия', size: 'mid', opacity: 0.8 },
+      { name: 'Франция', size: 'mid', opacity: 0.8 },
+      { name: 'Латвия', size: 'mid', opacity: 0.8 },
+      { name: 'Италия', size: 'mid', opacity: 0.8 },
+      { name: 'Тунис', size: 'mid', opacity: 0.8 },
+      { name: 'Литва', size: 'mid', opacity: 0.8 },
+      { name: 'Великобритания', size: 'mid', opacity: 0.8 },
+      { name: 'Эстония', size: 'mid', opacity: 0.8 },
+      { name: 'Швеция', size: 'small', opacity: 0.7 },
+      { name: 'Австрия', size: 'small', opacity: 0.7 },
+      { name: 'Дания', size: 'small', opacity: 0.7 },
+      { name: 'Кения', size: 'small', opacity: 0.7 },
+      { name: 'Шри-Ланка', size: 'small', opacity: 0.7 },
+      { name: 'Кот-д’Ивуар', size: 'small', opacity: 0.7 },
+      { name: 'Аргентина', size: 'small', opacity: 0.7 },
+      { name: 'Австралия', size: 'small', opacity: 0.7 },
+      { name: 'Йемен', size: 'small', opacity: 0.7 },
+      { name: 'Бангладеш', size: 'small', opacity: 0.7 },
+      { name: 'Бельгия', size: 'small', opacity: 0.7 },
+      { name: 'Эквадор', size: 'small', opacity: 0.7 },
+      { name: 'Катар', size: 'small', opacity: 0.7 },
+      { name: 'Нидерланды', size: 'small', opacity: 0.7 },
+      { name: 'Швейцария', size: 'small', opacity: 0.7 },
+      { name: 'Марокко', size: 'small', opacity: 0.7 },
+      { name: 'Португалия', size: 'small', opacity: 0.7 },
+      { name: 'Венгрия', size: 'small', opacity: 0.7 },
+      { name: 'Бразилия', size: 'small', opacity: 0.7 },
+      { name: 'Сингапур', size: 'small', opacity: 0.7 },
+      { name: 'Словакия', size: 'small', opacity: 0.7 },
+      { name: 'Греция', size: 'small', opacity: 0.7 },
+      { name: 'Болгария', size: 'small', opacity: 0.7 },
+      { name: 'Словения', size: 'small', opacity: 0.7 },
+      { name: 'Саудовская Аравия', size: 'small', opacity: 0.7 },
+      { name: 'Нигерия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Новая Зеландия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Папуа — Новая Гвинея', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Чили', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Бахрейн', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Нигер', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Норвегия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Маврикий', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Мальта', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Перу', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Сьерра-Леоне', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Непал', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Бруней', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Ангола', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Гана', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Сирия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Доминиканка', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Мадагаскар', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Ливия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Венесуэла', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Ливан', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Кипр Иордания', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Филиппины', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Панама', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Эфиопия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Лаос', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Гватемала', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Уругвай', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Ирландия', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Гвинея', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Танзания', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Камерун', size: 'extraSmall', opacity: 0.5 },
+      { name: 'Кувейт', size: 'extraSmall', opacity: 0.5 },
+    ];
 
-  // Объект для хранения данных о движении тегов
-    const tagMovements = {};
+    if (document.getElementById('tagCloud')) {
+      // Объект для хранения данных о движении тегов
+      const tagMovements = {};
 
-    function createTagCloud() {
-      const cloud = document.getElementById('tagCloud');
-      cloud.innerHTML = '';
+      function createTagCloud() {
+        const cloud = document.getElementById('tagCloud');
+        cloud.innerHTML = '';
 
-      const cloudWidth = cloud.offsetWidth;
-      const cloudHeight = cloud.offsetHeight;
+        const cloudWidth = cloud.offsetWidth;
+        const cloudHeight = cloud.offsetHeight;
 
-      // Сортируем теги по размеру (от больших к маленьким)
-      const sortedTags = [...map].sort((a, b) => {
-        const sizes = { 'extraBig': 4, 'big': 3, 'mid': 2, 'small': 1, 'extraSmall': 0 };
-        return sizes[b.size] - sizes[a.size];
-      });
+        // Сортируем теги по размеру (от больших к маленьким)
+        const sortedTags = [...map].sort((a, b) => {
+          const sizes = { 'extraBig': 4, 'big': 3, 'mid': 2, 'small': 1, 'extraSmall': 0 };
+          return sizes[b.size] - sizes[a.size];
+        });
 
-      // Массив для хранения размещенных тегов
-      const placedTags = [];
+        // Массив для хранения размещенных тегов
+        const placedTags = [];
 
-      // Создаем элементы тегов
-      sortedTags.forEach(tag => {
-        const tagElement = document.createElement('div');
-        tagElement.className = `tag ${tag.size}`;
-        tagElement.textContent = tag.name;
-        tagElement.style.opacity = tag.opacity;
+        // Создаем элементы тегов
+        sortedTags.forEach(tag => {
+          const tagElement = document.createElement('div');
+          tagElement.className = `tag ${tag.size}`;
+          tagElement.textContent = tag.name;
+          tagElement.style.opacity = tag.opacity;
 
-        // Временно добавляем элемент для измерения его размеров
-        tagElement.style.visibility = 'hidden';
-        cloud.appendChild(tagElement);
+          // Временно добавляем элемент для измерения его размеров
+          tagElement.style.visibility = 'hidden';
+          cloud.appendChild(tagElement);
 
-        const tagRect = tagElement.getBoundingClientRect();
-        const tagWidth = tagRect.width;
-        const tagHeight = tagRect.height;
+          const tagRect = tagElement.getBoundingClientRect();
+          const tagWidth = tagRect.width;
+          const tagHeight = tagRect.height;
 
-        cloud.removeChild(tagElement);
+          cloud.removeChild(tagElement);
 
-        // Пытаемся разместить тег без пересечений
-        let placed = false;
-        let attempts = 0;
-        const maxAttempts = 200;
+          // Пытаемся разместить тег без пересечений
+          let placed = false;
+          let attempts = 0;
+          const maxAttempts = 200;
 
-        let tagWidthPercent = 0;
-        let tagHeightPercent = 0;
+          let tagWidthPercent = 0;
+          let tagHeightPercent = 0;
 
-        while (!placed && attempts < maxAttempts) {
-          attempts++;
+          while (!placed && attempts < maxAttempts) {
+            attempts++;
 
-          // Генерируем случайные координаты в процентах
-          let leftPercent, topPercent;
+            // Генерируем случайные координаты в процентах
+            let leftPercent, topPercent;
 
-          // Для первых 20 тегов используем более точное размещение
-          if (attempts < 20) {
-            const angle = (attempts / 20) * 2 * Math.PI;
-            const distance = 0.3 + (attempts % 10) * 0.05;
+            // Для первых 20 тегов используем более точное размещение
+            if (attempts < 20) {
+              const angle = (attempts / 20) * 2 * Math.PI;
+              const distance = 0.3 + (attempts % 10) * 0.05;
 
-            leftPercent = 50 + distance * Math.cos(angle) * 50;
-            topPercent = 50 + distance * Math.sin(angle) * 50;
-          } else {
-            // Случайное размещение для остальных попыток
-            leftPercent = 10 + Math.random() * 80;
-            topPercent = 10 + Math.random() * 80;
+              leftPercent = 50 + distance * Math.cos(angle) * 50;
+              topPercent = 50 + distance * Math.sin(angle) * 50;
+            } else {
+              // Случайное размещение для остальных попыток
+              leftPercent = 10 + Math.random() * 80;
+              topPercent = 10 + Math.random() * 80;
+            }
+
+            // Корректируем позицию, чтобы тег полностью помещался в облако
+            tagWidthPercent = (tagWidth / cloudWidth) * 100;
+            tagHeightPercent = (tagHeight / cloudHeight) * 100;
+
+            leftPercent = Math.max(tagWidthPercent / 2, Math.min(100 - tagWidthPercent / 2, leftPercent));
+            topPercent = Math.max(tagHeightPercent / 2, Math.min(100 - tagHeightPercent / 2, topPercent));
+
+            // Проверяем пересечения с другими тегами
+            const collision = checkCollision(placedTags, {
+              left: leftPercent,
+              top: topPercent,
+              width: tagWidthPercent,
+              height: tagHeightPercent
+            });
+
+            if (!collision) {
+              placed = true;
+              tagElement.style.left = `${leftPercent}%`;
+              tagElement.style.top = `${topPercent}%`;
+              tagElement.style.visibility = 'visible';
+              cloud.appendChild(tagElement);
+
+              // Добавляем тег в массив размещенных
+              placedTags.push({
+                left: leftPercent,
+                top: topPercent,
+                width: tagWidthPercent,
+                height: tagHeightPercent,
+                element: tagElement
+              });
+
+              console.log(tagWidthPercent);
+              console.log(tagHeightPercent);
+
+              // Инициализируем движение для этого тега
+              initTagMovement(tagElement, tagWidthPercent, tagHeightPercent);
+            }
           }
 
-          // Корректируем позицию, чтобы тег полностью помещался в облако
-          tagWidthPercent = (tagWidth / cloudWidth) * 100;
-          tagHeightPercent = (tagHeight / cloudHeight) * 100;
+          // Если тег не поместился после всех попыток, размещаем его в любом случае
+          if (!placed) {
 
-          leftPercent = Math.max(tagWidthPercent / 2, Math.min(100 - tagWidthPercent / 2, leftPercent));
-          topPercent = Math.max(tagHeightPercent / 2, Math.min(100 - tagHeightPercent / 2, topPercent));
+            // Находим наименее плотную область
+            const bestPosition = findBestPosition(placedTags, tagWidthPercent, tagHeightPercent);
 
-          // Проверяем пересечения с другими тегами
-          const collision = checkCollision(placedTags, {
-            left: leftPercent,
-            top: topPercent,
-            width: tagWidthPercent,
-            height: tagHeightPercent
-          });
-
-          if (!collision) {
-            placed = true;
-            tagElement.style.left = `${leftPercent}%`;
-            tagElement.style.top = `${topPercent}%`;
+            tagElement.style.left = `${bestPosition.left}%`;
+            tagElement.style.top = `${bestPosition.top}%`;
             tagElement.style.visibility = 'visible';
             cloud.appendChild(tagElement);
 
-            // Добавляем тег в массив размещенных
             placedTags.push({
-              left: leftPercent,
-              top: topPercent,
+              left: bestPosition.left,
+              top: bestPosition.top,
               width: tagWidthPercent,
               height: tagHeightPercent,
               element: tagElement
             });
 
-            console.log(tagWidthPercent);
-            console.log(tagHeightPercent);
-
             // Инициализируем движение для этого тега
             initTagMovement(tagElement, tagWidthPercent, tagHeightPercent);
           }
-        }
+        });
 
-        // Если тег не поместился после всех попыток, размещаем его в любом случае
-        if (!placed) {
-
-          // Находим наименее плотную область
-          const bestPosition = findBestPosition(placedTags, tagWidthPercent, tagHeightPercent);
-
-          tagElement.style.left = `${bestPosition.left}%`;
-          tagElement.style.top = `${bestPosition.top}%`;
-          tagElement.style.visibility = 'visible';
-          cloud.appendChild(tagElement);
-
-          placedTags.push({
-            left: bestPosition.left,
-            top: bestPosition.top,
-            width: tagWidthPercent,
-            height: tagHeightPercent,
-            element: tagElement
-          });
-
-          // Инициализируем движение для этого тега
-          initTagMovement(tagElement, tagWidthPercent, tagHeightPercent);
-        }
-      });
-
-      console.log(`Размещено тегов: ${placedTags.length} из ${sortedTags.length}`);
-    }
-
-    function initTagMovement(tagElement, tagWidthPercent, tagHeightPercent) {
-      // Генерируем случайное направление и скорость
-      const angle = Math.random() * 2 * Math.PI;
-      const speed = 0.02 + Math.random() * 0.03; // Скорость движения (0.02-0.05% за кадр)
-
-      // Сохраняем данные о движении
-      tagMovements[tagElement.textContent] = {
-        dx: Math.cos(angle) * speed,
-        dy: Math.sin(angle) * speed,
-        widthPercent: tagWidthPercent,
-        heightPercent: tagHeightPercent,
-        element: tagElement
-      };
-    }
-
-    function animateTags() {
-      const cloud = document.getElementById('tagCloud');
-      const cloudWidth = cloud.offsetWidth;
-      const cloudHeight = cloud.offsetHeight;
-
-      for (const tagName in tagMovements) {
-        const movement = tagMovements[tagName];
-        const tagElement = movement.element;
-
-        // Получаем текущие координаты
-        let currentLeft = parseFloat(tagElement.style.left);
-        let currentTop = parseFloat(tagElement.style.top);
-
-        // Вычисляем новые координаты
-        let newLeft = currentLeft + movement.dx;
-        let newTop = currentTop + movement.dy;
-
-        // Проверяем границы облака с учетом размера тега
-        const halfWidth = movement.widthPercent / 2;
-        const halfHeight = movement.heightPercent / 2;
-
-        // Проверка левой и правой границы
-        if (newLeft - halfWidth < 0) {
-          newLeft = halfWidth;
-          movement.dx = -movement.dx; // Рикошет
-        } else if (newLeft + halfWidth > 100) {
-          newLeft = 100 - halfWidth;
-          movement.dx = -movement.dx; // Рикошет
-        }
-
-        // Проверка верхней и нижней границы
-        if (newTop - halfHeight < 0) {
-          newTop = halfHeight;
-          movement.dy = -movement.dy; // Рикошет
-        } else if (newTop + halfHeight > 100) {
-          newTop = 100 - halfHeight;
-          movement.dy = -movement.dy; // Рикошет
-        }
-
-        // Обновляем позицию тега
-        tagElement.style.left = `${newLeft}%`;
-        tagElement.style.top = `${newTop}%`;
+        console.log(`Размещено тегов: ${placedTags.length} из ${sortedTags.length}`);
       }
 
-      // Продолжаем анимацию
-      requestAnimationFrame(animateTags);
-    }
+      function initTagMovement(tagElement, tagWidthPercent, tagHeightPercent) {
+        // Генерируем случайное направление и скорость
+        const angle = Math.random() * 2 * Math.PI;
+        const speed = 0.02 + Math.random() * 0.03; // Скорость движения (0.02-0.05% за кадр)
 
-    function checkCollision(placedTags, newTag) {
-      // Увеличиваем зону проверки для лучшего разделения тегов
-      const padding = 1.5; // 1.5% от размера облака
+        // Сохраняем данные о движении
+        tagMovements[tagElement.textContent] = {
+          dx: Math.cos(angle) * speed,
+          dy: Math.sin(angle) * speed,
+          widthPercent: tagWidthPercent,
+          heightPercent: tagHeightPercent,
+          element: tagElement
+        };
+      }
 
-      for (const tag of placedTags) {
-        // Проверяем пересечение прямоугольников с учетом padding
-        if (!(newTag.left + newTag.width / 2 + padding < tag.left - tag.width / 2 - padding ||
-          newTag.left - newTag.width / 2 - padding > tag.left + tag.width / 2 + padding ||
-          newTag.top + newTag.height / 2 + padding < tag.top - tag.height / 2 - padding ||
-          newTag.top - newTag.height / 2 - padding > tag.top + tag.height / 2 + padding)) {
-          return true; // Найдено пересечение
+      function animateTags() {
+        const cloud = document.getElementById('tagCloud');
+        const cloudWidth = cloud.offsetWidth;
+        const cloudHeight = cloud.offsetHeight;
+
+        for (const tagName in tagMovements) {
+          const movement = tagMovements[tagName];
+          const tagElement = movement.element;
+
+          // Получаем текущие координаты
+          let currentLeft = parseFloat(tagElement.style.left);
+          let currentTop = parseFloat(tagElement.style.top);
+
+          // Вычисляем новые координаты
+          let newLeft = currentLeft + movement.dx;
+          let newTop = currentTop + movement.dy;
+
+          // Проверяем границы облака с учетом размера тега
+          const halfWidth = movement.widthPercent / 2;
+          const halfHeight = movement.heightPercent / 2;
+
+          // Проверка левой и правой границы
+          if (newLeft - halfWidth < 0) {
+            newLeft = halfWidth;
+            movement.dx = -movement.dx; // Рикошет
+          } else if (newLeft + halfWidth > 100) {
+            newLeft = 100 - halfWidth;
+            movement.dx = -movement.dx; // Рикошет
+          }
+
+          // Проверка верхней и нижней границы
+          if (newTop - halfHeight < 0) {
+            newTop = halfHeight;
+            movement.dy = -movement.dy; // Рикошет
+          } else if (newTop + halfHeight > 100) {
+            newTop = 100 - halfHeight;
+            movement.dy = -movement.dy; // Рикошет
+          }
+
+          // Обновляем позицию тега
+          tagElement.style.left = `${newLeft}%`;
+          tagElement.style.top = `${newTop}%`;
         }
-      }
-      return false; // Пересечений нет
-    }
 
-    function findBestPosition(placedTags, tagWidthPercent, tagHeightPercent) {
-      // Если нет размещенных тегов, размещаем в центре
-      if (placedTags.length === 0) {
-        return { left: 50, top: 50 };
+        // Продолжаем анимацию
+        requestAnimationFrame(animateTags);
       }
 
-      // Ищем позицию с минимальным пересечением
-      let bestPosition = { left: 10, top: 10 };
-      let minCollisions = Infinity;
+      function checkCollision(placedTags, newTag) {
+        // Увеличиваем зону проверки для лучшего разделения тегов
+        const padding = 1.5; // 1.5% от размера облака
 
-      // Проверяем несколько возможных позиций
-      for (let left = 10; left <= 90; left += 10) {
-        for (let top = 10; top <= 90; top += 10) {
-          let collisions = 0;
+        for (const tag of placedTags) {
+          // Проверяем пересечение прямоугольников с учетом padding
+          if (!(newTag.left + newTag.width / 2 + padding < tag.left - tag.width / 2 - padding ||
+            newTag.left - newTag.width / 2 - padding > tag.left + tag.width / 2 + padding ||
+            newTag.top + newTag.height / 2 + padding < tag.top - tag.height / 2 - padding ||
+            newTag.top - newTag.height / 2 - padding > tag.top + tag.height / 2 + padding)) {
+            return true; // Найдено пересечение
+          }
+        }
+        return false; // Пересечений нет
+      }
 
-          for (const tag of placedTags) {
-            if (!(left + tagWidthPercent / 2 < tag.left - tag.width / 2 ||
-              left - tagWidthPercent / 2 > tag.left + tag.width / 2 ||
-              top + tagHeightPercent / 2 < tag.top - tag.height / 2 ||
-              top - tagHeightPercent / 2 > tag.top + tag.height / 2)) {
-              collisions++;
+      function findBestPosition(placedTags, tagWidthPercent, tagHeightPercent) {
+        // Если нет размещенных тегов, размещаем в центре
+        if (placedTags.length === 0) {
+          return { left: 50, top: 50 };
+        }
+
+        // Ищем позицию с минимальным пересечением
+        let bestPosition = { left: 10, top: 10 };
+        let minCollisions = Infinity;
+
+        // Проверяем несколько возможных позиций
+        for (let left = 10; left <= 90; left += 10) {
+          for (let top = 10; top <= 90; top += 10) {
+            let collisions = 0;
+
+            for (const tag of placedTags) {
+              if (!(left + tagWidthPercent / 2 < tag.left - tag.width / 2 ||
+                left - tagWidthPercent / 2 > tag.left + tag.width / 2 ||
+                top + tagHeightPercent / 2 < tag.top - tag.height / 2 ||
+                top - tagHeightPercent / 2 > tag.top + tag.height / 2)) {
+                collisions++;
+              }
+            }
+
+            if (collisions < minCollisions) {
+              minCollisions = collisions;
+              bestPosition = { left, top };
             }
           }
-
-          if (collisions < minCollisions) {
-            minCollisions = collisions;
-            bestPosition = { left, top };
-          }
         }
+
+        return bestPosition;
       }
 
-      return bestPosition;
-    }
-
-    // Инициализируем облако тегов после загрузки страницы
-    window.addEventListener('load', () => {
-      createTagCloud();
-      // Запускаем анимацию движения тегов
-      requestAnimationFrame(animateTags);
-    });
-
-    // Оптимизированная обработка изменения размера окна
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
+      // Инициализируем облако тегов после загрузки страницы
+      window.addEventListener('load', () => {
         createTagCloud();
-      }, 200);
-    });
+        // Запускаем анимацию движения тегов
+        requestAnimationFrame(animateTags);
+      });
 
+      // Оптимизированная обработка изменения размера окна
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          createTagCloud();
+        }, 200);
+      });
+    }
 
 
   });
