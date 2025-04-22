@@ -116,7 +116,7 @@
       transform: scale(1);
       max-height: 100%;
       height: fit-content;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
   }
 
@@ -156,10 +156,10 @@
         }
       }
 
-      &:invalid {
-        color: var(--primary-accent);
-        border-color: var(--primary-accent);
-      }
+      // &:invalid {
+      //   color: var(--primary-accent);
+      //   border-color: var(--primary-accent);
+      // }
     }
 
     &-checkbox {
@@ -176,6 +176,10 @@
     color: var(--primary-black-50);
     border-color: var(--primary-black-50);
     height: 5rem;
+
+    &+.dropdown__list-border {
+      border-color: var(--primary-black-50);
+    }
   }
 
   .checkbox__text {

@@ -244,9 +244,11 @@ a {
 .error {
   display: none;
   font-size: 1rem;
-  line-height: 200%;
-  padding-left: 2rem;
+  line-height: 120%;
   color: var(--primary-accent);
+  margin-top: 0.4rem;
+  // position: absolute;
+  // top: calc(100% + 0.4rem);
 }
 
 .checkbox {
@@ -327,19 +329,34 @@ a {
     &:active {
       color: var(--primary-black);
       border-color: var(--primary-black-lighten);
+      background-color: var(--white);
 
       &::placeholder {
         color: var(--primary-black);
       }
     }
 
-    &:invalid {
-      color: var(--primary-accent);
-      border-color: var(--primary-accent);
+    // &:invalid {
+    //   color: var(--primary-accent);
+    //   border-color: var(--primary-accent);
 
-      &~.error {
-        display: block;
-      }
+    //   &~.error {
+    //     display: block;
+    //   }
+    // }
+  }
+
+  &-title {
+    position: absolute;
+    top: 1.2rem;
+    left: 2rem;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: var(--primary-accent);
+
+    &+input {
+      padding-top: 3rem;
     }
   }
 

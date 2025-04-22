@@ -151,8 +151,13 @@
                       <i class="icon-circle-chevron-down"></i>
                     </a>
                   </div>
-
-                  <img class="hero__img flag" src="./images/main/hero-2.png" alt="">
+                  <!-- <div class="canvas-wrap hero__img flag">
+                    <div id="canvas"></div>
+                    <div class="plane">
+                      <img src="./../images/main/flag-small.png" crossorigin="anonymous" />
+                    </div>
+                  </div> -->
+                  <img id="svg" class="hero__img flag" src="./images/main/hero-2.png" alt="">
                 </div>
               </div>
               <div class="swiper-progress"></div>
@@ -192,10 +197,18 @@
               </div>
               <div class="calc__body">
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Место отгрузки">
+                  <label class="form-title">Страна, Город</label>
+                  <input class="form-input" type="text" placeholder="Место отгрузки" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Место доставки">
+                  <label class="form-title">Страна, Город</label>
+                  <input class="form-input" type="text" placeholder="Место доставки" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group dots">
                   <div class="dropdown">
@@ -220,16 +233,28 @@
                       </li>
                     </ul>
                     <input type="text" name="select-category" value="all" class="dropdown__input-hidden">
+                    <span class="error">
+                      Поле заполнено неверно
+                    </span>
                   </div>
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Масса, кг">
+                  <input class="form-input" type="text" placeholder="Масса, кг" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Объём, м3">
+                  <input class="form-input" type="text" placeholder="Объём, м3" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Наименование">
+                  <input class="form-input" type="text" placeholder="Наименование" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <textarea class="form-textarea" name="" id="" placeholder="Описание груза"></textarea>
               </div>
@@ -241,15 +266,27 @@
               </div>
               <div class="calc__body">
                 <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Имя">
+                  <input class="form-input" type="text" placeholder="Имя" minlength="1" maxlength="40" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Телефон">
+                  <input class="form-input" type="text" placeholder="Телефон"
+                    pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"
+                    maxlength="12" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Эл.почта">
+                  <input class="form-input" type="text" placeholder="Эл.почта" pattern="^\S+@\S+\.\S+$" minlength="2"
+                    maxlength="40" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
-                <button class="form-btn btn btn-red">
+                <button class="form-btn btn btn-red" type="submit">
                   расчет стоимости
                 </button>
                 <div class="form-bottom">
@@ -1111,105 +1148,114 @@
           </div>
 
           <div class="work__items">
-
-            <a class="work__item work__item-active" href="javascript: void(0)">
-              <div class="work__item-content">
-                <h6 class="work__item-title">
-                  Индивидуальный подход
-                </h6>
-                <p class="work__item-text">
-                  мы предлагаем индивидуальный подход к каждому клиенту. Мы понимаем, что все компании уникальны,
-                  и адаптируем наши услуги к вашим конкретным потребностям, что позволяет обеспечить максимальную
-                  эффективность работы
-                </p>
-                <span class="work__item-count">
-                  01
-                </span>
-                <span class="work__item-icon icon-angle-item">
-                  <i class="icon-angle-first icon-angle"></i>
-                  <i class="icon-angle-second icon-angle"></i>
-                </span>
+            <div class="swiper-wrapper work-wrapper">
+              <div class="work__slide work__slide-active swiper-slide">
+                <a class="work__item" href="javascript: void(0)">
+                  <div class="work__item-content">
+                    <h6 class="work__item-title">
+                      Индивидуальный подход
+                    </h6>
+                    <p class="work__item-text">
+                      мы предлагаем индивидуальный подход к каждому клиенту. Мы понимаем, что все компании уникальны,
+                      и адаптируем наши услуги к вашим конкретным потребностям, что позволяет обеспечить максимальную
+                      эффективность работы
+                    </p>
+                    <span class="work__item-count">
+                      01
+                    </span>
+                    <span class="work__item-icon icon-angle-item">
+                      <i class="icon-angle-first icon-angle"></i>
+                      <i class="icon-angle-second icon-angle"></i>
+                    </span>
+                  </div>
+                </a>
               </div>
-            </a>
-
-            <a class="work__item" href="javascript: void(0)">
-              <div class="work__item-content">
-                <h6 class="work__item-title">
-                  Готовим документы для таможенного оформления
-                </h6>
-                <p class="work__item-text">
-                  Мы, самостоятельно не обременяя клиента форма
-                </p>
-                <span class="work__item-count">
-                  02
-                </span>
-                <span class="work__item-icon icon-angle-item">
-                  <i class="icon-angle-first icon-angle"></i>
-                  <i class="icon-angle-second icon-angle"></i>
-                </span>
+              <div class="work__slide swiper-slide">
+                <a class="work__item" href="javascript: void(0)">
+                  <div class="work__item-content">
+                    <h6 class="work__item-title">
+                      Готовим документы для таможенного оформления
+                    </h6>
+                    <p class="work__item-text">
+                      Мы, самостоятельно не обременяя клиента форма
+                    </p>
+                    <span class="work__item-count">
+                      02
+                    </span>
+                    <span class="work__item-icon icon-angle-item">
+                      <i class="icon-angle-first icon-angle"></i>
+                      <i class="icon-angle-second icon-angle"></i>
+                    </span>
+                  </div>
+                </a>
               </div>
-            </a>
-
-            <a class="work__item" href="javascript: void(0)">
-              <div class="work__item-content">
-                <h6 class="work__item-title">
-                  Учитываем все риски на этапе расчета
-                </h6>
-                <p class="work__item-text">
-                  На этапе предварительного расчёта мы анализируем все аспекты транспортировки и таможенного оформления
-                  груза: проверя необходимость разрешений, сертификатов и фитосанитарных документов, оценивая
-                  возможность
-                  ввоза брендов и риски, связанные со стоимостью груза.
-                </p>
-                <span class="work__item-count">
-                  03
-                </span>
-                <span class="work__item-icon icon-angle-item">
-                  <i class="icon-angle-first icon-angle"></i>
-                  <i class="icon-angle-second icon-angle"></i>
-                </span>
+              <div class="work__slide swiper-slide">
+                <a class="work__item" href="javascript: void(0)">
+                  <div class="work__item-content">
+                    <h6 class="work__item-title">
+                      Учитываем все риски на этапе расчета
+                    </h6>
+                    <p class="work__item-text">
+                      На этапе предварительного расчёта мы анализируем все аспекты транспортировки и таможенного
+                      оформления
+                      груза: проверя необходимость разрешений, сертификатов и фитосанитарных документов, оценивая
+                      возможность
+                      ввоза брендов и риски, связанные со стоимостью груза.
+                    </p>
+                    <span class="work__item-count">
+                      03
+                    </span>
+                    <span class="work__item-icon icon-angle-item">
+                      <i class="icon-angle-first icon-angle"></i>
+                      <i class="icon-angle-second icon-angle"></i>
+                    </span>
+                  </div>
+                </a>
               </div>
-            </a>
-
-            <a class="work__item" href="javascript: void(0)">
-              <div class="work__item-content">
-                <h6 class="work__item-title">
-                  Возим всеми видами транспорта
-                </h6>
-                <p class="work__item-text">
-                  Мы можем предложить различные варианты перевозки вашего груза с разной стоимостью и сроками доставки
-                </p>
-                <span class="work__item-count">
-                  04
-                </span>
-                <span class="work__item-icon icon-angle-item">
-                  <i class="icon-angle-first icon-angle"></i>
-                  <i class="icon-angle-second icon-angle"></i>
-                </span>
+              <div class="work__slide swiper-slide">
+                <a class="work__item" href="javascript: void(0)">
+                  <div class="work__item-content">
+                    <h6 class="work__item-title">
+                      Возим всеми видами транспорта
+                    </h6>
+                    <p class="work__item-text">
+                      Мы можем предложить различные варианты перевозки вашего груза с разной стоимостью и сроками
+                      доставки
+                    </p>
+                    <span class="work__item-count">
+                      04
+                    </span>
+                    <span class="work__item-icon icon-angle-item">
+                      <i class="icon-angle-first icon-angle"></i>
+                      <i class="icon-angle-second icon-angle"></i>
+                    </span>
+                  </div>
+                </a>
               </div>
-            </a>
-
-            <a class="work__item" href="javascript: void(0)">
-              <div class="work__item-content">
-                <h6 class="work__item-title">
-                  Конкурентные цены
-                </h6>
-                <p class="work__item-text">
-                  У нас конкурентоспособные цены на услуги логистики. Благодаря налаженным партнерским отношениям с
-                  транспортными компаниями и большому опыту мы можем предложить выгодные тарифы, что поможет вам
-                  сократить
-                  затраты на доставку
-                </p>
-                <span class="work__item-count">
-                  05
-                </span>
-                <span class="work__item-icon icon-angle-item">
-                  <i class="icon-angle-first icon-angle"></i>
-                  <i class="icon-angle-second icon-angle"></i>
-                </span>
+              <div class="work__slide swiper-slide">
+                <a class="work__item" href="javascript: void(0)">
+                  <div class="work__item-content">
+                    <h6 class="work__item-title">
+                      Конкурентные цены
+                    </h6>
+                    <p class="work__item-text">
+                      У нас конкурентоспособные цены на услуги логистики. Благодаря налаженным партнерским отношениям с
+                      транспортными компаниями и большому опыту мы можем предложить выгодные тарифы, что поможет вам
+                      сократить
+                      затраты на доставку
+                    </p>
+                    <span class="work__item-count">
+                      05
+                    </span>
+                    <span class="work__item-icon icon-angle-item">
+                      <i class="icon-angle-first icon-angle"></i>
+                      <i class="icon-angle-second icon-angle"></i>
+                    </span>
+                  </div>
+                </a>
               </div>
-            </a>
-
+              <div class="swiper-slide"></div>
+            </div>
           </div>
 
           <div class="banner">
@@ -1258,7 +1304,7 @@
             Все кейсы
           </a>
         </div>
-        <div class="case__body">
+        <div class="case__body" data-skip="true">
           <div class="case__acc tabs__panel tabs__panel--first tabs__panel--active accordion active" data-tab="tab-1">
             <div class="case__acc-item">
               <p class="case__acc-title">
@@ -1535,7 +1581,7 @@
               Довольных клиентов с 2019 года
             </p>
             <p class="partner__head-count">
-              <span class="number numberPartner" data-value="1000">0</span>+
+              <span class="numberPartner" data-value="1000">0</span>+
             </p>
           </div>
         </div>
@@ -1774,16 +1820,28 @@
               </div>
               <div class="calc__body">
                 <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Имя">
+                  <input class="form-input" type="text" placeholder="Имя" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Телефон">
+                  <input class="form-input" type="text" placeholder="Телефон"
+                    pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"
+                    maxlength="12" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Эл.почта">
+                  <input class="form-input" type="text" placeholder="Эл.почта" pattern="^\S+@\S+\.\S+$" minlength="2"
+                    maxlength="40" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <textarea class="form-textarea" name="" id="" placeholder="Комментарий"></textarea>
-                <button class="form-btn btn btn-red">
+                <button class="form-btn btn btn-red" type="submit">
                   Отправить
                 </button>
                 <div class="form-bottom">

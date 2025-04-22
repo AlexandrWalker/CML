@@ -703,7 +703,7 @@
             <span>стоимость доставки</span>
           </h2>
         </div>
-        <form action="">
+        <form action="#" method="get">
           <div class="calc__content">
             <div class="calc__block">
               <div class="calc__head">
@@ -712,10 +712,18 @@
               </div>
               <div class="calc__body">
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Место отгрузки">
+                  <label class="form-title">Страна, Город</label>
+                  <input class="form-input" type="text" placeholder="Место отгрузки" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Место доставки">
+                  <label class="form-title">Страна, Город</label>
+                  <input class="form-input" type="text" placeholder="Место доставки" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group dots">
                   <div class="dropdown">
@@ -740,16 +748,28 @@
                       </li>
                     </ul>
                     <input type="text" name="select-category" value="all" class="dropdown__input-hidden">
+                    <span class="error">
+                      Поле заполнено неверно
+                    </span>
                   </div>
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Масса, кг">
+                  <input class="form-input" type="text" placeholder="Масса, кг" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Объём, м3">
+                  <input class="form-input" type="text" placeholder="Объём, м3" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group dots">
-                  <input class="form-input" type="text" placeholder="Наименование">
+                  <input class="form-input" type="text" placeholder="Наименование" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <textarea class="form-textarea" name="" id="" placeholder="Описание груза"></textarea>
               </div>
@@ -761,15 +781,27 @@
               </div>
               <div class="calc__body">
                 <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Имя">
+                  <input class="form-input" type="text" placeholder="Имя" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Телефон">
+                  <input class="form-input" type="text" placeholder="Телефон"
+                    pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"
+                    maxlength="12" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
                 <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Эл.почта">
+                  <input class="form-input" type="text" placeholder="Эл.почта" pattern="^\S+@\S+\.\S+$" minlength="2"
+                    maxlength="40" required>
+                  <span class="error">
+                    Поле заполнено неверно
+                  </span>
                 </div>
-                <button class="form-btn btn btn-red">
+                <button class="form-btn btn btn-red" type="submit">
                   расчет стоимости
                 </button>
                 <div class="form-bottom">

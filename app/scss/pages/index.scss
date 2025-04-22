@@ -186,7 +186,7 @@
   }
 
   25% {
-    transform: translateY(1.5rem);
+    transform: translateY(2rem);
   }
 
   50% {
@@ -194,7 +194,7 @@
   }
 
   75% {
-    transform: translateY(-1.5rem);
+    transform: translateY(-2rem);
   }
 }
 
@@ -638,27 +638,7 @@
   }
 
   &__item {
-    overflow: hidden;
-    width: calc((100% - 54rem) / 4);
-    transition: all 0.5s ease;
-
-    &-active {
-      width: 54rem;
-
-      .work__item-count {
-        background-color: var(--primary-accent);
-      }
-
-      .icon-angle-first {
-        transform: translate(0.3125rem, -0.3125rem);
-        transition-delay: 0.3s;
-      }
-
-      .icon-angle-second {
-        transform: translate(-0.3125rem, 0.3125rem);
-        transition-delay: 0.3s;
-      }
-    }
+    width: 100%;
 
     &-content {
       display: flex;
@@ -719,6 +699,31 @@
 
       .icon-angle {
         font-size: 2.1rem;
+      }
+    }
+  }
+
+  &__slide {
+    overflow: hidden;
+    width: calc((100% - 54rem) / 4) !important;
+    height: auto;
+    transition: all 0.5s ease;
+
+    &-active {
+      width: 54rem !important;
+
+      .work__item-count {
+        background-color: var(--primary-accent);
+      }
+
+      .icon-angle-first {
+        transform: translate(0.3125rem, -0.3125rem);
+        transition-delay: 0.3s;
+      }
+
+      .icon-angle-second {
+        transform: translate(-0.3125rem, 0.3125rem);
+        transition-delay: 0.3s;
       }
     }
   }
@@ -1232,4 +1237,34 @@
 //   color: #434146;
 //   opacity: .5;
 //   z-index: 1;
+// }
+
+/* flag */
+// .flag {}
+
+// .canvas-wrap {
+//   position: relative;
+// }
+
+// #canvas {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   width: 51.1rem;
+//   height: 38.4rem;
+  
+//   canvas {
+//     // aspect-ratio: 511/384;
+//   }
+// }
+
+// .plane {
+//   width: 51.1rem;
+//   height: 38.4rem;
+// }
+
+// .plane img {
+//   display: none;
 // }
