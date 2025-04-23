@@ -350,89 +350,118 @@
 
 
     gsap.registerPlugin(ScrollTrigger);
+
+    function counter(array, time = 2000) {
+      let n = 0;
+      const num = Number(array.dataset.val);
+      let interval = setInterval(() => {
+        n < num ? (n += num / (time / 10)) : clearInterval(interval);
+        array.classList.contains('frac')
+          ? (array.innerHTML = n.toFixed(1))
+          : (array.innerHTML = Math.round(n));
+      }, 10);
+    }
+    
+    gsap.registerPlugin(ScrollTrigger);
+    const numbBoxes = document.querySelectorAll('.numbs');
+    numbBoxes.forEach((numbBox) => {
+      const numbs = numbBox.querySelectorAll('.number');
+      numbs.forEach((numb) => {
+        gsap.to(numb, {
+          scrollTrigger: {
+            trigger: numbBox,
+            start: `top 60%`,
+            // markers: true,
+          },
+          onStart: () => counter(numb),
+        });
+      });
+    });
+
+    
     // ScrollTrigger.normalizeScroll(true);
 
-    function scrolled1() {
-      if ($('.numberFraction')) {
-        $('.numberFraction').each(function () {
-          $(this).prop('Counter', 0).animate({
-            Counter: $(this).data('value')
-          }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function (now) {
-              $(this).text(now.toFixed(1));
-            }
-          });
-        });
-      }
-    }
+    // function scrolled1() {
+    //   if ($('.numberFraction')) {
+    //     $('.numberFraction').each(function () {
+    //       $(this).prop('Counter', 0).animate({
+    //         Counter: $(this).data('value')
+    //       }, {
+    //         duration: 2000,
+    //         easing: 'swing',
+    //         step: function (now) {
+    //           $(this).text(now.toFixed(1));
+    //         }
+    //       });
+    //     });
+    //   }
+    // }
 
-    function scrolled2() {
-      if ($('.number')) {
-        $('.number').each(function () {
-          $(this).prop('Counter', 0).animate({
-            Counter: $(this).data('value')
-          }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function (now) {
-              $(this).text(Math.ceil(now));
-            }
-          });
-        });
-      }
-    }
+    // function scrolled2() {
+    //   if ($('.number')) {
+    //     $('.number').each(function () {
+    //       $(this).prop('Counter', 0).animate({
+    //         Counter: $(this).data('value')
+    //       }, {
+    //         duration: 2000,
+    //         easing: 'swing',
+    //         step: function (now) {
+    //           $(this).text(Math.ceil(now));
+    //         }
+    //       });
+    //     });
+    //   }
+    // }
 
-    function scrolled3() {
-      if ($('.numberPartner')) {
-        $('.numberPartner').each(function () {
-          $(this).prop('Counter', 0).animate({
-            Counter: $(this).data('value')
-          }, {
-            duration: 4000,
-            easing: 'swing',
-            step: function (now) {
-              $(this).text(Math.ceil(now));
-            }
-          });
-        });
-      }
-    }
+    // function scrolled3() {
+    //   if ($('.numberPartner')) {
+    //     $('.numberPartner').each(function () {
+    //       $(this).prop('Counter', 0).animate({
+    //         Counter: $(this).data('value')
+    //       }, {
+    //         duration: 4000,
+    //         easing: 'swing',
+    //         step: function (now) {
+    //           $(this).text(Math.ceil(now));
+    //         }
+    //       });
+    //     });
+    //   }
+    // }
 
 
 
-    ScrollTrigger.create({
-      trigger: '.about__feat',
-      onEnter: scrolled1,
-      toggleActions: "play none none none",
-      onLeave: () => document.querySelector('.numberFraction').classList.remove("numberFraction"),
-      preventOverlaps: true,
-    });
+    // ScrollTrigger.create({
+    //   trigger: '.about__feat',
+    //   onEnter: scrolled1,
+    //   toggleActions: "play none none none",
+    //   onLeave: () => document.querySelector('.numberFraction').classList.remove("numberFraction"),
+    //   preventOverlaps: true,
+    // });
 
-    ScrollTrigger.create({
-      trigger: '.about__feat',
-      onEnter: scrolled2,
-      toggleActions: "play none none none",
-      onLeave: () => {
-        document.querySelectorAll('.number').forEach(element => {
-          element.innerText = document.querySelector('.number').dataset.value;
-          element.classList.remove("number")
-        });
-      },
-      preventOverlaps: true,
-    });
+    // ScrollTrigger.create({
+    //   trigger: '.about__feat',
+    //   onEnter: scrolled2,
+    //   toggleActions: "play none none none",
+    //   onLeave: () => {
+    //     document.querySelectorAll('.number').forEach(element => {
+    //       element.innerText = document.querySelector('.number').dataset.value;
+    //       element.classList.remove("number")
+    //     });
+    //   },
+    //   preventOverlaps: true,
+    // });
 
-    ScrollTrigger.create({
-      trigger: '.partner__head',
-      onEnter: scrolled3,
-      toggleActions: "play none none none",
-      onLeave: () => {
-        document.querySelector('.numberPartner').innerText = document.querySelector('.numberPartner').dataset.value;
-        document.querySelector('.numberPartner').classList.remove("numberPartner");
-      },
-      preventOverlaps: true,
-    });
+    // ScrollTrigger.create({
+    //   trigger: '.partner__head',
+    //   onEnter: scrolled3,
+    //   toggleActions: "play none none none",
+    //   onLeave: () => {
+    //     document.querySelector('.numberPartner').innerText = document.querySelector('.numberPartner').dataset.value;
+    //     document.querySelector('.numberPartner').classList.remove("numberPartner");
+    //   },
+    //   preventOverlaps: true,
+    // });
 
 
 
@@ -563,7 +592,7 @@
         plate.classList.remove(classToAdd);
       }
 
-      if (verticalScrollPosition + window.innerHeight !== document.body.offsetHeight) {
+      if (verticalScrollPosition + window.outerHeight !== document.body.offsetHeight) {
         plate.classList.add(classToAdd);
       } else {
         plate.classList.remove(classToAdd);
