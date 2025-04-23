@@ -206,7 +206,7 @@
             let modalId = e.target.getAttribute('data-id');
             if (modalId) {
               document.getElementById(modalId).classList.add('open');
-              // document.body.classList.add('no-scroll');
+              document.body.classList.add('no-scroll');
               // lenis.stop();
             } else {
               return
@@ -215,14 +215,14 @@
             Array.from(close, closeButton => {
               closeButton.addEventListener('click', e => {
                 document.getElementById(modalId).classList.remove("open");
-                // document.body.classList.remove('no-scroll');
-                lenis.start();
+                document.body.classList.remove('no-scroll');
+                // lenis.start();
               });
 
               window.addEventListener('keydown', (e) => {
                 if (e.key === "Escape") {
                   document.getElementById(modalId).classList.remove("open")
-                  // document.body.classList.remove('no-scroll');
+                  document.body.classList.remove('no-scroll');
                   // lenis.start();
                 }
               });
@@ -234,7 +234,7 @@
               document.getElementById(modalId).addEventListener('click', event => {
                 if (event._isClickWithInModal) return;
                 event.currentTarget.classList.remove('open');
-                // document.body.classList.remove('no-scroll');
+                document.body.classList.remove('no-scroll');
                 // lenis.start();
               });
             });
@@ -493,7 +493,11 @@
         plate.classList.remove(classToAdd);
       }
 
-      if (verticalScrollPosition + window.outerHeight !== document.body.offsetHeight) {
+      console.log(verticalScrollPosition + window.innerHeight);
+      console.log(document.body.offsetHeight);
+
+      const winHeight = window.innerHeight;
+      if (verticalScrollPosition + winHeight < document.body.offsetHeight) {
         plate.classList.add(classToAdd);
       } else {
         plate.classList.remove(classToAdd);
@@ -633,6 +637,9 @@
 
 
 
+    /**
+     * Карта
+     */
     const map = [
       { name: 'Россия', size: 'extraBig', opacity: 1, static: true },
       { name: 'ОАЭ', size: 'big', opacity: 1 },
