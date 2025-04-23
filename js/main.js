@@ -233,6 +233,7 @@
             if (modalId) {
               document.getElementById(modalId).classList.add('open');
               document.body.classList.add('no-scroll');
+              // lenis.stop();
             } else {
               return
             }
@@ -241,12 +242,14 @@
               closeButton.addEventListener('click', e => {
                 document.getElementById(modalId).classList.remove("open");
                 document.body.classList.remove('no-scroll');
+                lenis.start();
               });
 
               window.addEventListener('keydown', (e) => {
                 if (e.key === "Escape") {
                   document.getElementById(modalId).classList.remove("open")
                   document.body.classList.remove('no-scroll');
+                  // lenis.start();
                 }
               });
 
@@ -258,6 +261,7 @@
                 if (event._isClickWithInModal) return;
                 event.currentTarget.classList.remove('open');
                 document.body.classList.remove('no-scroll');
+                // lenis.start();
               });
             });
           });
@@ -346,7 +350,7 @@
 
 
     gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.normalizeScroll(true);
+    // ScrollTrigger.normalizeScroll(true);
 
     function scrolled1() {
       if ($('.numberFraction')) {
@@ -437,6 +441,8 @@
     const calcItems = document.querySelectorAll(".calc__block");
     const aboutItem = document.querySelector(".about__img");
     const bannerItem = document.querySelector(".banner");
+    const titleItems = document.querySelectorAll(".section__head");
+    const target = document.querySelectorAll('.section__title');
 
     for (let i = 0; i < faqItems.length; i++) {
       gsap.from(faqItems[i], {
@@ -505,9 +511,6 @@
         preventOverlaps: true,
       }
     });
-
-    const titleItems = document.querySelectorAll(".section__head");
-    const target = document.querySelectorAll('.section__title');
 
     for (let i = 0; i < target.length; i++) {
 
