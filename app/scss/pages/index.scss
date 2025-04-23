@@ -705,12 +705,12 @@
 
   &__slide {
     overflow: hidden;
-    width: calc((100% - 54rem) / 4) !important;
+    width: calc((100% - 54rem) / 4);
     height: auto;
     transition: all 0.5s ease;
 
     &-active {
-      width: 54rem !important;
+      width: 54rem;
 
       .work__item-count {
         background-color: var(--primary-accent);
@@ -725,6 +725,14 @@
         transform: translate(-0.3125rem, 0.3125rem);
         transition-delay: 0.3s;
       }
+    }
+  }
+
+  .swiper-slide {
+
+    &:last-child {
+      width: calc(100% - 26.2rem);
+      min-width: calc(100% - 26.2rem);
     }
   }
 }
@@ -1254,7 +1262,7 @@
 //   left: 0;
 //   width: 51.1rem;
 //   height: 38.4rem;
-  
+
 //   canvas {
 //     // aspect-ratio: 511/384;
 //   }

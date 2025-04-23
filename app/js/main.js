@@ -22,6 +22,8 @@
 
     var work__items = new Swiper(".work__items", {
       slidesPerView: 'auto',
+      // width: 'auto',
+      // slideClass: 'work__slide',
       slidesPerGroup: 1,
       speed: 600,
       breakpoints: {
@@ -395,7 +397,8 @@
       trigger: '.about',
       onEnter: scrolled1,
       toggleActions: "play none none none",
-      onLeave: () => document.querySelector('.numberFraction').classList.remove("numberFraction")
+      onLeave: () => document.querySelector('.numberFraction').classList.remove("numberFraction"),
+      preventOverlaps: true,
     });
 
 
@@ -409,6 +412,7 @@
           element.classList.remove("number")
         });
       },
+      preventOverlaps: true,
     });
 
     ScrollTrigger.create({
@@ -419,6 +423,7 @@
         document.querySelector('.numberPartner').innerText = document.querySelector('.numberPartner').dataset.value;
         document.querySelector('.numberPartner').classList.remove("numberPartner");
       },
+      preventOverlaps: true,
     });
 
 
@@ -561,7 +566,8 @@
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
-        }
+          preventOverlaps: true,
+        },
       })
     }
 

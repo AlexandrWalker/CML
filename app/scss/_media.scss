@@ -602,11 +602,11 @@
   }
 
   .work__slide {
-    width: calc((100% - 35.7rem) / 4) !important;
+    width: calc((100% - 35.7rem) / 4);
   }
 
   .work__slide-active {
-    width: 35.7rem !important;
+    width: 35.7rem;
   }
 
   .work__item-title {
@@ -1233,8 +1233,8 @@
   }
 
   .work .swiper-slide {
-    width: 26.2rem !important;
-    min-width: 26.2rem !important;
+    width: 26.2rem;
+    min-width: 26.2rem;
     height: auto;
   }
 
