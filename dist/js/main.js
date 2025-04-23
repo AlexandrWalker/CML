@@ -232,6 +232,7 @@
             let modalId = e.target.getAttribute('data-id');
             if (modalId) {
               document.getElementById(modalId).classList.add('open');
+              document.body.classList.add('no-scroll');
             } else {
               return
             }
@@ -239,11 +240,13 @@
             Array.from(close, closeButton => {
               closeButton.addEventListener('click', e => {
                 document.getElementById(modalId).classList.remove("open");
+                document.body.classList.remove('no-scroll');
               });
 
               window.addEventListener('keydown', (e) => {
                 if (e.key === "Escape") {
                   document.getElementById(modalId).classList.remove("open")
+                  document.body.classList.remove('no-scroll');
                 }
               });
 
@@ -254,6 +257,7 @@
               document.getElementById(modalId).addEventListener('click', event => {
                 if (event._isClickWithInModal) return;
                 event.currentTarget.classList.remove('open');
+                document.body.classList.remove('no-scroll');
               });
             });
           });
@@ -342,9 +346,10 @@
 
 
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.normalizeScroll(true);
 
     function scrolled1() {
-      $(function () {
+      if ($('.numberFraction')) {
         $('.numberFraction').each(function () {
           $(this).prop('Counter', 0).animate({
             Counter: $(this).data('value')
@@ -356,11 +361,11 @@
             }
           });
         });
-      });
+      }
     }
 
     function scrolled2() {
-      $(function () {
+      if ($('.number')) {
         $('.number').each(function () {
           $(this).prop('Counter', 0).animate({
             Counter: $(this).data('value')
@@ -372,11 +377,11 @@
             }
           });
         });
-      });
+      }
     }
 
     function scrolled3() {
-      $(function () {
+      if ($('.numberPartner')) {
         $('.numberPartner').each(function () {
           $(this).prop('Counter', 0).animate({
             Counter: $(this).data('value')
@@ -388,22 +393,21 @@
             }
           });
         });
-      });
+      }
     }
 
 
 
     ScrollTrigger.create({
-      trigger: '.about',
+      trigger: '.about__feat',
       onEnter: scrolled1,
       toggleActions: "play none none none",
       onLeave: () => document.querySelector('.numberFraction').classList.remove("numberFraction"),
       preventOverlaps: true,
     });
 
-
     ScrollTrigger.create({
-      trigger: '.about',
+      trigger: '.about__feat',
       onEnter: scrolled2,
       toggleActions: "play none none none",
       onLeave: () => {
@@ -446,21 +450,6 @@
           toggleActions: "play none none none",
           preventOverlaps: true,
         }
-      }); 3.
-    }
-
-    for (let i = 0; i < serviceItems.length; i++) {
-      gsap.from(serviceItems[i], {
-        opacity: 0,
-        x: -50,
-        duration: 0.3,
-        scrollTrigger: {
-          trigger: serviceItems[i],
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none none",
-          preventOverlaps: true,
-        }
       });
     }
 
@@ -479,6 +468,20 @@
       });
     }
 
+    for (let i = 0; i < serviceItems.length; i++) {
+      gsap.from(serviceItems[i], {
+        opacity: 0,
+        x: -50,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: serviceItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+        }
+      });
+    }
+
     gsap.from(aboutItem, {
       opacity: 0,
       y: 50,
@@ -487,7 +490,6 @@
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none none",
-        preventOverlaps: true,
       }
     });
 
@@ -503,6 +505,30 @@
         preventOverlaps: true,
       }
     });
+
+    const titleItems = document.querySelectorAll(".section__head");
+    const target = document.querySelectorAll('.section__title');
+
+    for (let i = 0; i < target.length; i++) {
+
+      const text = new SplitType(target[i], { types: 'lines, words' })
+
+      gsap.from(text.words, {
+        opacity: 0,
+        x: -50,
+        duration: 0.3,
+        stagger: { amount: 0.2 },
+        scrollTrigger: {
+          trigger: titleItems[i],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          preventOverlaps: true,
+        },
+      })
+    }
+
+
 
     const head = this.document.querySelector('.head');
     const h = document.getElementById('first-section').offsetHeight;
@@ -533,6 +559,12 @@
       } else {
         plate.classList.remove(classToAdd);
       }
+
+      if (verticalScrollPosition + window.innerHeight !== document.body.offsetHeight) {
+        plate.classList.add(classToAdd);
+      } else {
+        plate.classList.remove(classToAdd);
+      }
     }, 100));
 
     function debounce(func, delay) {
@@ -545,30 +577,6 @@
           func.apply(context, args);
         }, delay);
       }
-    }
-
-
-
-    const titleItems = document.querySelectorAll(".section__head");
-    const target = document.querySelectorAll('.section__title');
-
-    for (let i = 0; i < target.length; i++) {
-
-      const text = new SplitType(target[i], { types: 'lines, words' })
-
-      gsap.from(text.words, {
-        opacity: 0,
-        x: -50,
-        duration: 0.3,
-        stagger: { amount: 0.2 },
-        scrollTrigger: {
-          trigger: titleItems[i],
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none none",
-          preventOverlaps: true,
-        },
-      })
     }
 
 
