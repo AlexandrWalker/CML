@@ -71,6 +71,10 @@
 
     .header__btn-head {
       border-color: var(--primary-accent);
+
+      &:hover {
+        border-color: var(--white);
+      }
     }
 
     &-btn {

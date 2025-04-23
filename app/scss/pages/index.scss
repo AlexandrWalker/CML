@@ -459,54 +459,54 @@
     }
   }
 
-  &__cloud {
-    // cursor: zoom-in;
+  // &__cloud {
+  //   // cursor: zoom-in;
 
-    path {
-      transition: all 0.3s ease;
-    }
+  //   path {
+  //     transition: all 0.3s ease;
+  //   }
 
-    a {
-      position: relative;
-      padding: 1rem;
+  //   a {
+  //     position: relative;
+  //     padding: 1rem;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
-        display: none;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10.7px);
-      }
+  //     &::before {
+  //       content: "";
+  //       position: absolute;
+  //       top: 0;
+  //       bottom: 0;
+  //       left: 0;
+  //       right: 0;
+  //       z-index: 1;
+  //       display: none;
+  //       background: rgba(255, 255, 255, 0.9);
+  //       backdrop-filter: blur(10.7px);
+  //     }
 
-      &:hover {
-        &::before {
-          display: block;
-        }
+  //     &:hover {
+  //       &::before {
+  //         display: block;
+  //       }
 
-        path {
-          fill: var(--primary-accent);
-          fill-opacity: 1;
-          position: relative;
-          z-index: 2;
-        }
+  //       path {
+  //         fill: var(--primary-accent);
+  //         fill-opacity: 1;
+  //         position: relative;
+  //         z-index: 2;
+  //       }
 
-        &.big {}
+  //       &.big {}
 
-        &.mid path {
-          transform: scale(1.5) translate(-21%, -17%);
-        }
+  //       &.mid path {
+  //         transform: scale(1.5) translate(-21%, -17%);
+  //       }
 
-        &.small {}
+  //       &.small {}
 
-        &.extraSmall {}
-      }
-    }
-  }
+  //       &.extraSmall {}
+  //     }
+  //   }
+  // }
 }
 
 .about {
@@ -1201,14 +1201,31 @@
   text-transform: uppercase;
   white-space: nowrap;
   cursor: default;
+  line-height: 100%;
   transform-origin: center;
   transform: translate(-50%, -50%);
-  transition: transform .15s ease-in-out, opacity .25s ease-in-out;
+  transition: transform .15s ease-in-out, opacity .25s ease-in-out, font-weight 0.25s ease-in-out, font-size 0.25s ease-in-out, color 0.25s ease-in-out;
   will-change: transform, opacity;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(248, 248, 248, 0.5);
+  backdrop-filter: blur(0.15rem);
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(248, 248, 248, 0.5);
+
+  &:hover {
+    font-weight: bold;
+    font-size: 2.8rem;
+    z-index: 11;
+    color: var(--primary-accent);
+  }
 }
 
 .extraBig {
-  color: #C62826;
+  color: var(--primary-accent);
   font-size: 2.8rem;
   font-weight: bold;
   z-index: 10;

@@ -70,6 +70,10 @@
       opacity: 1;
       border: 0.1rem solid var(--primary-white-10);
       border-radius: var(--primary-border-r-5);
+
+      &:hover {
+        border-color: var(--white);
+      }
     }
 
     &-title {}

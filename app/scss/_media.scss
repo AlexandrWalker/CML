@@ -292,6 +292,12 @@
     background-color: var(--primary-black);
   }
 
+  .burger:hover span,
+  .burger:hover span::before,
+  .burger:hover span::after {
+    background-color: var(--primary-accent);
+  }
+
   .menu__close:hover.burger {
     border-color: var(--white);
     background-color: var(--white);
@@ -299,6 +305,10 @@
 
   .menu__close:hover .burger__text {
     color: var(--primary-black);
+  }
+
+  .menu__close:hover.burger span {
+    background-color: transparent;
   }
 
   .menu__close:hover.burger span::before,
@@ -605,7 +615,7 @@
     width: calc((100% - 35.7rem) / 4) !important;
   }
 
-  .work__slide-active {
+  .work__slide.work__slide-active {
     width: 35.7rem !important;
   }
 

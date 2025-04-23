@@ -22,9 +22,9 @@
 
     var work__items = new Swiper(".work__items", {
       slidesPerView: 'auto',
+      slidesPerGroup: 1,
       // width: 'auto',
       // slideClass: 'work__slide',
-      slidesPerGroup: 1,
       speed: 600,
       breakpoints: {
         600: {
@@ -736,7 +736,7 @@
         this.animationId = null;
         this.lastTime = 0;
         this.center = { x: 50, y: 50 };
-        this.speedFactor = 0.2;
+        this.speedFactor = 0.12;
         this.collisionCheckInterval = 10;
         this.frameCount = 0;
         this.fadeStartDistance = 24;

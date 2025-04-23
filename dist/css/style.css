@@ -728,6 +728,9 @@ a:hover {
   border: 0.1rem solid var(--primary-white-10);
   border-radius: var(--primary-border-r-5);
 }
+.header__btn-head:hover {
+  border-color: var(--white);
+}
 .header__btn-icon {
   position: absolute;
   top: 1.8rem;
@@ -1141,6 +1144,9 @@ a:hover {
 }
 .footer__info .header__btn-head {
   border-color: var(--primary-accent);
+}
+.footer__info .header__btn-head:hover {
+  border-color: var(--white);
 }
 .footer__info-btn {
   justify-content: space-between;
@@ -2389,37 +2395,7 @@ a:hover {
 .transport__item .icon-angle {
   font-size: 1.6rem;
 }
-.transport__cloud path {
-  transition: all 0.3s ease;
-}
-.transport__cloud a {
-  position: relative;
-  padding: 1rem;
-}
-.transport__cloud a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  display: none;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10.7px);
-}
-.transport__cloud a:hover::before {
-  display: block;
-}
-.transport__cloud a:hover path {
-  fill: var(--primary-accent);
-  fill-opacity: 1;
-  position: relative;
-  z-index: 2;
-}
-.transport__cloud a:hover.mid path {
-  transform: scale(1.5) translate(-21%, -17%);
-}
+
 .about {
   position: relative;
   background-color: var(--white);
@@ -2928,14 +2904,29 @@ a:hover {
   text-transform: uppercase;
   white-space: nowrap;
   cursor: default;
+  line-height: 100%;
   transform-origin: center;
   transform: translate(-50%, -50%);
-  transition: transform 0.15s ease-in-out, opacity 0.25s ease-in-out;
+  transition: transform 0.15s ease-in-out, opacity 0.25s ease-in-out, font-weight 0.25s ease-in-out, font-size 0.25s ease-in-out, color 0.25s ease-in-out;
   will-change: transform, opacity;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(248, 248, 248, 0.5);
+  backdrop-filter: blur(0.15rem);
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(248, 248, 248, 0.5);
+}
+.tag:hover {
+  font-weight: bold;
+  font-size: 2.8rem;
+  z-index: 11;
+  color: var(--primary-accent);
 }
 
 .extraBig {
-  color: #C62826;
+  color: var(--primary-accent);
   font-size: 2.8rem;
   font-weight: bold;
   z-index: 10;
@@ -3239,12 +3230,20 @@ a:hover {
   .burger span::after {
     background-color: var(--primary-black);
   }
+  .burger:hover span,
+  .burger:hover span::before,
+  .burger:hover span::after {
+    background-color: var(--primary-accent);
+  }
   .menu__close:hover.burger {
     border-color: var(--white);
     background-color: var(--white);
   }
   .menu__close:hover .burger__text {
     color: var(--primary-black);
+  }
+  .menu__close:hover.burger span {
+    background-color: transparent;
   }
   .menu__close:hover.burger span::before,
   .menu__close:hover.burger span::after {
@@ -3485,7 +3484,7 @@ a:hover {
   .work__slide {
     width: calc((100% - 35.7rem) / 4) !important;
   }
-  .work__slide-active {
+  .work__slide.work__slide-active {
     width: 35.7rem !important;
   }
   .work__item-title {
