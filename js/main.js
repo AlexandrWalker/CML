@@ -52,32 +52,6 @@
 
 
     /**
-     * Инициализация аккордеона
-     */
-    function accordionFunc() {
-      var accordionHead = document.querySelectorAll('.accordion'),
-        accordionActive = document.getElementsByClassName('active');
-
-      Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
-        accordionItem.addEventListener('click', function (e) {
-          if (this.parentNode.dataset.skip) {
-            this.classList.toggle('active');
-            return;
-          }
-
-          if (accordionActive.length > 0 && accordionActive[0] !== this) {
-            accordionActive[0].classList.remove('active');
-          }
-          this.classList.toggle('active');
-        });
-      });
-    }
-
-    accordionFunc();
-
-
-
-    /**
      * Инициализация Lenis для плавного скрола
      */
     const lenis = new Lenis({
@@ -232,7 +206,7 @@
             let modalId = e.target.getAttribute('data-id');
             if (modalId) {
               document.getElementById(modalId).classList.add('open');
-              document.body.classList.add('no-scroll');
+              // document.body.classList.add('no-scroll');
               // lenis.stop();
             } else {
               return
@@ -241,14 +215,14 @@
             Array.from(close, closeButton => {
               closeButton.addEventListener('click', e => {
                 document.getElementById(modalId).classList.remove("open");
-                document.body.classList.remove('no-scroll');
+                // document.body.classList.remove('no-scroll');
                 lenis.start();
               });
 
               window.addEventListener('keydown', (e) => {
                 if (e.key === "Escape") {
                   document.getElementById(modalId).classList.remove("open")
-                  document.body.classList.remove('no-scroll');
+                  // document.body.classList.remove('no-scroll');
                   // lenis.start();
                 }
               });
@@ -260,7 +234,7 @@
               document.getElementById(modalId).addEventListener('click', event => {
                 if (event._isClickWithInModal) return;
                 event.currentTarget.classList.remove('open');
-                document.body.classList.remove('no-scroll');
+                // document.body.classList.remove('no-scroll');
                 // lenis.start();
               });
             });
@@ -361,8 +335,7 @@
           : (array.innerHTML = Math.round(n));
       }, 10);
     }
-    
-    gsap.registerPlugin(ScrollTrigger);
+
     const numbBoxes = document.querySelectorAll('.numbs');
     numbBoxes.forEach((numbBox) => {
       const numbs = numbBox.querySelectorAll('.number');
@@ -378,91 +351,6 @@
       });
     });
 
-    
-    // ScrollTrigger.normalizeScroll(true);
-
-    // function scrolled1() {
-    //   if ($('.numberFraction')) {
-    //     $('.numberFraction').each(function () {
-    //       $(this).prop('Counter', 0).animate({
-    //         Counter: $(this).data('value')
-    //       }, {
-    //         duration: 2000,
-    //         easing: 'swing',
-    //         step: function (now) {
-    //           $(this).text(now.toFixed(1));
-    //         }
-    //       });
-    //     });
-    //   }
-    // }
-
-    // function scrolled2() {
-    //   if ($('.number')) {
-    //     $('.number').each(function () {
-    //       $(this).prop('Counter', 0).animate({
-    //         Counter: $(this).data('value')
-    //       }, {
-    //         duration: 2000,
-    //         easing: 'swing',
-    //         step: function (now) {
-    //           $(this).text(Math.ceil(now));
-    //         }
-    //       });
-    //     });
-    //   }
-    // }
-
-    // function scrolled3() {
-    //   if ($('.numberPartner')) {
-    //     $('.numberPartner').each(function () {
-    //       $(this).prop('Counter', 0).animate({
-    //         Counter: $(this).data('value')
-    //       }, {
-    //         duration: 4000,
-    //         easing: 'swing',
-    //         step: function (now) {
-    //           $(this).text(Math.ceil(now));
-    //         }
-    //       });
-    //     });
-    //   }
-    // }
-
-
-
-    // ScrollTrigger.create({
-    //   trigger: '.about__feat',
-    //   onEnter: scrolled1,
-    //   toggleActions: "play none none none",
-    //   onLeave: () => document.querySelector('.numberFraction').classList.remove("numberFraction"),
-    //   preventOverlaps: true,
-    // });
-
-    // ScrollTrigger.create({
-    //   trigger: '.about__feat',
-    //   onEnter: scrolled2,
-    //   toggleActions: "play none none none",
-    //   onLeave: () => {
-    //     document.querySelectorAll('.number').forEach(element => {
-    //       element.innerText = document.querySelector('.number').dataset.value;
-    //       element.classList.remove("number")
-    //     });
-    //   },
-    //   preventOverlaps: true,
-    // });
-
-    // ScrollTrigger.create({
-    //   trigger: '.partner__head',
-    //   onEnter: scrolled3,
-    //   toggleActions: "play none none none",
-    //   onLeave: () => {
-    //     document.querySelector('.numberPartner').innerText = document.querySelector('.numberPartner').dataset.value;
-    //     document.querySelector('.numberPartner').classList.remove("numberPartner");
-    //   },
-    //   preventOverlaps: true,
-    // });
-
 
 
     const faqItems = document.querySelectorAll(".faq__item");
@@ -472,6 +360,8 @@
     const bannerItem = document.querySelector(".banner");
     const titleItems = document.querySelectorAll(".section__head");
     const target = document.querySelectorAll('.section__title');
+
+
 
     for (let i = 0; i < faqItems.length; i++) {
       gsap.from(faqItems[i], {
@@ -484,8 +374,9 @@
           end: "bottom 20%",
           toggleActions: "play none none none",
           preventOverlaps: true,
+          // markers: true,
         }
-      });
+      })
     }
 
     for (let i = 0; i < calcItems.length; i++) {
@@ -562,6 +453,16 @@
 
 
 
+    // const case__acc_l = document.querySelectorAll('.case__acc');
+
+    // case__acc_l.forEach(element => {
+    //   element.addEventListener('click', function () {
+    //     ScrollTrigger.refresh();
+    //   })
+    // });
+
+
+
     const head = this.document.querySelector('.head');
     const h = document.getElementById('first-section').offsetHeight;
     const plate = document.getElementById('plate');
@@ -613,50 +514,6 @@
 
 
 
-    // const itemsContainer = document.querySelector('.work__items');
-    // const items = document.querySelectorAll('.work__item');
-    // const itemsActive = document.getElementsByClassName('work__item-active');
-
-    // function scrollItems() {
-
-    //   const containerRect = itemsContainer.getBoundingClientRect();
-    //   const containerCenter = containerRect.left + containerRect.width / 2;
-    //   const scrollRight = itemsContainer.scrollLeft + containerRect.width;
-
-    //   const isEndPos = Math.abs(scrollRight - itemsContainer.scrollWidth) < 1;
-    //   const isStartPos = itemsContainer.scrollLeft < 1;
-
-    //   if (isStartPos) {
-    //     items.forEach(item => item.classList.remove('work__item-active'));
-    //     items[0].classList.add('work__item-active');
-    //   } else if (isEndPos) {
-    //     items.forEach(item => item.classList.remove('work__item-active'));
-    //     items[items.length - 1].classList.add('work__item-active');
-    //   } else {
-
-    //     let closestItem = null;
-    //     let minimalPos = Infinity;
-
-    //     items.forEach(item => {
-
-    //       const itemRect = item.getBoundingClientRect();
-    //       const itemCenter = itemRect.left + itemRect.width / 2;
-    //       const itemPos = Math.abs(itemCenter - containerCenter);
-
-    //       if (itemPos < minimalPos) {
-    //         minimalPos = itemPos;
-    //         closestItem = item;
-    //       }
-
-    //       item.classList.remove('work__item-active');
-    //     });
-
-    //     if (closestItem) {
-    //       closestItem.classList.add('work__item-active');
-    //     }
-    //   }
-    // }
-
     const items = document.querySelectorAll('.work__slide');
     const itemsActive = document.getElementsByClassName('work__slide-active');
 
@@ -681,6 +538,8 @@
     const case__acc = document.querySelectorAll('.case__acc');
     const tabsPanelActive = document.querySelector('.tabs__panel--active');
     const tabsPanelFirst = document.querySelector('.tabs__panel--first');
+
+    tabsPanelFirst.click();
 
     if (case__acc) {
       window.addEventListener('resize', function (event) {
@@ -747,9 +606,35 @@
 
 
 
-    /* Карта */
+    /**
+     * Инициализация аккордеона
+     */
+    function accordionFunc() {
+      var accordionHead = document.querySelectorAll('.accordion'),
+        accordionActive = document.getElementsByClassName('active');
+
+      Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
+        accordionItem.addEventListener('click', function (e) {
+          // if (this.parentNode.dataset.skip) {
+          //   this.classList.toggle('active');
+          //   return;
+          // }
+          if (accordionActive.length > 0 && accordionActive[0] !== this) {
+            accordionActive[0].classList.remove('active');
+          }
+          this.classList.toggle('active');
+
+          ScrollTrigger.refresh();
+        });
+      });
+    }
+
+    accordionFunc();
+
+
+
     const map = [
-      { name: 'Россия', size: 'extraBig', opacity: 1 },
+      { name: 'Россия', size: 'extraBig', opacity: 1, static: true },
       { name: 'ОАЭ', size: 'big', opacity: 1 },
       { name: 'Турция', size: 'big', opacity: 1 },
       { name: 'Иран', size: 'big', opacity: 1 },
@@ -843,266 +728,238 @@
       { name: 'Кувейт', size: 'extraSmall', opacity: 0.5 },
     ];
 
-    if (document.getElementById('tagCloud')) {
-      // Объект для хранения данных о движении тегов
-      const tagMovements = {};
+    class TagCloud {
+      constructor() {
 
-      function createTagCloud() {
-        const cloud = document.getElementById('tagCloud');
-        cloud.innerHTML = '';
+        this.cloud = document.getElementById('tagCloud');
+        this.tags = [];
+        this.animationId = null;
+        this.lastTime = 0;
+        this.center = { x: 50, y: 50 };
+        this.speedFactor = 0.2;
+        this.collisionCheckInterval = 10;
+        this.frameCount = 0;
+        this.fadeStartDistance = 24;
+        this.fadeEndDistance = 5;
 
-        const cloudWidth = cloud.offsetWidth;
-        const cloudHeight = cloud.offsetHeight;
+        this.init();
+      }
 
-        // Сортируем теги по размеру (от больших к маленьким)
-        const sortedTags = [...map].sort((a, b) => {
+      init() {
+        this.createTags();
+        this.startAnimation();
+        window.addEventListener('resize', this.handleResize.bind(this));
+      }
+
+      createTags() {
+        this.cloud.innerHTML = '';
+        this.tags = [];
+
+        const staticTag = map.find(tag => tag.static);
+        if (staticTag) {
+          const staticElement = document.createElement('div');
+          staticElement.className = `tag ${staticTag.size}`;
+          staticElement.textContent = staticTag.name;
+          staticElement.style.opacity = staticTag.opacity;
+          staticElement.style.left = `${this.center.x}%`;
+          staticElement.style.top = `${this.center.y}%`;
+          staticElement.style.transform = 'translate(-50%, -50%)';
+          this.cloud.appendChild(staticElement);
+
+          this.staticTag = {
+            element: staticElement,
+            x: this.center.x,
+            y: this.center.y,
+            size: 1,
+            opacity: staticTag.opacity
+          };
+        }
+
+        const sortedTags = map.filter(tag => !tag.static).sort((a, b) => {
           const sizes = { 'extraBig': 4, 'big': 3, 'mid': 2, 'small': 1, 'extraSmall': 0 };
           return sizes[b.size] - sizes[a.size];
         });
 
-        // Массив для хранения размещенных тегов
-        const placedTags = [];
-
-        // Создаем элементы тегов
-        sortedTags.forEach(tag => {
+        sortedTags.forEach((tag, index) => {
           const tagElement = document.createElement('div');
           tagElement.className = `tag ${tag.size}`;
           tagElement.textContent = tag.name;
           tagElement.style.opacity = tag.opacity;
 
-          // Временно добавляем элемент для измерения его размеров
           tagElement.style.visibility = 'hidden';
-          cloud.appendChild(tagElement);
+          this.cloud.appendChild(tagElement);
 
           const tagRect = tagElement.getBoundingClientRect();
           const tagWidth = tagRect.width;
           const tagHeight = tagRect.height;
 
-          cloud.removeChild(tagElement);
+          this.cloud.removeChild(tagElement);
 
-          // Пытаемся разместить тег без пересечений
-          let placed = false;
-          let attempts = 0;
-          const maxAttempts = 200;
+          const angle = Math.random() * Math.PI * 2;
+          const distance = 0.7 + Math.random() * 0.2;
+          const left = this.center.x + Math.cos(angle) * distance * 50;
+          const top = this.center.y + Math.sin(angle) * distance * 50;
 
-          let tagWidthPercent = 0;
-          let tagHeightPercent = 0;
+          tagElement.style.left = `${left}%`;
+          tagElement.style.top = `${top}%`;
+          tagElement.style.visibility = 'visible';
+          tagElement.style.animation = `floatIn ${0.3 + Math.random() * 0.4}s ease-out forwards`;
 
-          while (!placed && attempts < maxAttempts) {
-            attempts++;
+          this.cloud.appendChild(tagElement);
 
-            // Генерируем случайные координаты в процентах
-            let leftPercent, topPercent;
+          // Уменьшил время затухания до 0.5-1 секунды
+          const fadeDuration = 500 + Math.random() * 500;
 
-            // Для первых 20 тегов используем более точное размещение
-            if (attempts < 20) {
-              const angle = (attempts / 20) * 2 * Math.PI;
-              const distance = 0.3 + (attempts % 10) * 0.05;
+          this.tags.push({
+            element: tagElement,
+            originalSize: tag.size,
+            x: left,
+            y: top,
+            speed: (0.3 + Math.random() * 0.45) * this.speedFactor,
+            size: 1,
+            opacity: tag.opacity,
+            width: tagWidth,
+            height: tagHeight,
+            sizeValue: this.getSizeValue(tag.size),
+            fadeDuration: fadeDuration,
+            fadeStartTime: 0,
+            isFading: false
+          });
+        });
+      }
 
-              leftPercent = 50 + distance * Math.cos(angle) * 50;
-              topPercent = 50 + distance * Math.sin(angle) * 50;
-            } else {
-              // Случайное размещение для остальных попыток
-              leftPercent = 10 + Math.random() * 80;
-              topPercent = 10 + Math.random() * 80;
-            }
+      getSizeValue(size) {
+        const sizes = { 'extraBig': 4, 'big': 3, 'mid': 2, 'small': 1, 'extraSmall': 0 };
+        return sizes[size];
+      }
 
-            // Корректируем позицию, чтобы тег полностью помещался в облако
-            tagWidthPercent = (tagWidth / cloudWidth) * 100;
-            tagHeightPercent = (tagHeight / cloudHeight) * 100;
+      startAnimation() {
+        if (this.animationId) {
+          cancelAnimationFrame(this.animationId);
+        }
 
-            leftPercent = Math.max(tagWidthPercent / 2, Math.min(100 - tagWidthPercent / 2, leftPercent));
-            topPercent = Math.max(tagHeightPercent / 2, Math.min(100 - tagHeightPercent / 2, topPercent));
+        const animate = (time) => {
+          if (!this.lastTime) this.lastTime = time;
+          const deltaTime = Math.min(time - this.lastTime, 100) / 1000;
+          this.lastTime = time;
 
-            // Проверяем пересечения с другими тегами
-            const collision = checkCollision(placedTags, {
-              left: leftPercent,
-              top: topPercent,
-              width: tagWidthPercent,
-              height: tagHeightPercent
-            });
+          this.updateTags(deltaTime, time);
 
-            if (!collision) {
-              placed = true;
-              tagElement.style.left = `${leftPercent}%`;
-              tagElement.style.top = `${topPercent}%`;
-              tagElement.style.visibility = 'visible';
-              cloud.appendChild(tagElement);
-
-              // Добавляем тег в массив размещенных
-              placedTags.push({
-                left: leftPercent,
-                top: topPercent,
-                width: tagWidthPercent,
-                height: tagHeightPercent,
-                element: tagElement
-              });
-
-              console.log(tagWidthPercent);
-              console.log(tagHeightPercent);
-
-              // Инициализируем движение для этого тега
-              initTagMovement(tagElement, tagWidthPercent, tagHeightPercent);
-            }
+          this.frameCount++;
+          if (this.frameCount % this.collisionCheckInterval === 0) {
+            this.checkCollisions();
           }
 
-          // Если тег не поместился после всех попыток, размещаем его в любом случае
-          if (!placed) {
+          this.animationId = requestAnimationFrame(animate);
+        };
 
-            // Находим наименее плотную область
-            const bestPosition = findBestPosition(placedTags, tagWidthPercent, tagHeightPercent);
+        this.animationId = requestAnimationFrame(animate);
+      }
 
-            tagElement.style.left = `${bestPosition.left}%`;
-            tagElement.style.top = `${bestPosition.top}%`;
-            tagElement.style.visibility = 'visible';
-            cloud.appendChild(tagElement);
+      updateTags(deltaTime, currentTime) {
+        this.tags.forEach(tag => {
+          const dx = this.center.x - tag.x;
+          const dy = this.center.y - tag.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
 
-            placedTags.push({
-              left: bestPosition.left,
-              top: bestPosition.top,
-              width: tagWidthPercent,
-              height: tagHeightPercent,
-              element: tagElement
-            });
+          // Сначала затухание
+          if (distance < this.fadeStartDistance && !tag.isFading) {
+            tag.isFading = true;
+            tag.fadeStartTime = currentTime;
+          }
 
-            // Инициализируем движение для этого тега
-            initTagMovement(tagElement, tagWidthPercent, tagHeightPercent);
+          if (tag.isFading) {
+            const fadeProgress = Math.min((currentTime - tag.fadeStartTime) / tag.fadeDuration, 1);
+            tag.opacity = 1 - fadeProgress;
+            tag.element.style.opacity = tag.opacity;
+          }
+
+          // Затем движение (если ещё виден)
+          if (tag.opacity > 0.01) {
+            const directionX = dx / distance;
+            const directionY = dy / distance;
+
+            tag.x += directionX * tag.speed * 50 * deltaTime;
+            tag.y += directionY * tag.speed * 50 * deltaTime;
+
+            const progress = distance / 50;
+            tag.size = progress * 0.8 + 0.2;
+
+            tag.element.style.left = `${tag.x}%`;
+            tag.element.style.top = `${tag.y}%`;
+            tag.element.style.transform = `translate(-50%, -50%) scale(${tag.size})`;
+          }
+
+          if (tag.opacity <= 0.01 || distance < this.fadeEndDistance) {
+            this.resetTag(tag, currentTime);
           }
         });
-
-        console.log(`Размещено тегов: ${placedTags.length} из ${sortedTags.length}`);
       }
 
-      function initTagMovement(tagElement, tagWidthPercent, tagHeightPercent) {
-        // Генерируем случайное направление и скорость
-        const angle = Math.random() * 2 * Math.PI;
-        const speed = 0.02 + Math.random() * 0.03; // Скорость движения (0.02-0.05% за кадр)
+      checkCollisions() {
+        const sortedTags = [...this.tags].sort((a, b) => a.sizeValue - b.sizeValue);
 
-        // Сохраняем данные о движении
-        tagMovements[tagElement.textContent] = {
-          dx: Math.cos(angle) * speed,
-          dy: Math.sin(angle) * speed,
-          widthPercent: tagWidthPercent,
-          heightPercent: tagHeightPercent,
-          element: tagElement
-        };
-      }
+        sortedTags.forEach(tag => {
+          tag.element.classList.remove('hidden');
+        });
 
-      function animateTags() {
-        const cloud = document.getElementById('tagCloud');
-        const cloudWidth = cloud.offsetWidth;
-        const cloudHeight = cloud.offsetHeight;
+        for (let i = 0; i < sortedTags.length; i++) {
+          for (let j = i + 1; j < sortedTags.length; j++) {
+            const tag1 = sortedTags[i];
+            const tag2 = sortedTags[j];
 
-        for (const tagName in tagMovements) {
-          const movement = tagMovements[tagName];
-          const tagElement = movement.element;
-
-          // Получаем текущие координаты
-          let currentLeft = parseFloat(tagElement.style.left);
-          let currentTop = parseFloat(tagElement.style.top);
-
-          // Вычисляем новые координаты
-          let newLeft = currentLeft + movement.dx;
-          let newTop = currentTop + movement.dy;
-
-          // Проверяем границы облака с учетом размера тега
-          const halfWidth = movement.widthPercent / 2;
-          const halfHeight = movement.heightPercent / 2;
-
-          // Проверка левой и правой границы
-          if (newLeft - halfWidth < 0) {
-            newLeft = halfWidth;
-            movement.dx = -movement.dx; // Рикошет
-          } else if (newLeft + halfWidth > 100) {
-            newLeft = 100 - halfWidth;
-            movement.dx = -movement.dx; // Рикошет
-          }
-
-          // Проверка верхней и нижней границы
-          if (newTop - halfHeight < 0) {
-            newTop = halfHeight;
-            movement.dy = -movement.dy; // Рикошет
-          } else if (newTop + halfHeight > 100) {
-            newTop = 100 - halfHeight;
-            movement.dy = -movement.dy; // Рикошет
-          }
-
-          // Обновляем позицию тега
-          tagElement.style.left = `${newLeft}%`;
-          tagElement.style.top = `${newTop}%`;
-        }
-
-        // Продолжаем анимацию
-        requestAnimationFrame(animateTags);
-      }
-
-      function checkCollision(placedTags, newTag) {
-        // Увеличиваем зону проверки для лучшего разделения тегов
-        const padding = 1.5; // 1.5% от размера облака
-
-        for (const tag of placedTags) {
-          // Проверяем пересечение прямоугольников с учетом padding
-          if (!(newTag.left + newTag.width / 2 + padding < tag.left - tag.width / 2 - padding ||
-            newTag.left - newTag.width / 2 - padding > tag.left + tag.width / 2 + padding ||
-            newTag.top + newTag.height / 2 + padding < tag.top - tag.height / 2 - padding ||
-            newTag.top - newTag.height / 2 - padding > tag.top + tag.height / 2 + padding)) {
-            return true; // Найдено пересечение
-          }
-        }
-        return false; // Пересечений нет
-      }
-
-      function findBestPosition(placedTags, tagWidthPercent, tagHeightPercent) {
-        // Если нет размещенных тегов, размещаем в центре
-        if (placedTags.length === 0) {
-          return { left: 50, top: 50 };
-        }
-
-        // Ищем позицию с минимальным пересечением
-        let bestPosition = { left: 10, top: 10 };
-        let minCollisions = Infinity;
-
-        // Проверяем несколько возможных позиций
-        for (let left = 10; left <= 90; left += 10) {
-          for (let top = 10; top <= 90; top += 10) {
-            let collisions = 0;
-
-            for (const tag of placedTags) {
-              if (!(left + tagWidthPercent / 2 < tag.left - tag.width / 2 ||
-                left - tagWidthPercent / 2 > tag.left + tag.width / 2 ||
-                top + tagHeightPercent / 2 < tag.top - tag.height / 2 ||
-                top - tagHeightPercent / 2 > tag.top + tag.height / 2)) {
-                collisions++;
-              }
-            }
-
-            if (collisions < minCollisions) {
-              minCollisions = collisions;
-              bestPosition = { left, top };
+            if (this.isColliding(tag1, tag2)) {
+              const smallerTag = tag1.sizeValue < tag2.sizeValue ? tag1 : tag2;
+              smallerTag.element.classList.add('hidden');
             }
           }
         }
-
-        return bestPosition;
       }
 
-      // Инициализируем облако тегов после загрузки страницы
-      window.addEventListener('load', () => {
-        createTagCloud();
-        // Запускаем анимацию движения тегов
-        requestAnimationFrame(animateTags);
-      });
+      isColliding(tag1, tag2) {
+        const rect1 = tag1.element.getBoundingClientRect();
+        const rect2 = tag2.element.getBoundingClientRect();
 
-      // Оптимизированная обработка изменения размера окна
-      let resizeTimeout;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          createTagCloud();
+        return !(
+          rect1.right < rect2.left ||
+          rect1.left > rect2.right ||
+          rect1.bottom < rect2.top ||
+          rect1.top > rect2.bottom
+        );
+      }
+
+      resetTag(tag, currentTime) {
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 0.7 + Math.random() * 0.2;
+
+        tag.x = this.center.x + Math.cos(angle) * distance * 50;
+        tag.y = this.center.y + Math.sin(angle) * distance * 50;
+        tag.size = 1;
+        tag.opacity = 1;
+        tag.isFading = false;
+        tag.fadeStartTime = 0;
+
+        tag.element.style.left = `${tag.x}%`;
+        tag.element.style.top = `${tag.y}%`;
+        tag.element.style.transform = `translate(-50%, -50%) scale(1)`;
+        tag.element.style.opacity = 1;
+        tag.element.classList.remove('hidden');
+
+        tag.element.style.animation = 'none';
+        tag.element.style.animation = `floatIn ${0.3 + Math.random() * 0.3}s ease-out forwards`;
+      }
+
+      handleResize() {
+        clearTimeout(this.resizeTimeout);
+        this.resizeTimeout = setTimeout(() => {
+          this.createTags();
         }, 200);
-      });
+      }
     }
 
+    window.addEventListener('load', () => {
+      new TagCloud();
+    });
 
   });
 })();
