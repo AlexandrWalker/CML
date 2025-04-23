@@ -2588,12 +2588,12 @@ a:hover {
 }
 .work__slide {
   overflow: hidden;
-  width: calc((100% - 54rem) / 4) !important;
+  width: calc((100% - 54rem) / 4);
   height: auto;
   transition: all 0.5s ease;
 }
 .work__slide-active {
-  width: 54rem !important;
+  width: 54rem;
 }
 .work__slide-active .work__item-count {
   background-color: var(--primary-accent);
@@ -2605,6 +2605,10 @@ a:hover {
 .work__slide-active .icon-angle-second {
   transform: translate(-0.3125rem, 0.3125rem);
   transition-delay: 0.3s;
+}
+.work .swiper-slide:last-child {
+  width: calc(100% - 26.2rem);
+  min-width: calc(100% - 26.2rem);
 }
 
 .banner {
@@ -3418,10 +3422,10 @@ a:hover {
     gap: 1rem;
   }
   .work__slide {
-    width: calc((100% - 35.7rem) / 4) !important;
+    width: calc((100% - 35.7rem) / 4);
   }
   .work__slide-active {
-    width: 35.7rem !important;
+    width: 35.7rem;
   }
   .work__item-title {
     font-size: 1.6rem;
@@ -3906,8 +3910,8 @@ a:hover {
     margin: 0;
   }
   .work .swiper-slide {
-    width: 26.2rem !important;
-    min-width: 26.2rem !important;
+    width: 26.2rem;
+    min-width: 26.2rem;
     height: auto;
   }
   .work__item {
