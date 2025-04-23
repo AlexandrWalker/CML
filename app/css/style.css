@@ -1949,6 +1949,7 @@ a:hover {
 }
 .dropdown__button:hover {
   color: inherit;
+  background-color: var(--white);
 }
 .dropdown__button--active {
   background-color: var(--white);
