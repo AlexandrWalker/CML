@@ -602,11 +602,11 @@
   }
 
   .work__slide {
-    width: calc((100% - 35.7rem) / 4);
+    width: calc((100% - 35.7rem) / 4) !important;
   }
 
   .work__slide-active {
-    width: 35.7rem;
+    width: 35.7rem !important;
   }
 
   .work__item-title {
@@ -1233,8 +1233,8 @@
   }
 
   .work .swiper-slide {
-    width: 26.2rem;
-    min-width: 26.2rem;
+    width: 26.2rem !important;
+    min-width: 26.2rem !important;
     height: auto;
   }
 
@@ -1246,7 +1246,7 @@
   }
 
   .work .swiper-slide-active {
-    width: 26.2rem;
+    width: 26.2rem !important;
   }
 
   .work .swiper-slide-active .work__item-content {

@@ -705,12 +705,12 @@
 
   &__slide {
     overflow: hidden;
-    width: calc((100% - 54rem) / 4);
+    width: calc((100% - 54rem) / 4) !important;
     height: auto;
     transition: all 0.5s ease;
 
-    &-active {
-      width: 54rem;
+    &.work__slide-active {
+      width: 54rem !important;
 
       .work__item-count {
         background-color: var(--primary-accent);
@@ -731,8 +731,8 @@
   .swiper-slide {
 
     &:last-child {
-      width: calc(100% - 26.2rem);
-      min-width: calc(100% - 26.2rem);
+      width: calc(100% - 26.2rem) !important;
+      min-width: calc(100% - 26.2rem) !important;
     }
   }
 }
@@ -1189,63 +1189,68 @@
   }
 }
 
-/* cloud */
-// .tag-cloud {
-//   position: relative;
-//   width: 100%;
-//   height: 45.5rem;
-//   border-radius: 6rem;
-//   overflow: hidden;
-// }
+.tag-cloud {
+  position: relative;
+  width: 100%;
+  height: 45.5rem;
+  overflow: hidden;
+}
 
-// .tag {
-//   position: absolute;
-//   white-space: nowrap;
-//   cursor: default;
-//   transition: transform 0.2s;
-//   line-height: 100%;
-//   text-transform: uppercase;
-// }
+.tag {
+  position: absolute;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: default;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  transition: transform .15s ease-in-out, opacity .25s ease-in-out;
+  will-change: transform, opacity;
+}
 
-// .tag:hover {
-//   transform: scale(1.1);
-//   z-index: 100;
-// }
+.extraBig {
+  color: #C62826;
+  font-size: 2.8rem;
+  font-weight: bold;
+  z-index: 10;
+}
 
-// .extraBig {
-//   font-size: 6rem;
-//   font-weight: bold;
-//   color: var(--primary-accent);
-//   z-index: 5;
-// }
+.big {
+  color: #2A2626;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 4;
+}
 
-// .big {
-//   font-size: 4rem;
-//   font-weight: bold;
-//   color: var(--primary-black);
-//   z-index: 4;
-// }
+.mid {
+  color: #68666A;
+  font-size: 1.6rem;
+  z-index: 3;
+}
 
-// .mid {
-//   font-size: 3rem;
-//   color: #434146;
-//   opacity: .8;
-//   z-index: 3;
-// }
+.small {
+  color: #7A787C;
+  font-size: 1.2rem;
+  z-index: 2;
+}
 
-// .small {
-//   font-size: 2rem;
-//   color: #434146;
-//   opacity: .7;
-//   z-index: 2;
-// }
+.extraSmall {
+  color: #9D9C9F;
+  font-size: 1rem;
+  z-index: 1;
+  opacity: .5;
+}
 
-// .extraSmall {
-//   font-size: 1.4rem;
-//   color: #434146;
-//   opacity: .5;
-//   z-index: 1;
-// }
+@keyframes floatIn {
+  0% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
 
 /* flag */
 // .flag {}
