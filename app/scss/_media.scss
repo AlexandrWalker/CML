@@ -246,6 +246,10 @@
   .header__btn {
     height: 4.4rem;
   }
+  
+  .header .header__btn {
+    width: 25rem;
+  }
 
   .footer .header__btn {
     height: 5rem;
@@ -507,7 +511,7 @@
   }
 
   .feat__item-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .transport__items {
@@ -1030,24 +1034,28 @@
     height: auto;
   }
 
+  .tag:hover {
+    font-size: 22px;
+  }
+
   .extraBig {
-    font-size: 2.4rem;
+    font-size: 22px;
   }
 
   .big {
-    font-size: 2rem;
+    font-size: 18px;
   }
 
   .mid {
-    font-size: 1.6rem;
+    font-size: 14px;
   }
 
   .small {
-    font-size: 1.4rem;
+    font-size: 10px;
   }
 
   .extraSmall {
-    font-size: 1.2rem;
+    font-size: 10px;
   }
 }
 
