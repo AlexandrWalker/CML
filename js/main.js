@@ -493,9 +493,6 @@
         plate.classList.remove(classToAdd);
       }
 
-      console.log(verticalScrollPosition + window.innerHeight);
-      console.log(document.body.offsetHeight);
-
       const winHeight = window.innerHeight;
       if (verticalScrollPosition + winHeight < document.body.offsetHeight) {
         plate.classList.add(classToAdd);
@@ -746,8 +743,8 @@
         this.speedFactor = 0.12;
         this.collisionCheckInterval = 10;
         this.frameCount = 0;
-        this.fadeStartDistance = 24;
-        this.fadeEndDistance = 5;
+        this.fadeStartDistance = 14;
+        this.fadeEndDistance = 2;
 
         this.init();
       }
