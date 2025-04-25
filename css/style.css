@@ -3975,6 +3975,7 @@ a:hover {
   #modal-calc .modal__box {
     margin: 0;
     width: 100%;
+    padding-bottom: 11rem;
   }
   .calc__container {
     padding: 0;
