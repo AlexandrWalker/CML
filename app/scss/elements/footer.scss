@@ -98,7 +98,9 @@
       text-align: right;
 
       &:hover {
-        text-decoration-line: underline;
+        span {
+          text-decoration-line: underline;
+        }
 
         i {
           background-color: var(--primary-accent);

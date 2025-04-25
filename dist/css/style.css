@@ -1221,7 +1221,7 @@ a:hover {
   color: inherit;
   text-align: right;
 }
-.footer__info-download:hover {
+.footer__info-download:hover span {
   text-decoration-line: underline;
 }
 .footer__info-download:hover i {
