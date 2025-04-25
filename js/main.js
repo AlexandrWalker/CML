@@ -464,7 +464,7 @@
 
 
     const head = this.document.querySelector('.head');
-    const h = document.getElementById('first-section').offsetHeight;
+    const h = document.getElementById('first-section');
     const plate = document.getElementById('plate');
     const classToAdd = 'show';
 
@@ -487,7 +487,7 @@
         head.classList.remove('fixed');
       }
 
-      if (verticalScrollPosition > h && !isActive) {
+      if ( h && verticalScrollPosition > h.offsetHeight && !isActive) {
         plate.classList.add(classToAdd);
       } else {
         plate.classList.remove(classToAdd);
@@ -540,7 +540,9 @@
     const tabsPanelActive = document.querySelector('.tabs__panel--active');
     const tabsPanelFirst = document.querySelector('.tabs__panel--first');
 
-    tabsPanelFirst.click();
+    if (tabsPanelFirst) {
+      tabsPanelFirst.click();
+    }
 
     if (case__acc) {
       window.addEventListener('resize', function (event) {
