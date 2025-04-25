@@ -1,0 +1,70 @@
+.privacy {
+
+  &__inner {
+    max-width: 110rem;
+    width: 100%;
+  }
+
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  a.privacy__download:hover {
+    text-decoration: none;
+  }
+
+  &__download {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 120%;
+    color: var(--primary-accent);
+    margin-bottom: 3rem;
+    width: fit-content;
+
+    &:hover {
+      text-decoration-line: none;
+
+      span {
+        text-decoration-line: underline;
+      }
+    }
+
+    i {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__accent {
+    color: var(--primary-accent);
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    line-height: 1.2;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  a {
+    color: var(--primary-accent);
+
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+
+  strong {
+    font-weight: 800;
+  }
+}

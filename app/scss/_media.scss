@@ -246,7 +246,7 @@
   .header__btn {
     height: 4.4rem;
   }
-  
+
   .header .header__btn {
     width: 25rem;
   }
@@ -1057,6 +1057,48 @@
   .extraSmall {
     font-size: 10px;
   }
+
+  /* privacy */
+  .privacy .title {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .privacy__download {
+    font-size: 1.4rem;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .privacy__download i {
+    font-size: 2rem;
+  }
+
+  .privacy h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .privacy p {
+    font-size: 1.4rem;
+  }
+
+  .privacy p:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  /* breadcrumbs */
+  .breadcrumbs {
+    margin: 2rem 0;
+  }
+
+  .breadcrumbs ul {
+    gap: 0.5rem;
+  }
+
+  .breadcrumbs li {
+    gap: 0.5rem;
+  }
 }
 
 @media (max-width: 660px) {}
@@ -1554,5 +1596,9 @@
 
   .transport__item-title {
     word-break: break-word;
+  }
+
+  .privacy .title {
+    font-size: 2.4rem;
   }
 }
