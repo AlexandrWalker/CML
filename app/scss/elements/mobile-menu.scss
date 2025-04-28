@@ -204,7 +204,7 @@
   }
 
   &__body {
-    // flex: 1 0 auto;
+    flex: 1 0 auto;
     transition: margin-top 0.3s ease;
 
     &.down {
@@ -217,7 +217,7 @@
     background-color: var(--primary-accent);
     color: var(--white);
     padding: 3rem 0 5rem;
-    // flex: 0 0 auto;
+    flex: 0 0 auto;
 
     &-container {
       display: flex;

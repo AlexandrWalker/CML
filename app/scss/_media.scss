@@ -380,6 +380,11 @@
     // flex-direction: column-reverse;
   }
 
+  .menu__body,
+  .menu__foot {
+    flex: none;
+  }
+
   .menu__body.down {
     // margin-top: 31rem;
     margin-top: 0;
