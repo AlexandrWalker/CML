@@ -1326,6 +1326,7 @@ a:hover {
   z-index: 300;
   pointer-events: none;
   transition: all 0.3s ease;
+  height: 100vh;
 }
 .menu.mobile-menu--opened {
   pointer-events: all;
@@ -1469,7 +1470,6 @@ a:hover {
   display: none;
 }
 .menu__body {
-  flex: 1 0 auto;
   transition: margin-top 0.3s ease;
 }
 .menu__body.down {
@@ -1479,7 +1479,6 @@ a:hover {
   background-color: var(--primary-accent);
   color: var(--white);
   padding: 3rem 0 5rem;
-  flex: 0 0 auto;
 }
 .menu__foot-container {
   display: flex;
@@ -3396,7 +3395,7 @@ a:hover {
     top: -100%;
     right: 0;
     padding: 11rem 0 0;
-    gap: 3rem;
+    gap: 2rem;
   }
   .menu.mobile-menu--opened .menu__inner {
     top: 0;
@@ -3415,7 +3414,7 @@ a:hover {
     font-size: 1.4rem;
   }
   .menu__foot {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
   .menu__foot-title {
     font-size: 1.4rem;
