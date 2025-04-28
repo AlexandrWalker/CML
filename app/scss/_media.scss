@@ -1155,6 +1155,43 @@
   .breadcrumbs li {
     gap: 0.5rem;
   }
+
+  /* management */
+  .management__item {
+    height: 41.2rem;
+    padding: 2rem;
+  }
+
+  .management__item-wrap {
+    gap: 1rem;
+  }
+
+  .management__item-wrap p {
+    font-size: 2rem;
+  }
+
+  .management__item-wrap span {
+    font-size: 1.4rem;
+  }
+
+  /* reviews */
+  .reviews__item {
+    padding: 2rem;
+  }
+
+  .reviews__item-body {
+    margin-bottom: 4rem;
+    font-size: 1.2rem;
+  }
+
+  .reviews__item-foot p,
+  .reviews__item-foot {
+    font-size: 1.2rem;
+  }
+
+  .swiper-buttons {
+    display: none;
+  }
 }
 
 @media (max-width: 660px) {}
@@ -1350,22 +1387,22 @@
     background-color: var(--primary-bg);
   }
 
-  .swiper .swiper-horizontal>.swiper-pagination-bullets,
-  .swiper .swiper-pagination-bullets.swiper-pagination-horizontal,
-  .swiper .swiper-pagination-custom,
-  .swiper .swiper-pagination-fraction {
+  .hero .swiper .swiper-horizontal>.swiper-pagination-bullets,
+  .hero .swiper .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .hero .swiper .swiper-pagination-custom,
+  .hero .swiper .swiper-pagination-fraction {
     top: unset;
     bottom: 1rem;
     background-color: var(--primary-black-lighten);
     height: 1.4rem;
   }
 
-  .swiper-pagination-bullet {
+  .hero .swiper-pagination-bullet {
     width: 0.4rem;
     height: 0.4rem;
   }
 
-  .swiper-pagination-bullet-active {
+  .hero .swiper-pagination-bullet-active {
     width: 0.8rem;
     height: 0.8rem;
   }
@@ -1712,6 +1749,58 @@
 
   .tag-cloud {
     display: none;
+  }
+
+  /* management */
+  .management .swiper-slide {
+    max-width: 26.2rem;
+  }
+
+  .management__item {
+    height: 30.3rem;
+  }
+
+  /* reviews */
+  .swiper-control {
+    width: 100%;
+    order: 3;
+  }
+
+  .swiper-control .btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .reviews__item {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .reviews__item-head {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reviews__item-cover {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .reviews__item-wrap {
+    gap: 0.5rem;
+  }
+
+  .reviews__item-head p {
+    font-size: 1.6rem;
+  }
+
+  .reviews__item-head span {
+    font-size: 1.2rem;
+  }
+
+  .reviews__item-body {
+    gap: 1.5rem;
+    margin-bottom: 3rem;
   }
 }
 

@@ -33,6 +33,85 @@
       }
     });
 
+    var managementSlider = new Swiper(".management__slider", {
+      slidesPerView: 'auto',
+      slidesPerGroup: 1,
+      spaceBetween: 10,
+      speed: 600,
+      loop: true,
+      grid: false,
+      breakpoints: {
+        601: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+          grid: {
+            rows: 2,
+            fill: "row"
+          },
+        },
+        769: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+    var reviewsSlider = new Swiper(".reviews__slider", {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 10,
+      speed: 600,
+      loop: true,
+      breakpoints: {
+        381: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        769: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        1441: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    var casesSlider = new Swiper(".cases__slider", {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 10,
+      speed: 600,
+      loop: true,
+      breakpoints: {
+        769: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
     hero__slider.on("slideChange afterInit init", function () {
 
       let currentSlide = this.realIndex + 1;

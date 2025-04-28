@@ -68,6 +68,82 @@
   .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 0.5rem;
   }
+
+  &-control {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-button-next {
+    position: static;
+    width: 6rem;
+    height: 6rem;
+    margin: 0;
+    flex-shrink: 0;
+
+    &::after {
+      display: none;
+    }
+
+    i {
+      font-size: 6rem;
+      line-height: 1;
+      color: var(--primary-black);
+      transform: rotate(-90deg);
+      transition: all 0.3s ease;
+    }
+
+    &:hover i {
+      color: var(--primary-accent);
+    }
+  }
+
+  &-button-prev {
+    position: static;
+    width: 6rem;
+    height: 6rem;
+    margin: 0;
+    flex-shrink: 0;
+
+    &::after {
+      display: none;
+    }
+
+    i {
+      font-size: 6rem;
+      line-height: 1;
+      color: var(--primary-black);
+      transform: rotate(90deg);
+      transition: all 0.3s ease;
+    }
+
+    &:hover i {
+      color: var(--primary-accent);
+    }
+  }
+
+  &-horizontal>.swiper-pagination-bullets,
+  &-pagination-bullets.swiper-pagination-horizontal,
+  &-pagination-custom {
+    position: static;
+    margin-top: 2rem;
+    background-color: transparent;
+  }
+
+  &-pagination-bullet {
+    background-color: var(--primary-black);
+
+    &-active {
+      background-color: var(--primary-accent);
+    }
+  }
 }
 
 .fraction {
