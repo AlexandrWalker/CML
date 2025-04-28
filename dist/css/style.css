@@ -1619,7 +1619,7 @@ a:hover {
   top: 0;
   width: 100%;
   height: 100vh;
-  z-index: 110;
+  z-index: 510;
   background-color: rgba(0, 0, 0, 0.3);
   display: grid;
   align-items: center;
@@ -1790,7 +1790,7 @@ a:hover {
 }
 
 #modal-calc {
-  z-index: 310;
+  z-index: 510;
 }
 
 #modal-bid .modal__box {
