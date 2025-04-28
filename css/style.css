@@ -1470,6 +1470,7 @@ a:hover {
   display: none;
 }
 .menu__body {
+  flex: 1 0 auto;
   transition: margin-top 0.3s ease;
 }
 .menu__body.down {
@@ -1479,6 +1480,7 @@ a:hover {
   background-color: var(--primary-accent);
   color: var(--white);
   padding: 3rem 0 5rem;
+  flex: 0 0 auto;
 }
 .menu__foot-container {
   display: flex;
@@ -3403,6 +3405,10 @@ a:hover {
   }
   .menu__head {
     display: none;
+  }
+  .menu__body,
+  .menu__foot {
+    flex: none;
   }
   .menu__body.down {
     margin-top: 0;
