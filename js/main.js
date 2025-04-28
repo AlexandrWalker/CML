@@ -107,10 +107,8 @@
         lenis.stop();
 
         if (window.innerWidth < 769 && window.innerWidth !== 769) {
-          console.log('1');
           const burgerOpened = document.querySelector('.burger.burger--opened');
           if (burgerOpened) {
-            console.log('2');
             burgerText.innerHTML = 'Закрыть';
             lenis.stop();
           } else {
@@ -119,6 +117,7 @@
           }
         }
 
+        const burgerOpened = document.querySelector('.burger.burger--opened');
         if (burgerOpened) {
           lenis.stop();
         } else {
