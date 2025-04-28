@@ -81,7 +81,6 @@
       var menuAccordionActive = document.getElementsByClassName('active');
       const burger = document.getElementById('burger');
       const burgerText = document.getElementById('burgerText');
-      const burgerOpened = document.querySelector('.burger.burger--opened');
       const menu = document.getElementById('mobile-menu');
       const closeButton = document.querySelector('.menu__close');
       const overlay = document.querySelector('.menu__overlay');
@@ -105,9 +104,13 @@
         const isOpened = burger.classList.toggle('burger--opened');
         menu.classList.toggle('mobile-menu--opened', isOpened);
         head.classList.toggle('head--active');
+        lenis.stop();
 
         if (window.innerWidth < 769 && window.innerWidth !== 769) {
+          console.log('1');
+          const burgerOpened = document.querySelector('.burger.burger--opened');
           if (burgerOpened) {
+            console.log('2');
             burgerText.innerHTML = 'Закрыть';
             lenis.stop();
           } else {
@@ -121,8 +124,6 @@
         } else {
           lenis.start();
         }
-
-        lenis.stop();
       };
 
       /**
