@@ -80,6 +80,8 @@
       const menuListItem = document.querySelector('.menu__list-item accordion active');
       var menuAccordionActive = document.getElementsByClassName('active');
       const burger = document.getElementById('burger');
+      const burgerText = document.getElementById('burgerText');
+      const burgerOpened = document.querySelector('.burger.burger--opened');
       const menu = document.getElementById('mobile-menu');
       const closeButton = document.querySelector('.menu__close');
       const overlay = document.querySelector('.menu__overlay');
@@ -103,6 +105,23 @@
         const isOpened = burger.classList.toggle('burger--opened');
         menu.classList.toggle('mobile-menu--opened', isOpened);
         head.classList.toggle('head--active');
+
+        if (window.innerWidth < 769 && window.innerWidth !== 769) {
+          if (burgerOpened) {
+            burgerText.innerHTML = 'Закрыть';
+            lenis.stop();
+          } else {
+            burgerText.innerHTML = 'Меню';
+            lenis.start();
+          }
+        }
+
+        if (burgerOpened) {
+          lenis.stop();
+        } else {
+          lenis.start();
+        }
+
         lenis.stop();
       };
 
@@ -112,6 +131,8 @@
       const closeMenu = () => {
         burger.classList.remove('burger--opened');
         menu.classList.remove('mobile-menu--opened');
+        head.classList.remove('head--active');
+
         lenis.start();
       };
 
@@ -124,6 +145,7 @@
       document.addEventListener('click', (event) => {
         if (!menu.contains(event.target) && !burger.contains(event.target)) {
           closeMenu();
+          lenis.start();
         }
       });
 
@@ -304,6 +326,7 @@
     if (headerItem) {
       Array.from(headerItem).forEach(function (hItem, i, headerItem) {
         hItem.addEventListener('click', function (e) {
+          e.stopPropagation();
           if (headerActive.length > 0 && headerActive[0] !== this) {
             headerActive[0].classList.remove('header__btn-active');
             document.querySelector('.menu__body').classList.remove('down');
@@ -487,14 +510,8 @@
         head.classList.remove('fixed');
       }
 
-      if ( h && verticalScrollPosition > h.offsetHeight && !isActive) {
-        plate.classList.add(classToAdd);
-      } else {
-        plate.classList.remove(classToAdd);
-      }
-
       const winHeight = window.innerHeight;
-      if (verticalScrollPosition + winHeight < document.body.offsetHeight) {
+      if (verticalScrollPosition + winHeight < document.body.offsetHeight && h && verticalScrollPosition > h.offsetHeight && !isActive) {
         plate.classList.add(classToAdd);
       } else {
         plate.classList.remove(classToAdd);

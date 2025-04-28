@@ -324,20 +324,18 @@
   &--opened {
 
     &.burger span {
-      background-color: var(--white);
+      background-color: transparent;
 
       &::before {
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
+        transform: rotate(45deg);
         background-color: var(--white);
       }
 
       &::after {
         top: 50%;
         bottom: unset;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
+        transform: rotate(-45deg);
         background-color: var(--white);
       }
     }

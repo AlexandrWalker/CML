@@ -7,14 +7,14 @@
   bottom: 0;
   right: 0;
   z-index: 300;
-  opacity: 0;
-  visibility: hidden;
+  // opacity: 0;
+  // visibility: hidden;
   pointer-events: none;
   transition: all 0.3s ease;
 
   &.mobile-menu--opened {
-    opacity: 1;
-    visibility: visible;
+    // opacity: 1;
+    // visibility: visible;
     pointer-events: all;
 
     .menu__inner {
@@ -168,6 +168,10 @@
           margin-bottom: 1.5rem;
         }
       }
+    }
+
+    &-btn {
+      white-space: nowrap;
     }
   }
 

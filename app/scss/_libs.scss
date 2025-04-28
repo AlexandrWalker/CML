@@ -107,7 +107,7 @@
 }
 
 .splitting .animate {
-  animation: slideUp 0.6s cubic-bezier(0.5,0,0.1,1) both;
+  animation: slideUp 0.6s cubic-bezier(0.5, 0, 0.1, 1) both;
   animation-delay: calc(0.5s * var(--char-percent));
 }
 

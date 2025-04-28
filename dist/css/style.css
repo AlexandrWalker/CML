@@ -992,19 +992,17 @@ a:hover {
   background-color: var(--white);
 }
 .burger--opened.burger span {
-  background-color: var(--white);
+  background-color: transparent;
 }
 .burger--opened.burger span::before {
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: rotate(45deg);
   background-color: var(--white);
 }
 .burger--opened.burger span::after {
   top: 50%;
   bottom: unset;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
+  transform: rotate(-45deg);
   background-color: var(--white);
 }
 .burger__text {
@@ -1326,14 +1324,10 @@ a:hover {
   bottom: 0;
   right: 0;
   z-index: 300;
-  opacity: 0;
-  visibility: hidden;
   pointer-events: none;
   transition: all 0.3s ease;
 }
 .menu.mobile-menu--opened {
-  opacity: 1;
-  visibility: visible;
   pointer-events: all;
 }
 .menu.mobile-menu--opened .menu__inner {
@@ -1452,6 +1446,9 @@ a:hover {
 }
 .menu__list-content li:not(:last-child) {
   margin-bottom: 1.5rem;
+}
+.menu__list-btn {
+  white-space: nowrap;
 }
 .menu__head-container {
   display: flex;
@@ -2330,6 +2327,7 @@ a:hover {
   text-transform: uppercase;
   color: var(--primary-accent);
   transition: all 0.3s ease;
+  width: 5.2rem;
   flex-shrink: 0;
 }
 .service__item-title {
@@ -3129,7 +3127,24 @@ a:hover {
 }
 @media (max-width: 768px) {
   .head {
-    height: 11.68rem;
+    height: 11.438rem;
+    z-index: 400;
+  }
+  .head--active {
+    height: 8rem;
+  }
+  .head--active .nav {
+    display: none;
+  }
+  .menu .header__btn {
+    display: none;
+  }
+  .burger--opened.burger span::before,
+  .burger--opened.burger span::after {
+    background-color: var(--primary-accent);
+  }
+  .head .burger--opened.burger:hover span {
+    background-color: transparent;
   }
   .nav {
     background-color: var(--white);
@@ -3159,6 +3174,9 @@ a:hover {
     width: 0.8rem;
     height: 0.8rem;
   }
+  .nav__list-link::before {
+    background-color: var(--primary-black);
+  }
   .nav__list-link::after {
     border-bottom-color: var(--primary-black);
   }
@@ -3169,7 +3187,7 @@ a:hover {
     font-size: 1.6rem;
   }
   .wrapper {
-    padding-top: 11.68rem;
+    padding-top: 11.438rem;
   }
   .icon-angle-item {
     width: 2.062rem;
@@ -3329,10 +3347,22 @@ a:hover {
   .menu .header__btn-active .header__btn-icon {
     top: 1.8rem;
   }
+  .header__btn-head {
+    border-color: var(--primary-white);
+  }
+  .header__btn-head:hover {
+    border-color: var(--white);
+    background-color: var(--white);
+    color: var(--primary-accent);
+  }
+  .header__btn-head:hover + .header__btn-icon {
+    color: var(--primary-accent);
+  }
   .header__icons-item {
     background-color: var(--primary-black);
   }
   .burger {
+    width: 14.411rem;
     height: 4.4rem;
     background-color: var(--white);
     color: var(--primary-black);
@@ -3361,14 +3391,21 @@ a:hover {
   .menu__close:hover.burger span::after {
     background-color: var(--primary-accent);
   }
-  .menu {
+  .menu__inner {
     max-width: 100%;
+    top: -100%;
+    right: 0;
+    padding: 11rem 0 0;
+    gap: 3rem;
   }
-  .menu__head-container {
-    flex-direction: column-reverse;
+  .menu.mobile-menu--opened .menu__inner {
+    top: 0;
+  }
+  .menu__head {
+    display: none;
   }
   .menu__body.down {
-    margin-top: 31rem;
+    margin-top: 0;
   }
   .menu__list-title,
   .menu__list-link {
@@ -3387,10 +3424,6 @@ a:hover {
   .menu__foot-wrap:nth-child(2) .menu__foot-link {
     font-size: 2.4rem;
   }
-  .menu__inner {
-    padding: 0;
-    gap: 3rem;
-  }
   .menu__head-wrap {
     display: flex;
     justify-content: space-between;
@@ -3399,7 +3432,7 @@ a:hover {
     background-color: var(--primary-accent);
     width: calc(100% + 4rem);
     margin-left: -2rem;
-    padding: 1rem 2rem;
+    padding: 1.8rem 2rem;
   }
   .menu .header__logo {
     display: block;
@@ -3451,6 +3484,9 @@ a:hover {
   }
   .hero__block-count {
     font-size: 6rem;
+    text-align: center;
+    width: 4rem;
+    flex-shrink: 0;
   }
   .hero__block-title {
     font-size: 1.6rem;
@@ -3972,6 +4008,9 @@ a:hover {
   }
 }
 @media (max-width: 600px) {
+  .wrapper {
+    padding-top: 9.9rem;
+  }
   #modal-calc .modal__box {
     margin: 0;
     width: 100%;
@@ -3999,8 +4038,36 @@ a:hover {
   .modal .form-btn {
     width: 100%;
   }
+  .menu__head {
+    display: block;
+  }
+  .menu__inner {
+    padding: 8.4rem 0 0;
+  }
+  .menu__head-wrap {
+    display: none;
+    padding: 1rem 2rem;
+  }
+  .menu__body.down {
+    margin-top: 31rem;
+  }
+  .head {
+    height: 9.9rem;
+  }
+  .head--active {
+    height: 6.4rem;
+  }
+  .menu .header__btn {
+    display: flex;
+  }
+  .header {
+    padding: 1rem 0;
+  }
   .head .header__btn {
     display: none;
+  }
+  .nav__list-link {
+    height: 3.5rem;
   }
   .hero {
     margin: 0;
@@ -4017,7 +4084,8 @@ a:hover {
     font-size: 3rem;
   }
   .hero__item-btn {
-    margin-bottom: 25.8rem;
+    margin-bottom: 21.2rem;
+    height: 5rem;
   }
   .hero__slider-item {
     padding: 0;
@@ -4029,8 +4097,35 @@ a:hover {
   .hero__block:nth-child(1) {
     max-width: 100%;
   }
+  .hero__block:nth-child(1) .hero__block-title::before {
+    content: "1.";
+  }
   .hero__block:nth-child(2) {
-    max-width: 75%;
+    max-width: 100%;
+  }
+  .hero__block:nth-child(2) .hero__block-title::before {
+    content: "2.";
+  }
+  .hero__block:nth-child(3) .hero__block-title::before {
+    content: "3.";
+  }
+  .hero__block:nth-child(4) .hero__block-title::before {
+    content: "4.";
+  }
+  .hero__block-count {
+    display: none;
+  }
+  .hero__block-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .hero__block-title::before {
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    color: var(--primary-accent);
   }
   .hero__item-down {
     display: none;
@@ -4039,6 +4134,11 @@ a:hover {
     width: 25rem;
     height: 26.9rem;
     right: 6rem;
+    bottom: 3.5rem;
+  }
+  .hero__img.flag, .hero__img.cube {
+    width: 30rem;
+    height: 20rem;
   }
   .hero__bg-small {
     background-image: url(./../images/main/hero-bg-mob-small.png);
@@ -4333,9 +4433,19 @@ a:hover {
   }
 }
 @media (max-width: 360px) {
+  .menu__list-wrap {
+    gap: 1rem;
+  }
+  .hero__item-title {
+    word-break: break-word;
+  }
   .hero__img {
     right: 50%;
     transform: translateX(50%);
+  }
+  .hero__img.cube {
+    right: 5%;
+    transform: unset;
   }
   .hero__img.flag {
     right: 12%;
