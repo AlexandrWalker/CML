@@ -555,32 +555,16 @@
 
 
 
-    // const case__acc_l = document.querySelectorAll('.case__acc');
-
-    // case__acc_l.forEach(element => {
-    //   element.addEventListener('click', function () {
-    //     ScrollTrigger.refresh();
-    //   })
-    // });
-
-
-
     const head = this.document.querySelector('.head');
-    const h = document.getElementById('first-section');
+    const hFirstSection = document.getElementById('first-section');
+    const hCalc = document.getElementById('calc');
+    const h = hFirstSection.offsetHeight + hCalc.offsetHeight;
     const plate = document.getElementById('plate');
     const classToAdd = 'show';
 
     window.addEventListener('scroll', function () {
-      const verticalScrollPosition = 0;
-      const scrollPosition = window.scrollY;
-
-      if (scrollPosition !== verticalScrollPosition) {
-        plate.classList.remove(classToAdd);
-      }
-    });
-
-    window.addEventListener('scroll', debounce(function () {
       const verticalScrollPosition = window.pageYOffset;
+      const bottomScrollPosition = document.body.offsetHeight - 80 - window.innerHeight;
       const isActive = plate.classList.contains(classToAdd);
 
       if (verticalScrollPosition > 0 && verticalScrollPosition !== 0) {
@@ -589,25 +573,12 @@
         head.classList.remove('fixed');
       }
 
-      const winHeight = window.innerHeight;
-      if (verticalScrollPosition + winHeight < document.body.offsetHeight && h && verticalScrollPosition > h.offsetHeight && !isActive) {
+      if (verticalScrollPosition > h && verticalScrollPosition < bottomScrollPosition) {
         plate.classList.add(classToAdd);
       } else {
         plate.classList.remove(classToAdd);
       }
-    }, 100));
-
-    function debounce(func, delay) {
-      let timer;
-      return function () {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timer);
-        timer = setTimeout(function () {
-          func.apply(context, args);
-        }, delay);
-      }
-    }
+    });
 
 
 
