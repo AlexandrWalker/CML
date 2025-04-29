@@ -86,11 +86,15 @@
     &-item {
       padding-bottom: 2rem;
       border: 0;
-      border-bottom: 0.1rem solid var(--primary-black-50);
       overflow: hidden;
 
       &:not(:last-child) {
+        border-bottom: 0.1rem solid var(--primary-black-50);
         margin-bottom: 2rem;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
       }
 
       &.active {

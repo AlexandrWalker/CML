@@ -285,8 +285,7 @@ a {
     border-radius: 50%;
     background-color: var(--primary-accent);
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 2.4rem;
     right: 1rem;
   }
 }
@@ -348,7 +347,7 @@ a {
 
   &-title {
     position: absolute;
-    top: 1.2rem;
+    top: 1rem;
     left: 2rem;
     z-index: 1;
     font-weight: 300;
