@@ -23,6 +23,32 @@
     }
   }
 
+  &-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-bullet {
+      background-color: var(--primary-black);
+      opacity: 1;
+      transition: all 0.3s ease;
+      width: 0.8rem;
+      height: 0.8rem;
+      flex-shrink: 0;
+
+      &:hover {
+        background-color: var(--primary-accent);
+      }
+
+      &-active {
+        background-color: var(--primary-accent);
+        width: 1.2rem;
+        height: 1.2rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+
   &-slide-active {
     .swiper-progress {
       &::before {
@@ -102,14 +128,6 @@
     position: static;
     margin-top: 2rem;
     background-color: transparent;
-  }
-
-  &-pagination-bullet {
-    background-color: var(--primary-black);
-
-    &-active {
-      background-color: var(--primary-accent);
-    }
   }
 }
 

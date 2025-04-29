@@ -5,7 +5,35 @@
   }
 }
 
-@media (max-width: 1440px) {}
+@media (max-width: 1440px) {
+
+  /* cases */
+  .cases__item h5 {
+    font-size: 2rem;
+  }
+
+  .cases__item p {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+  }
+
+  .cases__item-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .cases__item-tags {
+    display: none;
+  }
+
+  .cases__item-icon {
+    background: transparent;
+  }
+
+  .cases__item-icon i {
+    font-size: 1.6rem;
+  }
+}
 
 @media (max-width: 991px) {}
 
@@ -1191,6 +1219,97 @@
   .swiper-buttons {
     display: none;
   }
+
+  /* info */
+  .info__inner {
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  .info__body {
+    max-width: 100%;
+  }
+
+  .info__text p {
+    font-size: 1.4rem;
+  }
+
+  .info .about__feat {
+    width: 100%;
+    gap: 3rem 5rem;
+  }
+
+  .info .about__feat-item {
+    gap: 2rem;
+  }
+
+  .info .about__feat-count {
+    font-size: 6rem;
+    line-height: 0.66;
+  }
+
+  .info .about__feat-text {
+    font-size: 1.4rem;
+  }
+
+  /* templates */
+  .templates {
+    min-height: 78.2rem;
+  }
+
+  .templates .breadcrumbs {
+    margin: 2rem 0;
+  }
+
+  .templates__title {
+    font-size: 5rem;
+  }
+
+  .templates__title span {
+    font-size: 3rem;
+  }
+
+  .templates__body {
+    gap: 3rem;
+  }
+
+  .templates__content {
+    max-width: 26.5rem;
+  }
+
+  .templates__content p {
+    font-size: 2rem;
+  }
+
+  .templates__img {
+    height: 51.2rem;
+    top: auto;
+    bottom: 1.7rem;
+    right: -3.2rem;
+  }
+
+  /* cases */
+  .cases__item {
+    padding: 2rem;
+  }
+
+  .cases__item h5 {
+    font-size: 1.6rem;
+  }
+
+  /* templates-s */
+  .templates-s__inner {
+    flex-direction: row;
+  }
+
+  .templates-s__feat {
+    flex-wrap: wrap;
+  }
+
+  .made .case__img {
+    height: 43.4rem;
+    margin: 0;
+  }
 }
 
 @media (max-width: 660px) {}
@@ -1800,6 +1919,88 @@
   .reviews__item-body {
     gap: 1.5rem;
     margin-bottom: 3rem;
+  }
+
+  /* info */
+  .info__body {
+    gap: 2rem;
+  }
+
+  .info .about__feat {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .info .about__feat-item {
+    gap: 1rem;
+  }
+
+  .info .about__feat-count {
+    font-size: 3.4rem;
+    line-height: 120%;
+  }
+
+  .info .about__feat-item {}
+
+  /* templates */
+  .templates {
+    min-height: 62.7rem;
+  }
+
+  .templates {
+    background-image: url(./../images/main/hero-bg-mob.png);
+  }
+
+  .templates__body {
+    gap: 4rem;
+  }
+
+  .templates__title {
+    font-size: 4rem;
+  }
+
+  .templates__inner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .templates__content {
+    gap: 2rem;
+    max-width: 100%;
+  }
+
+  .templates__content span {
+    width: 6.2rem;
+    height: 4.7rem;
+  }
+
+  .templates__content p {
+    font-size: 1.6rem;
+  }
+
+  .templates__img {
+    width: auto;
+    height: 26.9rem;
+    position: static;
+    margin: auto 4.1rem 1.4rem 6.2rem;
+  }
+
+  /* cases */
+  .cases__item {
+    padding: 1rem;
+  }
+
+  .cases__item h5 {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+  }
+
+  .cases__item p {
+    display: none;
+  }
+
+  .templates-s__inner {
+    flex-direction: column;
   }
 }
 

@@ -91,12 +91,16 @@
     });
 
     var casesSlider = new Swiper(".cases__slider", {
-      slidesPerView: 2,
+      slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 10,
       speed: 600,
       loop: true,
       breakpoints: {
+        361: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
         769: {
           slidesPerView: 3,
           spaceBetween: 20,
@@ -558,13 +562,14 @@
     const head = this.document.querySelector('.head');
     const hFirstSection = document.getElementById('first-section');
     const hCalc = document.getElementById('calc');
+    const hFooter = document.getElementById('footer');
     const h = hFirstSection.offsetHeight + hCalc.offsetHeight;
     const plate = document.getElementById('plate');
     const classToAdd = 'show';
 
     window.addEventListener('scroll', function () {
       const verticalScrollPosition = window.pageYOffset;
-      const bottomScrollPosition = document.body.offsetHeight - 80 - window.innerHeight;
+      const bottomScrollPosition = document.body.offsetHeight - hFooter.offsetHeight - window.innerHeight;
       const isActive = plate.classList.contains(classToAdd);
 
       if (verticalScrollPosition > 0 && verticalScrollPosition !== 0) {

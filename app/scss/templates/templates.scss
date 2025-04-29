@@ -1,0 +1,139 @@
+.templates {
+  background-color: var(--primary-black);
+  min-height: 68.2rem;
+  background-image: url(./../images/main/hero-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  position: relative;
+
+  .breadcrumbs {
+    margin: 4rem 0;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    max-width: 68rem;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-weight: 800;
+    font-size: 8rem;
+    line-height: 96%;
+    color: var(--white);
+    text-transform: uppercase;
+
+    span {
+      font-weight: 300;
+      font-size: 5rem;
+      line-height: 120%;
+      color: var(--primary-accent);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    span {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTciIGhlaWdodD0iNzMiIHZpZXdCb3g9IjAgMCA5NyA3MyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICAgIDxwYXRoIGQ9Ik0zNi43MjUzIDBWNS44MDAzOUMyOC40MDY2IDEwLjEzODkgMjIuNDUxMSAxNC42NjYgMTguODU4OSAxOS4zODE4QzE1LjI2NjggMjQuMDk3NSAxMy40NzA3IDI5LjIzNzcgMTMuNDcwNyAzNC44MDIzQzEzLjQ3MDcgMzguMTAzNCAxMy45NDMzIDQwLjM2NjkgMTQuODg4NiA0MS41OTNDMTUuNzM5NCA0Mi45MTM0IDE2Ljc3OTMgNDMuNTczNiAxOC4wMDgyIDQzLjU3MzZDMTkuMjM3MSA0My41NzM2IDIwLjg5MTQgNDMuMjQzNSAyMi45NzExIDQyLjU4MzNDMjUuMDUwNyA0MS44Mjg4IDI2Ljk0MTQgNDEuNDUxNiAyOC42NDI5IDQxLjQ1MTZDMzIuNTE4NyA0MS40NTE2IDM1Ljg3NDUgNDIuOTEzNCAzOC43MTA1IDQ1LjgzNzJDNDEuNjQwOSA0OC42NjY3IDQzLjEwNjIgNTIuMTU2MyA0My4xMDYyIDU2LjMwNjJDNDMuMTA2MiA2MC44MzMzIDQxLjM1NzMgNjQuNzQ3NCAzNy44NTk3IDY4LjA0ODVDMzQuMzYyIDcxLjI1NTIgMzAuMDEzNiA3Mi44NTg1IDI0LjgxNDQgNzIuODU4NUMxOC40ODA4IDcyLjg1ODUgMTIuNzYxNyA3MC4xMjM0IDcuNjU3MDIgNjQuNjUzMUMyLjU1MjM0IDU5LjE4MjggMCA1Mi40MzkzIDAgNDQuNDIyNUMwIDM0Ljk5MSAzLjExOTUzIDI2LjIxOTYgOS4zNTg1OCAxOC4xMDg1QzE1LjY5MjIgOS45MDMxIDI0LjgxNDQgMy44NjY5MyAzNi43MjUzIDBaTTkwLjE5MzggMC40MjQ0MTlWNS44MDAzOUM4MC42NDYxIDExLjI3MDcgNzQuMzU5OCAxNi4xNzUxIDcxLjMzNDggMjAuNTEzNkM2OC4zMDk4IDI0Ljg1MjEgNjYuNzk3MyAyOS45NDUxIDY2Ljc5NzMgMzUuNzkyNkM2Ni43OTczIDM4LjQzMzUgNjcuMzE3MiA0MC40MTQxIDY4LjM1NzEgNDEuNzM0NUM2OS4zOTY5IDQzLjA1NDkgNzAuNDg0IDQzLjcxNTEgNzEuNjE4NCA0My43MTUxQzcyLjY1ODIgNDMuNzE1MSA3NC4yMTggNDMuMzM3OSA3Ni4yOTc3IDQyLjU4MzNDNzguMzc3NCA0MS44Mjg4IDgwLjQ1NzEgNDEuNDUxNiA4Mi41MzY3IDQxLjQ1MTZDODYuNDEyNSA0MS40NTE2IDg5Ljc2ODQgNDIuODY2MyA5Mi42MDQzIDQ1LjY5NTdDOTUuNTM0OCA0OC40MzA5IDk3IDUxLjgyNjIgOTcgNTUuODgxOEM5NyA2MC41MDMyIDk1LjE1NjYgNjQuNTExNiA5MS40Njk5IDY3LjkwN0M4Ny44Nzc3IDcxLjMwMjMgODMuNDM0OCA3MyA3OC4xNDEgNzNDNzEuOTAyIDczIDY2LjI3NzQgNzAuMzEyIDYxLjI2NzMgNjQuOTM2MUM1Ni4yNTcxIDU5LjU2MDEgNTMuNzUyIDUyLjg2MzcgNTMuNzUyIDQ0Ljg0NjlDNTMuNzUyIDM0Ljk0MzggNTYuOTE4OCAyNS45MzY3IDYzLjI1MjQgMTcuODI1NkM2OS41ODYgOS42MjAxNiA3OC41NjY0IDMuODE5NzcgOTAuMTkzOCAwLjQyNDQxOVoiIGZpbGw9IiNDNjI4MjYiLz4NCiAgICAgIDwvc3ZnPg0KICAgICAg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 9.7rem;
+      height: 7.3rem;
+    }
+
+    p {
+      font-weight: 800;
+      font-size: 2.4rem;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10.6rem;
+    z-index: 1;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.templates-s {
+  padding-bottom: 5rem;
+  background-color: var(--primary-black);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .breadcrumbs {
+    margin: 4rem 0 3rem;
+  }
+
+  .section__head {
+    max-width: 90rem;
+  }
+
+  .section__suptitle {
+    color: var(--white);
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  .section__title {
+    margin: 0;
+  }
+
+  &__feat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    max-width: 85.2rem;
+    width: 100%;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      color: var(--white);
+    }
+
+    span {
+      font-weight: 800;
+      font-size: 7rem;
+      line-height: 105%;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 2.4rem;
+      line-height: 120%;
+    }
+  }
+}
