@@ -3336,6 +3336,18 @@ a:hover {
   font-weight: 800;
 }
 
+.completed {
+  padding: 4rem 0;
+}
+.completed__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.completed .cases__item {
+  width: calc(33.33333% - 1.33333rem);
+}
+
 .notfound {
   margin: 6rem 0;
 }

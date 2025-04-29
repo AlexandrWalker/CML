@@ -177,3 +177,17 @@
     }
   }
 }
+
+.completed {
+  padding: 4rem 0;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .cases__item {
+    width: calc(33.33333% - 1.33333rem);
+  }
+}
