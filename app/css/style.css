@@ -4833,7 +4833,7 @@ a:hover {
     left: 0;
     right: 0;
     z-index: 1;
-    transition: all 0.5s ease;
+    transition: all 0.6s ease;
   }
   .work .swiper-slide-active .work__item-title {
     color: var(--white);
