@@ -29,7 +29,7 @@
 
     &-count {
       font-size: 10rem;
-      line-height: 0.71;
+      line-height: 0.8;
     }
 
     &-text {
@@ -175,19 +175,5 @@
         font-weight: 800;
       }
     }
-  }
-}
-
-.completed {
-  padding: 4rem 0;
-
-  &__items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-
-  .cases__item {
-    width: calc(33.33333% - 1.33333rem);
   }
 }

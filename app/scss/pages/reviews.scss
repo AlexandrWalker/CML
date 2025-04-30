@@ -1,0 +1,12 @@
+.reviews {
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .reviews__item {
+      width: calc(25% - 1.5rem);
+    }
+  }
+}

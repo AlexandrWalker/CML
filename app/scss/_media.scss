@@ -33,6 +33,10 @@
   .cases__item-icon i {
     font-size: 1.6rem;
   }
+
+  .reviews__items .reviews__item {
+    width: calc(33.33333% - 1.33333rem);
+  }
 }
 
 @media (max-width: 991px) {}
@@ -1211,6 +1215,10 @@
     font-size: 1.2rem;
   }
 
+  .reviews__item-body p {
+    font-size: inherit;
+  }
+
   .reviews__item-foot p,
   .reviews__item-foot {
     font-size: 1.2rem;
@@ -1309,6 +1317,24 @@
   .made .case__img {
     height: 43.4rem;
     margin: 0;
+  }
+
+  /* completed */
+  .completed__items {
+    gap: 1rem;
+  }
+
+  .completed .cases__item {
+    width: calc(50% - 0.5rem);
+  }
+
+  /* reviews */
+  .reviews__items {
+    gap: 1rem;
+  }
+
+  .reviews__items .reviews__item {
+    width: calc(50% - 0.5rem);
   }
 }
 
@@ -2049,5 +2075,14 @@
 
   .privacy .title {
     font-size: 2.4rem;
+  }
+
+  .completed .cases__item {
+    width: 100%;
+  }
+
+  /* reviews */
+  .reviews__items .reviews__item {
+    width: 100%;
   }
 }

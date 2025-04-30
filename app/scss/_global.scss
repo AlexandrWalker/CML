@@ -448,6 +448,12 @@ a {
 
 .section {
 
+  &-block {
+    .section__title {
+      margin: 0;
+    }
+  }
+
   &__head {
     display: flex;
     flex-direction: column;
