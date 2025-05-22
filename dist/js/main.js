@@ -312,7 +312,6 @@
             if (modalId) {
               document.getElementById(modalId).classList.add('open');
               document.body.classList.add('no-scroll');
-              // lenis.stop();
             } else {
               return
             }
@@ -321,14 +320,12 @@
               closeButton.addEventListener('click', e => {
                 document.getElementById(modalId).classList.remove("open");
                 document.body.classList.remove('no-scroll');
-                // lenis.start();
               });
 
               window.addEventListener('keydown', (e) => {
                 if (e.key === "Escape") {
                   document.getElementById(modalId).classList.remove("open")
                   document.body.classList.remove('no-scroll');
-                  // lenis.start();
                 }
               });
 
@@ -340,7 +337,6 @@
                 if (event._isClickWithInModal) return;
                 event.currentTarget.classList.remove('open');
                 document.body.classList.remove('no-scroll');
-                // lenis.start();
               });
             });
           });
@@ -423,9 +419,19 @@
 
 
 
-    document.getElementById('warning-btn').addEventListener('click', event => {
-      document.getElementById('warning-plate').style.display = 'none';
-    });
+    /**
+     * Кнопка куки
+     */
+    if (('; ' + document.cookie).split(`; COOKIE_ACCEPT=`).pop().split(';')[0] !== '1') {
+      const cookiesNotify = document.getElementById('warning-plate');
+
+      if (cookiesNotify) {
+        cookiesNotify.style.display = 'block';
+      }
+    }
+    // document.getElementById('warning-btn').addEventListener('click', event => {
+    //   document.getElementById('warning-plate').style.display = 'none';
+    // });
 
 
 
@@ -706,6 +712,12 @@
 
     accordionFunc();
 
+
+
+    const fixedBtn = document.getElementById('fixed-btn');
+    fixedBtn.addEventListener('click', function () {
+      fixedBtn.parentNode.classList.toggle('fixed-btns--active');
+    });
 
 
     /**
@@ -1041,3 +1053,8 @@
 
   });
 })();
+
+function checkCookies() {
+  document.cookie = 'COOKIE_ACCEPT=1;path=\'/\';expires:' + (new Date(new Date().getTime() + 86400e3 * 365).toUTCString());
+  document.getElementById('warning-plate').remove();
+}

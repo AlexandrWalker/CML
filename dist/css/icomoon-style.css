@@ -1,18 +1,19 @@
 @font-face {
-  font-family: 'CML';
-  src:  url('./../fonts/icomoon/CML.eot?n99nza');
-  src:  url('./../fonts/icomoon/CML.eot?n99nza#iefix') format('embedded-opentype'),
-    url('./../fonts/icomoon/CML.ttf?n99nza') format('truetype'),
-    url('./../fonts/icomoon/CML.woff?n99nza') format('woff'),
-    url('./../fonts/icomoon/CML.svg?n99nza#CML') format('svg');
+  font-family: 'cml';
+  src: url('./../fonts/icomoon/cml.eot?26ywpv');
+  src: url('./../fonts/icomoon/cml.eot?26ywpv#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon/cml.ttf?26ywpv') format('truetype'),
+    url('./../fonts/icomoon/cml.woff?26ywpv') format('woff'),
+    url('./../fonts/icomoon/cml.svg?26ywpv#cml') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'CML' !important;
+  font-family: 'cml' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -28,39 +29,63 @@
 .icon-angle:before {
   content: "\e900";
 }
+
 .icon-calc:before {
   content: "\e901";
 }
+
 .icon-chevron-down:before {
   content: "\e902";
 }
+
 .icon-circle-chevron-down:before {
   content: "\e903";
 }
+
 .icon-download:before {
   content: "\e904";
 }
+
 .icon-file-pdf:before {
   content: "\e905";
 }
+
 .icon-headphones:before {
   content: "\e906";
 }
+
 .icon-home:before {
   content: "\e907";
 }
+
 .icon-minus:before {
   content: "\e908";
 }
-.icon-plus:before {
+
+.icon-phone:before {
   content: "\e909";
 }
-.icon-pochta:before {
+
+.icon-plus:before {
   content: "\e90a";
 }
-.icon-telegram:before {
+
+.icon-pochta:before {
   content: "\e90b";
 }
-.icon-whatsapp:before {
+
+.icon-telegram:before {
   content: "\e90c";
+}
+
+.icon-telegram-color:before {
+  content: "\e90d";
+}
+
+.icon-whatsapp:before {
+  content: "\e90e";
+}
+
+.icon-whatsapp-color:before {
+  content: "\e90f";
 }

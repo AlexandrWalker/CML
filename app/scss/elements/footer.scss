@@ -69,6 +69,10 @@
       margin-bottom: 1.5rem;
     }
 
+    .header__btn-active {
+      z-index: 11;
+    }
+
     .header__btn-head {
       border-color: var(--primary-accent);
 

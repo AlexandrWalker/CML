@@ -9,4 +9,14 @@
       width: calc(25% - 1.5rem);
     }
   }
+
+  &__item {
+    border: 0.1rem solid transparent;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--white);
+      border-color: var(--primary-accent);
+    }
+  }
 }
