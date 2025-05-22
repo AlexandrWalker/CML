@@ -726,31 +726,38 @@
                   </span>
                 </div>
                 <div class="form-group dots">
-                  <div class="dropdown">
-                    <button class="dropdown__button" data-value="Тип перевозки" type="button">
-                      <span class="dropdown__button-text">Тип перевозки</span>
-                    </button>
-                    <ul class="dropdown__list dropdown__list-border">
-                      <li class="dropdown__list-item" data-value="Авиа">
-                        Авиа доставка
-                      </li>
-                      <li class="dropdown__list-item" data-value="Авто">
-                        Авто доставка
-                      </li>
-                      <li class="dropdown__list-item" data-value="Железнодорожная">
-                        Железнодорожная доставка
-                      </li>
-                      <li class="dropdown__list-item" data-value="Морская">
-                        Морская доставка
-                      </li>
-                      <li class="dropdown__list-item" data-value="Мультимодальная">
-                        Мультимодальная доставка
-                      </li>
-                    </ul>
-                    <input type="text" name="select-category" value="all" class="dropdown__input-hidden">
-                    <span class="error">
-                      Поле заполнено неверно
-                    </span>
+                  <div class="dropdown dropdown--js">
+                    <div class="dropdown__selected toggle--label dropdown__selected-label--js dropdown__selected--js">
+                      <span>Тип перевозки</span>
+                    </div>
+                    <div class="dropdown__container">
+                      <div class="dropdown__content toggle--panel">
+                        <label class="dropdown__option">
+                          <input class="dropdown__radio" name="type__radio" type="radio" value="Авиа доставка" />
+                          <span class="dropdown__label">Авиа доставка</span>
+                        </label>
+                        <label class="dropdown__option">
+                          <input class="dropdown__radio" name="type__radio" type="radio" value="Авто доставка" />
+                          <span class="dropdown__label">Авто доставка</span>
+                        </label>
+                        <label class="dropdown__option">
+                          <input class="dropdown__radio" name="type__radio" type="radio"
+                            value="Железнодорожная доставка" />
+                          <span class="dropdown__label">Железнодорожная доставка</span>
+                        </label>
+                        <label class="dropdown__option">
+                          <input class="dropdown__radio" name="type__radio" type="radio"
+                            value="Мультимодальная доставка" />
+                          <span class="dropdown__label">Мультимодальная доставка</span>
+                        </label>
+                        <label class="dropdown__option">
+                          <input class="dropdown__radio" name="type__radio" type="radio"
+                            value="Поле заполнено неверно" />
+                          <span class="dropdown__label">Поле заполнено неверно</span>
+                        </label>
+                      </div>
+                    </div>
+                    <input class="dropdown__value" type="hidden">
                   </div>
                 </div>
                 <div class="form-group dots">

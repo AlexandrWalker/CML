@@ -9,4 +9,8 @@
   .cases__item {
     width: calc(33.33333% - 1.33333rem);
   }
+
+  .cases__item-tags {
+    text-transform: lowercase;
+  }
 }

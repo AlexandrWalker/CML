@@ -243,46 +243,50 @@
     /**
      * Установка dropdown
      */
-    if (document.querySelectorAll('.dropdown')) {
-      document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
-        const dropDownBtn = dropDownWrapper.querySelector('.dropdown__button');
-        const dropDownBtnText = dropDownWrapper.querySelector('.dropdown__button-text');
-        const dropDownList = dropDownWrapper.querySelector('.dropdown__list');
-        const dropDownListItems = dropDownList.querySelectorAll('.dropdown__list-item');
-        const dropDownInput = dropDownWrapper.querySelector('.dropdown__input-hidden');
+    let dropdowns = document.querySelectorAll('.dropdown--js');
+    dropdowns.forEach(dropdown => {
 
-        dropDownBtn.addEventListener('click', function (e) {
-          dropDownList.classList.toggle('dropdown__list--visible');
-          this.classList.add('dropdown__button--active');
-        });
+      function updateSelected() {
+        let selectedValue = dropdown.querySelector('.dropdown__value');
+        let selectedOption = document.querySelector('.dropdown__radio:checked');
+        let selectedLabel = selectedOption.parentElement.querySelector('.dropdown__label');
+        let text = selectedLabel.textContent;
+        let selectedDropdown = dropdown.querySelector('.dropdown__selected--js');
+        selectedDropdown.querySelector('span').textContent = text;
+        selectedValue.dataset.value = text;
+      }
 
-        dropDownListItems.forEach(function (listItem) {
-          listItem.addEventListener('click', function (e) {
-            e.stopPropagation();
-            dropDownBtnText.innerHTML = this.innerHTML;
-            dropDownBtn.dataset.value = this.dataset.value;
-            dropDownBtn.focus();
-            dropDownBtn.click();
-            dropDownInput.value = this.dataset.value;
-            dropDownList.classList.remove('dropdown__list--visible');
-          });
-        });
+      function toggleClass(el, className, add) {
+        let addClass = add;
+        if (typeof addClass === 'undefined') {
+          addClass = !el.classList.contains(className);
+        }
+        if (addClass) {
+          el.classList.add(className);
+        } else {
+          el.classList.remove(className);
+        }
+      }
 
-        document.addEventListener('click', function (e) {
-          if (e.target !== dropDownBtn) {
-            dropDownBtn.classList.remove('dropdown__button--active');
-            dropDownList.classList.remove('dropdown__list--visible');
-          }
-        });
+      let radios = dropdown.querySelectorAll('.dropdown__radio');
+      let root = dropdown;
 
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Tab' || e.key === 'Escape') {
-            dropDownBtn.classList.remove('dropdown__button--active');
-            dropDownList.classList.remove('dropdown__list--visible');
-          }
+      for (let i = 0; i < radios.length; ++i) {
+        let radio = radios[i];
+        radio.addEventListener('change', function () {
+          updateSelected();
         });
+        radio.addEventListener('click', function () {
+          toggleClass(root, 'is-active', false);
+        });
+      }
+
+      let selectedLabel = dropdown.querySelector('.dropdown__selected--js');
+      selectedLabel.addEventListener('click', function () {
+        toggleClass(root, 'is-active');
       });
-    }
+      // updateSelected();
+    });
 
 
 

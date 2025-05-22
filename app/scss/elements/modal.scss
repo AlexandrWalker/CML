@@ -172,14 +172,10 @@
     }
   }
 
-  .dropdown__button {
+  .dropdown__selected {
     color: var(--primary-black-50);
     border-color: var(--primary-black-50);
     height: 5rem;
-
-    &+.dropdown__list-border {
-      border-color: var(--primary-black-50);
-    }
   }
 
   .checkbox__text {

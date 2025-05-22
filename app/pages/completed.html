@@ -18,12 +18,49 @@
       </div>
     </div>
   </section>
-  <section class="section-block">
+  <section class="section-block" id="first-section">
     <div class="container">
-      <div class="section__head">
-        <h2 class="section__title">
-          Реализованные проекты
-        </h2>
+      <div class="section__inner">
+        <div class="section__head">
+          <h2 class="section__title">
+            Реализованные проекты
+          </h2>
+        </div>
+        <div class="section__body">
+          <div class="dropdown dropdown--js">
+            <div class="dropdown__selected toggle--label dropdown__selected-label--js dropdown__selected--js">
+              <span>Тип перевозки</span>
+            </div>
+            <div class="dropdown__container">
+              <div class="dropdown__content toggle--panel">
+                <label class="dropdown__option">
+                  <input class="dropdown__radio" name="type__radio" type="radio" value="Авиа доставка" />
+                  <span class="dropdown__label">Авиа доставка</span>
+                </label>
+                <label class="dropdown__option">
+                  <input class="dropdown__radio" name="type__radio" type="radio" value="Авто доставка" />
+                  <span class="dropdown__label">Авто доставка</span>
+                </label>
+                <label class="dropdown__option">
+                  <input class="dropdown__radio" name="type__radio" type="radio" value="Железнодорожная доставка" />
+                  <span class="dropdown__label">Железнодорожная доставка</span>
+                </label>
+                <label class="dropdown__option">
+                  <input class="dropdown__radio" name="type__radio" type="radio" value="Мультимодальная доставка" />
+                  <span class="dropdown__label">Мультимодальная доставка</span>
+                </label>
+                <label class="dropdown__option">
+                  <input class="dropdown__radio" name="type__radio" type="radio" value="Поле заполнено неверно" />
+                  <span class="dropdown__label">Поле заполнено неверно</span>
+                </label>
+              </div>
+            </div>
+            <input class="dropdown__value" type="hidden">
+          </div>
+          <button class="section__btn btn">
+            показать
+          </button>
+        </div>
       </div>
     </div>
   </section>

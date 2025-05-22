@@ -17,20 +17,20 @@
     margin-bottom: 3rem;
   }
 
-  .cases__item-icon {
+  .cases__item-icon:not(.completed .cases__item-icon) {
     width: 2.4rem;
     height: 2.4rem;
   }
 
-  .cases__item-tags {
+  .cases__item-tags:not(.completed .cases__item-tags) {
     display: none;
   }
 
-  .cases__item-icon {
+  .cases__item-icon:not(.completed .cases__item-icon) {
     background: transparent;
   }
 
-  .cases__item-icon i {
+  .cases__item-icon:not(.completed .cases__item-icon) i {
     font-size: 1.6rem;
   }
 
@@ -187,7 +187,15 @@
     gap: 1rem;
   }
 
+  .dropdown {
+    height: 5rem;
+  }
+
   .dropdown__button {
+    height: 5rem;
+  }
+
+  .section__btn {
     height: 5rem;
   }
 
@@ -222,6 +230,10 @@
 
   .form-title+input {
     padding-top: 2.4rem;
+  }
+
+  .dropdown__selected {
+    font-size: 1.4rem;
   }
 
   .form-textarea {
@@ -1346,6 +1358,19 @@
     width: calc(50% - 0.5rem);
   }
 
+  .completed .cases__item-tags span {
+    font-size: 1.2rem;
+  }
+
+  .completed .cases__item-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .completed .cases__item-icon i {
+    font-size: 1.6rem;
+  }
+
   /* reviews */
   .reviews__items {
     gap: 1rem;
@@ -1928,6 +1953,10 @@
 
   .management__item {
     height: 30.3rem;
+  }
+
+  .management .swiper-pagination {
+    display: flex;
   }
 
   /* reviews */

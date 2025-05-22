@@ -288,6 +288,7 @@ a {
     position: absolute;
     top: 2.4rem;
     right: 1rem;
+    z-index: 10;
   }
 }
 
@@ -448,9 +449,31 @@ a {
 
 .section {
 
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
   &-block {
+    margin-bottom: 2rem;
+    overflow: visible;
+
     .section__title {
       margin: 0;
+    }
+
+    .dropdown {
+      max-width: 40rem;
+      width: 100%;
+    }
+
+    .dropdown__button {
+      padding-top: 3rem;
+    }
+
+    .dots::after {
+      right: 2rem;
     }
   }
 
@@ -477,6 +500,18 @@ a {
     span {
       color: var(--primary-accent);
     }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    --button-color: var(--white);
+    --button-bgcolor: var(--primary-black);
   }
 }
 
