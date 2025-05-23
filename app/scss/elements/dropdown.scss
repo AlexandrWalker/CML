@@ -104,7 +104,8 @@
   &__content {
     border: 0.1rem solid transparent;
     border-top: 0;
-    padding-bottom: 2.5rem;
+    // padding-bottom: 2.5rem;
+    padding-bottom: 1.8rem;
     will-change: transform;
     transform: translateY(-101%);
     transition: transform 0.2s ease;

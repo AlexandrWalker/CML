@@ -1,65 +1,90 @@
 <!--=include header.html-->
 <!-- Содержимое сайта -->
 <main class="main">
-  <!-- Хлебные крошки -->
-  <section class="breadcrumbs" id="first-section">
+  <!-- Главный блок с заголовком -->
+  <section class="general" id="first-section">
     <div class="container">
-      <div class="breadcrumbs__inner">
-        <ul>
-          <li>
-            <a href="/">
-              <i class="icon-home"></i>
-            </a>
-          </li>
-          <li>
-            Реализованные проекты
-          </li>
-        </ul>
+      <!-- Хлебные крошки -->
+      <div class="breadcrumbs">
+        <div class="breadcrumbs__inner">
+          <ul>
+            <li>
+              <a href="/">
+                <i class="icon-home"></i>
+              </a>
+            </li>
+            <li>
+              Реализованные проекты
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="section-block" id="first-section">
-    <div class="container">
-      <div class="section__inner">
-        <div class="section__head">
-          <h2 class="section__title">
+      <div class="general__inner">
+        <div class="general__head">
+          <h2 class="general__title">
             Реализованные проекты
           </h2>
         </div>
-        <div class="section__body">
-          <div class="dropdown dropdown--js">
-            <div class="dropdown__selected toggle--label dropdown__selected-label--js dropdown__selected--js">
-              <span>Тип перевозки</span>
-            </div>
-            <div class="dropdown__container">
-              <div class="dropdown__content toggle--panel">
-                <label class="dropdown__option">
-                  <input class="dropdown__radio" name="type__radio" type="radio" value="Авиа доставка" />
-                  <span class="dropdown__label">Авиа доставка</span>
-                </label>
-                <label class="dropdown__option">
-                  <input class="dropdown__radio" name="type__radio" type="radio" value="Авто доставка" />
-                  <span class="dropdown__label">Авто доставка</span>
-                </label>
-                <label class="dropdown__option">
-                  <input class="dropdown__radio" name="type__radio" type="radio" value="Железнодорожная доставка" />
-                  <span class="dropdown__label">Железнодорожная доставка</span>
-                </label>
-                <label class="dropdown__option">
-                  <input class="dropdown__radio" name="type__radio" type="radio" value="Мультимодальная доставка" />
-                  <span class="dropdown__label">Мультимодальная доставка</span>
-                </label>
-                <label class="dropdown__option">
-                  <input class="dropdown__radio" name="type__radio" type="radio" value="Поле заполнено неверно" />
-                  <span class="dropdown__label">Поле заполнено неверно</span>
-                </label>
+        <div class="general__body">
+          <div class="general__wrap">
+            <div class="dropdown dropdown--js">
+              <div class="dropdown__selected toggle--label dropdown__selected-label--js dropdown__selected--js dots">
+                <span>Все направления услуг</span>
               </div>
+              <div class="dropdown__container">
+                <div class="dropdown__content toggle--panel">
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Международные перевозки" />
+                    <span class="dropdown__label">Международные перевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Таможенное оформление" />
+                    <span class="dropdown__label">Таможенное оформление</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Сертификация грузов" />
+                    <span class="dropdown__label">Сертификация грузов</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Страхование грузов" />
+                    <span class="dropdown__label">Страхование грузов</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Авиаперевозки" />
+                    <span class="dropdown__label">Авиаперевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Автомобильные перевозки" />
+                    <span class="dropdown__label">Автомобильные перевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Ж/Д перевозки" />
+                    <span class="dropdown__label">Ж/Д перевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Морские перевозки" />
+                    <span class="dropdown__label">Морские перевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Все направления услуг"
+                      checked />
+                    <span class="dropdown__label">Все направления услуг</span>
+                  </label>
+                </div>
+              </div>
+              <input class="dropdown__value" type="hidden">
             </div>
-            <input class="dropdown__value" type="hidden">
+            <button class="general__btn btn">
+              показать
+            </button>
           </div>
-          <button class="section__btn btn">
-            показать
-          </button>
+          <div class="form-group">
+            <input class="form-filter" id="form-filter" type="checkbox">
+            <label for="form-filter">
+              Сортировка по дате
+              <i class="icon-chevron-down"></i>
+            </label>
+          </div>
         </div>
       </div>
     </div>
@@ -84,7 +109,7 @@
                     #Авиаперевозка
                   </span>
                 </div>
-                <span class="cases__item-icon">
+                <span class="plus-icon">
                   <i class="icon-plus"></i>
                 </span>
               </div>
@@ -106,7 +131,7 @@
                     #Авиаперевозка
                   </span>
                 </div>
-                <span class="cases__item-icon">
+                <span class="plus-icon">
                   <i class="icon-plus"></i>
                 </span>
               </div>
@@ -128,7 +153,7 @@
                     #Авиаперевозка
                   </span>
                 </div>
-                <span class="cases__item-icon">
+                <span class="plus-icon">
                   <i class="icon-plus"></i>
                 </span>
               </div>
@@ -150,7 +175,7 @@
                     #Авиаперевозка
                   </span>
                 </div>
-                <span class="cases__item-icon">
+                <span class="plus-icon">
                   <i class="icon-plus"></i>
                 </span>
               </div>
@@ -172,7 +197,7 @@
                     #Авиаперевозка
                   </span>
                 </div>
-                <span class="cases__item-icon">
+                <span class="plus-icon">
                   <i class="icon-plus"></i>
                 </span>
               </div>
@@ -194,7 +219,7 @@
                     #Авиаперевозка
                   </span>
                 </div>
-                <span class="cases__item-icon">
+                <span class="plus-icon">
                   <i class="icon-plus"></i>
                 </span>
               </div>
