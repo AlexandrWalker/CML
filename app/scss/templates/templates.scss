@@ -7,6 +7,27 @@
   background-size: 100% 100%;
   position: relative;
 
+  &-sample {
+    background-image: none;
+
+    .templates__body {
+      gap: 4rem;
+    }
+
+    .templates__content {
+      gap: 4rem;
+    }
+
+    .templates__img {
+      height: 49.7rem;
+      margin: auto 0;
+    }
+
+    .btn {
+      min-width: 30rem;
+    }
+  }
+
   .breadcrumbs {
     margin: 4rem 0;
   }
@@ -56,12 +77,19 @@
       height: 7.3rem;
     }
 
-    p {
+    blockquote {
       font-weight: 800;
       font-size: 2.4rem;
       line-height: 120%;
       text-transform: uppercase;
       color: var(--white);
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 120%;
+      color: #FFFFFF;
     }
   }
 
@@ -135,5 +163,12 @@
       font-size: 2.4rem;
       line-height: 120%;
     }
+  }
+}
+
+.air_delivery {
+
+  .templates__img {
+    height: 60rem;
   }
 }

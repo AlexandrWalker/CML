@@ -388,12 +388,21 @@
 
           // Устанавливаем активное состояние для выбранной вкладки
           tabsBtn.classList.add('tabs__btn--active');
+
           const targetPanel = currentTabsContainer.querySelector(
             `.tabs__panel[data-tab="${tabsBtn.dataset.tab}"]`,
           );
           if (targetPanel) {
             /* HACK */
             targetPanel.classList.add('tabs__panel--active');
+          }
+
+          if (tabsBtn.getAttribute('data-tab') === 'all') {
+            tabsPanels.forEach((panel) => {
+              if (panel.closest('.tabs') === currentTabsContainer) {
+                panel.classList.add('tabs__panel--active');
+              }
+            });
           }
         });
       });
@@ -573,10 +582,9 @@
     const hFirstSection = document.getElementById('first-section');
     const hCalc = document.getElementById('calc');
     const hFooter = document.getElementById('footer');
+    const h = hFirstSection.offsetHeight;
     if (hCalc) {
       const h = hFirstSection.offsetHeight + hCalc.offsetHeight;
-    } else {
-      const h = hFirstSection.offsetHeight;
     }
     const plate = document.getElementById('plate');
     const classToAdd = 'show';
@@ -622,6 +630,7 @@
 
 
 
+    const caseAcc = document.querySelector('.case__acc');
     const case__acc = document.querySelectorAll('.case__acc');
     const tabsPanelActive = document.querySelector('.tabs__panel--active');
     const tabsPanelFirst = document.querySelector('.tabs__panel--first');
@@ -630,7 +639,7 @@
       tabsPanelFirst.click();
     }
 
-    if (case__acc) {
+    if (caseAcc) {
       window.addEventListener('resize', function (event) {
         if (window.innerWidth < 769 && window.innerWidth !== 769) {
 
@@ -728,7 +737,7 @@
     });
 
 
-    
+
     /**
      * Карта
      */

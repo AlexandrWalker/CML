@@ -1,0 +1,154 @@
+.offers {
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 20%;
+    height: fit-content;
+    background-color: var(--white);
+    padding: 2rem 2rem 3rem;
+    border: 0.1rem solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+
+      border-color: var(--primary-accent);
+
+      .offers__item-icon {
+        background-color: var(--primary-black);
+      }
+
+      .offers__item-num {
+        opacity: 1;
+      }
+
+      .offers__list {
+        grid-template-rows: 1fr;
+      }
+    }
+
+    &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height: 10rem;
+      background-color: var(--primary-accent);
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      i {
+        position: absolute;
+        font-size: 2.6rem;
+        color: var(--white);
+
+        &:first-child {
+          top: 0;
+          right: 0;
+        }
+
+        &:last-child {
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+
+    &-icons {
+      width: 3.9rem;
+      height: 3.7rem;
+      position: relative;
+    }
+
+    &-num {
+      font-weight: 300;
+      font-size: 130px;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: var(--primary-accent);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    h3 {
+      font-weight: 800;
+      font-size: 2.4rem;
+      line-height: 120%;
+      text-transform: uppercase;
+      width: min-content;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    ul {
+      overflow: hidden;
+    }
+
+    li {
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    a {
+      font-weight: 800;
+      font-size: 1.6rem;
+      line-height: 1.25;
+      color: inherit;
+
+      &:hover {
+        color: var(--primary-accent);
+      }
+    }
+  }
+}
+
+.desc {
+
+  &__inner {
+    max-width: 140rem;
+  }
+
+  h3 {
+    font-weight: 800;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  h4 {
+    font-weight: 800;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 120%;
+    margin-bottom: 2rem;
+
+    b {
+      color: var(--primary-accent);
+      font-weight: 800;
+    }
+  }
+}

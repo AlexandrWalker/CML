@@ -1,5 +1,21 @@
 .news {
 
+  strong {
+    font-weight: 800;
+  }
+
+  h6 {
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 110%;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 110%;
+  }
+
   &-page {
 
     .general {
@@ -17,8 +33,17 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    max-width: 110rem;
-    width: 100%;
+    width: calc(100% - 54rem - 2rem);
+  }
+
+  &__date {
+
+    span {
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 130%;
+      color: var(--primary-accent);
+    }
   }
 
   &__text {
@@ -52,7 +77,10 @@
 
     li {
       display: flex;
+      flex-wrap: wrap;
       gap: 2rem;
+      padding-left: 3.2rem;
+      position: relative;
 
       &::before {
         content: "";
@@ -60,30 +88,26 @@
         height: 1.2rem;
         border-radius: 50%;
         background-color: var(--primary-accent);
-        position: relative;
+        position: absolute;
         top: 0.3rem;
+        left: 0;
+        flex-shrink: 0;
       }
 
       &:not(:last-child) {
         margin-bottom: 2rem;
       }
+
+      h6 {
+        width: 100%;
+      }
     }
   }
 
-  strong {
-    font-weight: 800;
-  }
-
-  h6 {
-    font-weight: 800;
-    font-size: 1.6rem;
-    line-height: 110%;
-  }
-
-  p {
-    font-weight: 300;
-    font-size: 1.6rem;
-    line-height: 110%;
+  &__solution {
+    li:not(:last-child) {
+      margin-bottom: 3rem;
+    }
   }
 
   &__subtitle {
@@ -105,6 +129,52 @@
       &:hover {
         text-decoration: none;
       }
+    }
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 5rem 3rem 4rem;
+    width: 54rem;
+    height: fit-content;
+    background-color: var(--white);
+
+    h3 {
+      font-weight: 800;
+      font-size: 2.4rem;
+      line-height: 100%;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.1rem solid var(--primary-black-50);
+      font-size: 1.6rem;
+      line-height: 110%;
+
+      p {
+        font-weight: 800;
+        max-width: 40.7rem;
+      }
+
+      span {
+        font-weight: 300;
+        color: var(--primary-accent);
+      }
+    }
+
+    &-btn {
+      width: 100%;
     }
   }
 }
