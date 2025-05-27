@@ -10,6 +10,9 @@
       init: false,
       speed: 600,
       effect: "fade",
+      fadeEffecct: {
+        crossFade: true
+      },
       autoplay: {
         delay: 8000,
         disableOnInteraction: false
@@ -114,6 +117,21 @@
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+    });
+
+    var storySlider = new Swiper(".story__slider", {
+      // slidesPerView: 'auto',
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+      speed: 600,
+      direction: 'horizontal',
+      // breakpoints: {
+      //   769: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 20,
+      //   },
+      // },
     });
 
     hero__slider.on("slideChange afterInit init", function () {
@@ -235,7 +253,6 @@
       // Закрытие меню по клику на пункты меню
       elements.forEach((element) => element.addEventListener('click', closeMenu));
     };
-
     burgerNav();
 
 
@@ -285,6 +302,12 @@
       selectedLabel.addEventListener('click', function () {
         toggleClass(root, 'is-active');
       });
+
+      let ddd = dropdown.querySelector('.dropdown__container');
+      ddd.addEventListener('click', function () {
+        toggleClass(root, 'is-active');
+      });
+
       // updateSelected();
     });
 
@@ -347,7 +370,6 @@
         });
       }
     };
-
     modalFunc();
 
 
@@ -407,7 +429,6 @@
         });
       });
     };
-
     tabsFunc();
 
 
@@ -476,6 +497,25 @@
       });
     });
 
+    /* story animation */
+    const panelsContainers = document.getElementById("story_slider");
+    if (panelsContainers) {
+      let panelsContainer = document.querySelector("#story_slider"), tween;
+      const panels = gsap.utils.toArray("#story_slider .story__slide");
+
+      tween = gsap.to(panels, {
+        x: () => -1 * (panelsContainer.scrollWidth - innerWidth),
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#story_slider",
+          pin: true,  
+          start: "top top",
+          scrub: 1,
+          end: () => "+=" + (panelsContainer.scrollWidth - innerWidth)
+        }
+      });
+    }
+
 
 
     const faqItems = document.querySelectorAll(".faq__item");
@@ -484,7 +524,7 @@
     const aboutItem = document.querySelector(".about__img");
     const bannerItem = document.querySelector(".banner");
     const titleItems = document.querySelectorAll(".section__head");
-    const target = document.querySelectorAll('.section__title');
+    const target = document.querySelectorAll('.section__head h2');
 
 
 

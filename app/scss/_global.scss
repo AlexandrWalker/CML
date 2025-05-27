@@ -466,6 +466,7 @@ a {
       line-height: 1.2;
       text-transform: uppercase;
       color: var(--primary-accent);
+      cursor: pointer;
 
       i {
         display: flex;
@@ -603,24 +604,24 @@ a {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
 
-  &__suptitle {
-    font-weight: 300;
-    font-size: 2.4rem;
-    line-height: 120%;
-    text-transform: uppercase;
-  }
+    h3 {
+      font-weight: 300;
+      font-size: 2.4rem;
+      line-height: 120%;
+      text-transform: uppercase;
+    }
 
-  &__title {
-    font-weight: 800;
-    font-size: 4.5rem;
-    line-height: 120%;
-    text-transform: uppercase;
-    margin-bottom: 4rem;
+    h2 {
+      font-weight: 800;
+      font-size: 4.5rem;
+      line-height: 120%;
+      text-transform: uppercase;
+      margin-bottom: 4rem;
 
-    span {
-      color: var(--primary-accent);
+      span {
+        color: var(--primary-accent);
+      }
     }
   }
 }
