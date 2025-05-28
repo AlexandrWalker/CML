@@ -1,12 +1,19 @@
 .privacy {
 
+  &-page {
+
+    .general {
+      margin-bottom: 3rem;
+    }
+
+    .general__inner {
+      gap: 2rem;
+    }
+  }
+
   &__inner {
     max-width: 110rem;
     width: 100%;
-  }
-
-  .title {
-    margin-bottom: 2rem;
   }
 
   a.privacy__download:hover {
@@ -21,7 +28,6 @@
     font-size: 1.6rem;
     line-height: 120%;
     color: var(--primary-accent);
-    margin-bottom: 3rem;
     width: fit-content;
 
     &:hover {
@@ -50,6 +56,10 @@
 
   p {
     line-height: 1.2;
+
+    span {
+      color: var(--primary-accent);
+    }
   }
 
   p:not(:last-child) {
@@ -66,5 +76,32 @@
 
   strong {
     font-weight: 800;
+  }
+
+  ul {
+    padding: 0 0 0 2.4rem;
+    margin-bottom: 2rem;
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+
+    &::before {
+      content: "";
+      display: block;
+      width: 0.44rem;
+      height: 0.44rem;
+      background-color: var(--primary-black);
+      border-radius: 0.22rem;
+      position: absolute;
+      top: 0.7rem;
+      left: -1.4rem;
+    }
   }
 }

@@ -497,7 +497,8 @@ a {
     gap: 2rem;
   }
 
-  &__title {
+  h1,
+  h2 {
     font-weight: 800;
     font-size: 4.5rem;
     line-height: 120%;
@@ -695,7 +696,7 @@ a {
 
 .accordion {
 
-  &.active {
+  &.accordion-active {
     .case__item {
       transform: translateX(0);
       opacity: 1;

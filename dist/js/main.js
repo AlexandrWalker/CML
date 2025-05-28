@@ -179,7 +179,7 @@
       const headerBtn = document.querySelector('.header__btn');
       const menuBody = document.querySelector('.menu__body');
       const menuListItem = document.querySelector('.menu__list-item accordion active');
-      var menuAccordionActive = document.getElementsByClassName('active');
+      var menuAccordionActive = document.getElementsByClassName('accordion-active');
       const burger = document.getElementById('burger');
       const burgerText = document.getElementById('burgerText');
       const menu = document.getElementById('mobile-menu');
@@ -200,7 +200,7 @@
           menuBody.classList.remove('down')
         }
         if (menuAccordionActive.length > 0 && menuAccordionActive[0] !== this) {
-          menuAccordionActive[0].classList.remove('active');
+          menuAccordionActive[0].classList.remove('accordion-active');
         }
         const isOpened = burger.classList.toggle('burger--opened');
         menu.classList.toggle('mobile-menu--opened', isOpened);
@@ -508,10 +508,11 @@
         ease: "none",
         scrollTrigger: {
           trigger: "#story_slider",
-          pin: true,  
-          start: "top top",
+          pin: true,
+          start: "top 20%",
           scrub: 1,
-          end: () => "+=" + (panelsContainer.scrollWidth - innerWidth)
+          end: () => "+=" + (panelsContainer.scrollWidth - innerWidth),
+          // markers: true,
         }
       });
     }
@@ -683,7 +684,7 @@
       window.addEventListener('resize', function (event) {
         if (window.innerWidth < 769 && window.innerWidth !== 769) {
 
-          case__acc[0].classList.add('active');
+          case__acc[0].classList.add('accordion-active');
 
           for (let i = 0; i < case__acc.length; i++) {
             case__acc[i].classList.add('accordion');
@@ -749,18 +750,18 @@
      */
     function accordionFunc() {
       var accordionHead = document.querySelectorAll('.accordion'),
-        accordionActive = document.getElementsByClassName('active');
+        accordionActive = document.getElementsByClassName('accordion-active');
 
       Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
         accordionItem.addEventListener('click', function (e) {
           // if (this.parentNode.dataset.skip) {
-          //   this.classList.toggle('active');
+          //   this.classList.toggle('accordion-active');
           //   return;
           // }
           if (accordionActive.length > 0 && accordionActive[0] !== this) {
-            accordionActive[0].classList.remove('active');
+            accordionActive[0].classList.remove('accordion-active');
           }
-          this.classList.toggle('active');
+          this.classList.toggle('accordion-active');
 
           ScrollTrigger.refresh();
         });
@@ -1111,10 +1112,229 @@
       });
     }
 
+    /**
+     * Анимация блока задач
+     */
+    window.addEventListener('scroll', function () {
+      const reasons = document.querySelector('.reasons');
+      if (reasons) {
+        const reasonsItems = document.querySelectorAll('.task__item');
+        const reasonsRect = reasons.getBoundingClientRect();
+        // Проверяем, достиг ли блок reasons верхнего края окна
+        if (reasonsRect.top <= 0) {
+          reasons.classList.add('fixed'); // Закрепляем блок
+          // Уменьшаем и перекрываем блоки reasons__items при прокрутке
+          reasonsItems.forEach((item, index) => {
+            const offset = window.scrollY - reasons.offsetHeight;
+            const scale = Math.max(0.5, 1 - (offset / 500) + (index * 0.1)); // Уменьшаем размер
+            item.style.transform = `scale(${scale}) translateY(${index * 20}px)`; // Перекрытие
+          });
+        } else {
+          reasons.classList.remove('fixed'); // Сбрасываем закрепление
+          reasonsItems.forEach(item => {
+            item.style.transform = 'scale(1) translateY(0)'; // Возвращаем в исходное состояние
+          });
+        }
+      }
+    });
+
   });
 })();
 
 function checkCookies() {
   document.cookie = 'COOKIE_ACCEPT=1;path=\'/\';expires:' + (new Date(new Date().getTime() + 86400e3 * 365).toUTCString());
   document.getElementById('warning-plate').remove();
+}
+
+/*=================Скрипт для блока со скролом=====================*/
+const reasons = document.querySelector('.reasons');
+
+if (reasons) {
+  var len = $('.reasons__item').length;
+  $(window).on('resize load', function () {
+
+    if (window.innerWidth < "767") {
+      scroll = 0;
+      inc = 0.06; // speed down
+      inc2 = 0.06; // speed up
+      scale = 1;
+      var wH = document.documentElement.clientWidth
+
+
+      $(window).on('scroll', function () {
+        // Find the active element
+        var $activeBlock = $('.active');
+        var element = document.querySelector('.active');
+        var h = element.clientHeight / 200;
+        var distanceToTop = $activeBlock.offset().top - $(window).scrollTop();
+        var top = window.pageYOffset;
+
+        // Scroll direction checks
+        if (scroll > top) {
+          // Scrolling up
+          if ($activeBlock.attr('data-index') != 1) {
+            h = h * 200;
+            if (distanceToTop > h) {
+              var $prevBlock = $activeBlock.prev();
+              $activeBlock.removeClass('active');
+              $prevBlock.addClass('active');
+              $($prevBlock).css('transform', 'scale(1)');
+              scale = 0.90; // set initial scale
+            }
+          }
+        } else if (scroll < top) {
+          // Scrolling down
+
+          if (distanceToTop < 200 && $activeBlock.attr('data-index') != len) {
+            var $nextBlock = $activeBlock.next();
+            $activeBlock.removeClass('active');
+            $nextBlock.addClass('active');
+          }
+
+          if ($activeBlock.attr('data-index') == len && distanceToTop <= 0) {
+            var $prevBlock = $activeBlock.prev();
+            $($prevBlock).css('transform', 'scale(0.90)');
+            scale = 0.90;
+          }
+        }
+
+        // Scaling effect
+        if (scroll > top) {
+          // Scrolling up
+          if (distanceToTop > 50) {
+            var $activeBlock = $('.active');
+            var prevCurrentBlock = $($activeBlock).prev();
+
+            scale += inc2 / 0.006; // Increase scale on scroll up
+            scale = Math.min(scale, 1); // Ensure max scale is 1
+
+            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(1, scale) + ')');
+
+            // Adjust opacity of the over block
+            var $overBlock = $(prevCurrentBlock).find('.over');
+            var newOpacity = Math.max(0, 1 - (distanceToTop / h)); // Calculate new opacity
+            $overBlock.css('opacity', newOpacity);
+          }
+        } else if (scroll < top) {
+          // Scrolling down
+          var $activeBlock = $('.active');
+          var prevCurrentBlock = $($activeBlock).prev();
+
+          scale -= inc * 0.06; // Decrease scale on scroll down
+          if ($(prevCurrentBlock).attr('data-index') == 1) {
+            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.83, scale) + ')');
+          }
+          if ($(prevCurrentBlock).attr('data-index') == 2) {
+            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.86, scale) + ')');
+          }
+          if ($(prevCurrentBlock).attr('data-index') == 3) {
+            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.89, scale) + ')');
+          }
+          if ($(prevCurrentBlock).attr('data-index') == 4) {
+            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.92, scale) + ')');
+          }
+
+          // Adjust opacity of the over block
+          var $overBlock = $(prevCurrentBlock).find('.over');
+          var newOpacity = Math.min(0.6, (distanceToTop / h + 0.02)); // Calculate new opacity
+          $overBlock.css('opacity', newOpacity);
+        }
+
+        if (distanceToTop < 0) {
+          var $prevBlock = $activeBlock.prev();
+          $($prevBlock).css('transform', 'scale(0.90)');
+          scale = 0.90;
+        }
+
+        scroll = top; // Update scroll position
+      });
+    } else {
+
+      scroll = 0;
+      inc = 0.006; // speed down
+      inc2 = 0.008; // speed up
+      scale = 1;
+      var wH = document.documentElement.clientWidth
+
+      $(window).on('scroll', function () {
+        // Find the active element
+        var $activeBlock = $('.active');
+        var element = reasons.querySelector('.active');
+        var h = element.clientHeight / 200;
+        var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 150;
+        var top = window.pageYOffset;
+
+        // Scroll direction checks
+        if (scroll > top) {
+          // Scrolling up
+          if ($activeBlock.attr('data-index') != 1) {
+            h = h * 200;
+            if (distanceToTop > h) {
+              var $prevBlock = $activeBlock.prev();
+              $activeBlock.removeClass('active');
+              $prevBlock.addClass('active');
+              $($prevBlock).css('transform', 'scale(1)');
+              scale = 0.92; // set initial scale
+            }
+          }
+        } else if (scroll < top) {
+
+          // Scrolling down
+          if (distanceToTop < h && $activeBlock.attr('data-index') != len) {
+            var $nextBlock = $activeBlock.next();
+            $activeBlock.removeClass('active');
+            $nextBlock.addClass('active');
+            if (scale !== 1) {
+              scale = 1; // set to 1 when scrolling down
+            }
+          }
+
+          if ($activeBlock.attr('data-index') == len && distanceToTop <= 0) {
+            var $prevBlock = $activeBlock.prev();
+            $($prevBlock).css('transform', 'scale(0.92)');
+            scale = 0.92;
+          }
+        }
+
+        // Scaling effect
+        if (scroll > top) {
+          // Scrolling up
+          var $activeBlock = $('.active');
+          var prevCurrentBlock = $($activeBlock).prev();
+
+          scale += inc2; // Increase scale on scroll up
+          scale = Math.min(scale, 1); // Ensure max scale is 1
+
+          $(prevCurrentBlock).css('transform', 'scale(' + Math.max(1, scale) + ')');
+
+          // Adjust opacity of the over block
+          var $overBlock = $(prevCurrentBlock).find('.over');
+          var newOpacity = Math.max(0, 1 - (distanceToTop / h)); // Calculate new opacity
+          $overBlock.css('opacity', newOpacity);
+        } else if (scroll < top) {
+          // Scrolling down
+          var $activeBlock = $('.active');
+          var prevCurrentBlock = $($activeBlock).prev();
+
+          scale -= inc; // Decrease scale on scroll down
+
+          $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.90, scale) + ')');
+
+          // Adjust opacity of the over block
+          var $overBlock = $(prevCurrentBlock).find('.over');
+          var newOpacity = Math.min(0.6, (distanceToTop / h)); // Calculate new opacity
+          $overBlock.css('opacity', newOpacity);
+        }
+
+        if (distanceToTop < 0) {
+          var $prevBlock = $activeBlock.prev();
+          $($prevBlock).css('transform', 'scale(0.92)');
+          scale = 0.92;
+        }
+
+        scroll = top; // Update scroll position
+      });
+
+    }
+  });
 }

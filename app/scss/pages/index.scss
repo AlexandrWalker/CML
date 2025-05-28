@@ -1088,7 +1088,7 @@
       right: 0;
     }
 
-    &.active {
+    &.accordion-active {
       .faq__item-body {
         grid-template-rows: 1fr;
         padding-top: 1rem;
@@ -1109,7 +1109,7 @@
           transform: rotate(180deg);
 
           &::before {
-            content: "\e907";
+            content: "\e908";
           }
         }
       }
