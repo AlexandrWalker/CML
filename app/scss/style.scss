@@ -15,6 +15,7 @@
 /* main page */
 @import 'pages/index.scss';
 
+/* inner pages */
 @import 'pages/press.scss';
 @import 'pages/news.scss';
 @import 'pages/completed.scss';
@@ -22,17 +23,16 @@
 @import 'pages/case.scss';
 @import 'pages/about.scss';
 @import 'pages/services.scss';
-
 @import 'pages/international.scss';
 @import 'pages/air_delivery.scss';
+@import 'pages/customs.scss';
 
+/* privacy page */
 @import 'pages/404.scss';
 @import 'pages/privacy.scss';
 
 /* templates */
 @import 'templates/templates.scss';
-
-/* inner pages */
 
 /* adaptive styles */
 @import 'media';

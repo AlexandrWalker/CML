@@ -20,10 +20,9 @@ body {
   background: var(--primary-bg);
 }
 
-section {
-  margin-bottom: 5rem;
-  overflow-x: hidden;
-  overflow-y: hidden;
+.no-scroll {
+  overflow: hidden;
+  height: 100dvh !important;
 }
 
 .wrapper {
@@ -42,6 +41,12 @@ section {
   flex: 0 0 auto;
 }
 
+section {
+  margin-bottom: 5rem;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .container {
   max-width: 192rem;
   width: 100%;
@@ -55,11 +60,6 @@ section {
   padding: 0;
   margin-right: auto;
   margin-left: auto;
-}
-
-.no-scroll {
-  overflow: hidden;
-  height: 100dvh !important;
 }
 
 .underline {
@@ -81,18 +81,6 @@ section {
     color: var(--primary-accent);
   }
 }
-
-h1 {}
-
-h2 {}
-
-h3 {}
-
-h4 {}
-
-h5 {}
-
-h6 {}
 
 p {
   font-weight: 300;
@@ -176,59 +164,56 @@ a {
   border-radius: var(--primary-border-r-5);
   background-color: var(--button-bgcolor);
   transition: all 0.3s ease;
-}
 
-.btn:hover {
-  --button-color: var(--white);
-  --button-bgcolor: var(--primary-accent);
-  --button-border-color: var(--primary-accent);
-}
+  &:hover {
+    --button-color: var(--white);
+    --button-bgcolor: var(--primary-accent);
+    --button-border-color: var(--primary-accent);
+  }
 
-.btn:disabled {
-  opacity: var(--button-disabled-opacity);
+  &:disabled {
+    opacity: var(--button-disabled-opacity);
+  }
 }
 
 .btn-red {
   --button-color: var(--white);
   --button-bgcolor: var(--primary-accent);
   --button-border-color: var(--primary-accent);
-}
 
-.btn-red:hover {
-  --button-bgcolor: var(--primary-black);
-  --button-border-color: var(--primary-black);
+  &:hover {
+    --button-bgcolor: var(--primary-black);
+    --button-border-color: var(--primary-black);
+  }
 }
 
 .btn-outline {
   --button-color: var(--primary-black);
   --button-bgcolor: transparent;
   --button-border-color: var(--primary-black-50);
+
+  &:hover {
+    --button-color: var(--white);
+    --button-bgcolor: var(--primary-accent);
+    --button-border-color: var(--primary-accent);
+  }
 }
 
-.btn-outline:hover {
-  --button-color: var(--white);
-  --button-bgcolor: var(--primary-accent);
-  --button-border-color: var(--primary-accent);
-}
+.btn-calc {
+  gap: 2rem;
 
-.btn {
+  i {
+    font-size: 3.2rem;
+    line-height: 100%;
+    color: var(--primary-black);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
 
-  &-calc {
-    gap: 2rem;
+  &:hover {
 
     i {
-      font-size: 3.2rem;
-      line-height: 100%;
-      color: var(--primary-black);
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    &:hover {
-
-      i {
-        color: var(--white);
-      }
+      color: var(--white);
     }
   }
 }
@@ -248,8 +233,6 @@ a {
   line-height: 120%;
   color: var(--primary-accent);
   margin-top: 0.4rem;
-  // position: absolute;
-  // top: calc(100% + 0.4rem);
 }
 
 .checkbox {
@@ -337,15 +320,6 @@ a {
         color: var(--primary-black);
       }
     }
-
-    // &:invalid {
-    //   color: var(--primary-accent);
-    //   border-color: var(--primary-accent);
-
-    //   &~.error {
-    //     display: block;
-    //   }
-    // }
   }
 
   &-title {
@@ -537,10 +511,10 @@ a {
 
   .dropdown {
     width: 40rem;
-  }
 
-  .dropdown__button {
-    padding-top: 3rem;
+    &__button {
+      padding-top: 3rem;
+    }
   }
 
   .dots::after {
@@ -611,6 +585,15 @@ a {
       font-size: 2.4rem;
       line-height: 120%;
       text-transform: uppercase;
+
+      a {
+        text-decoration: underline;
+        color: inherit;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
 
     h2 {
@@ -667,14 +650,12 @@ a {
   }
 
   &__panel {
-    // display: none;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
     height: 0;
 
     &--active {
-      // display: block;
       opacity: 1;
       pointer-events: all;
       visibility: visible;
@@ -697,6 +678,7 @@ a {
 .accordion {
 
   &.accordion-active {
+
     .case__item {
       transform: translateX(0);
       opacity: 1;
@@ -730,8 +712,6 @@ a {
       color: var(--white);
     }
   }
-
-  &__inner {}
 
   ul {
     display: flex;
@@ -786,7 +766,6 @@ a {
   flex-shrink: 0;
 
   i {
-    // font-size: 2.4rem;
     font-size: 1.6rem;
     color: var(--primary-black);
     transition: all 0.3s ease;

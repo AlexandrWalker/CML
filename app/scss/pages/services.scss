@@ -85,9 +85,13 @@
       position: relative;
     }
 
+    &-check {
+      display: none;
+    }
+
     &-num {
       font-weight: 300;
-      font-size: 130px;
+      font-size: 13rem;
       line-height: 120%;
       text-transform: uppercase;
       color: var(--primary-accent);

@@ -1,0 +1,42 @@
+.customs {
+
+  .templates__body {
+    max-width: 97.2rem;
+  }
+
+  .templates-desc .section__head h2 {
+    margin-bottom: 3rem;
+  }
+
+  .templates-desc__content {
+    max-width: 100%;
+    gap: 16rem;
+  }
+
+  .templates-desc__img {
+    position: static;
+    height: 51rem;
+  }
+
+  .press__item {
+    width: 100%;
+  }
+}
+
+.articles {
+
+  .section__head h2 {
+    margin-bottom: 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem 0;
+  }
+
+  &__body {
+    width: 100%;
+  }
+}
