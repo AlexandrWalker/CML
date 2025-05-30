@@ -153,12 +153,12 @@
       slidesPerView: 'auto',
       // slidesPerView: 3,
       slidesPerGroup: 1,
-      spaceBetween: 20,
+      spaceBetween: 10,
       speed: 600,
       direction: 'horizontal',
       init: false,
       breakpoints: {
-        769: {
+        600: {
           slidesPerView: 'auto',
           spaceBetween: 20,
         },

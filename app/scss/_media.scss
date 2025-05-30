@@ -855,6 +855,10 @@
     grid-template-rows: 1fr;
   }
 
+  .case__acc.accordion-active .case__acc-icon {
+    transform: scale(-1, -1);
+  }
+
   .case__acc-title {
     font-weight: 800;
     font-size: 1.2rem;
@@ -1923,6 +1927,7 @@
 
   .story__item {
     max-width: 26.5rem;
+    gap: 1.5rem;
   }
 
   .story__item-head {
@@ -1940,9 +1945,22 @@
     bottom: -2rem;
   }
 
+  .story__item-body {
+    gap: 1.5rem;
+  }
+
   .story__item-arrow {
     width: 8.2rem;
     height: 8.2rem;
+    top: 14.9rem;
+  }
+
+  .story__item-title {
+    font-size: 2rem;
+  }
+
+  .story__item-text {
+    font-size: 1.4rem;
   }
 
   .cargo__items {
@@ -3177,6 +3195,14 @@
   /* insurance */
   .insurance .feat__item {
     width: calc(50% - 0.5rem);
+  }
+
+  .story__item {
+    gap: 2rem;
+  }
+
+  .story__item-arrow {
+    display: none;
   }
 }
 

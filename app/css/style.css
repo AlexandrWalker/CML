@@ -3103,6 +3103,9 @@ a:hover {
 .case__acc-item {
   display: none;
 }
+.case__acc i {
+  transition: all 0.3s ease;
+}
 .partner {
   overflow: hidden;
 }
@@ -3685,7 +3688,7 @@ a:hover {
   max-width: 60rem;
   width: 100%;
 }
-.info .section__title {
+.info .section__head h2 {
   margin-bottom: 0;
 }
 .info .about__feat {
@@ -4053,6 +4056,9 @@ a:hover {
   font-weight: 800;
 }
 
+.international .templates-desc .section__head {
+  max-width: 82rem;
+}
 .international .templates-desc__content {
   display: flex;
   flex-direction: row;
@@ -4320,6 +4326,7 @@ a:hover {
   object-fit: cover;
   aspect-ratio: 340/258;
   background-color: var(--primary-bg);
+  visibility: hidden;
 }
 .cargo__item h4 {
   font-weight: 800;
@@ -5583,6 +5590,9 @@ a:hover {
   .case__acc.accordion-active .case__acc-content {
     grid-template-rows: 1fr;
   }
+  .case__acc.accordion-active .case__acc-icon {
+    transform: scale(-1, -1);
+  }
   .case__acc-title {
     font-weight: 800;
     font-size: 1.2rem;
@@ -6417,6 +6427,7 @@ a:hover {
   }
   .story__item {
     max-width: 26.5rem;
+    gap: 1.5rem;
   }
   .story__item-head {
     aspect-ratio: 265/349;
@@ -6430,9 +6441,19 @@ a:hover {
     font-size: 12.5rem;
     bottom: -2rem;
   }
+  .story__item-body {
+    gap: 1.5rem;
+  }
   .story__item-arrow {
     width: 8.2rem;
     height: 8.2rem;
+    top: 14.9rem;
+  }
+  .story__item-title {
+    font-size: 2rem;
+  }
+  .story__item-text {
+    font-size: 1.4rem;
   }
   .cargo__items {
     gap: 1rem;
@@ -7390,6 +7411,12 @@ a:hover {
   /* insurance */
   .insurance .feat__item {
     width: calc(50% - 0.5rem);
+  }
+  .story__item {
+    gap: 2rem;
+  }
+  .story__item-arrow {
+    display: none;
   }
 }
 @media (max-width: 360px) {

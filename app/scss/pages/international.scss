@@ -1,5 +1,9 @@
 .international {
 
+  .templates-desc .section__head {
+    max-width: 82rem;
+  }
+
   .templates-desc__content {
     display: flex;
     flex-direction: row;
