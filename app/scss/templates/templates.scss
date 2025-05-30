@@ -11,102 +11,6 @@
     margin: 4rem 0;
   }
 
-  &-sample {
-    background-image: none;
-    position: relative;
-
-    .templates__inner {}
-
-    .templates__body {
-      gap: 4rem;
-    }
-
-    .templates__content {
-      gap: 4rem;
-    }
-
-    .templates__img {
-      height: 69.2rem;
-      margin: auto 0;
-      right: 13rem;
-    }
-
-    .btn {
-      min-width: 30rem;
-
-      &:hover {
-        --button-border-color: var(--white);
-      }
-    }
-  }
-
-  &-short {
-    padding-bottom: 5rem;
-    background-color: var(--primary-black);
-
-    &__inner {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-    }
-
-    .breadcrumbs {
-      margin: 4rem 0 3rem;
-    }
-
-    .section__head {
-      max-width: 90rem;
-    }
-
-    .section__head h3 {
-      color: var(--white);
-    }
-
-    .section__suptitle {
-      color: var(--white);
-
-      span {
-        text-decoration: underline;
-      }
-    }
-
-    .section__title {
-      margin: 0;
-    }
-
-    &__feat {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 3rem;
-      max-width: 85.2rem;
-      width: 100%;
-
-      &-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        color: var(--white);
-      }
-
-      span {
-        font-weight: 800;
-        font-size: 7rem;
-        line-height: 105%;
-        text-transform: uppercase;
-      }
-
-      p {
-        font-weight: 300;
-        font-size: 2.4rem;
-        line-height: 120%;
-      }
-    }
-  }
-
-  &__container {}
-
   .hero__item-down {
     position: absolute;
     bottom: 5rem;
@@ -184,8 +88,107 @@
     object-fit: contain;
   }
 
+  &-sample {
+    background-image: none;
+    position: relative;
+
+    .templates__inner {}
+
+    .templates__body {
+      gap: 4rem;
+    }
+
+    .templates__content {
+      gap: 4rem;
+    }
+
+    .templates__img {
+      height: 69.2rem;
+      margin: auto 0;
+      right: 13rem;
+      aspect-ratio: 740/692;
+    }
+
+    .btn {
+      min-width: 30rem;
+
+      &:hover {
+        --button-border-color: var(--white);
+      }
+    }
+  }
+
+  &-short {
+    padding-bottom: 5rem;
+    background-color: var(--primary-black);
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .breadcrumbs {
+      margin: 4rem 0 3rem;
+    }
+
+    .section__head {
+      max-width: 90rem;
+    }
+
+    .section__head h3 {
+      color: var(--white);
+    }
+
+    .section__suptitle {
+      color: var(--white);
+
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    .section__title {
+      margin: 0;
+    }
+
+    &__feat {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+      max-width: 85.2rem;
+      width: 100%;
+
+      &-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        color: var(--white);
+      }
+
+      span {
+        font-weight: 800;
+        font-size: 7rem;
+        line-height: 105%;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-weight: 300;
+        font-size: 2.4rem;
+        line-height: 120%;
+      }
+    }
+  }
+
   &-desc {
     overflow: visible;
+
+    .section__head h2 {
+      margin-bottom: 3rem;
+    }
 
     &__inner {
       position: relative;
@@ -194,13 +197,13 @@
     &__content {
       display: flex;
       flex-direction: row;
-      gap: 22.5rem;
+      gap: 16rem;
       justify-content: space-between;
-      max-width: 68rem;
       width: 100%;
     }
 
     &__body {
+      max-width: 68rem;
 
       p {
 
@@ -240,30 +243,8 @@
 
     &__img {
       width: auto;
-      height: 62rem;
+      height: 51rem;
       object-fit: contain;
-      position: absolute;
-      top: -2rem;
-      right: 0;
     }
   }
-}
-
-
-.air_delivery {
-
-  .templates__img {
-    height: 60rem;
-  }
-}
-
-.customs {
-
-  // .templates__body {
-  //   max-width: 98rem;
-  // }
-
-  // .templates-desc__img {
-  //   height: 51rem;
-  // }
 }

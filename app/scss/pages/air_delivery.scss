@@ -217,7 +217,6 @@
   }
 
   .templates-desc__content {
-    max-width: 100%;
     gap: 17.5rem;
     justify-content: flex-start;
   }
@@ -227,8 +226,10 @@
   }
 
   .templates-desc__img {
-    position: static;
-    width: 51.4rem;
-    height: auto;
+    height: 47.1rem;
+  }
+
+  .templates__img {
+    height: 60rem;
   }
 }

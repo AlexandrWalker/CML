@@ -1,3 +1,27 @@
+.international {
+
+  .templates-desc__content {
+    display: flex;
+    flex-direction: row;
+    gap: 16rem;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .templates-desc__body {
+    max-width: 68rem;
+  }
+
+  .templates-desc__img {
+    width: auto;
+    height: 62rem;
+    object-fit: contain;
+    position: absolute;
+    top: -2rem;
+    right: 0;
+  }
+}
+
 .assortment {
   overflow: visible;
 
@@ -125,6 +149,11 @@
     flex-direction: row;
     justify-content: space-between;
     // gap: 8.5rem;
+  }
+
+  .section__head {
+    border-bottom: 0.1rem solid var(--primary-black-10);
+    margin-bottom: 4rem;
   }
 
   &__head {

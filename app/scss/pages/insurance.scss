@@ -1,0 +1,15 @@
+.insurance {
+
+  .feat {
+
+    &__item {
+      justify-content: flex-start;
+    }
+
+    p {
+      font-weight: 800;
+      font-size: 2rem;
+      line-height: 120%;
+    }
+  }
+}
