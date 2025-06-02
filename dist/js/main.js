@@ -1330,7 +1330,7 @@ if (reasons) {
         var $activeBlock = $('.active');
         var element = reasons.querySelector('.active');
         var h = element.clientHeight / 200;
-        var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 150;
+        var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 160;
         var top = window.pageYOffset;
 
         // Scroll direction checks

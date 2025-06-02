@@ -144,31 +144,44 @@
 
   &__inner {
     max-width: 140rem;
-  }
 
-  h3 {
-    font-weight: 800;
-    font-size: 4.5rem;
-    text-transform: uppercase;
-    margin-bottom: 3rem;
-  }
-
-  h4 {
-    font-weight: 800;
-    font-size: 2.4rem;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-  }
-
-  p {
-    font-weight: 300;
-    font-size: 1.6rem;
-    line-height: 120%;
-    margin-bottom: 2rem;
-
-    b {
+    span {
+      font-weight: 300;
+      font-size: 2.4rem;
+      line-height: 120%;
       color: var(--primary-accent);
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
       font-weight: 800;
+      font-size: 4.5rem;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    h4 {
+      font-weight: 800;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 120%;
+      margin-bottom: 2rem;
+
+      b {
+        color: var(--primary-accent);
+        font-weight: 800;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
