@@ -4868,6 +4868,10 @@ a:hover {
   width: 100%;
 }
 
+.verification .press__item {
+  width: 100%;
+}
+
 /* privacy page */
 .notfound {
   margin: 6rem 0;
