@@ -216,6 +216,10 @@
     height: 5rem;
   }
 
+  .dropdown__content {
+    width: 100%;
+  }
+
   .dropdown__button {
     height: 5rem;
   }
@@ -1014,7 +1018,7 @@
     min-width: 4rem;
   }
 
-  .faq__item-title {
+  .faq__item h2 {
     font-size: 1.6rem;
   }
 
@@ -1038,7 +1042,7 @@
     padding: 0;
   }
 
-  .faq__item-text {
+  .faq__item p {
     font-size: 1.4rem;
   }
 
@@ -1349,11 +1353,11 @@
     margin: 2rem 0;
   }
 
-  .templates__title {
+  .templates h2 {
     font-size: 5rem;
   }
 
-  .templates__title span {
+  .templates h2 span {
     font-size: 3rem;
   }
 
@@ -1387,7 +1391,7 @@
     gap: 2rem;
   }
 
-  .templates-sample .templates__title {
+  .templates-sample h2 {
     gap: 2rem;
   }
 
@@ -2353,6 +2357,10 @@
     margin-top: 31rem;
   }
 
+  .menu__foot-link {
+    white-space: unset;
+  }
+
   .head {
     height: 9.9rem;
   }
@@ -2939,7 +2947,7 @@
     gap: 4rem;
   }
 
-  .templates__title {
+  .templates h2 {
     font-size: 4rem;
   }
 
@@ -2972,6 +2980,12 @@
   .templates .hero__item-down {
     display: block;
     bottom: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .templates .hero__item-down i {
+    font-size: 4.5rem;
   }
 
   /* templates-short */
@@ -2984,7 +2998,7 @@
     background-image: none;
   }
 
-  .templates-sample .templates__title {
+  .templates-sample h2 {
     font-size: 3rem;
   }
 
@@ -3481,5 +3495,9 @@
   /* insurance */
   .insurance .feat__item {
     width: 100%;
+  }
+
+  .templates-sample .btn {
+    min-width: 100%;
   }
 }

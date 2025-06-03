@@ -151,7 +151,6 @@
 
     var storySlider = new Swiper(".story__slider", {
       slidesPerView: 'auto',
-      // slidesPerView: 3,
       slidesPerGroup: 1,
       spaceBetween: 10,
       speed: 600,
@@ -163,6 +162,11 @@
           spaceBetween: 20,
         },
       },
+      on: {
+        reachEnd: function () {
+          this.snapGrid = [...this.slidesGrid];
+        },
+      }
     });
 
     var cargofeatSlider = new Swiper(".cargo-feat__slider", {
@@ -308,56 +312,60 @@
     /**
      * Установка dropdown
      */
-    let dropdowns = document.querySelectorAll('.dropdown--js');
-    dropdowns.forEach(dropdown => {
+    const dropdownJs = document.querySelector('.dropdown--js');
+    if (dropdownJs) {
+      let dropdowns = document.querySelectorAll('.dropdown--js');
+      dropdowns.forEach(dropdown => {
 
-      function updateSelected() {
-        let selectedValue = dropdown.querySelector('.dropdown__value');
-        let selectedOption = document.querySelector('.dropdown__radio:checked');
-        let selectedLabel = selectedOption.parentElement.querySelector('.dropdown__label');
-        let text = selectedLabel.textContent;
-        let selectedDropdown = dropdown.querySelector('.dropdown__selected--js');
-        selectedDropdown.querySelector('span').textContent = text;
-        selectedValue.dataset.value = text;
-      }
-
-      function toggleClass(el, className, add) {
-        let addClass = add;
-        if (typeof addClass === 'undefined') {
-          addClass = !el.classList.contains(className);
+        function updateSelected() {
+          let selectedValue = dropdown.querySelector('.dropdown__value');
+          let selectedOption = document.querySelector('.dropdown__radio:checked');
+          let selectedLabel = selectedOption.parentElement.querySelector('.dropdown__label');
+          let text = selectedLabel.textContent;
+          let selectedDropdown = dropdown.querySelector('.dropdown__selected--js');
+          selectedDropdown.querySelector('span').textContent = text;
+          selectedValue.dataset.value = text;
         }
-        if (addClass) {
-          el.classList.add(className);
-        } else {
-          el.classList.remove(className);
+
+        function toggleClass(el, className, add) {
+          let addClass = add;
+          if (typeof addClass === 'undefined') {
+            addClass = !el.classList.contains(className);
+          }
+          if (addClass) {
+            el.classList.add(className);
+          } else {
+            el.classList.remove(className);
+          }
         }
-      }
 
-      let radios = dropdown.querySelectorAll('.dropdown__radio');
-      let root = dropdown;
+        let radios = dropdown.querySelectorAll('.dropdown__radio');
+        let root = dropdown;
 
-      for (let i = 0; i < radios.length; ++i) {
-        let radio = radios[i];
-        radio.addEventListener('change', function () {
-          updateSelected();
+        for (let i = 0; i < radios.length; ++i) {
+          let radio = radios[i];
+          radio.addEventListener('change', function () {
+            updateSelected();
+          });
+          radio.addEventListener('click', function () {
+            toggleClass(root, 'is-active', false);
+          });
+        }
+
+        let selectedLabel = dropdown.querySelector('.dropdown__selected--js');
+        selectedLabel.addEventListener('click', function () {
+          toggleClass(root, 'is-active');
         });
-        radio.addEventListener('click', function () {
-          toggleClass(root, 'is-active', false);
+
+        document.addEventListener('click', (event) => {
+          if (!document.querySelector('.dropdown__container').contains(event.target) && !document.querySelector('.dropdown__selected').contains(event.target)) {
+            toggleClass(root, 'is-active', false);
+          }
         });
-      }
 
-      let selectedLabel = dropdown.querySelector('.dropdown__selected--js');
-      selectedLabel.addEventListener('click', function () {
-        toggleClass(root, 'is-active');
+        // updateSelected();
       });
-
-      let ddd = dropdown.querySelector('.dropdown__container');
-      ddd.addEventListener('click', function () {
-        toggleClass(root, 'is-active');
-      });
-
-      // updateSelected();
-    });
+    }
 
 
 
@@ -537,7 +545,8 @@
         gsap.to(numb, {
           scrollTrigger: {
             trigger: numbBox,
-            start: `top 60%`,
+            start: `top 80%`,
+            // start: `top 60%`,
             // markers: true,
           },
           onStart: () => counter(numb),
@@ -574,14 +583,17 @@
           });
         }
 
-        const story__slide = document.querySelectorAll('.story__slide');
+        $(window).on('scroll', function () {
+          const story__slides = document.querySelectorAll('.story__slide');
 
-        story__slide.forEach(story__slides => {
-          if (story__slides.getBoundingClientRect().left < window.innerWidth / 3 && story__slides.getBoundingClientRect().left > window.innerWidth / 19.2) {
-            story__slides.classList.add('swiper-slide-active');
-          } else {
-            story__slides.classList.remove('swiper-slide-active');
-          }
+          story__slides.forEach(story__slide => {
+            if (story__slide.getBoundingClientRect().left < window.innerWidth / 3 && story__slide.getBoundingClientRect().right > window.innerWidth / 3) {
+              story__slide.classList.add('swiper-slide-active');
+            } else {
+              story__slide.classList.remove('swiper-slide-active');
+            }
+            console.log(story__slide.getBoundingClientRect().left);
+          });
         });
       }
     });
@@ -729,7 +741,6 @@
             itemsActive[0].classList.remove('work__slide-active');
           }
           this.classList.add('work__slide-active');
-
         });
         element.addEventListener('mouseout', function () {
           items[0].classList.add('work__slide-active');
@@ -836,7 +847,6 @@
         });
       });
     }
-
     accordionFunc();
 
 
@@ -1180,6 +1190,8 @@
         new TagCloud();
       });
     }
+
+
 
     /**
      * Анимация блока задач

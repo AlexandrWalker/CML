@@ -15,7 +15,8 @@
     border-radius: var(--primary-border-r-5);
     border: 0.1rem solid var(--primary-border-c-1);
     transition: all 0.3s ease;
-    padding: 1.4rem 3.2rem 1.4rem 2rem;
+    // padding: 1.4rem 3.2rem 1.4rem 2rem;
+    padding: .5rem 3.2rem .5rem 2rem;
 
     z-index: 9;
     position: relative;
@@ -28,12 +29,23 @@
     line-height: 125%;
     color: var(--primary-black-50);
 
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
     &:hover,
     &:focus,
     &:active {
       color: var(--primary-black);
       border-color: var(--primary-black-lighten);
       background-color: var(--white);
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1.2rem;
+      line-height: 1;
+      color: var(--primary-accent);
     }
 
     span {
@@ -104,13 +116,14 @@
   &__content {
     border: 0.1rem solid transparent;
     border-top: 0;
-    // padding-bottom: 2.5rem;
     padding-bottom: 1.8rem;
     will-change: transform;
     transform: translateY(-101%);
     transition: transform 0.2s ease;
     background-color: var(--white);
     border-radius: 0 0 var(--primary-border-r-5) var(--primary-border-r-5);
+
+    width: calc(100% - 0.1rem);
 
     .dropdown.is-active & {
       transform: translateY(0);
