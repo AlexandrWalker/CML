@@ -2282,6 +2282,7 @@ a:hover {
   font-size: 3.5rem;
   line-height: 120%;
   color: inherit;
+  white-space: nowrap;
 }
 .menu__foot-text {
   font-weight: 300;
@@ -3073,7 +3074,7 @@ a:hover {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  padding: 1.4rem 3.2rem 1.4rem 2rem;
+  padding: 0.5rem 3.2rem 0.5rem 2rem;
   z-index: 9;
   position: relative;
   cursor: pointer;
@@ -3083,11 +3084,27 @@ a:hover {
   font-size: 1.6rem;
   line-height: 125%;
   color: var(--primary-black-50);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .dropdown__selected:hover, .dropdown__selected:focus, .dropdown__selected:active {
   color: var(--primary-black);
   border-color: var(--primary-black-lighten);
   background-color: var(--white);
+}
+.dropdown__selected p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--primary-accent);
 }
 .dropdown__selected span {
   white-space: nowrap;
@@ -3164,6 +3181,7 @@ a:hover {
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   background-color: var(--white);
   border-radius: 0 0 var(--primary-border-r-5) var(--primary-border-r-5);
+  width: calc(100% - 0.1rem);
 }
 .dropdown.is-active .dropdown__content {
   -webkit-transform: translateY(0);
@@ -4325,7 +4343,7 @@ a:hover {
 .faq__item.accordion-active .faq__item-count {
   color: var(--primary-black);
 }
-.faq__item.accordion-active .faq__item-title {
+.faq__item.accordion-active h2 {
   color: var(--primary-accent);
 }
 .faq__item.accordion-active .faq__item-btn i {
@@ -4340,7 +4358,7 @@ a:hover {
 .faq__item:hover .faq__item-count {
   color: var(--primary-black);
 }
-.faq__item:hover .faq__item-title {
+.faq__item:hover h2 {
   color: var(--primary-accent);
 }
 .faq__item:hover .faq__item-btn i {
@@ -4368,7 +4386,7 @@ a:hover {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.faq__item-title {
+.faq__item h2 {
   font-weight: 800;
   font-size: 2.4rem;
   line-height: 120%;
@@ -4415,7 +4433,7 @@ a:hover {
   padding: 0 0 0 7.2rem;
   overflow: hidden;
 }
-.faq__item-text {
+.faq__item p {
   font-weight: 300;
   font-size: 2.4rem;
   line-height: 120%;
@@ -6766,7 +6784,7 @@ a:hover {
   position: relative;
   z-index: 2;
 }
-.templates__title {
+.templates h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6781,7 +6799,7 @@ a:hover {
   color: var(--white);
   text-transform: uppercase;
 }
-.templates__title span {
+.templates h2 span {
   font-weight: 300;
   font-size: 5rem;
   line-height: 120%;
@@ -7151,6 +7169,9 @@ a:hover {
   }
   .dropdown {
     height: 5rem;
+  }
+  .dropdown__content {
+    width: 100%;
   }
   .dropdown__button {
     height: 5rem;
@@ -7883,7 +7904,7 @@ a:hover {
     width: 4rem;
     min-width: 4rem;
   }
-  .faq__item-title {
+  .faq__item h2 {
     font-size: 1.6rem;
   }
   .faq__item-btn {
@@ -7902,7 +7923,7 @@ a:hover {
   .faq__item-content {
     padding: 0;
   }
-  .faq__item-text {
+  .faq__item p {
     font-size: 1.4rem;
   }
   .request__inner {
@@ -8172,10 +8193,10 @@ a:hover {
   .templates .breadcrumbs {
     margin: 2rem 0;
   }
-  .templates__title {
+  .templates h2 {
     font-size: 5rem;
   }
-  .templates__title span {
+  .templates h2 span {
     font-size: 3rem;
   }
   .templates__body {
@@ -8202,7 +8223,7 @@ a:hover {
     max-width: 50rem;
     gap: 2rem;
   }
-  .templates-sample .templates__title {
+  .templates-sample h2 {
     gap: 2rem;
   }
   .templates-sample .templates__img {
@@ -9125,6 +9146,9 @@ a:hover {
   .menu__body.down {
     margin-top: 31rem;
   }
+  .menu__foot-link {
+    white-space: unset;
+  }
   .head {
     height: 9.9rem;
   }
@@ -9656,7 +9680,7 @@ a:hover {
   .templates__body {
     gap: 4rem;
   }
-  .templates__title {
+  .templates h2 {
     font-size: 4rem;
   }
   .templates__inner {
@@ -9686,6 +9710,11 @@ a:hover {
   .templates .hero__item-down {
     display: block;
     bottom: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  .templates .hero__item-down i {
+    font-size: 4.5rem;
   }
   /* templates-short */
   .templates-short__inner {
@@ -9698,7 +9727,7 @@ a:hover {
   .templates-sample {
     background-image: none;
   }
-  .templates-sample .templates__title {
+  .templates-sample h2 {
     font-size: 3rem;
   }
   .templates-sample .templates__img,
@@ -10131,5 +10160,8 @@ a:hover {
   /* insurance */
   .insurance .feat__item {
     width: 100%;
+  }
+  .templates-sample .btn {
+    min-width: 100%;
   }
 }
