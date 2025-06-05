@@ -333,6 +333,10 @@
     margin-bottom: 3rem;
   }
 
+  .case-page .request .section__head h2 {
+    margin-bottom: 2rem;
+  }
+
   .general {
     margin-bottom: 1rem;
   }
@@ -2856,6 +2860,10 @@
     font-size: 3rem;
   }
 
+  .international .transport {
+    display: none;
+  }
+
   .tag-cloud {
     display: none;
   }
@@ -3381,6 +3389,11 @@
 
   .directory__list-head {
     gap: 1rem 2rem;
+    padding: 1.2rem 2rem;
+  }
+
+  .directory__list-head ul {
+    gap: 1rem;
   }
 
   .directory__list-wrap ul {

@@ -3605,6 +3605,11 @@ a:hover {
   border-color: var(--primary-accent);
 }
 
+.case-page .request .section__head h2 {
+  max-width: 82rem;
+  margin-bottom: 4px;
+}
+
 .made {
   overflow: unset;
 }
@@ -5030,6 +5035,7 @@ a:hover {
 .templates .hero__item-down {
   position: absolute;
   bottom: 5rem;
+  z-index: 1;
 }
 .templates__inner {
   display: flex;
@@ -5470,6 +5476,9 @@ a:hover {
   .section__head h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
+  }
+  .case-page .request .section__head h2 {
+    margin-bottom: 2rem;
   }
   .general {
     margin-bottom: 1rem;
@@ -7442,6 +7451,9 @@ a:hover {
   .notfound__text {
     font-size: 3rem;
   }
+  .international .transport {
+    display: none;
+  }
   .tag-cloud {
     display: none;
   }
@@ -7853,6 +7865,10 @@ a:hover {
   }
   .directory__list-head {
     gap: 1rem 2rem;
+    padding: 1.2rem 2rem;
+  }
+  .directory__list-head ul {
+    gap: 1rem;
   }
   .directory__list-wrap ul {
     padding: 0;
