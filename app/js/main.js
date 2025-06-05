@@ -527,6 +527,30 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
+    $(window).on('resize load', function () {
+      if (window.innerWidth > '768' && window.innerWidth != '768') {
+        const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
+        if (parallaxItem) {
+          const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+          parallaxImgContainers.forEach(parallaxImgContainer => {
+            const image = parallaxImgContainer.querySelector('img');
+            gsap.fromTo(image,
+              { y: '-7%' },
+              {
+                y: '7%',
+                scrollTrigger: {
+                  trigger: parallaxImgContainer,
+                  start: 'top 60%',
+                  end: 'bottom top',
+                  scrub: true,
+                },
+              }
+            );
+          });
+        }
+      }
+    });
+
     function counter(array, time = 2000) {
       let n = 0;
       const num = Number(array.dataset.val);
