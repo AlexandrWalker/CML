@@ -319,7 +319,7 @@
 
         function updateSelected() {
           let selectedValue = dropdown.querySelector('.dropdown__value');
-          let selectedOption = document.querySelector('.dropdown__radio:checked');
+          let selectedOption = dropdown.querySelector('.dropdown__radio:checked');
           let selectedLabel = selectedOption.parentElement.querySelector('.dropdown__label');
           let text = selectedLabel.textContent;
           let selectedDropdown = dropdown.querySelector('.dropdown__selected--js');
@@ -358,7 +358,7 @@
         });
 
         document.addEventListener('click', (event) => {
-          if (!document.querySelector('.dropdown__container').contains(event.target) && !document.querySelector('.dropdown__selected').contains(event.target)) {
+          if (!dropdown.querySelector('.dropdown__container').contains(event.target) && !dropdown.querySelector('.dropdown__selected').contains(event.target)) {
             toggleClass(root, 'is-active', false);
           }
         });

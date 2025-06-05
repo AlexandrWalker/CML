@@ -173,20 +173,20 @@
       flex-direction: column;
       gap: 1rem;
       text-align: right;
-    }
 
-    &-title {
-      font-weight: 800;
-      font-size: 4.5rem;
-      line-height: 120%;
-      color: var(--white);
-    }
+      h6 {
+        font-weight: 800;
+        font-size: 4.5rem;
+        line-height: 120%;
+        color: var(--white);
+      }
 
-    &-text {
-      font-weight: 300;
-      font-size: 1.6rem;
-      line-height: 110%;
-      color: var(--white);
+      p {
+        font-weight: 300;
+        font-size: 1.6rem;
+        line-height: 110%;
+        color: var(--white);
+      }
     }
   }
 
@@ -202,7 +202,7 @@
       padding: 2rem 0;
     }
 
-    &-text {
+    p {
       font-weight: 300;
       font-size: 1.4rem;
       color: var(--primary-white-lighten);

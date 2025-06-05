@@ -96,7 +96,11 @@
     background-color: var(--white);
     border-bottom: 0;
     border-radius: var(--primary-border-r-5) var(--primary-border-r-5) 0 0;
-    padding-bottom: 1.6rem;
+    // padding-bottom: 1.6rem;
+
+    &:not(.calc__inner .dropdown.is-active .dropdown__selected) span {
+      opacity: 0;
+    }
   }
 
   &__container {

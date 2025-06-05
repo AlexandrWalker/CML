@@ -30,7 +30,7 @@
     padding-top: 5rem;
     padding-bottom: 4rem;
 
-    &-title {
+    h2 {
       font-weight: 800;
       font-size: 8rem;
       line-height: 100%;
@@ -778,14 +778,14 @@
     z-index: 2;
   }
 
-  &__title {
+  h3 {
     font-weight: 800;
     font-size: 4.4rem;
     line-height: 100%;
     margin-bottom: 1.5rem;
   }
 
-  &__text {
+  p {
     font-weight: 300;
     font-size: 1.6rem;
     line-height: 120%;
