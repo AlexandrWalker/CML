@@ -904,6 +904,10 @@ a:hover {
   transition: all 0.3s ease;
 }
 
+.tag-cloud {
+  display: none;
+}
+
 /* component styles */
 .head {
   display: flex;
