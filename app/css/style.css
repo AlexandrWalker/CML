@@ -4491,7 +4491,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 26rem;
+  width: calc(50% - 8rem);
 }
 .solutions__item-num {
   display: flex;
