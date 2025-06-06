@@ -6068,7 +6068,7 @@ a:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2rem;
-  width: 26rem;
+  width: calc(50% - 8rem);
 }
 .solutions__item-num {
   display: -webkit-box;
