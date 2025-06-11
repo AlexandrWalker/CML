@@ -29,6 +29,9 @@
       // width: 'auto',
       // slideClass: 'work__slide',
       speed: 600,
+      mousewheel: {
+        forceToAxis: true,
+      },
       breakpoints: {
         600: {
           slidesPerView: 6,
@@ -43,6 +46,9 @@
       speed: 600,
       loop: true,
       grid: false,
+      mousewheel: {
+        forceToAxis: true,
+      },
       breakpoints: {
         601: {
           slidesPerView: 2,
@@ -69,6 +75,9 @@
       spaceBetween: 10,
       speed: 600,
       loop: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
       breakpoints: {
         381: {
           slidesPerView: 2,
@@ -99,6 +108,9 @@
       spaceBetween: 10,
       speed: 600,
       loop: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
       breakpoints: {
         381: {
           slidesPerView: 2,
@@ -129,6 +141,9 @@
       spaceBetween: 10,
       speed: 600,
       loop: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
       breakpoints: {
         361: {
           slidesPerView: 2,
@@ -156,6 +171,9 @@
       speed: 600,
       direction: 'horizontal',
       init: false,
+      mousewheel: {
+        forceToAxis: true,
+      },
       breakpoints: {
         600: {
           slidesPerView: 'auto',
@@ -174,6 +192,9 @@
       slidesPerGroup: 1,
       spaceBetween: 10,
       speed: 600,
+      mousewheel: {
+        forceToAxis: true,
+      },
       breakpoints: {
         601: {
           slidesPerView: 2,
@@ -209,6 +230,7 @@
      */
     const lenis = new Lenis({
       anchors: {
+        duration: 1.8,
         offset: -150,
         onComplete: () => {
           console.log('scrolled to anchor')
@@ -325,6 +347,12 @@
           let selectedDropdown = dropdown.querySelector('.dropdown__selected--js');
           selectedDropdown.querySelector('span').textContent = text;
           selectedValue.dataset.value = text;
+
+          if (selectedValue.dataset.value.length != 0) {
+            dropdown.classList.add('check');
+          } else {
+            dropdown.classList.remove('check');
+          }
         }
 
         function toggleClass(el, className, add) {
@@ -569,9 +597,9 @@
         gsap.to(numb, {
           scrollTrigger: {
             trigger: numbBox,
-            start: `top 80%`,
+            start: `top 95%`,
             // start: `top 60%`,
-            // markers: true,
+            markers: true,
           },
           onStart: () => counter(numb),
         });
@@ -641,7 +669,7 @@
         duration: 0.3,
         scrollTrigger: {
           trigger: faqItems[i],
-          start: "top 80%",
+          start: "top 90%",
           end: "bottom 20%",
           toggleActions: "play none none none",
           preventOverlaps: true,
@@ -657,7 +685,7 @@
         duration: 0.3,
         scrollTrigger: {
           trigger: calcItems[i],
-          start: "top 80%",
+          start: "top 90%",
           end: "bottom 20%",
           toggleActions: "play none none none",
           preventOverlaps: true,
@@ -672,7 +700,7 @@
         duration: 0.3,
         scrollTrigger: {
           trigger: serviceItems[i],
-          start: "top 80%",
+          start: "top 90%",
           end: "bottom 20%",
           toggleActions: "play none none none",
         }
@@ -684,7 +712,7 @@
       y: 50,
       scrollTrigger: {
         trigger: aboutItem,
-        start: "top 80%",
+        start: "top 90%",
         end: "bottom 20%",
         toggleActions: "play none none none",
       }
@@ -696,7 +724,7 @@
       duration: 0.3,
       scrollTrigger: {
         trigger: bannerItem,
-        start: "top 80%",
+        start: "top 90%",
         end: "bottom 20%",
         toggleActions: "play none none none",
         preventOverlaps: true,
@@ -714,7 +742,7 @@
         stagger: { amount: 0.2 },
         scrollTrigger: {
           trigger: titleItems[i],
-          start: "top 80%",
+          start: "top 90%",
           end: "bottom 20%",
           toggleActions: "play none none none",
           preventOverlaps: true,
