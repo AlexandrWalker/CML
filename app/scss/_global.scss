@@ -30,7 +30,7 @@ body {
   flex-direction: column;
   min-height: 100dvh;
   position: relative;
-  padding-top: 14.7rem;
+  padding-top: 14.4rem;
 }
 
 .main {
@@ -514,6 +514,10 @@ a {
 
     &__button {
       padding-top: 3rem;
+    }
+
+    &__selected {
+      color: var(--primary-black);
     }
   }
 

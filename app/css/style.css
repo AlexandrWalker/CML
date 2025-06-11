@@ -10,6 +10,7 @@
   --primary-white-10: #E7E5EE1A;
   --primary-white-lighten: #F2F3FA;
   --primary-bg: #F8F8F8;
+  --primary-grey: #DFDFDF;
   --white: #ffffff;
   --white-10: #ffffff1a;
   --white-90: #ffffffe6;
@@ -295,7 +296,7 @@ body {
   flex-direction: column;
   min-height: 100dvh;
   position: relative;
-  padding-top: 14.7rem;
+  padding-top: 14.4rem;
 }
 
 .main {
@@ -702,6 +703,9 @@ a:hover {
 .general .dropdown__button {
   padding-top: 3rem;
 }
+.general .dropdown__selected {
+  color: var(--primary-black);
+}
 .general .dots::after {
   top: 50%;
   transform: translateY(-50%);
@@ -926,6 +930,7 @@ a:hover {
 .header {
   background-color: var(--primary-black);
   padding: 2rem 0;
+  height: 10rem;
 }
 .header__inner {
   display: flex;
@@ -1242,6 +1247,7 @@ a:hover {
 }
 
 .nav {
+  height: 4.4rem;
   background-color: var(--primary-accent);
 }
 .nav__container {
@@ -1278,6 +1284,7 @@ a:hover {
 .nav__list-link {
   font-weight: 800;
   font-size: 1.4rem;
+  line-height: 100%;
   color: var(--white);
   padding: 1.5rem 0;
   overflow: hidden;
@@ -2307,6 +2314,9 @@ a:hover {
   width: 100%;
   height: 6rem;
 }
+.dropdown.check .dropdown__selected {
+  color: var(--primary-black);
+}
 .dropdown__selected {
   display: flex;
   align-items: center;
@@ -2699,6 +2709,9 @@ a:hover {
   gap: 2rem;
   width: 100%;
 }
+.calc .dropdown__selected {
+  color: var(--primary-black-50);
+}
 
 .service__items {
   display: flex;
@@ -2715,6 +2728,7 @@ a:hover {
   color: inherit;
   border-bottom: 0.1rem solid var(--primary-accent);
   transition: all 0.3s ease;
+  cursor: initial;
 }
 .service__item:hover {
   border-color: var(--primary-black);
@@ -3626,9 +3640,14 @@ a:hover {
   font-size: 1.6rem;
   line-height: 110%;
 }
-.news__side-item p {
+.news__side-item a {
   font-weight: 800;
+  color: inherit;
   max-width: 40.7rem;
+}
+.news__side-item a:hover {
+  color: var(--primary-accent);
+  text-decoration: underline;
 }
 .news__side-item span {
   font-weight: 300;
@@ -3669,7 +3688,7 @@ a:hover {
 
 .case-page .request .section__head h2 {
   max-width: 82rem;
-  margin-bottom: 4px;
+  margin-bottom: 0.4rem;
 }
 
 .made {
@@ -4034,7 +4053,7 @@ a:hover {
   background-color: var(--primary-black);
 }
 .offers__item-content:hover .offers__item-num {
-  opacity: 1;
+  color: var(--primary-accent);
 }
 .offers__item-content:hover .offers__list {
   grid-template-rows: 1fr;
@@ -4077,8 +4096,7 @@ a:hover {
   font-size: 13rem;
   line-height: 120%;
   text-transform: uppercase;
-  color: var(--primary-accent);
-  opacity: 0;
+  color: var(--primary-grey);
   transition: all 0.3s ease;
   margin-bottom: 5.6rem;
 }
@@ -4194,12 +4212,19 @@ a:hover {
   left: 0;
   right: 0;
 }
+.assortment__item:not(.international .assortment__item) {
+  height: 100%;
+}
 .assortment__item-content {
   width: calc(50% - 1rem);
   height: 58.6rem;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
+}
+.assortment__item-head:not(.international .assortment__item-head) {
+  margin-top: auto;
+  height: fit-content;
 }
 .assortment__item-head h3 {
   font-weight: 800;
@@ -5342,7 +5367,7 @@ a:hover {
     top: 1.9rem;
   }
   .head {
-    height: 11.438rem;
+    height: 11.2rem;
     z-index: 400;
   }
   .head--active {
@@ -5363,6 +5388,7 @@ a:hover {
   }
   .nav {
     background-color: var(--white);
+    height: 3.2rem;
   }
   .nav .container {
     padding: 0;
@@ -5402,7 +5428,7 @@ a:hover {
     font-size: 1.6rem;
   }
   .wrapper {
-    padding-top: 11.438rem;
+    padding-top: 11.2rem;
   }
   .icon-angle-item {
     width: 2.062rem;
@@ -5562,6 +5588,7 @@ a:hover {
   .header {
     background-color: var(--primary-accent);
     padding: 1.8rem 0;
+    height: 8rem;
   }
   .header__logo {
     height: 3rem;
@@ -6771,6 +6798,7 @@ a:hover {
     line-height: 0.6666;
     margin-bottom: 3rem;
     opacity: 1;
+    color: var(--primary-accent);
   }
   .offers__item h3 {
     width: auto;
@@ -7088,7 +7116,7 @@ a:hover {
 }
 @media (max-width: 600px) {
   .wrapper {
-    padding-top: 9.9rem;
+    padding-top: 9.6rem;
   }
   #modal-calc .modal__box {
     margin: 0;
@@ -7140,7 +7168,7 @@ a:hover {
     white-space: unset;
   }
   .head {
-    height: 9.9rem;
+    height: 9.6rem;
   }
   .head--active {
     height: 6.4rem;
@@ -7149,13 +7177,11 @@ a:hover {
     display: flex;
   }
   .header {
+    height: 6.4rem;
     padding: 1rem 0;
   }
   .head .header__btn {
     display: none;
-  }
-  .nav__list-link {
-    height: 3.5rem;
   }
   .hero {
     margin: 0;

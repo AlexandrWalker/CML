@@ -277,6 +277,10 @@
     gap: 2rem;
     width: 100%;
   }
+
+  .dropdown__selected  {
+    color: var(--primary-black-50);
+  }
 }
 
 .service {
@@ -297,6 +301,7 @@
     color: inherit;
     border-bottom: 0.1rem solid var(--primary-accent);
     transition: all 0.3s ease;
+    cursor: initial;
 
     &:hover {
       border-color: var(--primary-black);

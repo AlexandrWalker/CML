@@ -73,7 +73,7 @@
   }
 
   .head {
-    height: 11.438rem;
+    height: 11.2rem;
     // height: fit-content;
     z-index: 400;
   }
@@ -101,6 +101,7 @@
 
   .nav {
     background-color: var(--white);
+    height: 3.2rem;
   }
 
   .nav .container {
@@ -155,7 +156,7 @@
   }
 
   .wrapper {
-    padding-top: 11.438rem;
+    padding-top: 11.2rem;
     // padding-bottom: 6.4rem;
   }
 
@@ -362,6 +363,7 @@
   .header {
     background-color: var(--primary-accent);
     padding: 1.8rem 0;
+    height: 8rem;
   }
 
   .header__logo {
@@ -1901,6 +1903,7 @@
     line-height: 0.6666;
     margin-bottom: 3rem;
     opacity: 1;
+    color: var(--primary-accent);
   }
 
   .offers__item h3 {
@@ -2303,7 +2306,7 @@
 
 @media (max-width: 600px) {
   .wrapper {
-    padding-top: 9.9rem;
+    padding-top: 9.6rem;
   }
 
   #modal-calc .modal__box {
@@ -2370,7 +2373,7 @@
   }
 
   .head {
-    height: 9.9rem;
+    height: 9.6rem;
   }
 
   .head--active {
@@ -2382,6 +2385,7 @@
   }
 
   .header {
+    height: 6.4rem;
     padding: 1rem 0;
   }
 
@@ -2389,8 +2393,12 @@
     display: none;
   }
 
+  .nav {
+    // height: 3.5rem;
+  }
+
   .nav__list-link {
-    height: 3.5rem;
+    // height: 3.5rem;
   }
 
   .hero {

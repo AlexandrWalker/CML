@@ -1,0 +1,87 @@
+<!--=include header.html-->
+<!-- Содержимое сайта -->
+<main class="main">
+  <!-- Главный блок с заголовком -->
+  <section class="general" id="first-section">
+    <div class="container">
+      <!-- Хлебные крошки -->
+      <div class="breadcrumbs">
+        <div class="breadcrumbs__inner">
+          <ul>
+            <li>
+              <a href="/CML">
+                <i class="icon-home"></i>
+              </a>
+            </li>
+            <li>
+              Результаты поиска
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="general__inner">
+        <div class="general__head">
+          <h2>
+            Результаты поиска
+          </h2>
+        </div>
+        <div class="general__body">
+          <div class="general__wrap">
+            <div class="dropdown dropdown--js">
+              <div class="dropdown__selected toggle--label dropdown__selected-label--js dropdown__selected--js dots">
+                <p>Выберите направление</p>
+                <span>Все направления услуг</span>
+              </div>
+              <div class="dropdown__container">
+                <div class="dropdown__content toggle--panel">
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Международные перевозки" />
+                    <span class="dropdown__label">Международные перевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Таможенное оформление" />
+                    <span class="dropdown__label">Таможенное оформление</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Сертификация грузов" />
+                    <span class="dropdown__label">Сертификация грузов</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Страхование грузов" />
+                    <span class="dropdown__label">Страхование грузов</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Авиаперевозки" />
+                    <span class="dropdown__label">Авиаперевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Автомобильные перевозки" />
+                    <span class="dropdown__label">Автомобильные перевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Ж/Д перевозки" />
+                    <span class="dropdown__label">Ж/Д перевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Морские перевозки" />
+                    <span class="dropdown__label">Морские перевозки</span>
+                  </label>
+                  <label class="dropdown__option">
+                    <input class="dropdown__radio" name="type__radio" type="radio" value="Все направления услуг"
+                      checked />
+                    <span class="dropdown__label">Все направления услуг</span>
+                  </label>
+                </div>
+              </div>
+              <input class="dropdown__value" type="hidden">
+            </div>
+            <button class="general__btn btn">
+              показать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!--=include footer.html-->

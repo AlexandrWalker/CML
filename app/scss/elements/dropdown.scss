@@ -6,7 +6,12 @@
   width: 100%;
   height: 6rem;
 
-  &-form {}
+  &.check {
+
+    .dropdown__selected {
+      color: var(--primary-black);
+    }
+  }
 
   &__selected {
     display: flex;

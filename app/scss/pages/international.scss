@@ -51,6 +51,10 @@
     left: 0;
     right: 0;
 
+    &:not(.international .assortment__item) {
+      height: 100%;
+    }
+
     &-content {
       width: calc(50% - 1rem);
       height: 58.6rem;
@@ -60,6 +64,11 @@
     }
 
     &-head {
+
+      &:not(.international .assortment__item-head) {
+        margin-top: auto;
+        height: fit-content;
+      }
 
       h3 {
         font-weight: 800;

@@ -40,7 +40,7 @@
         }
 
         .offers__item-num {
-          opacity: 1;
+          color: var(--primary-accent);
         }
 
         .offers__list {
@@ -94,8 +94,7 @@
       font-size: 13rem;
       line-height: 120%;
       text-transform: uppercase;
-      color: var(--primary-accent);
-      opacity: 0;
+      color: var(--primary-grey);
       transition: all 0.3s ease;
       margin-bottom: 5.6rem;
     }
