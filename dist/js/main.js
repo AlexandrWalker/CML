@@ -599,7 +599,7 @@
             trigger: numbBox,
             start: `top 95%`,
             // start: `top 60%`,
-            markers: true,
+            // markers: true,
           },
           onStart: () => counter(numb),
         });
