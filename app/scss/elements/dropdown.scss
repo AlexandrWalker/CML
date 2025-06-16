@@ -119,6 +119,7 @@
 
     .dropdown.is-active & {
       pointer-events: all;
+      border-radius: 0 0 var(--primary-border-r-5) var(--primary-border-r-5);
     }
   }
 

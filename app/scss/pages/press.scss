@@ -74,4 +74,26 @@
       }
     }
   }
+
+  &-page {
+
+    .dropdown {
+
+      &__content {
+        padding-bottom: 1.2rem;
+      }
+
+      &__container {
+        transition: all 0.2s ease;
+      }
+
+      &.is-active {
+
+        .dropdown__container {
+          transition-delay: 0.1s;
+          box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
 }

@@ -2,6 +2,7 @@ html {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
   --refRes: 1920;
+  will-change: font-size;
   font-size: calc(100vw / var(--refRes) * 10);
 
   @media (max-width: 768px) {
@@ -507,6 +508,7 @@ a {
   &__btn {
     --button-color: var(--white);
     --button-bgcolor: var(--primary-black);
+    --button-border-color: var(--primary-black);
   }
 
   .dropdown {

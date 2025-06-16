@@ -2132,6 +2132,7 @@
     max-width: 100%;
     gap: 2rem;
     padding: 3rem 2rem 2rem;
+    position: static;
   }
 
   .directory__content {
@@ -2148,7 +2149,8 @@
   }
 
   .directory__side-item {
-    width: calc(50% - 4.5rem);
+    // width: calc(50% - 4.5rem);
+    width: 100%;
     padding-bottom: 1.5rem;
   }
 
@@ -2156,8 +2158,12 @@
     font-size: 2rem;
   }
 
-  .directory__side-item a {
+  .directory__side-head {
     font-size: 2rem;
+  }
+
+  .directory__side-item.accordion-active .directory__side-body {
+    padding-top: 1.5rem;
   }
 
   .directory .desc__inner span {
@@ -2264,6 +2270,58 @@
 
   .directory__wrap {
     gap: 2rem;
+  }
+
+  /* contacts */
+  .contacts__inner {
+    gap: 2rem;
+  }
+
+  .contacts__items {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .contacts__item {
+    width: 100%;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .contacts__item:last-child .contacts__item-wrap span {
+    margin-bottom: 2rem;
+  }
+
+  .contacts__copy {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .contacts__item a,
+  .contacts__item h3 {
+    font-size: 2rem;
+  }
+
+  .contacts__item-wrap p {
+    font-size: 1.4rem;
+  }
+
+  .contacts__item-wrap span:not(.contacts__item-links span) {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .contacts__item-links a {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .contacts__item-links i {
+    font-size: 3rem;
+  }
+
+  .contacts__item-requisite p:not(:last-child) {
+    margin-bottom: 1.4rem;
   }
 }
 
@@ -3446,6 +3504,29 @@
 
   .directory__foot p {
     font-size: 2rem;
+  }
+
+  /* results */
+  .results-page .general,
+  .contacts-page .general {
+    margin-bottom: 2rem;
+  }
+
+  .results__items {
+    gap: 1.5rem;
+  }
+
+  .results__item {
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .results__item h2 {
+    font-size: 2rem;
+  }
+
+  .results__item p {
+    font-size: 1.4rem;
   }
 }
 
