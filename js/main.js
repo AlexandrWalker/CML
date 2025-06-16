@@ -141,6 +141,9 @@
       spaceBetween: 10,
       speed: 600,
       loop: true,
+
+      // init: false,
+
       mousewheel: {
         forceToAxis: true,
       },
@@ -163,6 +166,18 @@
         prevEl: ".cases-button-prev",
       },
     });
+
+    // const casesSlide = document.querySelectorAll('.cases__slide');
+    // const count = casesSlide.length;
+    // if (casesSlide.length == count) {
+    //   for (let i = 0; i < count; ++i) {
+    //     const casesSlideCopy = casesSlide[i].cloneNode(true);
+    //     casesSlide[i].parentNode.append(casesSlideCopy);
+    //     casesSlideCopy.classList.add('clone');
+    //   }
+    // }
+
+    // casesSlider.init();
 
     var storySlider = new Swiper(".story__slider", {
       slidesPerView: 'auto',
@@ -553,6 +568,25 @@
 
 
 
+    /**
+     *  Copyboard
+     */
+    const contacts__copy = document.querySelector(".contacts__copy");
+    if (contacts__copy) {
+      const copyButtons = document.querySelectorAll(".contacts__copy");
+      copyButtons.forEach(copyButton => {
+        copyButton.addEventListener("click", function () {
+          navigator.clipboard.writeText(copyButton.parentNode.innerText).then(function () {
+            console.log('Text copied to clipboard');
+          }).catch(function (error) {
+            console.error('Error:', error);
+          });
+        });
+      });
+    }
+
+
+
     gsap.registerPlugin(ScrollTrigger);
 
     $(window).on('resize load', function () {
@@ -625,7 +659,7 @@
             x: () => -1 * (panelsContainer.scrollWidth - (innerWidth / 3)),
             ease: "none",
             scrollTrigger: {
-              trigger: "#story_slider",
+              trigger: "#story__inner",
               pin: true,
               start: "top 20%",
               scrub: 1,
