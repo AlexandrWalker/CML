@@ -772,6 +772,9 @@
 
 
 
+
+
+
     const head = this.document.querySelector('.head');
     const hFirstSection = document.getElementById('first-section');
     const hCalc = document.getElementById('calc');
@@ -900,23 +903,25 @@
     /**
      * Инициализация аккордеона
      */
-    function accordionFunc() {
-      var accordionHead = document.querySelectorAll('.accordion'),
-        accordionActive = document.getElementsByClassName('accordion-active');
+    // function accordionFunc() {
 
-      Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
-        accordionItem.addEventListener('click', function (e) {
+    // }
+    // accordionFunc();
 
-          if (accordionActive.length > 0 && accordionActive[0] !== this) {
-            accordionActive[0].classList.remove('accordion-active');
-          }
-          this.classList.toggle('accordion-active');
+    var accordionHead = document.querySelectorAll('.accordion'),
+      accordionActive = document.getElementsByClassName('accordion-active');
 
-          ScrollTrigger.refresh();
-        });
+    Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
+      accordionItem.addEventListener('click', function (e) {
+
+        if (accordionActive.length > 0 && accordionActive[0] !== this) {
+          accordionActive[0].classList.remove('accordion-active');
+        }
+        this.classList.toggle('accordion-active');
+
+        ScrollTrigger.refresh();
       });
-    }
-    accordionFunc();
+    });
 
 
 
