@@ -407,7 +407,6 @@
       if (!modal__btn) {
         return;
       } else {
-
         var close = document.querySelectorAll('.modal__close-btn');
         var openBtn = document.querySelectorAll('.modal__btn');
 
@@ -421,8 +420,23 @@
             }
 
             let modalId = e.target.getAttribute('data-id');
+            let modalValue = e.target.getAttribute('data-value');
+
             if (modalId) {
               document.getElementById(modalId).classList.add('open');
+
+              if (openButton.hasAttribute('data-value')) {
+                document.getElementById(modalId).querySelector('.dropdown--js').classList.add('check');
+                document.getElementById(modalId).querySelector('.dropdown__selected--js span').innerHTML = modalValue;
+                document.getElementById(modalId).querySelector('.dropdown__value').dataset.value = modalValue;
+                const dropdownRadios = document.getElementById(modalId).querySelectorAll('.dropdown__radio');
+                dropdownRadios.forEach(dropdownRadio => {
+                  if (dropdownRadio.value == modalValue) {
+                    dropdownRadio.checked = true;
+                  }
+                });
+              }
+
               document.body.classList.add('no-scroll');
             } else {
               return
@@ -656,6 +670,7 @@
         }
 
         $(window).on('scroll', function () {
+
           const story__slides = document.querySelectorAll('.story__slide');
 
           story__slides.forEach(story__slide => {
@@ -664,7 +679,6 @@
             } else {
               story__slide.classList.remove('swiper-slide-active');
             }
-            console.log(story__slide.getBoundingClientRect().left);
           });
         });
       }
@@ -689,7 +703,7 @@
         duration: 0.3,
         scrollTrigger: {
           trigger: faqItems[i],
-          start: "top 90%",
+          start: "top 95%",
           end: "bottom 20%",
           toggleActions: "play none none none",
           preventOverlaps: true,
@@ -705,7 +719,7 @@
         duration: 0.3,
         scrollTrigger: {
           trigger: calcItems[i],
-          start: "top 90%",
+          start: "top 95%",
           end: "bottom 20%",
           toggleActions: "play none none none",
           preventOverlaps: true,
@@ -720,7 +734,7 @@
         duration: 0.3,
         scrollTrigger: {
           trigger: serviceItems[i],
-          start: "top 90%",
+          start: "top 95%",
           end: "bottom 20%",
           toggleActions: "play none none none",
         }
@@ -732,7 +746,7 @@
       y: 50,
       scrollTrigger: {
         trigger: aboutItem,
-        start: "top 90%",
+        start: "top 95%",
         end: "bottom 20%",
         toggleActions: "play none none none",
       }
@@ -744,7 +758,7 @@
       duration: 0.3,
       scrollTrigger: {
         trigger: bannerItem,
-        start: "top 90%",
+        start: "top 95%",
         end: "bottom 20%",
         toggleActions: "play none none none",
         preventOverlaps: true,
@@ -762,7 +776,7 @@
         stagger: { amount: 0.2 },
         scrollTrigger: {
           trigger: titleItems[i],
-          start: "top 90%",
+          start: "top 95%",
           end: "bottom 20%",
           toggleActions: "play none none none",
           preventOverlaps: true,
@@ -908,19 +922,23 @@
     // }
     // accordionFunc();
 
-    var accordionHead = document.querySelectorAll('.accordion'),
-      accordionActive = document.getElementsByClassName('accordion-active');
+    document.querySelectorAll('.accordion-parent').forEach((accordionContainer) => {
 
-    Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
-      accordionItem.addEventListener('click', function (e) {
+      var accordionHead = accordionContainer.querySelectorAll('.accordion'),
+        accordionActive = accordionContainer.getElementsByClassName('accordion-active');
 
-        if (accordionActive.length > 0 && accordionActive[0] !== this) {
-          accordionActive[0].classList.remove('accordion-active');
-        }
-        this.classList.toggle('accordion-active');
+      Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
+        accordionItem.addEventListener('click', function (e) {
 
-        ScrollTrigger.refresh();
+          if (accordionActive.length > 0 && accordionActive[0] !== this) {
+            accordionActive[0].classList.remove('accordion-active');
+          }
+          this.classList.toggle('accordion-active');
+
+          ScrollTrigger.refresh();
+        });
       });
+
     });
 
 
@@ -1293,6 +1311,10 @@
       }
     });
 
+
+
+    window.addEventListener('resize', function () { ScrollTrigger.refresh() });
+
   });
 })();
 
@@ -1418,6 +1440,19 @@ if (reasons) {
         var h = element.clientHeight / 200;
         var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 160;
         var top = window.pageYOffset;
+
+        const reasonsHead = $('.reasons__head');
+
+        if (reasonsHead) {
+
+          const dataIndex = $activeBlock.attr('data-index');
+
+          setTimeout(() => {
+            reasonsHead.find('span').html(dataIndex < 10 ? `0${dataIndex}` : dataIndex); // Изменяем текст
+          }, 200); // Задержка должна соответствовать длительности transition
+
+          /* в зависимости от цифры этой просто делаешь подмену */
+        }
 
         // Scroll direction checks
         if (scroll > top) {
