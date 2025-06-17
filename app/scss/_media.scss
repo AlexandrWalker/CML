@@ -867,6 +867,7 @@
 
   .case__acc.accordion-active .case__acc-content {
     grid-template-rows: 1fr;
+    pointer-events: all;
   }
 
   .case__acc.accordion-active .case__acc-icon {
@@ -899,6 +900,7 @@
     overflow: hidden;
     // transition: all 0.5s ease;
     transition: all 0.8s ease;
+    pointer-events: none;
   }
 
   .case__acc.accordion-active .case__content {

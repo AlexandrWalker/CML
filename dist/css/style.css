@@ -8159,6 +8159,7 @@ a:hover {
   .case__acc.accordion-active .case__acc-content {
     -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
+    pointer-events: all;
   }
   .case__acc.accordion-active .case__acc-icon {
     -webkit-transform: scale(-1, -1);
@@ -8197,6 +8198,7 @@ a:hover {
     -webkit-transition: all 0.8s ease;
     -o-transition: all 0.8s ease;
     transition: all 0.8s ease;
+    pointer-events: none;
   }
   .case__acc.accordion-active .case__content {
     padding: 0.7rem 2rem 2rem;
