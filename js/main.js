@@ -141,9 +141,7 @@
       spaceBetween: 10,
       speed: 600,
       loop: true,
-
-      // init: false,
-
+      // loopAdditionalSlides: 6,
       mousewheel: {
         forceToAxis: true,
       },
@@ -166,18 +164,6 @@
         prevEl: ".cases-button-prev",
       },
     });
-
-    // const casesSlide = document.querySelectorAll('.cases__slide');
-    // const count = casesSlide.length;
-    // if (casesSlide.length == count) {
-    //   for (let i = 0; i < count; ++i) {
-    //     const casesSlideCopy = casesSlide[i].cloneNode(true);
-    //     casesSlide[i].parentNode.append(casesSlideCopy);
-    //     casesSlideCopy.classList.add('clone');
-    //   }
-    // }
-
-    // casesSlider.init();
 
     var storySlider = new Swiper(".story__slider", {
       slidesPerView: 'auto',
@@ -842,9 +828,9 @@
     const tabsPanelActive = document.querySelector('.tabs__panel--active');
     const tabsPanelFirst = document.querySelector('.tabs__panel--first');
 
-    if (tabsPanelFirst) {
-      tabsPanelFirst.click();
-    }
+    // if (tabsPanelFirst) {
+    //   tabsPanelFirst.click();
+    // }
 
     if (caseAcc) {
       window.addEventListener('resize', function (event) {
@@ -920,10 +906,7 @@
 
       Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
         accordionItem.addEventListener('click', function (e) {
-          // if (this.parentNode.dataset.skip) {
-          //   this.classList.toggle('accordion-active');
-          //   return;
-          // }
+
           if (accordionActive.length > 0 && accordionActive[0] !== this) {
             accordionActive[0].classList.remove('accordion-active');
           }
