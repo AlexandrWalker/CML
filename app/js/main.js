@@ -916,7 +916,7 @@
         });
       });
     }
-    // accordionFunc();
+    accordionFunc();
 
 
 
