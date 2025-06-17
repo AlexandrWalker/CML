@@ -57,7 +57,8 @@
 
     &-content {
       width: calc(50% - 1rem);
-      height: 58.6rem;
+      // height: 58.6rem;
+      height: 57rem;
       position: relative;
       z-index: 1;
       transition: all 0.3s ease;
@@ -194,6 +195,7 @@
       font-size: 20rem;
       line-height: 120%;
       color: var(--primary-accent);
+      transition: all 0.2s ease;
     }
   }
 

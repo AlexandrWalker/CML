@@ -50,7 +50,9 @@
         <div class="section__head">
           <h3>доставка грузов</h3>
           <h2>
-            <span>из&nbsp;300 стран мира</span> <div>любым способом</div> <br> <div>более <span>5&nbsp;лет</span></div>
+            <span>из&nbsp;300 стран мира</span>
+            <div>любым способом</div> <br>
+            <div>более <span>5&nbsp;лет</span></div>
           </h2>
         </div>
         <div class="templates-desc__content">
@@ -87,7 +89,7 @@
       </div>
     </div>
   </section>
-    <!-- Виды транспорта -->
+  <!-- Виды транспорта -->
   <section class="transport" style="display: none;">
     <div class="container">
       <div class="transport__inner">
@@ -140,9 +142,9 @@
                   </span>
                 </div>
                 <div class="form-group dots">
-                  <div class="dropdown dropdown--js">
+                  <div class="dropdown dropdown--js check">
                     <div class="dropdown__selected toggle--label dropdown__selected-label--js dropdown__selected--js">
-                      <span>Тип перевозки</span>
+                      <span>Мультимодальная доставка</span>
                     </div>
                     <div class="dropdown__container">
                       <div class="dropdown__content toggle--panel">
@@ -161,17 +163,21 @@
                         </label>
                         <label class="dropdown__option">
                           <input class="dropdown__radio" name="type__radio" type="radio"
-                            value="Мультимодальная доставка" />
+                            value="Мультимодальная доставка" checked />
                           <span class="dropdown__label">Мультимодальная доставка</span>
                         </label>
                         <label class="dropdown__option">
                           <input class="dropdown__radio" name="type__radio" type="radio"
-                            value="Поле заполнено неверно" />
-                          <span class="dropdown__label">Поле заполнено неверно</span>
+                            value="Контейнерная доставка" />
+                          <span class="dropdown__label">Контейнерная доставка</span>
+                        </label>
+                        <label class="dropdown__option">
+                          <input class="dropdown__radio" name="type__radio" type="radio" value="Сборная доставка" />
+                          <span class="dropdown__label">Сборная доставка</span>
                         </label>
                       </div>
                     </div>
-                    <input class="dropdown__value" type="hidden">
+                    <input class="dropdown__value" type="hidden" data-value="Мультимодальная доставка">
                   </div>
                 </div>
                 <div class="form-group dots">
@@ -249,7 +255,7 @@
             виды перевозок
           </h2>
         </div>
-        <div class="assortment__items">
+        <div class="assortment__items accordion-parent">
           <div class="assortment__item-content accordion accordion-active">
             <div class="assortment__item">
               <div class="assortment__item-head">
@@ -278,10 +284,10 @@
                 </div>
               </div>
               <div class="assortment__item-foot">
-                <a class="btn btn-red" href="/">
+                <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Авто доставка">
                   Заказать доставку
-                </a>
-                <a class="btn btn-outline" href="/">
+                </button>
+                <a class="btn btn-outline" href="/CML/auto_delivery.html">
                   Узнать подробнее
                 </a>
               </div>
@@ -316,10 +322,10 @@
                 </div>
               </div>
               <div class="assortment__item-foot">
-                <a class="btn btn-red" href="/">
+                <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Авиа доставка">
                   Заказать доставку
-                </a>
-                <a class="btn btn-outline" href="/">
+                </button>
+                <a class="btn btn-outline" href="/CML/air_delivery.html">
                   Узнать подробнее
                 </a>
               </div>
@@ -354,10 +360,10 @@
                 </div>
               </div>
               <div class="assortment__item-foot">
-                <a class="btn btn-red" href="/">
+                <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Железнодорожная доставка">
                   Заказать доставку
-                </a>
-                <a class="btn btn-outline" href="/">
+                </button>
+                <a class="btn btn-outline" href="/CML/railway_delivery.html">
                   Узнать подробнее
                 </a>
               </div>
@@ -392,10 +398,10 @@
                 </div>
               </div>
               <div class="assortment__item-foot">
-                <a class="btn btn-red" href="/">
+                <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Контейнерная доставка">
                   Заказать доставку
-                </a>
-                <a class="btn btn-outline" href="/">
+                </button>
+                <a class="btn btn-outline" href="/CML/sea_delivery.html">
                   Узнать подробнее
                 </a>
               </div>
@@ -430,10 +436,10 @@
                 </div>
               </div>
               <div class="assortment__item-foot">
-                <a class="btn btn-red" href="/">
+                <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Сборная доставка">
                   Заказать доставку
-                </a>
-                <a class="btn btn-outline" href="/">
+                </button>
+                <a class="btn btn-outline" href="/CML/consolidated.html">
                   Узнать подробнее
                 </a>
               </div>
@@ -617,7 +623,7 @@
             Все кейсы
           </a>
         </div>
-        <div class="case__body">
+        <div class="case__body accordion-parent">
           <div class="case__acc tabs__panel tabs__panel--first tabs__panel--active accordion" data-tab="tab-1">
             <div class="case__acc-item">
               <p class="case__acc-title">

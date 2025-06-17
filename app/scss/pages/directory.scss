@@ -311,6 +311,16 @@
         overflow: hidden;
         transition: all 0.3s ease;
 
+        &:hover {
+          h3 {
+            color: var(--primary-accent);
+          }
+
+          i {
+            color: var(--primary-accent);
+          }
+        }
+
         &.accordion-active {
           gap: 2rem;
 

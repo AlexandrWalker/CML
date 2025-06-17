@@ -139,6 +139,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 1.2rem;
 }
 .swiper-pagination-bullet {
   background-color: var(--primary-black);
@@ -286,6 +287,7 @@ body {
   line-height: 1.2;
   color: var(--primary-black);
   background: var(--primary-bg);
+  background: #9c9c9c;
 }
 
 .no-scroll {
@@ -927,7 +929,7 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 10;
-  height: 14.7rem;
+  height: 14.4rem;
 }
 
 .header {
@@ -3862,9 +3864,6 @@ a:hover {
   display: none;
 }
 
-.story__slider {
-  overflow-x: visible;
-}
 .story__slide {
   display: flex;
   flex-direction: row;
@@ -4232,7 +4231,7 @@ a:hover {
 }
 .assortment__item-content {
   width: calc(50% - 1rem);
-  height: 58.6rem;
+  height: 57rem;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
@@ -4344,6 +4343,7 @@ a:hover {
   font-size: 20rem;
   line-height: 120%;
   color: var(--primary-accent);
+  transition: all 0.2s ease;
 }
 .reasons__body {
   overflow: visible;
@@ -4989,6 +4989,12 @@ a:hover {
   gap: 0;
   overflow: hidden;
   transition: all 0.3s ease;
+}
+.directory__list-wrap li:hover h3 {
+  color: var(--primary-accent);
+}
+.directory__list-wrap li:hover i {
+  color: var(--primary-accent);
 }
 .directory__list-wrap li.accordion-active {
   gap: 2rem;

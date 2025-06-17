@@ -82,9 +82,9 @@
                   </span>
                 </div>
                 <div class="form-group dots">
-                  <div class="dropdown dropdown--js">
+                  <div class="dropdown dropdown--js check">
                     <div class="dropdown__selected toggle--label dropdown__selected-label--js dropdown__selected--js">
-                      <span>Тип перевозки</span>
+                      <span>Авто доставка</span>
                     </div>
                     <div class="dropdown__container">
                       <div class="dropdown__content toggle--panel">
@@ -93,7 +93,8 @@
                           <span class="dropdown__label">Авиа доставка</span>
                         </label>
                         <label class="dropdown__option">
-                          <input class="dropdown__radio" name="type__radio" type="radio" value="Авто доставка" />
+                          <input class="dropdown__radio" name="type__radio" type="radio" value="Авто доставка"
+                            checked />
                           <span class="dropdown__label">Авто доставка</span>
                         </label>
                         <label class="dropdown__option">
@@ -108,12 +109,16 @@
                         </label>
                         <label class="dropdown__option">
                           <input class="dropdown__radio" name="type__radio" type="radio"
-                            value="Поле заполнено неверно" />
-                          <span class="dropdown__label">Поле заполнено неверно</span>
+                            value="Контейнерная доставка" />
+                          <span class="dropdown__label">Контейнерная доставка</span>
+                        </label>
+                        <label class="dropdown__option">
+                          <input class="dropdown__radio" name="type__radio" type="radio" value="Сборная доставка" />
+                          <span class="dropdown__label">Сборная доставка</span>
                         </label>
                       </div>
                     </div>
-                    <input class="dropdown__value" type="hidden">
+                    <input class="dropdown__value" type="hidden" data-value="Авто доставка">
                   </div>
                 </div>
                 <div class="form-group dots">
@@ -1261,7 +1266,7 @@
             Все кейсы
           </a>
         </div>
-        <div class="case__body">
+        <div class="case__body accordion-parent">
           <div class="case__acc tabs__panel tabs__panel--first tabs__panel--active accordion" data-tab="tab-1">
             <div class="case__acc-item">
               <p class="case__acc-title">
@@ -1628,7 +1633,7 @@
             Ответы на частые вопросы
           </h2>
         </div>
-        <div class="faq__items">
+        <div class="faq__items accordion-parent">
           <div class="faq__item accordion">
             <div class="faq__item-head">
               <span class="faq__item-count">
