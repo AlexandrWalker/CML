@@ -287,7 +287,6 @@ body {
   line-height: 1.2;
   color: var(--primary-black);
   background: var(--primary-bg);
-  background: #9c9c9c;
 }
 
 .no-scroll {

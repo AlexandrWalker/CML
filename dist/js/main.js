@@ -1451,7 +1451,6 @@ if (reasons) {
             reasonsHead.find('span').html(dataIndex < 10 ? `0${dataIndex}` : dataIndex); // Изменяем текст
           }, 200); // Задержка должна соответствовать длительности transition
 
-          /* в зависимости от цифры этой просто делаешь подмену */
         }
 
         // Scroll direction checks
