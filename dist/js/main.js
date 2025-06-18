@@ -13,6 +13,9 @@
       fadeEffecct: {
         crossFade: true
       },
+      mousewheel: {
+        forceToAxis: true,
+      },
       autoplay: {
         delay: 8000,
         disableOnInteraction: false

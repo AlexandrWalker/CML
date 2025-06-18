@@ -974,7 +974,8 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  width: 100%;
+  max-width: 100%;
+  width: auto;
   height: 100%;
   padding: 1.8rem 1.3rem 1.8rem 2rem;
   font-weight: 800;
@@ -989,6 +990,7 @@ a:hover {
   opacity: 1;
   border: 0.1rem solid var(--primary-white-10);
   border-radius: var(--primary-border-r-5);
+  appearance: auto;
 }
 .header__btn-head:hover {
   border-color: var(--white);
