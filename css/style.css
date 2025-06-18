@@ -2683,6 +2683,9 @@ a:hover {
 .modal__bid-text {
   margin-bottom: 3rem;
 }
+.modal .section__head h2 {
+  margin-bottom: 0;
+}
 
 #modal-calc {
   z-index: 510;
