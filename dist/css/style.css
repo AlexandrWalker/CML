@@ -1266,6 +1266,9 @@ a:hover {
   border: 0.1rem solid var(--primary-white-10);
   border-radius: var(--primary-border-r-5);
 }
+.header__btn:hover {
+  border-color: var(--white);
+}
 .header__btn-head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1296,9 +1299,6 @@ a:hover {
   -webkit-appearance: auto;
      -moz-appearance: auto;
           appearance: auto;
-}
-.header__btn-head:hover {
-  border-color: var(--white);
 }
 .header__btn-icon {
   position: absolute;

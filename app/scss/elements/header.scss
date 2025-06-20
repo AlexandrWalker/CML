@@ -54,6 +54,10 @@
     border: 0.1rem solid var(--primary-white-10);
     border-radius: var(--primary-border-r-5);
 
+    &:hover {
+      border-color: var(--white);
+    }
+
     &-head {
       display: flex;
       justify-content: space-between;
@@ -75,10 +79,6 @@
       cursor: pointer;
       opacity: 1;
       appearance: auto;
-
-      &:hover {
-        border-color: var(--white);
-      }
     }
 
     &-title {}
