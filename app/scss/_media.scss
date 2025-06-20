@@ -403,12 +403,15 @@
     top: 1.8rem;
   }
 
-  .header__btn-head {
+  .header__btn {
     border-color: var(--primary-white);
   }
 
-  .header__btn-head:hover {
+  .header__btn:hover {
     border-color: var(--white);
+  }
+
+  .header__btn-head:hover {
     background-color: var(--white);
     color: var(--primary-accent);
   }

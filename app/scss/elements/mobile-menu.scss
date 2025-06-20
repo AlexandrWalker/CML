@@ -320,10 +320,10 @@
   .header__btn {
     justify-content: space-between;
     width: 100%;
+    border-color: var(--primary-black-50);
   }
 
   .header__btn-head {
-    border-color: var(--primary-black-50);
     color: var(--primary-black);
     width: 100%;
   }

@@ -1263,6 +1263,8 @@ a:hover {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  border: 0.1rem solid var(--primary-white-10);
+  border-radius: var(--primary-border-r-5);
 }
 .header__btn-head {
   display: -webkit-box;
@@ -1291,8 +1293,6 @@ a:hover {
   overflow: hidden;
   cursor: pointer;
   opacity: 1;
-  border: 0.1rem solid var(--primary-white-10);
-  border-radius: var(--primary-border-r-5);
   -webkit-appearance: auto;
      -moz-appearance: auto;
           appearance: auto;
@@ -1322,6 +1322,9 @@ a:hover {
 }
 .header__btn-active {
   overflow: visible;
+}
+.header__btn-active.header__btn {
+  border: 0;
 }
 .header__btn-active .header__btn-head {
   padding: 0 1.3rem 0 2rem;
@@ -2372,9 +2375,9 @@ a:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  border-color: var(--primary-black-50);
 }
 .menu .header__btn-head {
-  border-color: var(--primary-black-50);
   color: var(--primary-black);
   width: 100%;
 }
@@ -7779,11 +7782,13 @@ a:hover {
   .menu .header__btn-active .header__btn-icon {
     top: 1.8rem;
   }
-  .header__btn-head {
+  .header__btn {
     border-color: var(--primary-white);
   }
-  .header__btn-head:hover {
+  .header__btn:hover {
     border-color: var(--white);
+  }
+  .header__btn-head:hover {
     background-color: var(--white);
     color: var(--primary-accent);
   }

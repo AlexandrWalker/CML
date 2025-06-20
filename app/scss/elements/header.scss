@@ -51,6 +51,8 @@
     z-index: 5;
     overflow: hidden;
     transition: all 0.3s ease;
+    border: 0.1rem solid var(--primary-white-10);
+    border-radius: var(--primary-border-r-5);
 
     &-head {
       display: flex;
@@ -72,8 +74,6 @@
       overflow: hidden;
       cursor: pointer;
       opacity: 1;
-      border: 0.1rem solid var(--primary-white-10);
-      border-radius: var(--primary-border-r-5);
       appearance: auto;
 
       &:hover {
@@ -102,6 +102,10 @@
     &-active {
       overflow: visible;
       // height: auto;
+
+      &.header__btn {
+        border: 0;
+      }
 
       .header__btn-head {
         padding: 0 1.3rem 0 2rem;
