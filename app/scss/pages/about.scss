@@ -300,9 +300,13 @@
       font-size: 1.6rem;
       line-height: 120%;
 
-      span {
+      a {
         color: var(--primary-accent);
         text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
 
@@ -314,8 +318,13 @@
       line-height: 110%;
       font-weight: 300;
 
-      span {
+      a {
         font-weight: 800;
+        color: inherit;
+
+        &:hover {
+          color: var(--primary-accent);
+        }
       }
     }
   }

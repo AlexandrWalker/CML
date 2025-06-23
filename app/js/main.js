@@ -3,7 +3,7 @@
     /**
      * Инициализация слайдеров swiper
      */
-    var hero__slider = new Swiper(".hero__slider-init", {
+    const hero__slider = new Swiper(".hero__slider-init", {
       slidesPerView: 1,
       centeredSlides: true,
       loop: true,
@@ -26,7 +26,7 @@
       },
     });
 
-    var work__items = new Swiper(".work__items", {
+    const work__items = new Swiper(".work__items", {
       slidesPerView: 'auto',
       slidesPerGroup: 1,
       // width: 'auto',
@@ -42,7 +42,7 @@
       }
     });
 
-    var managementSlider = new Swiper(".management__slider", {
+    const managementSlider = new Swiper(".management__slider", {
       slidesPerView: 'auto',
       slidesPerGroup: 1,
       spaceBetween: 10,
@@ -72,7 +72,7 @@
       },
     });
 
-    var reviewsSlider = new Swiper(".reviews__slider", {
+    const reviewsSlider = new Swiper(".reviews__slider", {
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 10,
@@ -105,7 +105,7 @@
       },
     });
 
-    var articlesSlider = new Swiper(".articles__slider", {
+    const articlesSlider = new Swiper(".articles__slider", {
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 10,
@@ -138,7 +138,7 @@
       },
     });
 
-    var casesSlider = new Swiper(".cases__slider", {
+    const casesSlider = new Swiper(".cases__slider", {
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 10,
@@ -168,7 +168,7 @@
       },
     });
 
-    var storySlider = new Swiper(".story__slider", {
+    const storySlider = new Swiper(".story__slider", {
       slidesPerView: 'auto',
       slidesPerGroup: 1,
       spaceBetween: 10,
@@ -191,7 +191,7 @@
       }
     });
 
-    var cargofeatSlider = new Swiper(".cargo-feat__slider", {
+    const cargofeatSlider = new Swiper(".cargo-feat__slider", {
       slidesPerView: 'auto',
       slidesPerGroup: 1,
       spaceBetween: 10,
@@ -538,7 +538,7 @@
     var headerItem = document.querySelectorAll('.header__btn'),
       headerActive = document.getElementsByClassName('header__btn-active');
 
-    if (headerItem) {
+    if (headerItem.length != 0) {
       Array.from(headerItem).forEach(function (hItem, i, headerItem) {
         hItem.addEventListener('click', function (e) {
           e.stopPropagation();
@@ -642,8 +642,6 @@
         });
       });
     });
-
-
 
     $(window).on('resize load', function () {
       // window.addEventListener('resize load', function () {

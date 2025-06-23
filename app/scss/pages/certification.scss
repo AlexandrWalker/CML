@@ -8,6 +8,13 @@
 
   &__block {
     position: relative;
+
+    &:hover {
+
+      .assortment__item {
+        border-color: var(--primary-accent);
+      }
+    }
   }
 
   .assortment__item {

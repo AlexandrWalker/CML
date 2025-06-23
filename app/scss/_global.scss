@@ -24,6 +24,7 @@ body {
   line-height: 1.2;
   color: var(--primary-black);
   background: var(--primary-bg);
+  background: #868686;
 }
 
 .no-scroll {
@@ -315,15 +316,32 @@ a {
       transition: all 0.3s ease;
     }
 
-    &:hover,
-    &:focus,
-    &:active {
+    &:hover {
       color: var(--primary-black);
       border-color: var(--primary-black-lighten);
       background-color: var(--white);
 
       &::placeholder {
         color: var(--primary-black);
+      }
+    }
+
+    &:focus,
+    &:active {
+      &::-webkit-input-placeholder {
+        opacity: 0;
+      }
+
+      &::-moz-placeholder {
+        opacity: 0;
+      }
+
+      &:-moz-placeholder {
+        opacity: 0;
+      }
+
+      &:-ms-input-placeholder {
+        opacity: 0;
       }
     }
   }
@@ -369,14 +387,31 @@ a {
       transition: all 0.3s ease;
     }
 
-    &:hover,
-    &:focus,
-    &:active {
+    &:hover {
       color: var(--primary-black);
       border-color: var(--primary-black-lighten);
 
       &::placeholder {
         color: var(--primary-black);
+      }
+    }
+
+    &:focus,
+    &:active {
+      &::-webkit-input-placeholder {
+        opacity: 0;
+      }
+
+      &::-moz-placeholder {
+        opacity: 0;
+      }
+
+      &:-moz-placeholder {
+        opacity: 0;
+      }
+
+      &:-ms-input-placeholder {
+        opacity: 0;
       }
     }
   }
@@ -619,6 +654,8 @@ a {
       }
     }
   }
+
+  &__body {}
 }
 
 .tabs {

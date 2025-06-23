@@ -241,9 +241,12 @@
     }
 
     &__img {
-      width: auto;
-      height: 51rem;
-      object-fit: contain;
+
+      img {
+        width: auto;
+        height: 51rem;
+        object-fit: contain;
+      }
     }
   }
 }
