@@ -24,7 +24,6 @@ body {
   line-height: 1.2;
   color: var(--primary-black);
   background: var(--primary-bg);
-  background: #868686;
 }
 
 .no-scroll {
@@ -734,6 +733,30 @@ a {
 
     .case__img {
       transform: translateY(0);
+    }
+  }
+}
+
+.pre-accordion {
+
+  &+.directory__side-paragraph {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    li {
+      overflow: hidden;
+    }
+  }
+
+  &.pre-accordion-active {
+    color: var(--primary-accent);
+    text-decoration: underline;
+
+    &+.directory__side-paragraph {
+      grid-template-rows: 1fr;
+      margin-top: 1.5rem;
     }
   }
 }

@@ -1,8 +1,6 @@
 .reviews {
 
-  &-page {
-    
-  }
+  &-page {}
 
   &__items {
     display: flex;
@@ -22,5 +20,7 @@
       background-color: var(--white);
       border-color: var(--primary-accent);
     }
+
+    &-foot {}
   }
 }

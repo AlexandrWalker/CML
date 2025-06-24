@@ -942,6 +942,21 @@
 
     });
 
+    var preAccordionHead = document.querySelectorAll('.pre-accordion'),
+      preAccordionActive = document.getElementsByClassName('pre-accordion-active');
+
+    Array.from(preAccordionHead).forEach(function (preAccordionItem, i, preAccordionHead) {
+      preAccordionItem.addEventListener('click', function (e) {
+
+        if (preAccordionActive.length > 0 && preAccordionActive[0] !== this) {
+          preAccordionActive[0].classList.remove('pre-accordion-active');
+        }
+        this.classList.toggle('pre-accordion-active');
+
+        ScrollTrigger.refresh();
+      });
+    });
+
 
 
     const fixedBtn = document.getElementById('fixed-btn');
