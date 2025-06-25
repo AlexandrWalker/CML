@@ -549,6 +549,24 @@
           this.classList.toggle('header__btn-active');
           document.querySelector('.menu__body').classList.toggle('down');
 
+          window.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+              this.classList.remove("header__btn-active")
+            }
+          });
+
+          document.addEventListener('click', (e) => {
+            const withinBoundaries = e.composedPath().includes(hItem.querySelector('.header__dropdown'));
+
+            if (!withinBoundaries) {
+              hItem.classList.remove("header__btn-active");
+
+              const menuBody = document.querySelector('.menu__body');
+              if (menuBody.classList.contains('down')) {
+                menuBody.classList.remove('down')
+              }
+            }
+          })
         });
       });
     }
