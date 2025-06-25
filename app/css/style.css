@@ -2241,6 +2241,7 @@ a:hover {
   z-index: 400;
   margin: 0;
   color: var(--white);
+  pointer-events: none;
 }
 .warning__inner {
   display: flex;
@@ -2251,6 +2252,7 @@ a:hover {
   width: fit-content;
   margin: 0 0 0 auto;
   background-color: var(--primary-black);
+  pointer-events: all;
 }
 .warning__text {
   font-weight: 300;

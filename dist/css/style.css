@@ -2952,6 +2952,7 @@ a:hover {
   z-index: 400;
   margin: 0;
   color: var(--white);
+  pointer-events: none;
 }
 .warning__inner {
   display: -webkit-box;
@@ -2971,6 +2972,7 @@ a:hover {
   width: fit-content;
   margin: 0 0 0 auto;
   background-color: var(--primary-black);
+  pointer-events: all;
 }
 .warning__text {
   font-weight: 300;
@@ -4120,8 +4122,8 @@ a:hover {
   height: 36.2rem;
   padding: 5rem 6rem 5rem 5rem;
   position: relative;
-  background: -webkit-gradient(linear, right top, left top, color-stop(-34.23%, rgba(0, 0, 0, 0.1)), to(rgba(255, 255, 255, 0))), var(--white);
   background: -o-linear-gradient(right, rgba(0, 0, 0, 0.1) -34.23%, rgba(255, 255, 255, 0) 100%), var(--white);
+  background: -webkit-gradient(linear, right top, left top, color-stop(-34.23%, rgba(0, 0, 0, 0.1)), to(rgba(255, 255, 255, 0))), var(--white);
   background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) -34.23%, rgba(255, 255, 255, 0) 100%), var(--white);
   -webkit-transition: all 0.1s ease;
   -o-transition: all 0.1s ease;
