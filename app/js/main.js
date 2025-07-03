@@ -712,6 +712,8 @@
     const bannerItem = document.querySelector(".banner");
     const titleItems = document.querySelectorAll(".section__head");
     const target = document.querySelectorAll('.section__head h2');
+    const generalTitleItems = document.querySelectorAll(".general__head");
+    const generalTarget = document.querySelectorAll('.general__head h2');
 
 
 
@@ -795,6 +797,25 @@
         stagger: { amount: 0.2 },
         scrollTrigger: {
           trigger: titleItems[i],
+          start: "top 95%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          preventOverlaps: true,
+        },
+      })
+    }
+
+    for (let i = 0; i < generalTarget.length; i++) {
+
+      const text = new SplitType(generalTarget[i], { types: 'lines, words' })
+
+      gsap.from(text.words, {
+        opacity: 0,
+        x: -50,
+        duration: 0.3,
+        stagger: { amount: 0.2 },
+        scrollTrigger: {
+          trigger: generalTitleItems[i],
           start: "top 95%",
           end: "bottom 20%",
           toggleActions: "play none none none",

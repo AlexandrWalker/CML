@@ -58,6 +58,14 @@
   .press-page .tabs__btn {
     height: 5rem;
   }
+
+  .general--big .general__body {
+    gap: 2rem;
+  }
+
+  .directory-page .general--big .general__body {
+    max-width: 63rem;
+  }
 }
 
 @media (max-width: 991px) {}
@@ -347,7 +355,8 @@
   }
 
   .general h1,
-  .general h2 {
+  .general h2,
+  .general h2 span {
     font-size: 3rem;
   }
 
@@ -1274,7 +1283,8 @@
   }
 
   /* breadcrumbs */
-  .breadcrumbs {
+  .breadcrumbs,
+  .general .breadcrumbs {
     margin: 2rem 0;
   }
 
@@ -1360,64 +1370,73 @@
   }
 
   /* templates */
-  .templates {
+  .general {
     min-height: 78.2rem;
   }
 
-  .templates .breadcrumbs {
+  .general .breadcrumbs {
     margin: 2rem 0;
   }
 
-  .templates h2 {
+  .general--big h2 {
     font-size: 5rem;
   }
 
-  .templates h2 span {
+  .general--big h2 span {
     font-size: 3rem;
   }
 
-  .templates__body {
+  .general--big .general__content {
+    max-width: 49rem;
+  }
+
+  .general__body {
     gap: 3rem;
   }
 
-  .templates__content {
+  .general__content {
     max-width: 26.5rem;
   }
 
-  .templates__content blockquote {
+  .general__content blockquote {
     font-size: 2rem;
   }
 
-  .templates__img {
+  .general__img {
     height: 51.2rem;
     top: auto;
     bottom: 1.7rem;
     right: -3.2rem;
   }
 
-  /* templates-sample */
-  .templates-sample .templates__body {
+  .general--big .general__body {
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  /* general--sample */
+  .general--sample .general__body {
     gap: 2rem;
     max-width: 100%;
   }
 
-  .templates-sample .templates__content {
+  .general--sample .general__content {
     max-width: 50rem;
     gap: 2rem;
   }
 
-  .templates-sample h2 {
-    gap: 2rem;
+  .general--sample h2 {
+    gap: 1rem;
   }
 
-  .templates-sample .templates__img {
+  .general--sample .general__img {
     bottom: 0;
     right: 2rem;
     width: 60%;
     height: auto;
   }
 
-  .templates__content p {
+  .general__content p {
     font-size: 1.4rem;
   }
 
@@ -1502,37 +1521,44 @@
   }
 
   /* templates-short */
-  .case-page .templates-short__inner {
+  .general--short .general__inner {
     flex-direction: row;
     gap: 1rem;
   }
 
-  .case-page .templates-short .section__head {
+  .general--short .general__head {
     width: calc(50% - 0.5rem);
+    gap: 1rem;
   }
 
-  .case-page .templates-short__feat {
+  .general--short .general__head h3 {
+    font-size: 1.6rem;
+  }
+
+  .general__feat {
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 2rem 1rem;
     width: calc(50% - 0.5rem);
     height: fit-content;
+
+    margin-top: 2.9rem;
   }
 
-  .case-page .templates-short__feat-item {
+  .general__feat-item {
     gap: 1.5rem;
     width: calc(50% - 0.5rem);
   }
 
-  .case-page .templates-short__feat-item:nth-child(2) {
+  .general__feat-item:nth-child(2) {
     order: 3;
   }
 
-  .case-page .templates-short__feat span {
+  .general__feat span {
     font-size: 4rem;
   }
 
-  .case-page .templates-short__feat p {
+  .general__feat p {
     font-size: 1.6rem;
   }
 
@@ -2120,14 +2146,14 @@
   }
 
   /* customs */
-  .customs .templates-sample .templates__img {
+  .customs .general--sample .general__img {
     bottom: -2%;
     right: -6%;
     width: 69%;
   }
 
   /* certification */
-  .certification .templates-sample .templates__img {
+  .certification .general--sample .general__img {
     bottom: -6%;
     width: 80%;
   }
@@ -2348,17 +2374,18 @@
 }
 
 @media (max-width: 680px) {
-  .case-page .templates-short__inner {
+  .general--short .general__inner {
     flex-direction: column;
     gap: 3rem;
   }
 
-  .case-page .templates-short .section__head {
+  .general--short .general__head {
     width: 100%;
   }
 
-  .case-page .templates-short__feat {
+  .general__feat {
     width: 100%;
+    margin-top: 0;
   }
 
   /* insurance */
@@ -3025,73 +3052,88 @@
   .info .about__feat-item {}
 
   /* templates */
-  .templates {
+  .directory-page .general--big h2 {
+    font-size: 3rem;
+  }
+
+  .directory-page .general--big h2 span {
+    font-size: 2rem;
+  }
+
+  .general--big .general__img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .general--big {
     min-height: 62.7rem;
     background-image: url(./../images/main/hero-bg-mob.png);
   }
 
-  .templates__body {
+  .general__body {
     gap: 4rem;
   }
 
-  .templates h2 {
+  .general h2 {
     font-size: 4rem;
   }
 
-  .templates__inner {
+  .general__inner {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .templates__content {
+  .general__content {
     gap: 2rem;
     max-width: 100%;
   }
 
-  .templates__content span {
+  .general__content span {
     width: 6.2rem;
     height: 4.7rem;
   }
 
-  .templates__content blockquote {
+  .general__content blockquote {
     font-size: 1.6rem;
   }
 
-  .templates__img {
+  .general__img {
     width: auto;
     height: 26.9rem;
     position: static;
     margin: auto 4.1rem 1.4rem 6.2rem;
   }
 
-  .templates .hero__item-down {
+  .general .hero__item-down {
     display: block;
     bottom: 3rem;
     width: 4.5rem;
     height: 4.5rem;
   }
 
-  .templates .hero__item-down i {
+  .general .hero__item-down i {
     font-size: 4.5rem;
   }
 
   /* templates-short */
-  .templates-short__inner {
+  .general--short .general__inner {
     flex-direction: column;
   }
 
-  /* templates-sample */
-  .templates-sample {
+  /* general--sample */
+  .general--sample {
     background-image: none;
   }
 
-  .templates-sample h2 {
+  .general--sample h2,
+  .general--sample h2 span {
     font-size: 3rem;
   }
 
-  .templates-sample .templates__img,
-  .customs .templates-sample .templates__img,
-  .certification .templates-sample .templates__img {
+  .general--sample .general__img,
+  .customs .general--sample .general__img,
+  .certification .general--sample .general__img {
     transform: unset;
     width: 100%;
   }
@@ -3606,7 +3648,7 @@
     width: 100%;
   }
 
-  .case-page .templates-short__feat-item {
+  .case-page .general__feat-item {
     width: 100%;
   }
 
@@ -3621,7 +3663,7 @@
     width: 100%;
   }
 
-  .templates-sample .btn {
+  .general--sample .btn {
     min-width: 100%;
   }
 }
