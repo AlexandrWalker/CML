@@ -7811,9 +7811,6 @@ table td:not(:first-child) {
     max-width: 63rem;
   }
   /* news */
-  .news table {
-    display: none;
-  }
 }
 @media (max-width: 768px) {
   .btn:not(.menu__list-btn) {
@@ -9803,27 +9800,27 @@ table td:not(:first-child) {
   .directory .desc__inner p:last-child {
     margin-bottom: 0;
   }
-  .directory table {
+  table {
     display: block;
     width: calc(100% + 4rem);
     margin-left: -2rem;
     padding: 0 2rem;
     overflow-x: auto;
   }
-  .directory table::-webkit-scrollbar {
+  table::-webkit-scrollbar {
     width: 0;
     height: 0;
     padding: 0;
     margin: 0;
   }
-  .directory tbody {
+  tbody {
     width: 100%;
   }
-  .directory table tr {
+  table tr {
     width: 100%;
   }
-  .directory table th,
-  .directory table td {
+  table th,
+  table td {
     width: 21rem;
     min-width: 26rem;
   }
