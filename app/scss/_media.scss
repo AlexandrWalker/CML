@@ -350,16 +350,6 @@
     margin-bottom: 2rem;
   }
 
-  .general {
-    margin-bottom: 1rem;
-  }
-
-  .general h1,
-  .general h2,
-  .general h2 span {
-    font-size: 3rem;
-  }
-
   .menu .container,
   .container {
     padding: 0 2rem;
@@ -1370,8 +1360,19 @@
   }
 
   /* templates */
-  .general {
+  .general h1,
+  .general h2,
+  .general h2 span {
+    font-size: 3rem;
+  }
+
+  .general--sample,
+  .general--big {
     min-height: 78.2rem;
+  }
+
+  .general {
+    margin-bottom: 1rem;
   }
 
   .general .breadcrumbs {
