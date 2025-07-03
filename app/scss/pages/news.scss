@@ -4,6 +4,13 @@
     font-weight: 800;
   }
 
+  h5 {
+    font-size: 2.4rem;
+    line-height: 110%;
+    color: var(--primary-accent);
+    margin-bottom: 3rem;
+  }
+
   h6 {
     font-weight: 800;
     font-size: 1.6rem;
@@ -14,6 +21,7 @@
     font-weight: 300;
     font-size: 1.6rem;
     line-height: 110%;
+    margin-bottom: 3rem;
   }
 
   &-page {
@@ -32,37 +40,8 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    // gap: 3rem;
     width: calc(100% - 54rem - 2rem);
-  }
-
-  &__date {
-
-    span {
-      font-weight: 300;
-      font-size: 1.6rem;
-      line-height: 130%;
-      color: var(--primary-accent);
-    }
-  }
-
-  &__text {
-
-    p {
-      font-weight: 800;
-      font-size: 1.6rem;
-      line-height: 110%;
-    }
-  }
-
-  &__img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    flex-direction: 0;
-  }
-
-  &__list {
 
     h3 {
       font-weight: 800;
@@ -73,7 +52,9 @@
       margin-bottom: 2rem;
     }
 
-    ul {}
+    ul {
+      margin-bottom: 3rem;
+    }
 
     li {
       display: flex;
@@ -96,39 +77,58 @@
 
       &:not(:last-child) {
         margin-bottom: 2rem;
+        margin-bottom: 3rem;
       }
 
       h6 {
         width: 100%;
       }
-    }
-  }
 
-  &__solution {
-    li:not(:last-child) {
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    time {
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 130%;
+      color: var(--primary-accent);
+      margin-bottom: 3rem;
+    }
+
+    span {
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 110%;
+
+      a {
+        color: var(--primary-accent);
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    table {
+      margin-bottom: 3rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
       margin-bottom: 3rem;
     }
   }
 
-  &__subtitle {
+  &__solution {
 
-    p {
-      font-weight: 800;
-      font-size: 2.4rem;
-      line-height: 110%;
-      color: var(--primary-accent);
-    }
-  }
-
-  &__source {
-
-    a {
-      color: var(--primary-accent);
-      text-decoration: underline;
-
-      &:hover {
-        text-decoration: none;
-      }
+    li:not(:last-child) {
+      margin-bottom: 3rem;
     }
   }
 

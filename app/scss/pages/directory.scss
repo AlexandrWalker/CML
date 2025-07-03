@@ -1,6 +1,12 @@
 .directory {
   overflow: visible;
 
+  &-page {
+    .general {
+      overflow: hidden;
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: row;
@@ -225,32 +231,13 @@
       text-transform: uppercase;
       color: var(--primary-accent);
     }
-  }
 
-  &__block {
+    ul {
+      margin-bottom: 3rem;
 
-    img {
-      width: 40rem;
-      height: auto;
-      object-fit: cover;
-      margin-right: 2rem;
-      float: left;
-    }
-
-    h6 {
-      font-weight: 800;
-      font-size: 1.6rem;
-      line-height: 110%;
-    }
-
-    p {
-      font-weight: 300;
-      font-size: 1.6rem;
-      line-height: 120%;
-    }
-
-    &>p {
-      margin-bottom: 2rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     li {
@@ -280,17 +267,25 @@
         width: 100%;
       }
     }
+
+    img {
+      width: 40rem;
+      height: auto;
+      object-fit: cover;
+      aspect-ratio: 400/462;
+      margin-right: 2rem;
+      float: left;
+    }
   }
 
-  &__foot {
-    max-width: 86rem;
+  &__block {}
 
-    p {
-      font-weight: 800;
-      font-size: 2.4rem;
-      line-height: 110%;
-      color: var(--primary-accent);
-    }
+  h5 {
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 110%;
+    color: var(--primary-accent);
+    max-width: 86rem;
   }
 
   &__list {
@@ -427,10 +422,32 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    aspect-ratio: 1240/536;
   }
 
-  .general__table th,
-  .general__table td {
+  h6 {
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 110%;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 120%;
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &>p {
+    margin-bottom: 2rem;
+  }
+
+  table th,
+  table td {
 
     &:not(:last-child) {
       width: 26rem;
@@ -446,7 +463,7 @@
     }
   }
 
-  .general__table td:first-child {
+  table td:first-child {
     display: inline-flex;
     align-items: center;
     padding: 0.4rem 1rem;

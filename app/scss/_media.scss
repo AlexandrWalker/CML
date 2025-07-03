@@ -66,6 +66,11 @@
   .directory-page .general--big .general__body {
     max-width: 63rem;
   }
+
+  /* news */
+  .news table {
+    display: none;
+  }
 }
 
 @media (max-width: 991px) {}
@@ -1379,6 +1384,10 @@
     margin: 2rem 0;
   }
 
+  .general--big {
+    margin-bottom: 3rem;
+  }
+
   .general--big h2 {
     font-size: 5rem;
   }
@@ -1652,22 +1661,35 @@
 
   .news__content {
     width: 100%;
-    gap: 2rem;
+    // gap: 2rem;
   }
 
-  .news__text p {
+  .news__content time {
+    margin-bottom: 2rem;
+  }
+
+  .news__content p {
     font-size: 1.4rem;
+    margin-bottom: 2rem;
   }
 
-  .news__list h3 {
+  .news__content img {
+    margin-bottom: 2rem;
+  }
+
+  .news__content h3 {
     font-size: 2rem;
   }
 
-  .news__list li {
+  .news__content ul {
+    margin-bottom: 2rem;
+  }
+
+  .news__content li {
     gap: 1.5rem;
   }
 
-  .news__list li:not(:last-child) {
+  .news__content li:not(:last-child) {
     margin-bottom: 1.5rem;
   }
 
@@ -1675,12 +1697,9 @@
     margin-bottom: 2rem;
   }
 
-  .news__subtitle p {
+  .news__content h5 {
     font-size: 2rem;
-  }
-
-  .news .general__table {
-    display: none;
+    margin-bottom: 2rem;
   }
 
   .news__side {
@@ -2217,30 +2236,31 @@
     margin-bottom: 0;
   }
 
-  .directory .general__table {
-    overflow-x: auto;
+  .directory table {
+    display: block;
     width: calc(100% + 4rem);
     margin-left: -2rem;
     padding: 0 2rem;
+    overflow-x: auto;
   }
 
-  .directory .general__table::-webkit-scrollbar {
+  .directory table::-webkit-scrollbar {
     width: 0;
     height: 0;
     padding: 0;
     margin: 0;
   }
 
-  .directory .general__table table {
-    width: fit-content;
-  }
-
-  .directory .general__table tr {
+  .directory tbody {
     width: 100%;
   }
 
-  .directory .general__table th,
-  .directory .general__table td {
+  .directory table tr {
+    width: 100%;
+  }
+
+  .directory table th,
+  .directory table td {
     width: 21rem;
     min-width: 26rem;
   }
@@ -2298,6 +2318,7 @@
     float: none;
     width: 100%;
     margin: 0 0 2rem;
+    aspect-ratio: 1240/536;
   }
 
   .directory__wrap {
@@ -3077,7 +3098,8 @@
   }
 
   .general h2 {
-    font-size: 4rem;
+    // font-size: 4rem;
+    font-size: 3rem;
   }
 
   .general__inner {
@@ -3554,7 +3576,7 @@
     font-size: 1.4rem;
   }
 
-  .directory__foot p {
+  .directory h5 {
     font-size: 2rem;
   }
 
