@@ -95,6 +95,7 @@ p {
 }
 
 a {
+  color: var(--primary-accent);
   transition: all 0.3s ease;
 
   &:hover {
@@ -844,6 +845,37 @@ table {
 
     &:not(:first-child) {
       border-left: unset;
+    }
+  }
+}
+
+ol {
+  counter-reset: myCounter;
+  margin-bottom: 3rem;
+
+  li {
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      counter-increment: myCounter;
+      content: counter(myCounter);
+      display: inline-block;
+      width: 3.2rem;
+      height: auto;
+      
+      font-weight: 800;
+      font-size: 1.6rem;
+      line-height: normal;
+      text-align: center;
+      color: var(--primary-black);
+
+      position: absolute;
+      top: -0.1rem;
+      left: 0;
+      flex-shrink: 0;
     }
   }
 }

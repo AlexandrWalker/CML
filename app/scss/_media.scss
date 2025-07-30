@@ -1650,6 +1650,7 @@
   }
 
   /* news */
+  .news li,
   .news p {
     font-size: 1.4rem;
   }
@@ -1677,8 +1678,13 @@
     margin-bottom: 2rem;
   }
 
+  .news__content h2,
   .news__content h3 {
     font-size: 2rem;
+  }
+
+  ol {
+    margin-bottom: 2rem;
   }
 
   .news__content ul {
@@ -1708,7 +1714,7 @@
     gap: 2rem;
   }
 
-  .news__side h3 {
+  .news__side h2 {
     font-size: 2rem;
   }
 

@@ -713,7 +713,7 @@
     const titleItems = document.querySelectorAll(".section__head");
     const target = document.querySelectorAll('.section__head h2');
     const generalTitleItems = document.querySelectorAll(".general__head");
-    const generalTarget = document.querySelectorAll('.general__head h2');
+    const generalTarget = document.querySelectorAll('.general__head h1');
 
 
 
