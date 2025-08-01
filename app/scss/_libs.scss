@@ -50,6 +50,10 @@
     }
   }
 
+  &-slide {
+    height: auto;
+  }
+
   &-slide-active {
     .swiper-progress {
       &::before {

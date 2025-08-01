@@ -1342,6 +1342,10 @@
     max-width: 100%;
   }
 
+  .info__text {
+    gap: 1.6rem;
+  }
+
   .info__text p {
     font-size: 1.4rem;
   }
@@ -1365,11 +1369,17 @@
   }
 
   /* templates */
-  .general h1,
-  .general h2,
-  .general h2 span {
+  .general h1 {
     font-size: 3rem;
   }
+
+  /**/
+  .general__head-title h1,
+  .general__head-title span {
+    font-size: 3rem;
+  }
+
+  /**/
 
   .general--sample,
   .general--big {
@@ -1388,12 +1398,25 @@
     margin-bottom: 3rem;
   }
 
-  .general--big h2 {
+  .general--big .general__head-title h1 {
     font-size: 5rem;
   }
 
-  .general--big h2 span {
+  .general--big .general__head-suptitle {
     font-size: 3rem;
+  }
+
+  .general--big .general__inner,
+  .about-page .general--big .general__inner {
+    gap: 3rem;
+  }
+
+  .services-page .general--big .general__inner {
+    gap: 2rem;
+  }
+
+  .about-page .general--big .general__content {
+    max-width: 26.5rem;
   }
 
   .general--big .general__content {
@@ -1425,14 +1448,31 @@
   }
 
   /* general--sample */
+  .general--sample .general__inner {
+    gap: 2rem !important;
+  }
+
+  .general--sample .general__head {
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .general--sample .general__head-suptitle {
+    font-size: 3rem;
+  }
+
+  .general--sample .general__head-title h1 {
+    font-size: 5rem;
+  }
+
   .general--sample .general__body {
-    gap: 2rem;
+    gap: 3rem;
     max-width: 100%;
   }
 
   .general--sample .general__content {
     max-width: 50rem;
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   .general--sample h2 {
@@ -1442,15 +1482,33 @@
   .general--sample .general__img {
     bottom: 0;
     right: 2rem;
-    width: 60%;
+    // width: 60%;
+    width: 76%;
     height: auto;
+  }
+
+  .international .general--sample .general__img {
+    width: calc(100% - 4rem);
+    left: 2rem;
+    bottom: -15%;
   }
 
   .general__content p {
     font-size: 1.4rem;
   }
 
+  .general--sample-inner .general__head {
+    gap: 2rem;
+  }
+
+  .general--sample-inner .general__body {
+    gap: 2rem;
+  }
+
   /* templates-desc */
+  .templates-desc {
+    min-height: unset;
+  }
   .international .templates-desc__content {
     gap: 1rem;
   }
@@ -1530,6 +1588,14 @@
     font-size: 1.6rem;
   }
 
+  .certification .general--sample .general__inner {
+    gap: 2rem;
+  }
+
+  .certification .general__head-title h1 {
+    font-size: 5rem;
+  }
+
   /* templates-short */
   .general--short .general__inner {
     flex-direction: row;
@@ -1541,9 +1607,17 @@
     gap: 1rem;
   }
 
-  .general--short .general__head h3 {
+  .general--short .general__head-title {
+    gap: 1rem;
+  }
+
+  .general--short .general__head-suptitle {
     font-size: 1.6rem;
   }
+
+  // .general--short .general__head-title h1 {
+  //   font-size: 3rem;
+  // }
 
   .general__feat {
     flex-wrap: wrap;
@@ -1552,7 +1626,7 @@
     width: calc(50% - 0.5rem);
     height: fit-content;
 
-    margin-top: 2.9rem;
+    margin-top: 2.6rem;
   }
 
   .general__feat-item {
@@ -1618,7 +1692,7 @@
   }
 
   .reviews-page .general .dropdown {
-    width: 100%;
+    min-width: 100%;
   }
 
   .general__inner {
@@ -1653,6 +1727,10 @@
   .news li,
   .news p {
     font-size: 1.4rem;
+  }
+
+  .news-page .general {
+    margin-bottom: 2rem;
   }
 
   .news__inner {
@@ -2185,6 +2263,10 @@
   }
 
   /* directory */
+  .directory-page .general--big .general__inner {
+    gap: 2rem;
+  }
+
   .directory__side {
     max-width: 100%;
     gap: 2rem;
@@ -3080,18 +3162,36 @@
   .info .about__feat-item {}
 
   /* templates */
-  .directory-page .general--big h2 {
+  .directory-page .general--big .general__inner {
+    gap: 2rem !important;
+  }
+
+  .directory-page .general--big .general__head-title h1 {
     font-size: 3rem;
   }
 
-  .directory-page .general--big h2 span {
+  .directory-page .general--big .general__head-suptitle {
     font-size: 2rem;
+  }
+
+  .directory-page .general--big .general__img {
+    margin-top: 0;
+  }
+
+  .general--big .general__head-title h1 {
+    font-size: 4rem;
+  }
+
+  .services-page .general--big .general__inner {
+    gap: 3rem !important;
   }
 
   .general--big .general__img {
     width: 100%;
     height: auto;
     margin: 0;
+
+    margin-top: -3rem;
   }
 
   .general--big {
@@ -3099,18 +3199,23 @@
     background-image: url(./../images/main/hero-bg-mob.png);
   }
 
-  .general__body {
+  .general--big .general__inner {
     gap: 4rem;
   }
 
   .general h2 {
     // font-size: 4rem;
-    font-size: 3rem;
+    // font-size: 3rem;
   }
 
-  .general__inner {
+  .general__inner:not(.reviews-page .general__inner, .about-page .general__inner, .results-page .general__inner, .privacy-page .general__inner) {
     flex-direction: column;
-    gap: 0.5rem;
+    // gap: 0.5rem;
+    gap: 1rem;
+  }
+
+  .about-page .general--big .general__content {
+    gap: 2rem;
   }
 
   .general__content {
@@ -3153,11 +3258,15 @@
   /* general--sample */
   .general--sample {
     background-image: none;
+    min-height: 69.1rem;
   }
 
-  .general--sample h2,
-  .general--sample h2 span {
+  .general--sample .general__head-title h1 {
     font-size: 3rem;
+  }
+
+  .delivery .general--sample .general__body {
+    gap: 2rem;
   }
 
   .general--sample .general__img,
@@ -3165,6 +3274,26 @@
   .certification .general--sample .general__img {
     transform: unset;
     width: 100%;
+  }
+
+  .international .general--sample .general__img {
+    width: 100%;
+  }
+
+  .certification .general__head-title span {
+    font-size: 1.6rem;
+  }
+
+  .certification .general__head-title h1 {
+    font-size: 3rem;
+  }
+
+  .customs .general--sample .general__head-suptitle {
+    font-size: 1.6rem;
+  }
+
+  .customs .general--sample .general__body {
+    gap: 2rem;
   }
 
   /* templates-desc */
@@ -3226,9 +3355,14 @@
     width: 100%;
   }
 
+  .general__head-title {
+    gap: 0.5rem;
+  }
+
   .general__body {
     flex-direction: column;
     align-items: flex-start;
+    gap: 4rem;
   }
 
   .general__wrap {
@@ -3288,6 +3422,11 @@
 
   .press__item-date span {
     font-size: 1.4rem;
+  }
+
+  /*  completed-page */
+  .completed-page .general__body {
+    gap: 1.5rem;
   }
 
   /* news */

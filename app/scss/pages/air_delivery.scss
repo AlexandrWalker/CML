@@ -241,10 +241,13 @@
   }
 
   .templates-desc__img {
-    height: 47.1rem;
+    width: 51.4rem;
+    height: auto;
+    // height: 47.1rem;
 
     img {
-      height: 100%;
+      width: 100%;
+      height: auto;
     }
   }
 

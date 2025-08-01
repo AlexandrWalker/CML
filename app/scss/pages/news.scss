@@ -27,7 +27,10 @@
   &-page {
 
     .general {
-      margin-bottom: 3rem;
+
+      &__head {
+        max-width: 100rem;
+      }
     }
   }
 
@@ -85,7 +88,7 @@
         margin-bottom: 2rem;
         margin-bottom: 3rem;
       }
-      
+
       h6 {
         width: 100%;
       }

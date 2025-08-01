@@ -63,7 +63,8 @@
     &-content {
       width: calc(50% - 1rem);
       // height: 58.6rem;
-      height: 57rem;
+      // height: 57rem;
+      height: 61rem;
       position: relative;
       z-index: 1;
       transition: all 0.3s ease;
@@ -118,7 +119,8 @@
 
       span {
         font-weight: 300;
-        font-size: 7rem;
+        // font-size: 7rem;
+        font-size: 5rem;
         line-height: 100%;
         text-transform: uppercase;
         color: var(--primary-accent);

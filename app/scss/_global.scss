@@ -496,80 +496,6 @@ a {
   }
 }
 
-.general {
-  margin-bottom: 2rem;
-  overflow: visible;
-
-  &__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  &__head {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  h1,
-  h2 {
-    font-weight: 800;
-    font-size: 4.5rem;
-    line-height: 120%;
-    text-transform: uppercase;
-
-    max-width: 124rem;
-
-    span {
-      color: var(--primary-accent);
-    }
-  }
-
-  &__body {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem 1rem;
-
-    .form-group {
-      width: fit-content;
-    }
-  }
-
-  &__wrap {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  &__btn {
-    --button-color: var(--white);
-    --button-bgcolor: var(--primary-black);
-    --button-border-color: var(--primary-black);
-  }
-
-  .dropdown {
-    width: 40rem;
-
-    &__button {
-      padding-top: 3rem;
-    }
-
-    &__selected {
-      color: var(--primary-black);
-    }
-  }
-
-  .dots::after {
-    top: 50%;
-    transform: translateY(-50%);
-    right: 2rem;
-  }
-}
-
 .section {
 
   &__head {
@@ -724,22 +650,6 @@ a {
     margin: 0;
   }
 
-  &.light {
-    color: var(--white);
-
-    li:not(:last-child)::after {
-      color: var(--white);
-    }
-
-    i {
-      color: var(--white);
-    }
-
-    a {
-      color: var(--white);
-    }
-  }
-
   ul {
     display: flex;
     flex-direction: row;
@@ -854,6 +764,7 @@ ol {
   margin-bottom: 3rem;
 
   li {
+    list-style: none;
 
     &::before {
       display: none;
@@ -869,7 +780,6 @@ ol {
       font-weight: 800;
       font-size: 1.6rem;
       line-height: normal;
-      text-align: center;
       color: var(--primary-black);
 
       position: absolute;
