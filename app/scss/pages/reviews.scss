@@ -1,6 +1,15 @@
 .reviews {
 
-  &-page {}
+  &-page {
+
+    .reviews__item {
+      height: auto;
+    }
+
+    .reviews__item-foot {
+      margin-top: auto;
+    }
+  }
 
   &__items {
     display: flex;

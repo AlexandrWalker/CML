@@ -3726,6 +3726,12 @@ ol li::after {
   text-transform: lowercase;
 }
 
+.reviews-page .reviews__item {
+  height: auto;
+}
+.reviews-page .reviews__item-foot {
+  margin-top: auto;
+}
 .reviews__items {
   display: flex;
   flex-wrap: wrap;
