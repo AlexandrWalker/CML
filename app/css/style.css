@@ -3721,6 +3721,7 @@ ol li::after {
 }
 .completed .cases__item {
   width: calc(33.33333% - 1.33333rem);
+  height: auto;
 }
 .completed .cases__item-tags {
   text-transform: lowercase;
