@@ -683,10 +683,10 @@ a {
     color: var(--primary-black);
 
     &:hover {
-      color: var(--primary-accent);
+      color: var(--primary-accent) !important;
 
       i {
-        color: var(--primary-accent);
+        color: var(--primary-accent) !important;
       }
     }
   }

@@ -835,10 +835,10 @@ a:hover {
   color: var(--primary-black);
 }
 .breadcrumbs a:hover {
-  color: var(--primary-accent);
+  color: var(--primary-accent) !important;
 }
 .breadcrumbs a:hover i {
-  color: var(--primary-accent);
+  color: var(--primary-accent) !important;
 }
 
 .plus-icon {
