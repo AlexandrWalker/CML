@@ -253,6 +253,9 @@
     background-color: var(--white);
     color: inherit;
 
+    display: grid;
+    grid-template-rows: auto 2fr 1fr;
+
     &.doublegis {
 
       .reviews__item-cover {
@@ -332,6 +335,17 @@
       font-size: 1.6rem;
       line-height: 120%;
 
+      justify-content: space-between;
+
+      p {
+        -webkit-line-clamp: 4;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -o-text-overflow: clip;
+        text-overflow: clip;
+        overflow: hidden;
+      }
+
       a {
         color: var(--primary-accent);
         text-decoration: underline;
@@ -349,6 +363,8 @@
       font-size: 1.6rem;
       line-height: 110%;
       font-weight: 300;
+
+
 
       p {
         font-weight: 800;

@@ -3116,6 +3116,8 @@
 
   .reviews__item {
     padding: 1rem 1rem 2rem;
+
+    grid-template-rows: auto 1fr 1fr;
   }
 
   .reviews__item-head {
