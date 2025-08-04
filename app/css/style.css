@@ -4357,7 +4357,7 @@ ol li::after {
 }
 .assortment__item-content {
   width: calc(50% - 1rem);
-  height: 61rem;
+  height: 68rem;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
@@ -4380,6 +4380,7 @@ ol li::after {
   font-size: 1.6rem;
   line-height: 110%;
   margin-bottom: 3rem;
+  min-height: 18rem;
 }
 .assortment__item-head img {
   width: 100%;
@@ -7369,7 +7370,7 @@ ol li::after {
     margin-top: 1rem;
   }
   .assortment__item-content {
-    height: 73.1rem;
+    height: 82rem;
   }
   .assortment__item {
     grid-template-columns: 1fr;
@@ -7386,6 +7387,7 @@ ol li::after {
   .assortment__item-head p {
     font-size: 1.4rem;
     margin-bottom: 2rem;
+    min-height: 15rem;
   }
   .assortment__item-body {
     padding: 0;
@@ -7914,6 +7916,9 @@ ol li::after {
   /* insurance */
   .insurance .feat__item {
     width: calc(33.33333% - 0.66666rem);
+  }
+  .assortment__item-content {
+    height: 79rem;
   }
 }
 @media (max-width: 600px) {
@@ -8681,6 +8686,7 @@ ol li::after {
   .assortment__item-head p {
     overflow: hidden;
     margin-bottom: 0;
+    min-height: unset;
   }
   .assortment__item-head img {
     overflow: hidden;
