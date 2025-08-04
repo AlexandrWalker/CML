@@ -5005,9 +5005,6 @@ ol li::after {
 .reviews-page .reviews__item {
   height: auto;
 }
-.reviews-page .reviews__item-foot {
-  margin-top: auto;
-}
 .reviews__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5424,6 +5421,10 @@ ol li::after {
   height: 100%;
   background-color: var(--white);
   color: inherit;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 2fr 1fr;
+  grid-template-rows: auto 2fr 1fr;
 }
 .reviews__item.doublegis .reviews__item-cover {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTM3LjEyNCAyOS43NTNjLTkuMDI3LjA0NC0xMC40ODcgNS40ODEtMTAuOTc0IDEwLjA4bC0uMjIgMi4wMzNoLTEuODE1bC0uMjIxLTIuMDM0Yy0uNDg3LTQuNTk4LTEuOTkxLTEwLjAzNS0xMC43MDgtMTAuMDgtMS40Ni0zLjAwNi0yLjA4LTUuNDM3LTIuMDgtOC4xNzggMC02Ljg1MiA1LjYyLTEzLjI2MyAxMy45MzgtMTMuMjYzIDguMzE5IDAgMTMuODUgNi4zNjYgMTMuODUgMTMuMzA3IDAgMi42OTctLjI2NiA1LjEyOC0xLjc3IDguMTM1ek0yNC45NTYgMEMxMS4yMzkgMCAwIDExLjIzIDAgMjQuOTc4IDAgMzguNzcgMTEuMjQgNTAgMjQuOTU2IDUwIDM4LjgwNiA1MCA1MCAzOC43NzEgNTAgMjQuOTc4IDUwIDExLjIyOSAzOC44MDUgMCAyNC45NTYgMHoiIGZpbGw9IiMyOUIyNEEiLz48L3N2Zz4=);
@@ -5501,6 +5502,17 @@ ol li::after {
   font-weight: 300;
   font-size: 1.6rem;
   line-height: 120%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.reviews__item-body p {
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  overflow: hidden;
 }
 .reviews__item-body a {
   color: var(--primary-accent);
@@ -10732,6 +10744,8 @@ ol li::after {
   }
   .reviews__item {
     padding: 1rem 1rem 2rem;
+    -ms-grid-rows: auto 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
   }
   .reviews__item-head {
     -webkit-box-orient: vertical;
