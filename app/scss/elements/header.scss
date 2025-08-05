@@ -42,6 +42,20 @@
 
   &__calc {
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2rem;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      animation: moveLight 1.5s infinite forwards;
+      pointer-events: none
+    }
   }
 
   &__btn {
@@ -505,5 +519,15 @@
 
   to {
     transform: rotateX(360deg);
+  }
+}
+
+@keyframes moveLight {
+  from {
+    transform: translateX(-4rem) skewX(-45deg);
+  }
+
+  to {
+    transform: translateX(30rem) skewX(-45deg);
   }
 }

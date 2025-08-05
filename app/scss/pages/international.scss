@@ -1,7 +1,7 @@
 .international {
 
   .templates-desc .section__head {
-    max-width: 82rem;
+    max-width: calc(100% - 67.6rem);
   }
 
   .templates-desc__content {
@@ -17,10 +17,12 @@
   }
 
   .templates-desc__img {
-    width: auto;
+    // width: auto;
+    width: 67.6rem;
     height: 62rem;
     position: absolute;
-    top: -2rem;
+    // top: -2rem;
+    top: 2rem;
     right: 0;
 
     img {
@@ -55,6 +57,7 @@
     top: 0;
     left: 0;
     right: 0;
+    color: inherit;
 
     &:not(.international .assortment__item) {
       height: 100%;
@@ -100,6 +103,7 @@
         width: 100%;
         height: auto;
         object-fit: contain;
+        background-color: var(--primary-bg);
       }
 
       i {
@@ -136,7 +140,7 @@
       }
 
       &:first-child {
-        margin-top: auto;
+        // margin-top: auto;
       }
 
       &:last-child {

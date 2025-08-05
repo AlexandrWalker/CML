@@ -8,6 +8,8 @@
 
   &__block {
     position: relative;
+    width: calc(50% - 1rem);
+    padding-bottom: 0.1rem;
 
     &:hover {
 
@@ -19,6 +21,14 @@
 
   .assortment__item {
     position: static;
+    grid-template-columns: calc(60% - 1rem) calc(40% - 1rem);
+
+    &-head {
+
+      h3 {
+        width: auto;
+      }
+    }
 
     &-img {
       display: flex;
@@ -27,6 +37,7 @@
       width: 100%;
       height: 26.7rem;
       overflow: hidden;
+      background-color: var(--primary-bg);
 
       img {
         width: 11.8rem;

@@ -24,14 +24,32 @@
     height: 100%;
 
     &-content {
-      width: 20%;
+      width: 33.33333%;
       height: 33.7rem;
       position: relative;
 
+      &:not(.accordion) {
+
+        .offers__item-link {
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+
       &:hover {
 
-        .offers__item {
+        &.accordion .offers__item {
           height: fit-content;
+        }
+
+        .offers__item {
           border-color: var(--primary-accent);
         }
 

@@ -301,7 +301,7 @@
     color: inherit;
     border-bottom: 0.1rem solid var(--primary-accent);
     transition: all 0.3s ease;
-    cursor: initial;
+    cursor: context-menu;
 
     &:hover {
       border-color: var(--primary-black);
@@ -672,6 +672,8 @@
 
   &__item {
     width: 100%;
+
+    pointer-events: none;
 
     &-content {
       display: flex;

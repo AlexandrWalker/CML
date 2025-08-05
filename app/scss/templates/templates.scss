@@ -475,7 +475,7 @@
   }
 
   &__body {
-    max-width: 68rem;
+    width: calc(100% - 16rem - 82rem);
 
     p {
 
@@ -514,10 +514,11 @@
   }
 
   &__img {
+    width: 82rem;
 
     img {
-      width: auto;
-      height: 51rem;
+      width: 100%;
+      height: auto;
       object-fit: contain;
     }
   }

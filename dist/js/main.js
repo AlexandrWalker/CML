@@ -42,35 +42,35 @@
       }
     });
 
-    const managementSlider = new Swiper(".management__slider", {
-      slidesPerView: 'auto',
-      slidesPerGroup: 1,
-      spaceBetween: 10,
-      speed: 600,
-      loop: true,
-      grid: false,
-      mousewheel: {
-        forceToAxis: true,
-      },
-      breakpoints: {
-        601: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-          grid: {
-            rows: 2,
-            fill: "row"
-          },
-        },
-        769: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
+    // const managementSlider = new Swiper(".management__slider", {
+    //   slidesPerView: 'auto',
+    //   slidesPerGroup: 1,
+    //   spaceBetween: 10,
+    //   speed: 600,
+    //   loop: true,
+    //   grid: false,
+    //   mousewheel: {
+    //     forceToAxis: true,
+    //   },
+    //   breakpoints: {
+    //     601: {
+    //       slidesPerView: 2,
+    //       spaceBetween: 10,
+    //       grid: {
+    //         rows: 2,
+    //         fill: "row"
+    //       },
+    //     },
+    //     769: {
+    //       slidesPerView: 3,
+    //       spaceBetween: 20,
+    //     },
+    //   },
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    //   },
+    // });
 
     const reviewsSlider = new Swiper(".reviews__slider", {
       slidesPerView: 1,

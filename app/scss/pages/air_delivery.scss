@@ -119,8 +119,13 @@
 
   &__inner {
     display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__content {
+    display: flex;
     flex-direction: row;
-    align-items: flex-end;
     gap: 16rem;
   }
 
@@ -128,6 +133,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 3rem 16rem;
+    width: calc(100% - 16rem - 82rem);
+    height: fit-content;
   }
 
   &__item {
@@ -166,7 +173,7 @@
   &__img {
     width: 82rem;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
@@ -174,35 +181,57 @@
 
   &__items {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    flex-wrap: wrap;
+    gap: 4rem 2rem;
   }
 
   &__item {
     display: flex;
-    align-items: center;
-    gap: 2rem;
+    flex-direction: column;
     padding-bottom: 3rem;
+    width: calc(33.33333% - 1.33333rem);
     border-bottom: 0.1rem solid var(--primary-black-50);
+    color: inherit;
+    cursor: context-menu;
 
     &:hover {
 
-      p {
+      span {
+        background-color: var(--primary-accent);
+      }
+
+      h6 {
         color: var(--primary-accent);
       }
     }
 
     span {
-      width: 5.5rem;
+      width: 16rem;
+      height: fit-content;
+      padding: 2.5rem 0;
+      margin-bottom: 3rem;
+      background-color: var(--primary-black);
       font-weight: 300;
-      font-size: 4.5rem;
+      font-size: 8rem;
       line-height: 105%;
       text-transform: uppercase;
+      text-align: center;
+      color: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    h6 {
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 120%;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+      min-height: 5.8rem;
     }
 
     p {
       font-weight: 300;
-      font-size: 3.4rem;
+      font-size: 1.6rem;
       line-height: 120%;
       transition: all 0.3s ease;
     }
@@ -211,13 +240,14 @@
 
 .delivery {
 
-  .section__head h2 {
-    margin-bottom: 3rem;
+  .solutions .section__head h2 {
+    margin-bottom: 0;
   }
 
   .templates-desc {
     position: relative;
     overflow: hidden;
+    min-height: unset;
 
     &::before {
       content: "";
@@ -232,26 +262,32 @@
   }
 
   .templates-desc__content {
-    gap: 17.5rem;
+    // gap: 17.5rem;
+    gap: 6rem;
     justify-content: flex-start;
   }
 
   .templates-desc__body {
-    max-width: 68rem;
+    width: 88rem;
   }
 
   .templates-desc__img {
-    width: 51.4rem;
+    width: 54rem;
     height: auto;
+    aspect-ratio: 540/486;
     // height: 47.1rem;
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
     }
   }
 
   .general__img {
     height: 60rem;
+  }
+
+  .section__body {
+    max-width: 68rem;
   }
 }
