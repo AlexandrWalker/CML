@@ -1,19 +1,18 @@
 @font-face {
-  font-family: 'cml';
-  src: url('./../fonts/icomoon/cml.eot?26ywpv');
-  src: url('./../fonts/icomoon/cml.eot?26ywpv#iefix') format('embedded-opentype'),
-    url('./../fonts/icomoon/cml.ttf?26ywpv') format('truetype'),
-    url('./../fonts/icomoon/cml.woff?26ywpv') format('woff'),
-    url('./../fonts/icomoon/cml.svg?26ywpv#cml') format('svg');
+  font-family: 'CMLicons';
+  src:  url('./../fonts/icomoon/CMLicons.eot?n7kwij');
+  src:  url('./../fonts/icomoon/CMLicons.eot?n7kwij#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon/CMLicons.ttf?n7kwij') format('truetype'),
+    url('./../fonts/icomoon/CMLicons.woff?n7kwij') format('woff'),
+    url('./../fonts/icomoon/CMLicons.svg?n7kwij#CMLicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'cml' !important;
+  font-family: 'CMLicons' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -29,63 +28,51 @@
 .icon-angle:before {
   content: "\e900";
 }
-
 .icon-calc:before {
   content: "\e901";
 }
-
 .icon-chevron-down:before {
   content: "\e902";
 }
-
 .icon-circle-chevron-down:before {
   content: "\e903";
 }
-
 .icon-download:before {
   content: "\e904";
 }
-
 .icon-file-pdf:before {
   content: "\e905";
 }
-
 .icon-headphones:before {
   content: "\e906";
 }
-
 .icon-home:before {
   content: "\e907";
 }
-
 .icon-minus:before {
   content: "\e908";
 }
-
 .icon-phone:before {
   content: "\e909";
 }
-
 .icon-plus:before {
   content: "\e90a";
 }
-
 .icon-pochta:before {
   content: "\e90b";
 }
-
 .icon-telegram:before {
   content: "\e90c";
 }
-
 .icon-telegram-color:before {
   content: "\e90d";
 }
-
-.icon-whatsapp:before {
+.icon-wchat:before {
   content: "\e90e";
 }
-
-.icon-whatsapp-color:before {
+.icon-whatsapp:before {
   content: "\e90f";
+}
+.icon-whatsapp-color:before {
+  content: "\e910";
 }
