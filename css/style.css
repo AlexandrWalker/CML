@@ -7461,10 +7461,6 @@ ol li::after {
   color: var(--white);
   font-size: 5rem;
 }
-.contacts__item-links img {
-  width: 5rem;
-  height: 5rem;
-}
 .contacts__item-links span {
   font-size: 0;
 }
