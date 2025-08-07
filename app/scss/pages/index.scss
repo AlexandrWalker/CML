@@ -38,7 +38,7 @@
       margin-bottom: 5rem;
 
       span {
-        font-weight: 300;
+        font-weight: 400;;
         font-size: 5rem;
         margin-bottom: 1rem;
         color: var(--primary-accent);
@@ -112,7 +112,7 @@
     }
 
     &-text {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 1.6rem;
       line-height: 110%;
     }
@@ -301,7 +301,7 @@
     color: inherit;
     border-bottom: 0.1rem solid var(--primary-accent);
     transition: all 0.3s ease;
-    cursor: context-menu;
+    cursor: default;
 
     &:hover {
       border-color: var(--primary-black);
@@ -331,7 +331,7 @@
     }
 
     &-count {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 4.5rem;
       line-height: 105%;
       text-transform: uppercase;
@@ -355,7 +355,7 @@
     }
 
     &-text {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 2.4rem;
       line-height: 120%;
     }
@@ -473,7 +473,7 @@
       transition: all 0.3s ease;
 
       li {
-        font-weight: 300;
+        font-weight: 400;;
         font-size: 2.4rem;
         line-height: 120%;
       }
@@ -580,7 +580,7 @@
     gap: 2rem;
 
     &-text {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 1.6rem;
       line-height: 110%;
       width: 40rem;
@@ -621,7 +621,7 @@
     }
 
     &-text {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 1.6rem;
       line-height: 110%;
     }
@@ -696,7 +696,7 @@
     }
 
     &-text {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 1.6rem;
       line-height: 120%;
       color: var(--primary-black);
@@ -710,7 +710,7 @@
       width: 8rem;
       height: 8rem;
       background-color: var(--primary-black);
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 4.5rem;
       line-height: 115%;
       text-align: center;
@@ -794,7 +794,7 @@
   }
 
   p {
-    font-weight: 300;
+    font-weight: 400;;
     font-size: 1.6rem;
     line-height: 120%;
     margin-bottom: 2rem;
@@ -947,7 +947,7 @@
     }
 
     &-count {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 4.5rem;
       line-height: 105%;
       text-transform: uppercase;
@@ -964,7 +964,7 @@
     }
 
     &-text {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 1.6rem;
       line-height: 120%;
     }
@@ -1151,7 +1151,7 @@
     }
 
     &-count {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 4.5rem;
       line-height: 105%;
       text-transform: uppercase;
@@ -1200,7 +1200,7 @@
     }
 
     p {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 2.4rem;
       line-height: 120%;
     }

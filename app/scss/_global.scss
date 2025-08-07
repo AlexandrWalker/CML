@@ -19,7 +19,7 @@ body {
   min-width: 320px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.4rem;
   line-height: 1.2;
   color: var(--primary-black);
@@ -73,7 +73,7 @@ section {
 }
 
 .suptitle {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   text-transform: uppercase;
 }
@@ -89,7 +89,7 @@ section {
 }
 
 p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.125;
 }
@@ -351,7 +351,7 @@ a {
     top: 1rem;
     left: 2rem;
     z-index: 1;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.2rem;
     color: var(--primary-accent);
 
@@ -446,7 +446,7 @@ a {
   }
 
   &-text {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.4rem;
     line-height: 115%;
     color: inherit;
@@ -504,7 +504,7 @@ a {
     gap: 1rem;
 
     h3 {
-      font-weight: 300;
+      font-weight: 400;
       font-size: 2.4rem;
       line-height: 120%;
       text-transform: uppercase;
@@ -548,7 +548,7 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 1.4rem;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--primary-black);
     text-align: center;
     text-transform: uppercase;
@@ -563,7 +563,7 @@ a {
 
     &--active {
       background-color: var(--primary-black);
-      font-weight: 800;
+      // font-weight: 800;
       color: var(--white);
     }
 
@@ -746,7 +746,7 @@ table {
   td {
     height: 5rem;
     padding: 1rem 2rem;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.6rem;
     line-height: 110%;
     text-align: left;

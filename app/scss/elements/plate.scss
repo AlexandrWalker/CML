@@ -32,7 +32,7 @@
   }
 
   &__btn {
-    --button-font-size: 1rem;
+    --button-font-size: 1.2rem;
 
     flex-direction: column;
     gap: 0.2rem;
@@ -41,7 +41,7 @@
     padding: 0;
     border-radius: 0.5rem;
 
-    font-weight: 300;
+    font-weight: 400;
     text-transform: capitalize;
 
     &:hover {
@@ -115,7 +115,7 @@
   }
 
   &__text {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 2rem;
     line-height: 115%;
     color: var(--white);

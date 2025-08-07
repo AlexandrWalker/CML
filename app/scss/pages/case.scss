@@ -17,6 +17,7 @@
     }
 
     &__img {
+      max-height: 68rem;
       height: auto;
       opacity: 1;
       transform: unset;
@@ -95,7 +96,7 @@
     }
 
     p {
-      font-weight: 300;
+      font-weight: 400;;
       font-size: 1.6rem;
       line-height: 120%;
     }
@@ -114,7 +115,7 @@
       gap: 0.5rem 1rem;
 
       span {
-        font-weight: 300;
+        font-weight: 400;;
         font-size: 1.6rem;
         line-height: 110%;
         color: var(--primary-accent);

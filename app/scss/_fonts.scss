@@ -10,9 +10,18 @@
 
 @font-face {
   font-family: 'Gilroy';
+  src: url(./../fonts/Gilroy-Regular.woff2),
+    url(./../fonts/Gilroy-Regular.woff);
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
   src: url(./../fonts/Gilroy-Light.woff2),
     url(./../fonts/Gilroy-Light.woff);
-  font-weight: 300;
+  font-weight: 300;;
   font-display: swap;
   font-style: normal;
 }

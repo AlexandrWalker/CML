@@ -24,10 +24,13 @@
   }
 
   &-pagination {
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 1.2rem;
+
+    &:not(.swiper-pagination-lock) {
+      display: flex;
+    }
 
     &-bullet {
       background-color: var(--primary-black);
@@ -109,7 +112,7 @@
     z-index: 9;
     width: 6rem;
     height: 6rem;
-    margin: 0;  
+    margin: 0;
     flex-shrink: 0;
 
     &::after {
@@ -146,7 +149,7 @@
   height: 13rem;
   padding: 2.5rem 0;
   background-color: var(--primary-accent);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 5rem;
   line-height: 100%;
   vertical-align: bottom;
