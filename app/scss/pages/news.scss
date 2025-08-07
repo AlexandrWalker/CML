@@ -5,7 +5,7 @@
   }
 
   h3 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     line-height: 110%;
     color: var(--primary-accent);
     margin-bottom: 3rem;
@@ -13,13 +13,14 @@
 
   h6 {
     font-weight: 800;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 110%;
   }
 
   p {
-    font-weight: 400;;
-    font-size: 1.6rem;
+    font-weight: 400;
+    ;
+    font-size: 1.8rem;
     line-height: 110%;
     margin-bottom: 3rem;
   }
@@ -49,7 +50,16 @@
     // h3 {
     h2 {
       font-weight: 800;
-      font-size: 2.4rem;
+      font-size: 2.6rem;
+      line-height: 110%;
+      text-transform: uppercase;
+      color: var(--primary-accent);
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      font-weight: 800;
+      font-size: 2.2rem;
       line-height: 110%;
       text-transform: uppercase;
       color: var(--primary-accent);
@@ -68,8 +78,9 @@
       padding-left: 3.2rem;
       position: relative;
 
-      font-weight: 400;;
-      font-size: 1.6rem;
+      font-weight: 400;
+      ;
+      font-size: 1.8rem;
       line-height: 110%;
 
       &::before {
@@ -98,17 +109,54 @@
       }
     }
 
+    blockquote {
+      font-weight: 800;
+      font-size: 2.4rem;
+      line-height: 110%;
+      color: var(--primary-accent);
+      position: relative;
+      padding: 2rem 3rem;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 3rem;
+        height: 1.8rem;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNTMiIHZpZXdCb3g9IjAgMCA3MCA1MyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0yNi41MDI4IDBWNC4yMTEyNEMyMC40OTk2IDcuMzYxMTEgMTYuMjAxOCAxMC42NDc5IDEzLjYwOTYgMTQuMDcxN0MxMS4wMTczIDE3LjQ5NTUgOS43MjExMSAyMS4yMjc0IDkuNzIxMTEgMjUuMjY3NEM5LjcyMTExIDI3LjY2NDEgMTAuMDYyMiAyOS4zMDc1IDEwLjc0NDQgMzAuMTk3N0MxMS4zNTgzIDMxLjE1NjMgMTIuMTA4NyAzMS42MzU3IDEyLjk5NTYgMzEuNjM1N0MxMy44ODI0IDMxLjYzNTcgMTUuMDc2MiAzMS4zOTYgMTYuNTc3IDMwLjkxNjdDMTguMDc3OCAzMC4zNjg5IDE5LjQ0MjIgMzAuMDk1IDIwLjY3MDEgMzAuMDk1QzIzLjQ2NzEgMzAuMDk1IDI1Ljg4ODggMzEuMTU2MyAyNy45MzU0IDMzLjI3OTFDMzAuMDUwMiAzNS4zMzMzIDMxLjEwNzUgMzcuODY2OSAzMS4xMDc1IDQwLjg3OThDMzEuMTA3NSA0NC4xNjY3IDI5Ljg0NTUgNDcuMDA4NCAyNy4zMjE0IDQ5LjQwNUMyNC43OTczIDUxLjczMzIgMjEuNjU5MyA1Mi44OTczIDE3LjkwNzMgNTIuODk3M0MxMy4zMzY3IDUyLjg5NzMgOS4yMDk0NyA1MC45MTE1IDUuNTI1NjggNDYuOTM5OUMxLjg0MTg5IDQyLjk2ODMgMCAzOC4wNzI0IDAgMzIuMjUxOUMwIDI1LjQwNDQgMi4yNTEyIDE5LjAzNjIgNi43NTM2MSAxMy4xNDczQzExLjMyNDIgNy4xODk5MiAxNy45MDczIDIuODA3NDkgMjYuNTAyOCAwWk02NS4wODgzIDAuMzA4MTRWNC4yMTEyNEM1OC4xOTgyIDguMTgyODIgNTMuNjYxNyAxMS43NDM1IDUxLjQ3ODcgMTQuODkzNEM0OS4yOTU3IDE4LjA0MzMgNDguMjA0MyAyMS43NDEgNDguMjA0MyAyNS45ODY0QzQ4LjIwNDMgMjcuOTAzNyA0OC41Nzk0IDI5LjM0MTcgNDkuMzI5OSAzMC4zMDA0QzUwLjA4MDMgMzEuMjU5IDUwLjg2NDggMzEuNzM4NCA1MS42ODM0IDMxLjczODRDNTIuNDMzOCAzMS43Mzg0IDUzLjU1OTQgMzEuNDY0NSA1NS4wNjAyIDMwLjkxNjdDNTYuNTYxIDMwLjM2ODkgNTguMDYxOCAzMC4wOTUgNTkuNTYyNiAzMC4wOTVDNjIuMzU5NiAzMC4wOTUgNjQuNzgxMyAzMS4xMjIxIDY2LjgyNzkgMzMuMTc2NEM2OC45NDI2IDM1LjE2MjEgNzAgMzcuNjI3MyA3MCA0MC41NzE3QzcwIDQzLjkyNyA2OC42Njk3IDQ2LjgzNzIgNjYuMDA5MiA0OS4zMDIzQzYzLjQxNjkgNTEuNzY3NCA2MC4yMTA3IDUzIDU2LjM5MDQgNTNDNTEuODg4IDUzIDQ3LjgyOTEgNTEuMDQ4NSA0NC4yMTM1IDQ3LjE0NTRDNDAuNTk3OSA0My4yNDIyIDM4Ljc5MDEgMzguMzgwNSAzOC43OTAxIDMyLjU2MDFDMzguNzkwMSAyNS4zNzAyIDQxLjA3NTQgMTguODMwNyA0NS42NDYxIDEyLjk0MTlDNTAuMjE2NyA2Ljk4NDUgNTYuNjk3NCAyLjc3MzI2IDY1LjA4ODMgMC4zMDgxNFoiIGZpbGw9IiNDNjI4MjYiLz4NCjwvc3ZnPg0K);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 3rem;
+        height: 1.8rem;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNTMiIHZpZXdCb3g9IjAgMCA3MCA1MyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik00My40OTcyIDUzVjQ4Ljc4ODhDNDkuNTAwNCA0NS42Mzg5IDUzLjc5ODIgNDIuMzUyMSA1Ni4zOTA0IDM4LjkyODNDNTguOTgyNyAzNS41MDQ1IDYwLjI3ODkgMzEuNzcyNiA2MC4yNzg5IDI3LjczMjZDNjAuMjc4OSAyNS4zMzU5IDU5LjkzNzggMjMuNjkyNSA1OS4yNTU2IDIyLjgwMjNDNTguNjQxNyAyMS44NDM3IDU3Ljg5MTMgMjEuMzY0MyA1Ny4wMDQ0IDIxLjM2NDNDNTYuMTE3NiAyMS4zNjQzIDU0LjkyMzggMjEuNjA0IDUzLjQyMyAyMi4wODMzQzUxLjkyMjIgMjIuNjMxMSA1MC41NTc4IDIyLjkwNSA0OS4zMjk5IDIyLjkwNUM0Ni41MzI5IDIyLjkwNSA0NC4xMTEyIDIxLjg0MzcgNDIuMDY0NiAxOS43MjA5QzM5Ljk0OTggMTcuNjY2NyAzOC44OTI1IDE1LjEzMzEgMzguODkyNSAxMi4xMjAyQzM4Ljg5MjUgOC44MzMzMyA0MC4xNTQ1IDUuOTkxNiA0Mi42Nzg2IDMuNTk0OTZDNDUuMjAyNyAxLjI2Njc5IDQ4LjM0MDcgMC4xMDI3MTUgNTIuMDkyNyAwLjEwMjcxNUM1Ni42NjMzIDAuMTAyNzE1IDYwLjc5MDUgMi4wODg1IDY0LjQ3NDMgNi4wNjAwOEM2OC4xNTgxIDEwLjAzMTcgNzAgMTQuOTI3NiA3MCAyMC43NDgxQzcwIDI3LjU5NTYgNjcuNzQ4OCAzMy45NjM4IDYzLjI0NjQgMzkuODUyN0M1OC42NzU4IDQ1LjgxMDEgNTIuMDkyNyA1MC4xOTI1IDQzLjQ5NzIgNTNaTTQuOTExNzIgNTIuNjkxOVY0OC43ODg4QzExLjgwMTggNDQuODE3MiAxNi4zMzgzIDQxLjI1NjUgMTguNTIxMyAzOC4xMDY2QzIwLjcwNDMgMzQuOTU2NyAyMS43OTU3IDMxLjI1OSAyMS43OTU3IDI3LjAxMzZDMjEuNzk1NyAyNS4wOTYzIDIxLjQyMDYgMjMuNjU4MyAyMC42NzAxIDIyLjY5OTZDMTkuOTE5NyAyMS43NDEgMTkuMTM1MiAyMS4yNjE2IDE4LjMxNjYgMjEuMjYxNkMxNy41NjYyIDIxLjI2MTYgMTYuNDQwNiAyMS41MzU1IDE0LjkzOTggMjIuMDgzM0MxMy40MzkgMjIuNjMxMSAxMS45MzgyIDIyLjkwNSAxMC40Mzc0IDIyLjkwNUM3LjY0MDQ1IDIyLjkwNSA1LjIxODcgMjEuODc3OSAzLjE3MjE1IDE5LjgyMzZDMS4wNTczOSAxNy44Mzc5IDAgMTUuMzcyNyAwIDEyLjQyODNDMCA5LjA3MyAxLjMzMDI2IDYuMTYyNzkgMy45OTA3OCAzLjY5NzY3QzYuNTgzMDcgMS4yMzI1NiA5Ljc4OTMzIDAgMTMuNjA5NiAwQzE4LjExMiAwIDIyLjE3MDkgMS45NTE1NSAyNS43ODY1IDUuODU0NjVDMjkuNDAyMSA5Ljc1Nzc1IDMxLjIwOTkgMTQuNjE5NSAzMS4yMDk5IDIwLjQzOTlDMzEuMjA5OSAyNy42Mjk4IDI4LjkyNDYgMzQuMTY5MyAyNC4zNTM5IDQwLjA1ODFDMTkuNzgzMyA0Ni4wMTU1IDEzLjMwMjYgNTAuMjI2NyA0LjkxMTcyIDUyLjY5MTlaIiBmaWxsPSIjQzYyODI2Ii8+DQo8L3N2Zz4NCg==);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
     time {
-      font-weight: 400;;
-      font-size: 1.6rem;
+      font-weight: 400;
+      ;
+      font-size: 1.8rem;
       line-height: 130%;
       color: var(--primary-accent);
       margin-bottom: 3rem;
     }
 
     p {
-      font-weight: 400;;
-      font-size: 1.6rem;
+      font-weight: 400;
+      ;
+      font-size: 1.8rem;
       line-height: 110%;
 
       a {
@@ -150,10 +198,13 @@
     height: fit-content;
     background-color: var(--white);
 
-    h2 {
+    h2,
+    h3 {
       font-weight: 800;
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       line-height: 100%;
+      color: inherit;
+      margin: 0;
     }
 
     &-items {
@@ -168,7 +219,7 @@
       gap: 2rem;
       padding-bottom: 2rem;
       border-bottom: 0.1rem solid var(--primary-black-50);
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       line-height: 110%;
 
       a {

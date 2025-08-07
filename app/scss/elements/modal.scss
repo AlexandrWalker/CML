@@ -226,6 +226,10 @@
 
 #modal-calc {
   z-index: 510;
+
+  .section__head {
+    margin-bottom: 2rem;
+  }
 }
 
 #modal-bid {
@@ -301,7 +305,7 @@
 }
 
 .modal .calc__head-text {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .modal .calc__body {
@@ -323,14 +327,14 @@
 }
 
 .modal .form-text {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .modal .form-input {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   height: 5rem;
 }
 
 .modal .form-textarea {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }

@@ -20,7 +20,7 @@ body {
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.2;
   color: var(--primary-black);
   background: var(--primary-bg);
@@ -74,7 +74,7 @@ section {
 
 .suptitle {
   font-weight: 400;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   text-transform: uppercase;
 }
 
@@ -90,7 +90,7 @@ section {
 
 p {
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.125;
 }
 
@@ -149,7 +149,7 @@ a {
 .btn {
   --button-padding-x: 2rem;
   --button-padding-y: 1rem;
-  --button-font-size: 1.4rem;
+  --button-font-size: 1.6rem;
   --button-color: var(--primary-black);
   --button-bgcolor: var(--white);
   --button-border-color: var(--white);
@@ -236,7 +236,7 @@ a {
 /* form-input */
 .error {
   display: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 120%;
   color: var(--primary-accent);
   margin-top: 0.4rem;
@@ -249,7 +249,7 @@ a {
 
   &__text {
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.16;
     color: var(--white-50);
     max-width: 30rem;
@@ -292,7 +292,7 @@ a {
 
   &-input {
     font-weight: 800;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 125%;
     color: inherit;
     width: 100%;
@@ -352,7 +352,7 @@ a {
     left: 2rem;
     z-index: 1;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--primary-accent);
 
     &+input {
@@ -362,7 +362,7 @@ a {
 
   &-textarea {
     font-weight: 800;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 125%;
     color: inherit;
     width: 100%;
@@ -447,7 +447,7 @@ a {
 
   &-text {
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 115%;
     color: inherit;
     max-width: 48rem;
@@ -477,7 +477,7 @@ a {
       align-items: center;
       gap: 0.5rem;
       font-weight: 800;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       line-height: 1.2;
       text-transform: uppercase;
       color: var(--primary-accent);
@@ -505,7 +505,7 @@ a {
 
     h3 {
       font-weight: 400;
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       line-height: 120%;
       text-transform: uppercase;
 
@@ -547,7 +547,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
     color: var(--primary-black);
     text-align: center;
@@ -664,7 +664,7 @@ a {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1;
     white-space: nowrap;
 
@@ -675,7 +675,7 @@ a {
   }
 
   i {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     transition: all 0.3s ease;
   }
 
@@ -721,7 +721,7 @@ table {
     height: 5rem;
     padding: 1rem 2rem;
     font-weight: 800;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 110%;
     color: var(--white);
     text-align: left;
@@ -747,7 +747,7 @@ table {
     height: 5rem;
     padding: 1rem 2rem;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 110%;
     text-align: left;
     border: 0.1rem solid var(--black-10);
@@ -778,7 +778,7 @@ ol {
       height: auto;
       
       font-weight: 800;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       line-height: normal;
       color: var(--primary-black);
 

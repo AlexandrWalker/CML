@@ -1832,8 +1832,18 @@
   }
 
   .news__content h2,
-  .news__content h3 {
+  .news__content h3,
+  .news__content blockquote {
     font-size: 2rem;
+  }
+
+  .news__content blockquote {
+    padding: 2rem;
+  }
+
+  .news__content blockquote::before,
+  .news__content blockquote::after {
+    height: 1.5rem;
   }
 
   ol {
