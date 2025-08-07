@@ -32,6 +32,13 @@
 }
 @font-face {
   font-family: "Gilroy";
+  src: url(./../fonts/Gilroy-Regular.woff2), url(./../fonts/Gilroy-Regular.woff);
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
   src: url(./../fonts/Gilroy-Light.woff2), url(./../fonts/Gilroy-Light.woff);
   font-weight: 300;
   font-display: swap;
@@ -139,9 +146,6 @@ h1, h2, h3, h4, h5, h6 {
           animation-delay: 600ms;
 }
 .swiper-pagination {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -149,6 +153,11 @@ h1, h2, h3, h4, h5, h6 {
       -ms-flex-align: center;
           align-items: center;
   height: 1.2rem;
+}
+.swiper-pagination:not(.swiper-pagination-lock) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .swiper-pagination-bullet {
   background-color: var(--primary-black);
@@ -271,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 13rem;
   padding: 2.5rem 0;
   background-color: var(--primary-accent);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 5rem;
   line-height: 100%;
   vertical-align: bottom;
@@ -349,7 +358,7 @@ body {
   min-width: 320px;
   font-family: "Gilroy", sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.4rem;
   line-height: 1.2;
   color: var(--primary-black);
@@ -413,7 +422,7 @@ section {
 }
 
 .suptitle {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   text-transform: uppercase;
 }
@@ -428,7 +437,7 @@ section {
 }
 
 p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.125;
 }
@@ -705,7 +714,7 @@ a:hover {
   top: 1rem;
   left: 2rem;
   z-index: 1;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.2rem;
   color: var(--primary-accent);
 }
@@ -816,7 +825,7 @@ a:hover {
   gap: 1rem;
 }
 .form-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.4rem;
   line-height: 115%;
   color: inherit;
@@ -883,7 +892,7 @@ a:hover {
   gap: 1rem;
 }
 .section__head h3 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   line-height: 120%;
   text-transform: uppercase;
@@ -926,7 +935,7 @@ a:hover {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.4rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--primary-black);
   text-align: center;
   text-transform: uppercase;
@@ -945,7 +954,6 @@ a:hover {
 }
 .tabs__btn--active {
   background-color: var(--primary-black);
-  font-weight: 800;
   color: var(--white);
 }
 .tabs__btn:not(.tabs__btn--active):hover {
@@ -1134,7 +1142,7 @@ table tr:not(:first-child) td {
 table td {
   height: 5rem;
   padding: 1rem 2rem;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   text-align: left;
@@ -1424,7 +1432,7 @@ ol li::after {
 }
 .header__dropdown-social .header__dropdown-link {
   gap: 0.7rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 .header__dropdown-link {
   display: -webkit-box;
@@ -1460,7 +1468,7 @@ ol li::after {
   color: var(--primary-black);
 }
 .header__dropdown-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.4rem;
   color: var(--primary-black);
 }
@@ -1923,7 +1931,7 @@ ol li::after {
       -ms-flex-align: center;
           align-items: center;
   gap: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   margin-bottom: 3rem;
@@ -1973,7 +1981,7 @@ ol li::after {
   gap: 2rem;
 }
 .footer__info-link {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   -webkit-text-decoration-line: underline;
@@ -2029,7 +2037,7 @@ ol li::after {
   color: var(--white);
 }
 .footer__body-item p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   color: var(--white);
@@ -2053,7 +2061,7 @@ ol li::after {
   padding: 2rem 0;
 }
 .footer__foot p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.4rem;
   color: var(--primary-white-lighten);
 }
@@ -2313,7 +2321,7 @@ ol li::after {
   font-size: 2.8rem;
 }
 .menu__foot-title {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   text-transform: uppercase;
@@ -2325,7 +2333,7 @@ ol li::after {
   color: inherit;
 }
 .menu__foot-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   margin-top: -0.5rem;
@@ -2348,7 +2356,7 @@ ol li::after {
       -ms-flex-align: center;
           align-items: center;
   gap: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   color: inherit;
@@ -2747,7 +2755,7 @@ ol li::after {
   gap: 0;
 }
 #modal-callback .modal__title {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 3rem;
   line-height: 116%;
   text-transform: uppercase;
@@ -2802,7 +2810,7 @@ ol li::after {
 }
 
 .modal .form-text {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .modal .form-input {
@@ -2856,7 +2864,7 @@ ol li::after {
   width: 100%;
 }
 .plate__btn {
-  --button-font-size: 1rem;
+  --button-font-size: 1.2rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2866,7 +2874,7 @@ ol li::after {
   height: 5rem;
   padding: 0;
   border-radius: 0.5rem;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: capitalize;
 }
 .plate__btn:hover {
@@ -2937,7 +2945,7 @@ ol li::after {
   pointer-events: all;
 }
 .warning__text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2rem;
   line-height: 115%;
   color: var(--white);
@@ -3165,7 +3173,7 @@ ol li::after {
   background-color: var(--white);
 }
 .dropdown__selected p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.2rem;
   line-height: 1;
   color: var(--primary-accent);
@@ -3344,7 +3352,7 @@ ol li::after {
   margin: 0;
 }
 .dropdown__filter .dropdown__option {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.4rem;
   color: var(--primary-accent);
 }
@@ -3399,7 +3407,7 @@ ol li::after {
   margin-bottom: 5rem;
 }
 .hero__item h2 span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 5rem;
   margin-bottom: 1rem;
   color: var(--primary-accent);
@@ -3478,7 +3486,7 @@ ol li::after {
   line-height: 1.2;
 }
 .hero__block-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
 }
@@ -3729,7 +3737,7 @@ ol li::after {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  cursor: context-menu;
+  cursor: default;
 }
 .service__item:hover {
   border-color: var(--primary-black);
@@ -3764,7 +3772,7 @@ ol li::after {
   gap: 4rem;
 }
 .service__item-count {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 4.5rem;
   line-height: 105%;
   text-transform: uppercase;
@@ -3790,7 +3798,7 @@ ol li::after {
   width: 100%;
 }
 .service__item-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   line-height: 120%;
 }
@@ -3920,7 +3928,7 @@ ol li::after {
   transition: all 0.3s ease;
 }
 .transport__item-list li {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   line-height: 120%;
 }
@@ -3980,7 +3988,7 @@ ol li::after {
   gap: 2rem;
 }
 .about__content-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   width: 40rem;
@@ -4024,7 +4032,7 @@ ol li::after {
   color: var(--primary-accent);
 }
 .about__feat-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
 }
@@ -4116,7 +4124,7 @@ ol li::after {
   transition: all 0.1s ease;
 }
 .work__item-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   color: var(--primary-black);
@@ -4137,7 +4145,7 @@ ol li::after {
   width: 8rem;
   height: 8rem;
   background-color: var(--primary-black);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 4.5rem;
   line-height: 115%;
   text-align: center;
@@ -4218,7 +4226,7 @@ ol li::after {
   margin-bottom: 1.5rem;
 }
 .banner p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   margin-bottom: 2rem;
@@ -4329,7 +4337,7 @@ ol li::after {
       flex-shrink: 0;
 }
 .case__item-count {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 4.5rem;
   line-height: 105%;
   text-transform: uppercase;
@@ -4345,7 +4353,7 @@ ol li::after {
   line-height: 120%;
 }
 .case__item-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
 }
@@ -4527,7 +4535,7 @@ ol li::after {
   gap: 2rem;
 }
 .faq__item-count {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 4.5rem;
   line-height: 105%;
   text-transform: uppercase;
@@ -4587,7 +4595,7 @@ ol li::after {
   overflow: hidden;
 }
 .faq__item p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   line-height: 120%;
 }
@@ -4818,7 +4826,7 @@ ol li::after {
   gap: 0.5rem 1rem;
 }
 .press__item-date span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
 }
@@ -4853,7 +4861,7 @@ ol li::after {
   line-height: 110%;
 }
 .news p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   margin-bottom: 3rem;
@@ -4905,7 +4913,7 @@ ol li::after {
   gap: 2rem;
   padding-left: 3.2rem;
   position: relative;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
 }
@@ -4932,14 +4940,14 @@ ol li::after {
   margin-bottom: 0;
 }
 .news__content time {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 130%;
   color: var(--primary-accent);
   margin-bottom: 3rem;
 }
 .news__content p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
 }
@@ -5094,6 +5102,7 @@ ol li::after {
           transform: unset;
 }
 .made .case__img {
+  max-height: 68rem;
   height: auto;
   opacity: 1;
   -webkit-transform: unset;
@@ -5191,7 +5200,7 @@ ol li::after {
   line-height: 110%;
 }
 .cases__item p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
 }
@@ -5220,7 +5229,7 @@ ol li::after {
   gap: 0.5rem 1rem;
 }
 .cases__item-tags span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   color: var(--primary-accent);
@@ -5282,7 +5291,7 @@ ol li::after {
   line-height: 0.8;
 }
 .info .about__feat-text p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
 }
@@ -5349,7 +5358,7 @@ ol li::after {
   font-size: 3rem;
 }
 .management__item-wrap span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
 }
 .management__content {
@@ -5502,7 +5511,7 @@ ol li::after {
   line-height: 100%;
 }
 .story__item p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
 }
@@ -5589,7 +5598,7 @@ ol li::after {
   line-height: 110%;
 }
 .reviews__item-head span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
 }
@@ -5640,7 +5649,7 @@ ol li::after {
           flex-direction: column;
   gap: 2rem;
   margin-bottom: 6rem;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   -webkit-box-pack: justify;
@@ -5673,7 +5682,7 @@ ol li::after {
   gap: 1rem;
   font-size: 1.6rem;
   line-height: 110%;
-  font-weight: 300;
+  font-weight: 400;
 }
 .reviews__item-foot p {
   font-weight: 800;
@@ -5687,7 +5696,7 @@ ol li::after {
           align-items: center;
   gap: 0.4rem;
   position: relative;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.2rem;
   color: inherit;
 }
@@ -5829,7 +5838,7 @@ ol li::after {
   display: none;
 }
 .offers__item-num {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 13rem;
   line-height: 120%;
   text-transform: uppercase;
@@ -5883,7 +5892,7 @@ ol li::after {
   max-width: 140rem;
 }
 .desc__inner span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   line-height: 120%;
   color: var(--primary-accent);
@@ -5903,7 +5912,7 @@ ol li::after {
   margin-bottom: 2rem;
 }
 .desc__inner p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   margin-bottom: 2rem;
@@ -6030,7 +6039,7 @@ ol li::after {
   width: min-content;
 }
 .assortment__item-head p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
   margin-bottom: 3rem;
@@ -6068,7 +6077,7 @@ ol li::after {
   padding-bottom: 3rem;
 }
 .assortment__item-wrap span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 5rem;
   line-height: 100%;
   text-transform: uppercase;
@@ -6076,7 +6085,7 @@ ol li::after {
   margin-bottom: 1rem;
 }
 .assortment__item-wrap p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
 }
@@ -6154,13 +6163,13 @@ ol li::after {
   height: fit-content;
 }
 .reasons__head h2 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   line-height: 120%;
   text-transform: uppercase;
 }
 .reasons__head span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20rem;
   line-height: 120%;
   color: var(--primary-accent);
@@ -6396,7 +6405,7 @@ ol li::after {
   position: absolute;
   top: 0;
   right: 0;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 4.5rem;
   line-height: 115%;
   text-align: center;
@@ -6471,7 +6480,7 @@ ol li::after {
   line-height: 120%;
 }
 .solutions__item p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 110%;
 }
@@ -6518,7 +6527,7 @@ ol li::after {
   padding: 2.5rem 0;
   margin-bottom: 3rem;
   background-color: var(--primary-black);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 8rem;
   line-height: 105%;
   text-transform: uppercase;
@@ -6539,7 +6548,7 @@ ol li::after {
   min-height: 5.8rem;
 }
 .included__item p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   -webkit-transition: all 0.3s ease;
@@ -6712,7 +6721,7 @@ ol li::after {
   position: absolute;
   top: 0;
   left: 0;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 7rem;
   line-height: 120%;
   text-transform: uppercase;
@@ -6900,7 +6909,7 @@ ol li::after {
           align-items: center;
   width: 2rem;
   height: 2rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1rem;
   color: var(--primary-black);
   -webkit-transition: all 0.3s ease;
@@ -6974,7 +6983,7 @@ ol li::after {
   margin-bottom: 0;
 }
 .directory__side-paragraph a {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   color: inherit;
 }
@@ -7090,7 +7099,7 @@ ol li::after {
   gap: 6rem;
 }
 .directory__list-head button {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   line-height: 120%;
   color: var(--primary-black);
@@ -7125,7 +7134,7 @@ ol li::after {
   border-bottom: 0.1rem solid var(--primary-black-10);
 }
 .directory__list-wrap span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 4.5rem;
   line-height: 105%;
   text-transform: uppercase;
@@ -7214,7 +7223,7 @@ ol li::after {
   transition: all 0.3s ease;
 }
 .directory__list-wrap p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   overflow: hidden;
@@ -7232,7 +7241,7 @@ ol li::after {
   line-height: 110%;
 }
 .directory p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   margin-bottom: 2rem;
@@ -7423,7 +7432,7 @@ ol li::after {
   margin-bottom: 2rem;
 }
 .contacts__item-requisite span {
-  font-weight: 300;
+  font-weight: 400;
   color: var(--primary-accent);
   margin-bottom: 0;
 }
@@ -7668,7 +7677,7 @@ ol li::after {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.general .dropdown:not(.press-page .dropdown, .completed-page .dropdown) {
+.general .dropdown:not(.press-page .dropdown, .completed-page .dropdown__filter) {
   width: 40rem;
 }
 .general .dropdown__button {
@@ -7709,7 +7718,7 @@ ol li::after {
   gap: 2rem;
 }
 .general__head-suptitle {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 3rem;
   line-height: 100%;
   text-transform: uppercase;
@@ -7808,7 +7817,7 @@ ol li::after {
   color: var(--white);
 }
 .general__content p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 120%;
   color: #FFFFFF;
@@ -7861,7 +7870,7 @@ ol li::after {
   text-transform: uppercase;
 }
 .general__feat p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.4rem;
   line-height: 120%;
 }
@@ -8034,7 +8043,7 @@ ol li::after {
   text-transform: uppercase;
 }
 .general--sample h2 span {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 5rem;
   line-height: 120%;
   color: var(--primary-accent);

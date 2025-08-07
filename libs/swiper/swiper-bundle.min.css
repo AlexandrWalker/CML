@@ -403,7 +403,7 @@
 .swiper-button-prev:after,
 .swiper-button-next:after {
     font-family: 'Tenery' !important;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-transform: none !important;
     letter-spacing: 0;
     font-variant: initial;
@@ -412,7 +412,7 @@
 @media (min-width: 80em) {
     .swiper-button-prev:after,
     .swiper-button-next:after {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
 .swiper-button-prev:after,
