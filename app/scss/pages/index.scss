@@ -434,6 +434,8 @@
     transition: all 0.3s ease;
     position: relative;
 
+    color: inherit;
+
     &:hover {
       background-color: var(--primary-accent);
 
