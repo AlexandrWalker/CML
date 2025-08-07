@@ -3891,6 +3891,7 @@ ol li::after {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
+  color: inherit;
 }
 .transport__item:hover {
   background-color: var(--primary-accent);
