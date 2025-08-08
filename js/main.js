@@ -16,10 +16,10 @@
       mousewheel: {
         forceToAxis: true,
       },
-      autoplay: {
-        delay: 8000,
-        disableOnInteraction: false
-      },
+      // autoplay: {
+      //   delay: 8000,
+      //   disableOnInteraction: false
+      // },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
