@@ -299,6 +299,10 @@
     height: 5rem;
   }
 
+  .modal .form-title {
+    top: 1rem;
+  }
+
   .service__items {
     gap: 1rem;
   }
@@ -334,9 +338,17 @@
     padding-right: 4rem;
   }
 
+  .service__item-title p {
+    font-size: 1.6rem;
+  }
+
   .service__item-text {
     font-size: 1.6rem;
     padding-left: 5.1rem;
+  }
+
+  .service__item-text p {
+    font-size: 1.6rem;
   }
 
   .service__item-body {
@@ -2368,6 +2380,7 @@
   .outsourcing .assortment__item {
     // display: flex;
     // flex-direction: column;
+    grid-template-rows: 1fr auto;
   }
 
   /* directory */
@@ -3406,6 +3419,18 @@
     width: 100%;
   }
 
+  .international .assortment__item-content.accordion-active .assortment__item {
+    grid-template-rows: 1fr auto auto;
+  }
+
+  .international .assortment__item-content.accordion-active .assortment__item-body {
+    margin-bottom: 2rem;
+  }
+
+  .international .assortment__item-foot {
+    display: flex;
+  }
+
   .certification .general__head-title span {
     font-size: 1.6rem;
   }
@@ -3816,6 +3841,18 @@
   .certificates-types__item p {
     font-size: 1.2rem;
     padding: 0 1rem 2rem 1rem;
+  }
+
+  /* outsourcing */
+  .outsourcing .assortment__item {
+    pointer-events: all;
+    gap: 2rem;
+  }
+
+  .outsourcing .assortment__item-head {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   /* insurance */
