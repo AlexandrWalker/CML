@@ -33,6 +33,10 @@
     &-count {
       font-size: 10rem;
       line-height: 0.8;
+
+      .number {
+        width: 13rem;
+      }
     }
 
     &-text {

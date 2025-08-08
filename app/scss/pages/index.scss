@@ -622,10 +622,14 @@
       font-size: 6rem;
       line-height: 120%;
       color: var(--primary-accent);
+
+      .number {
+        width: 7rem;
+      }
     }
 
     &-text {
-      font-weight: 400;;
+      font-weight: 400;
       font-size: 1.8rem;
       line-height: 110%;
     }
@@ -1031,6 +1035,11 @@
       text-transform: uppercase;
       color: var(--primary-accent);
       margin-top: -1rem;
+
+      .number {
+        width: fit-content;
+        min-width: 46rem;
+      }
     }
   }
 

@@ -3015,6 +3015,9 @@ ol li::after {
   line-height: 120%;
   color: var(--primary-accent);
 }
+.about__feat-count .number {
+  width: 7rem;
+}
 .about__feat-text {
   font-weight: 400;
   font-size: 1.8rem;
@@ -3298,6 +3301,10 @@ ol li::after {
   text-transform: uppercase;
   color: var(--primary-accent);
   margin-top: -1rem;
+}
+.partner__head-count .number {
+  width: fit-content;
+  min-width: 46rem;
 }
 .partner__items {
   display: flex;
@@ -3989,6 +3996,9 @@ ol li::after {
 .info .about__feat-count {
   font-size: 10rem;
   line-height: 0.8;
+}
+.info .about__feat-count .number {
+  width: 13rem;
 }
 .info .about__feat-text p {
   font-weight: 400;
@@ -6132,6 +6142,13 @@ ol li::after {
   margin: 0;
 }
 
+.number {
+  display: inline-block;
+  width: 13rem;
+  white-space: nowrap;
+  text-align: right;
+}
+
 .templates-desc {
   overflow: visible;
   min-height: 62rem;
@@ -6762,6 +6779,12 @@ ol li::after {
   .about__feat-count {
     font-size: 3.4rem;
   }
+  .about__feat-count .number {
+    width: 5rem;
+  }
+  .info .about__feat-count .number {
+    width: 7rem;
+  }
   .about__feat {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -6977,6 +7000,10 @@ ol li::after {
     font-size: 10rem;
     line-height: 70%;
     margin: 0;
+    white-space: nowrap;
+  }
+  .partner__head-count .number {
+    min-width: 23rem;
   }
   .partner__item {
     width: 33.33333%;
@@ -7518,6 +7545,9 @@ ol li::after {
   }
   .general__feat span {
     font-size: 4rem;
+  }
+  .general__feat .number {
+    width: 8rem;
   }
   .general__feat p {
     font-size: 1.6rem;
@@ -8431,6 +8461,10 @@ ol li::after {
   .about__feat {
     display: flex;
     flex-direction: column;
+  }
+  .info .about__feat-count .number,
+  .about__feat-count .number {
+    width: 4rem;
   }
   .about__feat-text {
     font-size: 1.4rem;
