@@ -2816,9 +2816,13 @@ ol li::after {
   font-size: 1.4rem;
 }
 
+.modal .form-title {
+  top: 0.8rem;
+}
+
 .modal .form-input {
   font-size: 1.6rem;
-  height: 5rem;
+  height: 5.4rem;
 }
 
 .modal .form-textarea {
@@ -3787,7 +3791,7 @@ ol li::after {
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
-.service__item-title {
+.service__item-title, .service__item-title p {
   font-weight: 800;
   font-size: 2.6rem;
   line-height: 120%;
@@ -3800,7 +3804,7 @@ ol li::after {
   max-width: 96rem;
   width: 100%;
 }
-.service__item-text {
+.service__item-text, .service__item-text p {
   font-weight: 400;
   font-size: 2.6rem;
   line-height: 120%;
@@ -5757,9 +5761,13 @@ ol li::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 0.4rem;
   position: relative;
   font-weight: 400;
@@ -5769,7 +5777,7 @@ ol li::after {
 .reviews__item-foot a::after {
   content: "/";
 }
-.reviews__item-foot a:last-child::after {
+.reviews__item-foot a:first-child::after {
   display: none;
 }
 .reviews__item-foot a:hover {
@@ -8459,6 +8467,9 @@ ol li::after {
     width: calc(50% - 0.5rem);
     height: 5rem;
   }
+  .modal .form-title {
+    top: 1rem;
+  }
   .service__items {
     gap: 1rem;
   }
@@ -8496,9 +8507,15 @@ ol li::after {
     font-size: 1.6rem;
     padding-right: 4rem;
   }
+  .service__item-title p {
+    font-size: 1.6rem;
+  }
   .service__item-text {
     font-size: 1.6rem;
     padding-left: 5.1rem;
+  }
+  .service__item-text p {
+    font-size: 1.6rem;
   }
   .service__item-body {
     width: calc(100% - 3rem);
@@ -10357,6 +10374,10 @@ ol li::after {
     width: 80%;
   }
   /* outsourcing */
+  .outsourcing .assortment__item {
+    -ms-grid-rows: 1fr auto;
+    grid-template-rows: 1fr auto;
+  }
   /* directory */
   .directory-page .general--big .general__inner {
     gap: 2rem;
@@ -11255,6 +11276,18 @@ ol li::after {
   .international .general--sample .general__img {
     width: 100%;
   }
+  .international .assortment__item-content.accordion-active .assortment__item {
+    -ms-grid-rows: 1fr auto auto;
+    grid-template-rows: 1fr auto auto;
+  }
+  .international .assortment__item-content.accordion-active .assortment__item-body {
+    margin-bottom: 2rem;
+  }
+  .international .assortment__item-foot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .certification .general__head-title span {
     font-size: 1.6rem;
   }
@@ -11623,6 +11656,21 @@ ol li::after {
   .certificates-types__item p {
     font-size: 1.2rem;
     padding: 0 1rem 2rem 1rem;
+  }
+  /* outsourcing */
+  .outsourcing .assortment__item {
+    pointer-events: all;
+    gap: 2rem;
+  }
+  .outsourcing .assortment__item-head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem;
   }
   /* insurance */
   .insurance .feat__item {
