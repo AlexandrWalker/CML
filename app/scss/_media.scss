@@ -80,6 +80,10 @@
 
 @media (max-width: 768px) {
 
+  p {
+    font-size: 1.4rem;
+  }
+
   .btn:not(.menu__list-btn) {
     height: 5rem;
   }

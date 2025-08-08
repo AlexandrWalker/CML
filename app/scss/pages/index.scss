@@ -20,6 +20,7 @@
       display: flex;
       // gap: 5rem;
       padding-right: 5rem;
+      height: 100%;
     }
   }
 
@@ -38,7 +39,8 @@
       margin-bottom: 5rem;
 
       span {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 5rem;
         margin-bottom: 1rem;
         color: var(--primary-accent);
@@ -54,8 +56,10 @@
     }
 
     &-down {
+      display: block;
       width: 5rem;
       height: 5rem;
+      margin-top: auto;
 
       &:hover {
         i {
@@ -112,7 +116,8 @@
     }
 
     &-text {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 1.8rem;
       line-height: 110%;
     }
@@ -278,7 +283,7 @@
     width: 100%;
   }
 
-  .dropdown__selected  {
+  .dropdown__selected {
     color: var(--primary-black-50);
   }
 }
@@ -331,7 +336,8 @@
     }
 
     &-count {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 4.5rem;
       line-height: 105%;
       text-transform: uppercase;
@@ -357,7 +363,8 @@
 
     &-text,
     &-text p {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 2.6rem;
       line-height: 120%;
     }
@@ -477,7 +484,8 @@
       transition: all 0.3s ease;
 
       li {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 2.6rem;
         line-height: 120%;
       }
@@ -584,7 +592,8 @@
     gap: 2rem;
 
     &-text {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 1.8rem;
       line-height: 110%;
       width: 40rem;
@@ -704,7 +713,8 @@
     }
 
     &-text {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 1.8rem;
       line-height: 120%;
       color: var(--primary-black);
@@ -718,7 +728,8 @@
       width: 8rem;
       height: 8rem;
       background-color: var(--primary-black);
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 4.5rem;
       line-height: 115%;
       text-align: center;
@@ -802,7 +813,8 @@
   }
 
   p {
-    font-weight: 400;;
+    font-weight: 400;
+    ;
     font-size: 1.6rem;
     line-height: 120%;
     margin-bottom: 2rem;
@@ -956,7 +968,8 @@
     }
 
     &-count {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 4.5rem;
       line-height: 105%;
       text-transform: uppercase;
@@ -973,9 +986,17 @@
     }
 
     &-text {
-      font-weight: 400;;
+      font-weight: 400;
       font-size: 1.8rem;
       line-height: 120%;
+
+      p {
+        margin-bottom: 2rem;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
     }
   }
 
@@ -1169,7 +1190,8 @@
     }
 
     &-count {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 4.5rem;
       line-height: 105%;
       text-transform: uppercase;
@@ -1218,7 +1240,8 @@
     }
 
     p {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 2.6rem;
       line-height: 120%;
     }
