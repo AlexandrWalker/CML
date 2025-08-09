@@ -49,17 +49,19 @@
 
     &-btn {
       --button-color: var(--primary-accent);
-      margin-bottom: 6.4rem;
-      transform: translateY(5rem);
+      // margin-bottom: 6.4rem;
+      // transform: translateY(5rem);
       transition: all 0.5s ease;
       opacity: 0;
+
+      margin-top: auto;
     }
 
     &-down {
       display: block;
       width: 5rem;
       height: 5rem;
-      margin-top: auto;
+      margin-top: 6.4rem;
 
       &:hover {
         i {
@@ -166,7 +168,7 @@
 
     .hero__item-btn {
       opacity: 1;
-      transform: translateY(0);
+      // transform: translateY(0);
       // transition-delay: 0.3s;
     }
   }

@@ -3422,20 +3422,17 @@ ol li::after {
 }
 .hero__item-btn {
   --button-color: var(--primary-accent);
-  margin-bottom: 6.4rem;
-  -webkit-transform: translateY(5rem);
-      -ms-transform: translateY(5rem);
-          transform: translateY(5rem);
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 0;
+  margin-top: auto;
 }
 .hero__item-down {
   display: block;
   width: 5rem;
   height: 5rem;
-  margin-top: auto;
+  margin-top: 6.4rem;
 }
 .hero__item-down:hover i {
   color: var(--white);
@@ -3545,9 +3542,6 @@ ol li::after {
 }
 .hero .swiper-slide-active .hero__item-btn {
   opacity: 1;
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
 }
 
 .cube {
@@ -7958,6 +7952,9 @@ ol li::after {
   gap: 2rem;
   color: var(--white);
 }
+.general__feat-item:last-child .number {
+  min-width: 13rem;
+}
 .general__feat span {
   font-weight: 800;
   font-size: 7rem;
@@ -8268,6 +8265,11 @@ ol li::after {
 @media (min-width: 1921px) {
   html {
     font-size: calc(10px + 0 * (100vw - var(--refRes) * 1px) / var(--refRes));
+  }
+}
+@media (min-width: 1440px) {
+  .timeline.swiper {
+    overflow: unset;
   }
 }
 @media (max-width: 1440px) {
@@ -8778,7 +8780,7 @@ ol li::after {
     margin-bottom: 3rem;
   }
   .hero__item-down {
-    margin: auto 0 0;
+    margin-top: 6.4rem;
   }
   .hero__slider-item {
     height: 100%;
@@ -9776,6 +9778,9 @@ ol li::after {
   }
   .general__feat .number {
     width: 8rem;
+  }
+  .general__feat-item:last-child .number {
+    min-width: 8rem;
   }
   .general__feat p {
     font-size: 1.6rem;

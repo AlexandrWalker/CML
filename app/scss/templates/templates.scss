@@ -180,6 +180,13 @@
       gap: 2rem;
       color: var(--white);
 
+      &:last-child {
+
+        .number {
+          min-width: 13rem;
+        }
+      }
+
       // width: 100%;
 
       // &:nth-child(1),
