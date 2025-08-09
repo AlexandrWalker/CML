@@ -2129,12 +2129,12 @@ ol li::after {
 }
 
 .modal .form-bottom {
-  width: calc(50% - 0.5rem);
-  margin: 0 0 0 auto;
+  width: 100%;
 }
 
 .modal .form-text {
   font-size: 1.4rem;
+  max-width: 100%;
 }
 
 .modal .form-title {
