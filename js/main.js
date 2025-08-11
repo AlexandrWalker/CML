@@ -610,8 +610,8 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
-    $(window).on('resize load', function () {
-      if (window.innerWidth > '768' && window.innerWidth != '768') {
+    // $(window).on('resize load', function () {
+      // if (window.innerWidth > '768' && window.innerWidth != '768') {
         const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
         if (parallaxItem) {
           const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
@@ -631,8 +631,8 @@
             );
           });
         }
-      }
-    });
+      // }
+    // });
 
     // function counter(array, time = 2000) {
     //   let n = 0;
@@ -651,8 +651,6 @@
       const num = Number(array.dataset.val);
       const isFractional = array.classList.contains('frac');
       const isYearType = array.dataset.type === 'year';
-
-      // array.style.minWidth = (num).toString().length + 'ch';
 
       const interval = setInterval(() => {
         n += num / (time / 10);
