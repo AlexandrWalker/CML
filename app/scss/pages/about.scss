@@ -33,10 +33,6 @@
     &-count {
       font-size: 10rem;
       line-height: 0.8;
-
-      .number {
-        width: 13rem;
-      }
     }
 
     &-text {
@@ -222,11 +218,12 @@
     &:hover {
 
       .story__item-head {
-        background-color: var(--primary-accent);
+        // background-color: var(--primary-accent);
       }
 
       .story__item-year {
-        color: var(--white);
+        // color: var(--white);
+        color: var(--primary-accent);
       }
     }
 
@@ -454,13 +451,13 @@
         font-size: 1.4rem;
         color: inherit;
 
-        &::after {
-          content: "/";
-        }
+        // &::after {
+        //   content: "/";
+        // }
 
-        &:first-child::after {
-          display: none;
-        }
+        // &:first-child::after {
+        //   display: none;
+        // }
 
         &:hover {
           color: var(--primary-accent);
@@ -470,7 +467,7 @@
       div {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.4rem;
+        gap: 0.4rem 1rem;
       }
     }
   }

@@ -633,10 +633,6 @@
       font-size: 6rem;
       line-height: 120%;
       color: var(--primary-accent);
-
-      .number {
-        width: 7rem;
-      }
     }
 
     &-text {
@@ -1058,11 +1054,6 @@
       text-transform: uppercase;
       color: var(--primary-accent);
       margin-top: -1rem;
-
-      .number {
-        width: fit-content;
-        min-width: 46rem;
-      }
     }
   }
 
