@@ -1818,8 +1818,8 @@ ol li::after {
             transform: translateX(-4rem) skewX(-45deg);
   }
   to {
-    -webkit-transform: translateX(30rem) skewX(-45deg);
-            transform: translateX(30rem) skewX(-45deg);
+    -webkit-transform: translateX(40rem) skewX(-45deg);
+            transform: translateX(40rem) skewX(-45deg);
   }
 }
 @keyframes moveLight {
@@ -1828,8 +1828,8 @@ ol li::after {
             transform: translateX(-4rem) skewX(-45deg);
   }
   to {
-    -webkit-transform: translateX(30rem) skewX(-45deg);
-            transform: translateX(30rem) skewX(-45deg);
+    -webkit-transform: translateX(40rem) skewX(-45deg);
+            transform: translateX(40rem) skewX(-45deg);
   }
 }
 .footer {
@@ -6025,6 +6025,15 @@ ol li::after {
   -o-object-fit: contain;
      object-fit: contain;
 }
+.international .assortment__item-content {
+  height: 73rem;
+}
+.international .assortment__item-content:nth-child(1), .international .assortment__item-content:nth-child(2) {
+  height: 69rem;
+}
+.international .assortment__item-head p {
+  min-height: 23rem;
+}
 
 .assortment {
   overflow: visible;
@@ -9884,6 +9893,16 @@ ol li::after {
   .news__side-btn {
     margin-top: 1rem;
   }
+  .international .assortment__item-content:nth-child(1),
+  .international .assortment__item-content:nth-child(2) {
+    height: 88rem;
+  }
+  .international .assortment__item-content {
+    height: 90rem;
+  }
+  .international .assortment__item-content:hover .assortment__item-head {
+    margin-bottom: 0;
+  }
   .assortment__item-content {
     height: 82rem;
   }
@@ -9919,6 +9938,13 @@ ol li::after {
   .assortment__item-head p {
     font-size: 1.4rem;
     margin-bottom: 2rem;
+    min-height: 15rem;
+  }
+  .international .assortment__item-head p,
+  .international .assortment__item-head p {
+    min-height: 15rem;
+  }
+  .international .assortment__item-head p {
     min-height: 15rem;
   }
   .assortment__item-body {
@@ -11440,6 +11466,17 @@ ol li::after {
     position: static;
     padding: 3rem 2rem 2rem 2rem;
   }
+  .international .assortment__item-content:nth-child(1),
+  .international .assortment__item-content:nth-child(2) {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .international .assortment__item-content {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
   .assortment__item-content {
     width: 100%;
     height: -webkit-fit-content;
@@ -11503,6 +11540,9 @@ ol li::after {
   .assortment__item-head p {
     overflow: hidden;
     margin-bottom: 0;
+    min-height: unset;
+  }
+  .international .assortment__item-head p {
     min-height: unset;
   }
   .assortment__item-head img {

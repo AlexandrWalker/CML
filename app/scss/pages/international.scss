@@ -31,6 +31,19 @@
       object-fit: contain;
     }
   }
+
+  .assortment__item-content {
+    height: 73rem;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      height: 69rem;
+    }
+  }
+
+  .assortment__item-head p {
+    min-height: 23rem;
+  }
 }
 
 .assortment {
@@ -92,7 +105,8 @@
       }
 
       p {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 1.8rem;
         line-height: 110%;
         margin-bottom: 3rem;
@@ -124,7 +138,8 @@
       padding-bottom: 3rem;
 
       span {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         // font-size: 7rem;
         font-size: 5rem;
         line-height: 100%;
@@ -134,7 +149,8 @@
       }
 
       p {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 1.8rem;
         line-height: 120%;
       }
@@ -198,14 +214,16 @@
     height: fit-content;
 
     h2 {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 2.6rem;
       line-height: 120%;
       text-transform: uppercase;
     }
 
     span {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 20rem;
       line-height: 120%;
       color: var(--primary-accent);
