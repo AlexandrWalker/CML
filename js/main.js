@@ -634,17 +634,70 @@
       }
     });
 
+    // function counter(array, time = 2000) {
+    //   let n = 0;
+    //   const num = Number(array.dataset.val);
+    //   array.style.minWidth = (num).toString().length + 'ch';
+    //   let interval = setInterval(() => {
+    //     n < num ? (n += num / (time / 10)) : clearInterval(interval);
+    //     array.classList.contains('frac')
+    //       ? (array.innerHTML = n.toFixed(1))
+    //       : (array.innerHTML = Math.round(n));
+    //   }, 10);
+    // }
+
     function counter(array, time = 2000) {
       let n = 0;
       const num = Number(array.dataset.val);
-      console.log((num).toString().length)
-      array.style.minWidth = (num).toString().length + 'ch';
-      let interval = setInterval(() => {
-        n < num ? (n += num / (time / 10)) : clearInterval(interval);
-        array.classList.contains('frac')
-          ? (array.innerHTML = n.toFixed(1))
-          : (array.innerHTML = Math.round(n));
+      const isFractional = array.classList.contains('frac');
+      const isYearType = array.dataset.type === 'year';
+
+      // array.style.minWidth = (num).toString().length + 'ch';
+
+      const interval = setInterval(() => {
+        n += num / (time / 10);
+
+        if (n >= num) {
+          n = num;
+          clearInterval(interval);
+        }
+
+        let formattedValue;
+        if (isFractional) {
+          formattedValue = n.toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+          array.style.minWidth = ((num).toString().length - 1) + 'ch';
+        } else {
+          formattedValue = Math.round(n).toLocaleString();
+          array.style.minWidth = (num).toString().length + 'ch';
+        }
+
+        array.innerHTML = formattedValue;
+
+        if (isYearType) {
+          const currentValue = isFractional ? parseFloat(n.toFixed(1)) : Math.round(n);
+          array.innerHTML = formattedValue + getYearText(currentValue);
+        }
       }, 10);
+    }
+
+    function getYearText(value) {
+      const lastDigit = value % 10;
+      const lastTwoDigits = value % 100;
+
+      if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+        return ` лет`;
+      }
+
+      switch (lastDigit) {
+        case 1:
+          return ` год`;
+        case 2:
+        case 3:
+        case 4:
+          return ` года`;
+        default:
+          return ` лет`;
+      }
     }
 
     const numbBoxes = document.querySelectorAll('.numbs');
@@ -655,8 +708,6 @@
           scrollTrigger: {
             trigger: numbBox,
             start: `top 95%`,
-            // start: `top 60%`,
-            // markers: true,
           },
           onStart: () => counter(numb),
         });
