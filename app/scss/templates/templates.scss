@@ -179,23 +179,7 @@
       align-items: center;
       gap: 2rem;
       color: var(--white);
-
-      &:last-child {
-
-        .number {
-          min-width: 13rem;
-        }
-      }
-
-      // width: 100%;
-
-      // &:nth-child(1),
-      // &:nth-child(2) {
-
-      //   span {
-      //     min-width: 9rem;
-      //   }
-      // }
+      width: 100%;
     }
 
     span {
@@ -203,16 +187,10 @@
       font-size: 7rem;
       line-height: 105%;
       text-transform: uppercase;
-
-      // width: fit-content;
-      // min-width: 13rem;
-      // text-align: right;
-      // white-space: nowrap;
     }
 
     p {
       font-weight: 400;
-      ;
       font-size: 2.4rem;
       line-height: 120%;
     }
@@ -482,9 +460,7 @@
 
 .number {
   display: inline-block;
-  // width: fit-content;
-  // min-width: 13rem;
-  width: clamp(9rem, 13rem, 14rem);
+  width: fit-content;
   white-space: nowrap;
   text-align: right;
 }

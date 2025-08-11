@@ -16,10 +16,10 @@
       mousewheel: {
         forceToAxis: true,
       },
-      // autoplay: {
-      //   delay: 8000,
-      //   disableOnInteraction: false
-      // },
+      autoplay: {
+        delay: 8000,
+        disableOnInteraction: false
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -637,6 +637,8 @@
     function counter(array, time = 2000) {
       let n = 0;
       const num = Number(array.dataset.val);
+      console.log((num).toString().length)
+      array.style.minWidth = (num).toString().length + 'ch';
       let interval = setInterval(() => {
         n < num ? (n += num / (time / 10)) : clearInterval(interval);
         array.classList.contains('frac')

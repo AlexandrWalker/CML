@@ -7951,9 +7951,7 @@ ol li::after {
           align-items: center;
   gap: 2rem;
   color: var(--white);
-}
-.general__feat-item:last-child .number {
-  min-width: 13rem;
+  width: 100%;
 }
 .general__feat span {
   font-weight: 800;
@@ -8192,7 +8190,9 @@ ol li::after {
 
 .number {
   display: inline-block;
-  width: 13rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   white-space: nowrap;
   text-align: right;
 }
