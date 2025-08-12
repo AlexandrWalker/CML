@@ -548,7 +548,7 @@
     modalFunc();
 
 
-    
+
     /**
      * Управляет переключением вкладок на странице.
      * Добавляет и удаляет классы активности для кнопок и панелей вкладок.
@@ -1016,8 +1016,8 @@
     if (caseAcc) {
       window.addEventListener('resize', function (event) {
         if (window.innerWidth < 769 && window.innerWidth !== 769) {
-
-          case__acc[0].classList.add('accordion-active');
+          event.stopPropagation();
+          // case__acc[0].classList.add('accordion-active');
 
           for (let i = 0; i < case__acc.length; i++) {
             case__acc[i].classList.add('accordion');

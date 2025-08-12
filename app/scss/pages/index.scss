@@ -931,6 +931,8 @@
     gap: 2rem;
     padding-top: 1rem;
     border-bottom: 0.1rem solid var(--primary-border-c-2);
+
+    overflow: hidden;
   }
 
   &__item {
@@ -1010,6 +1012,10 @@
 
     &-item {
       display: none;
+    }
+
+    &-content {
+      
     }
 
     i {
