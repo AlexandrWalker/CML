@@ -41,8 +41,10 @@
     }
   }
 
-  .assortment__item-head p {
+  .assortment__item-text {
     min-height: 23rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
   }
 }
 
@@ -106,11 +108,13 @@
 
       p {
         font-weight: 400;
-        ;
         font-size: 1.8rem;
         line-height: 110%;
-        margin-bottom: 3rem;
-        min-height: 18rem;
+        overflow: hidden;
+
+        &:not(:last-child, .certificates .assortment__item-head p) {
+          margin-bottom: 2rem;
+        }
       }
 
       img {

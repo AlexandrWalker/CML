@@ -404,6 +404,79 @@
     /**
      * Активация любого количества модальных окон
      */
+    // function modalFunc() {
+    //   var modal__btn = document.querySelector('.modal__btn');
+
+    //   if (!modal__btn) {
+    //     return;
+    //   } else {
+    //     var close = document.querySelectorAll('.modal__close-btn');
+    //     var openBtn = document.querySelectorAll('.modal__btn');
+
+    //     Array.from(openBtn, openButton => {
+    //       openButton.addEventListener('click', e => {
+
+    //         let open = document.getElementsByClassName('open');
+
+    //         if (open.length > 0 && open[0] !== this) {
+    //           open[0].classList.remove('open');
+    //         }
+
+    //         let modalId = e.target.getAttribute('data-id');
+    //         let modalValue = e.target.getAttribute('data-value');
+
+    //         if (modalId) {
+    //           document.getElementById(modalId).classList.add('open');
+
+    //           if (openButton.hasAttribute('data-value')) {
+    //             document.getElementById(modalId).querySelector('.dropdown--js').classList.add('check');
+    //             document.getElementById(modalId).querySelector('.dropdown__selected--js span').innerHTML = modalValue;
+    //             document.getElementById(modalId).querySelector('.dropdown__value').dataset.value = modalValue;
+    //             const dropdownRadios = document.getElementById(modalId).querySelectorAll('.dropdown__radio');
+    //             dropdownRadios.forEach(dropdownRadio => {
+    //               if (dropdownRadio.value == modalValue) {
+    //                 dropdownRadio.checked = true;
+    //               }
+    //             });
+    //           }
+
+    //           document.body.classList.add('no-scroll');
+    //         } else {
+    //           return
+    //         }
+
+    //         Array.from(close, closeButton => {
+    //           closeButton.addEventListener('click', e => {
+    //             document.getElementById(modalId).classList.remove("open");
+    //             document.body.classList.remove('no-scroll');
+    //           });
+
+    //           window.addEventListener('keydown', (e) => {
+    //             if (e.key === "Escape") {
+    //               document.getElementById(modalId).classList.remove("open")
+    //               document.body.classList.remove('no-scroll');
+    //             }
+    //           });
+
+    //           document.querySelector(".modal.open .modal__box").addEventListener('click', event => {
+    //             event._isClickWithInModal = true;
+    //           });
+
+    //           document.getElementById(modalId).addEventListener('click', event => {
+    //             if (event._isClickWithInModal) return;
+    //             event.currentTarget.classList.remove('open');
+    //             document.body.classList.remove('no-scroll');
+    //           });
+    //         });
+    //       });
+    //     });
+    //   }
+    // };
+    // modalFunc();
+    // модальные окна
+    // бутстрап 3
+    // бутстрап 5
+
     function modalFunc() {
       var modal__btn = document.querySelector('.modal__btn');
 
@@ -444,30 +517,30 @@
             } else {
               return
             }
+          });
+        });
 
-            Array.from(close, closeButton => {
-              closeButton.addEventListener('click', e => {
-                document.getElementById(modalId).classList.remove("open");
-                document.body.classList.remove('no-scroll');
-              });
+        close.forEach((closeButton, i) => {
+          const modalId = closeButton.closest('.modal').getAttribute('id');
 
-              window.addEventListener('keydown', (e) => {
-                if (e.key === "Escape") {
-                  document.getElementById(modalId).classList.remove("open")
-                  document.body.classList.remove('no-scroll');
-                }
-              });
+          closeButton.addEventListener('click', e => {
+            document.getElementById(modalId).classList.remove("open");
+            document.body.classList.remove('no-scroll');
+          });
 
-              document.querySelector(".modal.open .modal__box").addEventListener('click', event => {
-                event._isClickWithInModal = true;
-              });
+          window.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+              document.getElementById(modalId).classList.remove("open")
+              document.body.classList.remove('no-scroll');
+            }
+          });
 
-              document.getElementById(modalId).addEventListener('click', event => {
-                if (event._isClickWithInModal) return;
-                event.currentTarget.classList.remove('open');
-                document.body.classList.remove('no-scroll');
-              });
-            });
+          document.getElementById(modalId).addEventListener('click', event => {
+
+            if (event.target.closest('.modal__box')) return;
+
+            event.currentTarget.classList.remove('open');
+            document.body.classList.remove('no-scroll');
           });
         });
       }
@@ -475,7 +548,7 @@
     modalFunc();
 
 
-
+    
     /**
      * Управляет переключением вкладок на странице.
      * Добавляет и удаляет классы активности для кнопок и панелей вкладок.
@@ -611,27 +684,27 @@
     gsap.registerPlugin(ScrollTrigger);
 
     // $(window).on('resize load', function () {
-      // if (window.innerWidth > '768' && window.innerWidth != '768') {
-        const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
-        if (parallaxItem) {
-          const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
-          parallaxImgContainers.forEach(parallaxImgContainer => {
-            const image = parallaxImgContainer.querySelector('img');
-            gsap.fromTo(image,
-              { y: '-7%' },
-              {
-                y: '7%',
-                scrollTrigger: {
-                  trigger: parallaxImgContainer,
-                  start: 'top 60%',
-                  end: 'bottom top',
-                  scrub: true,
-                },
-              }
-            );
-          });
-        }
-      // }
+    // if (window.innerWidth > '768' && window.innerWidth != '768') {
+    const parallaxItem = document.querySelector('[data-animation="parallax-img"]');
+    if (parallaxItem) {
+      const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+      parallaxImgContainers.forEach(parallaxImgContainer => {
+        const image = parallaxImgContainer.querySelector('img');
+        gsap.fromTo(image,
+          { y: '-7%' },
+          {
+            y: '7%',
+            scrollTrigger: {
+              trigger: parallaxImgContainer,
+              start: 'top 60%',
+              end: 'bottom top',
+              scrub: true,
+            },
+          }
+        );
+      });
+    }
+    // }
     // });
 
     // function counter(array, time = 2000) {
