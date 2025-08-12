@@ -1958,6 +1958,10 @@
     min-height: 20rem;
   }
 
+  .outsourcing .assortment__item-text {
+    min-height: 28rem;
+  }
+
   .assortment__item-body {
     padding: 0;
     border: 0;
@@ -3705,6 +3709,10 @@
   .international .assortment__item-text {
     min-height: unset;
     margin-bottom: 0;
+  }
+
+  .outsourcing .assortment__item-text {
+    min-height: unset;
   }
 
   .international .assortment__item-content.accordion-active .assortment__item-head {

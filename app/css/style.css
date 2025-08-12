@@ -5098,6 +5098,10 @@ ol li::after {
   line-height: 120%;
 }
 
+.outsourcing .assortment__item-text {
+  min-height: 22rem;
+}
+
 .directory {
   overflow: visible;
 }
@@ -7711,6 +7715,9 @@ ol li::after {
   .international .assortment__item-text {
     min-height: 20rem;
   }
+  .outsourcing .assortment__item-text {
+    min-height: 28rem;
+  }
   .assortment__item-body {
     padding: 0;
     border: 0;
@@ -9054,6 +9061,9 @@ ol li::after {
   .international .assortment__item-text {
     min-height: unset;
     margin-bottom: 0;
+  }
+  .outsourcing .assortment__item-text {
+    min-height: unset;
   }
   .international .assortment__item-content.accordion-active .assortment__item-head {
     margin-bottom: 2rem;
