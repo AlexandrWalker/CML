@@ -127,6 +127,18 @@
     }
   }
 
+  &#modal-result {
+
+    .modal__box {
+      padding: 6rem 3rem;
+      max-width: 50rem;
+    }
+
+    .modal__bid-text {
+      margin: 0;
+    }
+  }
+
   &__wrap {
     position: relative;
   }

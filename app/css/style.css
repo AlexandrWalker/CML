@@ -1974,6 +1974,13 @@ ol li::after {
   padding: 3rem 2rem;
   max-width: 42rem;
 }
+.modal#modal-result .modal__box {
+  padding: 6rem 3rem;
+  max-width: 50rem;
+}
+.modal#modal-result .modal__bid-text {
+  margin: 0;
+}
 .modal__wrap {
   position: relative;
 }
@@ -6404,6 +6411,15 @@ ol li::after {
   }
   .modal:not(.modal#modal-calc) {
     padding-bottom: 6.4rem;
+  }
+  .modal#modal-result .modal__box {
+    padding: 6rem 2rem 4rem;
+  }
+  #modal-result .modal__bid-text {
+    font-size: 1.6rem;
+  }
+  #modal-result .modal__content {
+    gap: 1.5rem;
   }
   #modal-bid .modal__box {
     padding: 3rem 2rem;
