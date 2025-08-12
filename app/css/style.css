@@ -2558,6 +2558,53 @@ ol li::after {
   background-color: var(--white);
 }
 
+.timeline {
+  width: 100dvw;
+  padding: 0 var(--container-padding);
+  margin-left: calc(var(--container-padding) * -1);
+}
+.timeline-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+.timeline-wrapper {
+  display: flex;
+  flex-direction: row;
+  will-change: transform;
+  cursor: grab;
+}
+.timeline-wrapper.grabbing {
+  cursor: grabbing;
+}
+.timeline-item {
+  flex: 0 0 var(--history-item-width);
+  flex-shrink: 0;
+}
+.timeline-button-prev, .timeline-button-next {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  font-size: 5rem;
+  transition: all 0.3s ease;
+}
+.timeline-button-prev:hover, .timeline-button-next:hover {
+  color: var(--white);
+  background-color: var(--accent);
+}
+.timeline-button-prev i, .timeline-button-next i {
+  --font-size: 5rem;
+  color: var(--gray);
+}
+
 /* main page */
 .hero {
   color: var(--white);
@@ -4147,6 +4194,9 @@ ol li::after {
   left: 0;
   transition: all 0.3s ease;
 }
+.timeline-active .story__item-year {
+  color: var(--primary-accent);
+}
 .story__item-body {
   display: flex;
   flex-direction: column;
@@ -5101,6 +5151,7 @@ ol li::after {
 
 .outsourcing .assortment__item-text {
   min-height: 22rem;
+  margin-bottom: 2rem;
 }
 
 .directory {
@@ -8276,6 +8327,9 @@ ol li::after {
   .international .assortment__item-content {
     height: 85rem;
   }
+  .outsourcing .assortment__item-text {
+    min-height: 38rem;
+  }
 }
 @media (max-width: 600px) {
   .wrapper {
@@ -9065,6 +9119,7 @@ ol li::after {
   }
   .outsourcing .assortment__item-text {
     min-height: unset;
+    margin-bottom: 0;
   }
   .international .assortment__item-content.accordion-active .assortment__item-head {
     margin-bottom: 2rem;
@@ -9229,6 +9284,11 @@ ol li::after {
   .story__item-arrow {
     display: none;
   }
+  /* new */
+  .story__slide {
+    padding-right: 1rem;
+  }
+  /**/
   /* directory */
   .directory__inner {
     gap: 1rem;

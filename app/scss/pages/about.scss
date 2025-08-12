@@ -217,12 +217,7 @@
 
     &:hover {
 
-      .story__item-head {
-        // background-color: var(--primary-accent);
-      }
-
       .story__item-year {
-        // color: var(--white);
         color: var(--primary-accent);
       }
     }
@@ -240,14 +235,8 @@
       transform: none;
       width: 100%;
       height: auto;
-
-      // width: auto;
-      // height: 18rem;
       object-fit: contain;
       position: absolute;
-      // top: 12.5rem;
-      // left: 50%;
-      // transform: translateX(-50%);
     }
 
     &-year {
@@ -259,6 +248,10 @@
       bottom: -3rem;
       left: 0;
       transition: all 0.3s ease;
+
+      .timeline-active & {
+        color: var(--primary-accent);
+      }
     }
 
     &-body {

@@ -2674,6 +2674,10 @@
   .international .assortment__item-content {
     height: 85rem;
   }
+
+  .outsourcing .assortment__item-text {
+    min-height: 38rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -3713,6 +3717,7 @@
 
   .outsourcing .assortment__item-text {
     min-height: unset;
+    margin-bottom: 0;
   }
 
   .international .assortment__item-content.accordion-active .assortment__item-head {
@@ -3926,6 +3931,13 @@
   .story__item-arrow {
     display: none;
   }
+
+  /* new */
+  .story__slide {
+    padding-right: 1rem;
+  }
+
+  /**/
 
   /* directory */
   .directory__inner {
