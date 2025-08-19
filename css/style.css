@@ -578,6 +578,72 @@ a:hover {
   color: var(--white);
 }
 
+.btn-telegram {
+  --button-font-size: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 5rem;
+  border-radius: 0.5rem;
+  border: 0;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.btn-telegram:hover::after {
+  opacity: 1;
+}
+.btn-telegram::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-7%, #38AFE3), to(#1E96C8));
+  background: -o-linear-gradient(top, #38AFE3 -7%, #1E96C8 100%);
+  background: linear-gradient(180deg, #38AFE3 -7%, #1E96C8 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.btn-telegram::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-7%, #1E96C8), to(#38AFE3));
+  background: -o-linear-gradient(top, #1E96C8 -7%, #38AFE3 100%);
+  background: linear-gradient(180deg, #1E96C8 -7%, #38AFE3 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.btn-telegram i {
+  font-size: 3rem;
+}
+
 .planshet-block {
   display: none !important;
 }
@@ -1179,6 +1245,44 @@ ol li::after {
       flex-shrink: 0;
 }
 
+.blik {
+  overflow: hidden;
+  position: relative;
+}
+.blik::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-animation: moveLight 1.5s infinite forwards;
+          animation: moveLight 1.5s infinite forwards;
+  pointer-events: none;
+}
+
+@-webkit-keyframes moveLight {
+  from {
+    -webkit-transform: translateX(-4rem) skewX(-45deg);
+            transform: translateX(-4rem) skewX(-45deg);
+  }
+  to {
+    -webkit-transform: translateX(40rem) skewX(-45deg);
+            transform: translateX(40rem) skewX(-45deg);
+  }
+}
+
+@keyframes moveLight {
+  from {
+    -webkit-transform: translateX(-4rem) skewX(-45deg);
+            transform: translateX(-4rem) skewX(-45deg);
+  }
+  to {
+    -webkit-transform: translateX(40rem) skewX(-45deg);
+            transform: translateX(40rem) skewX(-45deg);
+  }
+}
 /* component styles */
 .head {
   display: -webkit-box;
@@ -1244,18 +1348,6 @@ ol li::after {
   position: relative;
   overflow: hidden;
 }
-.header__calc::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2rem;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  -webkit-animation: moveLight 1.5s infinite forwards;
-          animation: moveLight 1.5s infinite forwards;
-  pointer-events: none;
-}
 .header__btn {
   width: 30.8rem;
   height: 6rem;
@@ -1312,6 +1404,7 @@ ol li::after {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
+  pointer-events: none;
 }
 .header__btn-wrap {
   display: -webkit-box;
@@ -1337,6 +1430,7 @@ ol li::after {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+  pointer-events: all;
 }
 .header__btn-active .header__dropdown {
   height: auto;
@@ -1812,26 +1906,6 @@ ol li::after {
             transform: rotateX(360deg);
   }
 }
-@-webkit-keyframes moveLight {
-  from {
-    -webkit-transform: translateX(-4rem) skewX(-45deg);
-            transform: translateX(-4rem) skewX(-45deg);
-  }
-  to {
-    -webkit-transform: translateX(40rem) skewX(-45deg);
-            transform: translateX(40rem) skewX(-45deg);
-  }
-}
-@keyframes moveLight {
-  from {
-    -webkit-transform: translateX(-4rem) skewX(-45deg);
-            transform: translateX(-4rem) skewX(-45deg);
-  }
-  to {
-    -webkit-transform: translateX(40rem) skewX(-45deg);
-            transform: translateX(40rem) skewX(-45deg);
-  }
-}
 .footer {
   background-color: var(--primary-black);
   color: var(--white);
@@ -2029,11 +2103,14 @@ ol li::after {
   gap: 1rem;
   text-align: right;
 }
-.footer__body-item h6 {
+.footer__body-item a {
   font-weight: 800;
   font-size: 4.5rem;
   line-height: 120%;
   color: var(--white);
+}
+.footer__body-item a:hover {
+  color: var(--primary-accent);
 }
 .footer__body-item p {
   font-weight: 400;
@@ -2318,6 +2395,9 @@ ol li::after {
 }
 .menu__foot-wrap:nth-child(2) .menu__foot-link {
   font-size: 2.8rem;
+}
+.menu__foot-wrap:nth-child(2) .menu__foot-link:hover {
+  text-decoration: underline;
 }
 .menu__foot-title {
   font-weight: 400;
@@ -3103,18 +3183,6 @@ ol li::after {
   position: relative;
   overflow: hidden;
 }
-.fixed-btns__btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2rem;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  -webkit-animation: moveLight 1.5s infinite forwards;
-          animation: moveLight 1.5s infinite forwards;
-  pointer-events: none;
-}
 .fixed-btns__btn i {
   font-size: 3rem;
   -webkit-transition: all 0.3s ease;
@@ -3128,6 +3196,129 @@ ol li::after {
 }
 .fixed-btns__btn:hover i {
   color: var(--primary-accent);
+}
+
+.telegram__plate {
+  position: fixed;
+  bottom: 12rem;
+  left: 0;
+  right: 0;
+  z-index: 400;
+  margin: 0;
+  color: var(--white);
+  pointer-events: none;
+  overflow: visible;
+  -webkit-transform: translateY(200%);
+      -ms-transform: translateY(200%);
+          transform: translateY(200%);
+  -webkit-transition: bottom 0.3s ease, -webkit-transform 1s linear;
+  transition: bottom 0.3s ease, -webkit-transform 1s linear;
+  -o-transition: transform 1s linear, bottom 0.3s ease;
+  transition: transform 1s linear, bottom 0.3s ease;
+  transition: transform 1s linear, bottom 0.3s ease, -webkit-transform 1s linear;
+}
+.telegram__plate.show {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+.telegram__close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+.telegram__close::before {
+  content: "";
+  display: block;
+  width: 1.8rem;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+  background-color: var(--primary-black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.telegram__close::after {
+  content: "";
+  display: block;
+  width: 1.8rem;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+  background-color: var(--primary-black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-135deg);
+      -ms-transform: translate(-50%, -50%) rotate(-135deg);
+          transform: translate(-50%, -50%) rotate(-135deg);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.telegram__close:hover::before, .telegram__close:hover::after {
+  background-color: var(--primary-accent);
+}
+.telegram__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  max-width: 47.4rem;
+  margin: 0 auto 0 0;
+  background-color: var(--white);
+  pointer-events: all;
+  position: relative;
+  -webkit-box-shadow: 0px 34px 54px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 34px 54px rgba(0, 0, 0, 0.09);
+}
+.telegram__text p {
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--primary-black);
+}
+.telegram__btn i {
+  margin-top: -0.2rem;
+}
+.telegram__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+  max-width: 36rem;
+  margin-top: 1rem;
+}
+.telegram__wrap .telegram__text p {
+  font-weight: 700;
+  font-size: 1.6rem;
 }
 
 .dropdown {
@@ -6603,8 +6794,8 @@ ol li::after {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 3rem 16rem;
-  width: calc(100% - 16rem - 82rem);
+  gap: 3rem 6rem;
+  width: calc(100% - 6rem - 82rem);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6618,7 +6809,7 @@ ol li::after {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2rem;
-  width: calc(50% - 8rem);
+  width: calc(50% - 3rem);
 }
 .solutions__item-num {
   display: -webkit-box;
@@ -6676,7 +6867,7 @@ ol li::after {
   width: calc(33.33333% - 1.33333rem);
   border-bottom: 0.1rem solid var(--primary-black-50);
   color: inherit;
-  cursor: context-menu;
+  cursor: default;
 }
 .included__item:hover span {
   background-color: var(--primary-accent);
@@ -6760,10 +6951,6 @@ ol li::after {
 .delivery .general__img {
   height: 60rem;
 }
-.delivery .section__body {
-  max-width: 68rem;
-}
-
 .customs .press__item {
   width: 100%;
 }
@@ -7565,13 +7752,13 @@ ol li::after {
   color: var(--primary-accent);
   margin-bottom: 1.5rem;
 }
-.contacts__item a,
+.contacts__item a:not(.telegram__btn),
 .contacts__item h3 {
   font-weight: 800;
   font-size: 3.5rem;
   color: inherit;
 }
-.contacts__item a:hover {
+.contacts__item a:not(.telegram__btn):hover {
   color: var(--primary-accent);
 }
 .contacts__item:last-child {
@@ -8047,17 +8234,16 @@ ol li::after {
 }
 .general--big {
   background-color: var(--primary-black);
-  min-height: 68.2rem;
   background-image: url(./../images/main/hero-bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  background-color: var(--black);
   margin-bottom: 5rem;
-  max-width: 192rem;
-  width: 100%;
-  padding: 0;
-  margin-right: auto;
-  margin-left: auto;
+}
+.general--big .container {
+  min-height: 68.2rem;
+  position: relative;
 }
 .general--big .breadcrumbs {
   color: var(--white);
@@ -8117,13 +8303,13 @@ ol li::after {
 .general--sample {
   background-color: var(--primary-black);
   color: var(--white);
-  min-height: 68.2rem;
   margin-bottom: 4rem;
+  max-width: unset;
+}
+.general--sample .container {
   max-width: 192rem;
-  width: 100%;
-  padding: 0;
-  margin-right: auto;
-  margin-left: auto;
+  position: relative;
+  min-height: 68.2rem;
 }
 .general--sample .breadcrumbs {
   color: var(--white);
@@ -9379,7 +9565,7 @@ ol li::after {
   .footer__body-logo {
     height: 4rem;
   }
-  .footer__body-item h6 {
+  .footer__body-item a {
     font-size: 2.5rem;
   }
   .footer__body-item p {
@@ -9619,8 +9805,10 @@ ol li::after {
   .general__head-title span {
     font-size: 3rem;
   }
-  .general--sample,
-  .general--big {
+  .general--big .container {
+    min-height: 78.2rem;
+  }
+  .general--sample .container {
     min-height: 78.2rem;
   }
   .general {
@@ -9631,6 +9819,7 @@ ol li::after {
   }
   .general--big {
     margin-bottom: 3rem;
+    background-image: url(./../images/main/hero-bg-mob.png);
   }
   .general--big .general__head-title h1 {
     font-size: 5rem;
@@ -10682,6 +10871,29 @@ ol li::after {
   .contacts__item-requisite p:not(:last-child) {
     margin-bottom: 1.4rem;
   }
+  /* telegram plate */
+  .telegram__plate {
+    bottom: 1.5rem;
+  }
+  .telegram__close {
+    right: 2rem;
+  }
+  .telegram__inner {
+    padding: 3rem 2rem;
+  }
+  .telegram__text p {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .telegram__wrap {
+    max-width: 28rem;
+  }
+  .telegram__wrap .telegram__text p {
+    font-size: 1.4rem;
+  }
+  .telegram__wrap .telegram__btn {
+    max-width: 25rem;
+  }
 }
 @media (min-width: 601px) {
   .assortment__item-content:hover {
@@ -11210,7 +11422,7 @@ ol li::after {
   .footer__body-item {
     text-align: left;
   }
-  .footer__body-item h6 {
+  .footer__body-item a {
     font-size: 2.4rem;
   }
   .footer__body-item p {
@@ -11343,7 +11555,6 @@ ol li::after {
   }
   .general--big {
     min-height: 62.7rem;
-    background-image: url(./../images/main/hero-bg-mob.png);
   }
   .general--big .general__inner {
     gap: 4rem;
@@ -11394,6 +11605,8 @@ ol li::after {
   /* general--sample */
   .general--sample {
     background-image: none;
+  }
+  .general--sample .container {
     min-height: 69.1rem;
   }
   .general--sample .general__head-title h1 {

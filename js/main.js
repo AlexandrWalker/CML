@@ -597,8 +597,8 @@
             headerActive[0].classList.remove('header__btn-active');
             document.querySelector('.menu__body').classList.remove('down');
           }
-          this.classList.toggle('header__btn-active');
-          document.querySelector('.menu__body').classList.toggle('down');
+          this.classList.add('header__btn-active');
+          document.querySelector('.menu__body').classList.add('down');
 
           window.addEventListener('keydown', (e) => {
             if (e.key === "Escape") {
@@ -606,10 +606,9 @@
             }
           });
 
-          document.addEventListener('click', (e) => {
-            const withinBoundaries = e.composedPath().includes(hItem.querySelector('.header__dropdown'));
-
-            if (!withinBoundaries) {
+          // Закрытие меню при клике вне области
+          document.addEventListener('click', (event) => {
+            if (!hItem.querySelector('.header__dropdown').contains(event.target)) {
               hItem.classList.remove("header__btn-active");
 
               const menuBody = document.querySelector('.menu__body');
@@ -617,7 +616,20 @@
                 menuBody.classList.remove('down')
               }
             }
-          })
+          });
+
+          hItem.querySelector('.header__btn-icon').addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('asd');
+
+            hItem.classList.remove("header__btn-active");
+
+            const menuBody = document.querySelector('.menu__body');
+            if (menuBody.classList.contains('down')) {
+              menuBody.classList.remove('down')
+            }
+          });
+
         });
       });
     }
@@ -1111,8 +1123,20 @@
 
       if (verticalScrollPosition > h && verticalScrollPosition < bottomScrollPosition) {
         plate.classList.add(classToAdd);
+
+        $('resize load', function (event) {
+          if (window.innerWidth < 769 && window.innerWidth !== 769) {
+            tgPlate.style.bottom = '8rem';
+          }
+        });
       } else {
         plate.classList.remove(classToAdd);
+
+        $('resize load', function (event) {
+          if (window.innerWidth < 769 && window.innerWidth !== 769) {
+            tgPlate.style.bottom = '1.5rem';
+          }
+        });
       }
     });
 
@@ -1258,6 +1282,23 @@
     fixedBtn.addEventListener('click', function () {
       fixedBtn.parentNode.classList.toggle('fixed-btns--active');
     });
+
+
+
+    const tgPlate = document.getElementById('telegram-plate');
+    if (tgPlate) {
+      const tgPlateClose = document.getElementById('telegram-close');
+      const tgPlateClassName = 'show';
+      const delay = 3000;
+
+      setTimeout(() => {
+        tgPlate.classList.add(tgPlateClassName);
+      }, delay);
+
+      tgPlateClose.addEventListener('click', e => {
+        tgPlate.classList.remove(tgPlateClassName);
+      })
+    }
 
 
 
