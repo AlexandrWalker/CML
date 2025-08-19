@@ -238,18 +238,6 @@
     position: relative;
     overflow: hidden;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 2rem;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.3);
-      animation: moveLight 1.5s infinite forwards;
-      pointer-events: none
-    }
-
     i {
       font-size: 3rem;
       transition: all 0.3s ease;
@@ -262,6 +250,118 @@
       i {
         color: var(--primary-accent);
       }
+    }
+  }
+}
+
+.telegram {
+
+  &__plate {
+    position: fixed;
+    bottom: 12rem;
+    left: 0;
+    right: 0;
+    z-index: 400;
+    margin: 0;
+    color: var(--white);
+    pointer-events: none;
+    overflow: visible;
+
+    transform: translateY(200%);
+    transition: transform 1s linear, bottom 0.3s ease;
+
+    &.show {
+      transform: translateY(0);
+    }
+  }
+
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1.8rem;
+      height: 0.2rem;
+      border-radius: 0.1rem;
+      background-color: var(--primary-black);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      transition: all 0.3s ease;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 1.8rem;
+      height: 0.2rem;
+      border-radius: 0.1rem;
+      background-color: var(--primary-black);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-135deg);
+      transition: all 0.3s ease;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: var(--primary-accent);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    max-width: 47.4rem;
+    margin: 0 auto 0 0;
+    background-color: var(--white);
+    pointer-events: all;
+    position: relative;
+
+    box-shadow: 0px 34px 54px rgba(0, 0, 0, 0.09);
+  }
+
+  &__text {
+
+    p {
+      font-weight: 700;
+      font-size: 3rem;
+      color: var(--primary-black);
+    }
+  }
+
+  &__btn {
+
+    i {
+      margin-top: -0.2rem;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 36rem;
+    margin-top: 1rem;
+
+    .telegram__text p {
+      font-weight: 700;
+      font-size: 1.6rem;
     }
   }
 }

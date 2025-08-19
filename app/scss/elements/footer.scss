@@ -174,11 +174,15 @@
       gap: 1rem;
       text-align: right;
 
-      h6 {
+      a {
         font-weight: 800;
         font-size: 4.5rem;
         line-height: 120%;
         color: var(--white);
+
+        &:hover {
+          color: var(--primary-accent);
+        }
       }
 
       p {

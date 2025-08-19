@@ -240,9 +240,9 @@
             <p class="menu__foot-title">
               Адрес:
             </p>
-            <p class="menu__foot-link">
+            <a class="menu__foot-link" href="/" target="_blank">
               630039, Новосибирская&nbsp;область, город&nbsp;Новосибирск, улица&nbsp;Добролюбова,&nbsp;162/1
-            </p>
+            </a>
             <p class="menu__foot-text">
               Режим работы: пн – пт 10:00-18:00 по Новосибирску, обед 13:00-14:00
             </p>
@@ -278,7 +278,7 @@
               </picture>
             </a>
             <div class="header__wrap">
-              <button class="header__calc btn btn-calc modal__btn" data-id="modal-result">
+              <button class="header__calc btn btn-calc modal__btn blik" data-id="modal-result">
                 Рассчитайте стоимость
                 <i class="icon-calc"></i>
               </button>
@@ -895,7 +895,7 @@
               <p>
                 Пройдите опрос что бы утонить все детали заказа и выявить ваши потребности
               </p>
-              <a class="banner__btn btn" href="#popup:marquiz_6746e81ec17b29002647f133">
+              <a class="banner__btn btn blik" href="#popup:marquiz_6746e81ec17b29002647f133">
                 Получите скидку
               </a>
             </div>
@@ -2041,9 +2041,9 @@
           <img class="footer__body-img" src="./images/logo/logo.svg" alt="">
         </a>
         <div class="footer__body-item">
-          <h6>
+          <a href="/" target="_blank">
             630039, Новосибирская&nbsp;область, город&nbsp;Новосибирск, улица&nbsp;Добролюбова,&nbsp;162/1
-          </h6>
+          </a>
           <p>
             Режим работы: пн – пт 10:00-18:00 по Новосибирску, обед 13:00-14:00
           </p>
@@ -2391,10 +2391,29 @@
       </a>
     </div>
   </div>
-  <div class="fixed-btns__btn btn btn-red" id="fixed-btn">
+  <div class="fixed-btns__btn btn btn-red blik" id="fixed-btn">
     <i class="icon-headphones"></i>
   </div>
 </div>
+
+<section id="telegram-plate" class="telegram__plate">
+  <div class="container telegram__container">
+    <div class="telegram__inner">
+      <button id="telegram-close" class="telegram__close">
+      </button>
+      <div class="telegram__text">
+        <p>
+          Подписывайтесь на наш телеграм-канал и будьте
+          в курсе последних новостей в мире ВЭД
+        </p>
+      </div>
+      <a class="telegram__btn btn btn-telegram" href="https://t.me/cml_company" target="_blank">
+        <i class="icon-telegram-color"></i>
+        Подписаться
+      </a>
+    </div>
+  </div>
+</section>
 <!-- scipts -->
 <script src="./libs/lenis/lenis.min.js"></script>
 <script src="./libs/gsap/gsap.min.js"></script>

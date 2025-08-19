@@ -1173,7 +1173,7 @@
     height: 4rem;
   }
 
-  .footer__body-item h6 {
+  .footer__body-item a {
     font-size: 2.5rem;
   }
 
@@ -1468,8 +1468,11 @@
     font-size: 3rem;
   }
 
-  .general--sample,
-  .general--big {
+  .general--big .container {
+    min-height: 78.2rem;
+  }
+
+  .general--sample .container {
     min-height: 78.2rem;
   }
 
@@ -1483,6 +1486,7 @@
 
   .general--big {
     margin-bottom: 3rem;
+    background-image: url(./../images/main/hero-bg-mob.png);
   }
 
   .general--big .general__head-title h1 {
@@ -2635,6 +2639,36 @@
   .contacts__item-requisite p:not(:last-child) {
     margin-bottom: 1.4rem;
   }
+
+  /* telegram plate */
+  .telegram__plate {
+    bottom: 1.5rem;
+  }
+
+  .telegram__close {
+    right: 2rem;
+  }
+
+  .telegram__inner {
+    padding: 3rem 2rem;
+  }
+
+  .telegram__text p {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .telegram__wrap {
+    max-width: 28rem;
+  }
+
+  .telegram__wrap .telegram__text p {
+    font-size: 1.4rem;
+  }
+
+  .telegram__wrap .telegram__btn {
+    max-width: 25rem;
+  }
 }
 
 @media (min-width: 601px) {
@@ -3225,7 +3259,7 @@
     text-align: left;
   }
 
-  .footer__body-item h6 {
+  .footer__body-item a {
     // font-size: 3.4rem;
     font-size: 2.4rem;
   }
@@ -3387,7 +3421,6 @@
 
   .general--big {
     min-height: 62.7rem;
-    background-image: url(./../images/main/hero-bg-mob.png);
   }
 
   .general--big .general__inner {
@@ -3449,6 +3482,9 @@
   /* general--sample */
   .general--sample {
     background-image: none;
+  }
+
+  .general--sample .container {
     min-height: 69.1rem;
   }
 

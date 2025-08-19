@@ -35,7 +35,7 @@
       margin-bottom: 1.5rem;
     }
 
-    a,
+    a:not(.telegram__btn),
     h3 {
       font-weight: 800;
       font-size: 3.5rem;
@@ -43,7 +43,7 @@
       // margin-bottom: 1rem;
     }
 
-    a {
+    a:not(.telegram__btn) {
 
       &:hover {
         color: var(--primary-accent);
@@ -81,7 +81,8 @@
       }
 
       span {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         color: var(--primary-accent);
         margin-bottom: 0;
       }

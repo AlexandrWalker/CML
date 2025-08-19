@@ -198,18 +198,17 @@
 
   &--big {
     background-color: var(--primary-black);
-    min-height: 68.2rem;
     background-image: url(./../images/main/hero-bg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
+    background-color: var(--black);
     margin-bottom: 5rem;
 
-    max-width: 192rem;
-    width: 100%;
-    padding: 0;
-    margin-right: auto;
-    margin-left: auto;
+    .container {
+      min-height: 68.2rem;
+      position: relative;
+    }
 
     .breadcrumbs {
       color: var(--white);
@@ -282,14 +281,15 @@
   &--sample {
     background-color: var(--primary-black);
     color: var(--white);
-    min-height: 68.2rem;
     margin-bottom: 4rem;
 
-    max-width: 192rem;
-    width: 100%;
-    padding: 0;
-    margin-right: auto;
-    margin-left: auto;
+    max-width: unset;
+
+    .container {
+      max-width: 192rem;
+      position: relative;
+      min-height: 68.2rem;
+    }
 
     .breadcrumbs {
       color: var(--white);
