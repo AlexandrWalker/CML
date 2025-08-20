@@ -5560,14 +5560,14 @@ ol li::after {
   align-items: center;
   gap: 6rem;
 }
-.directory__list-head button {
+.directory__list-head a {
   font-weight: 400;
   font-size: 2.6rem;
   line-height: 120%;
   color: var(--primary-black);
   background: transparent;
 }
-.directory__list-head button:hover, .directory__list-head button.btn-active {
+.directory__list-head a:hover, .directory__list-head a.btn-active {
   font-weight: 800;
   text-decoration-line: underline;
   color: var(--primary-accent);
@@ -8364,7 +8364,7 @@ ol li::after {
   .directory__list-head ul {
     gap: 3rem;
   }
-  .directory__list-head button {
+  .directory__list-head a {
     font-size: 2rem;
   }
   .directory__list-wrap span {
