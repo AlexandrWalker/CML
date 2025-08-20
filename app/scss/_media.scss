@@ -3272,8 +3272,28 @@
     background-color: var(--primary-accent);
   }
 
+  .footer__info-download {
+    font-size: 1.6rem;
+  }
+
   .footer__info-link {
     text-align: left;
+    font-size: 1.4rem;
+  }
+
+  .footer .telegram__wrap {
+    align-items: flex-start;
+    max-width: 100%;
+    margin-top: 2.4rem;
+    gap: 1rem;
+  }
+
+  .footer .telegram__text p {
+    text-align: left;
+  }
+
+  .footer .telegram__btn {
+    max-width: 100%;
   }
 
   /* 404 */

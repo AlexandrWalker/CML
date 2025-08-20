@@ -220,4 +220,19 @@
       }
     }
   }
+
+  .telegram__wrap {
+    align-items: flex-end;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .telegram__text p {
+    text-align: right;
+    color: var(--white);
+  }
+
+  .telegram__btn{
+    max-width: 26rem;
+  }
 }

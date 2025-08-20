@@ -1625,6 +1625,18 @@ ol li::after {
 .footer__foot-text a:hover {
   text-decoration: underline;
 }
+.footer .telegram__wrap {
+  align-items: flex-end;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.footer .telegram__text p {
+  text-align: right;
+  color: var(--white);
+}
+.footer .telegram__btn {
+  max-width: 26rem;
+}
 
 .menu {
   width: 100%;
@@ -8926,8 +8938,24 @@ ol li::after {
   .footer .header__icons-item {
     background-color: var(--primary-accent);
   }
+  .footer__info-download {
+    font-size: 1.6rem;
+  }
   .footer__info-link {
     text-align: left;
+    font-size: 1.4rem;
+  }
+  .footer .telegram__wrap {
+    align-items: flex-start;
+    max-width: 100%;
+    margin-top: 2.4rem;
+    gap: 1rem;
+  }
+  .footer .telegram__text p {
+    text-align: left;
+  }
+  .footer .telegram__btn {
+    max-width: 100%;
   }
   /* 404 */
   .notfound {
