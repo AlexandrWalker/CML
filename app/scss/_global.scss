@@ -677,8 +677,9 @@ a {
   }
 }
 
-.pre-accordion {
 
+.pre-accordion {
+  
   &+.directory__side-paragraph {
     display: grid;
     grid-template-rows: 0fr;

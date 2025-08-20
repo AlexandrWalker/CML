@@ -5680,10 +5680,12 @@ ol li::after {
   left: 0;
   right: 0;
   z-index: 1;
+}
+.management__item-img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .management__item-wrap {
   display: -webkit-box;
@@ -9708,7 +9710,7 @@ ol li::after {
     padding: 2rem;
     aspect-ratio: 357/412;
   }
-  .management__item-img {
+  .management__item-img img {
     height: auto;
   }
   .management__item-wrap {

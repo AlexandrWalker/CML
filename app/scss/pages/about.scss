@@ -38,7 +38,8 @@
     &-text {
 
       p {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 1.8rem;
         line-height: 110%;
       }
@@ -75,9 +76,16 @@
       left: 0;
       right: 0;
       z-index: 1;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      // width: 100%;
+      // height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+
+      }
     }
 
     &-wrap {
@@ -94,7 +102,8 @@
       }
 
       span {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 1.8rem;
       }
     }
@@ -267,7 +276,8 @@
     }
 
     p {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 1.8rem;
       line-height: 120%;
     }
@@ -355,7 +365,8 @@
       }
 
       span {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 1.8rem;
         line-height: 120%;
       }
@@ -397,7 +408,8 @@
       flex-direction: column;
       gap: 2rem;
       margin-bottom: 6rem;
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 1.8rem;
       line-height: 120%;
 
@@ -428,7 +440,8 @@
       gap: 1rem;
       font-size: 1.8rem;
       line-height: 110%;
-      font-weight: 400;;
+      font-weight: 400;
+      ;
 
       p {
         font-weight: 800;
@@ -440,7 +453,8 @@
         align-items: flex-start;
         gap: 0.4rem;
         position: relative;
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 1.4rem;
         color: inherit;
 
