@@ -237,10 +237,10 @@ a {
   border-radius: 0.5rem;
   border: 0;
   color: var(--white);
+  background: transparent;
 
   position: relative;
   z-index: 1;
-  overflow: hidden;
 
   &:hover {
 
@@ -263,6 +263,7 @@ a {
     opacity: 1;
     transition: opacity 0.5s ease;
     pointer-events: none;
+    border-radius: 0.5rem;
   }
 
   &::after {
@@ -279,6 +280,7 @@ a {
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
+    border-radius: 0.5rem;
   }
 
   i {

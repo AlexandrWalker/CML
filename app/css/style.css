@@ -493,9 +493,9 @@ a:hover {
   border-radius: 0.5rem;
   border: 0;
   color: var(--white);
+  background: transparent;
   position: relative;
   z-index: 1;
-  overflow: hidden;
 }
 .btn-telegram:hover::after {
   opacity: 1;
@@ -514,6 +514,7 @@ a:hover {
   opacity: 1;
   transition: opacity 0.5s ease;
   pointer-events: none;
+  border-radius: 0.5rem;
 }
 .btn-telegram::after {
   content: "";
@@ -529,6 +530,7 @@ a:hover {
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
+  border-radius: 0.5rem;
 }
 .btn-telegram i {
   font-size: 3rem;
