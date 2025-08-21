@@ -13,7 +13,8 @@
 
   &__menu {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    // grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr 1.5fr;
     gap: 2rem;
     width: 100%;
 
@@ -225,6 +226,7 @@
     align-items: flex-end;
     gap: 2rem;
     margin-top: 3rem;
+    max-width: 40rem;
   }
 
   .telegram__text p {

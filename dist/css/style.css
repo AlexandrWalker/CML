@@ -1930,8 +1930,8 @@ ol li::after {
 .footer__menu {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 1fr;
-  grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr 2rem 1fr 2rem 0.5fr 2rem 1.5fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr 1.5fr;
   gap: 2rem;
   width: 100%;
 }
@@ -2155,6 +2155,7 @@ ol li::after {
           align-items: flex-end;
   gap: 2rem;
   margin-top: 3rem;
+  max-width: 40rem;
 }
 .footer .telegram__text p {
   text-align: right;
