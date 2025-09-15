@@ -8251,6 +8251,52 @@ ol li::after {
   font-size: 2.4rem;
   line-height: 120%;
 }
+.general__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 4rem;
+}
+.general__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 2rem;
+  border-left: 0.1rem solid var(--primary-grey-sec);
+  color: var(--white);
+}
+.general__item-head {
+  display: none;
+  font-weight: 400;
+  font-size: 4rem;
+}
+.general__item-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+.general__item-body h6 {
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+.general__item-body p {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--primary-accent);
+}
 .general--big {
   background-color: var(--primary-black);
   background-image: url(./../images/main/hero-bg.png);
@@ -8446,6 +8492,16 @@ ol li::after {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 3rem;
+}
+.general--short .general__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4rem;
 }
 .general--short .breadcrumbs {
   margin: 4rem 0 3rem;
@@ -10019,6 +10075,9 @@ ol li::after {
     font-size: 5rem;
   }
   /* templates-short */
+  .general--short {
+    padding-bottom: 4rem;
+  }
   .general--short .general__inner {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -10062,6 +10121,37 @@ ol li::after {
     font-size: 4rem;
   }
   .general__feat p {
+    font-size: 1.6rem;
+  }
+  .general__items {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 1rem;
+    width: calc(50% - 0.5rem);
+  }
+  .general__item {
+    width: calc(50% - 0.5rem);
+    padding-left: 0;
+    border: 0;
+    gap: 2rem;
+  }
+  .general__item-head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .general__item-body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+  .general__item-body p {
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+  .general__item-body h6 {
     font-size: 1.6rem;
   }
   .case-page .section__head h2 {
@@ -10929,6 +11019,9 @@ ol li::after {
   }
 }
 @media (max-width: 680px) {
+  .general--short .breadcrumbs {
+    margin: 3rem 0 4rem;
+  }
   .general--short .general__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -10942,6 +11035,9 @@ ol li::after {
   .general__feat {
     width: 100%;
     margin-top: 0;
+  }
+  .general__items {
+    width: 100%;
   }
   /* insurance */
   .insurance .feat__item {
@@ -11596,12 +11692,15 @@ ol li::after {
   .general--big .general__inner {
     gap: 4rem;
   }
-  .general__inner:not(.reviews-page .general__inner, .about-page .general__inner, .results-page .general__inner, .privacy-page .general__inner) {
+  .general__inner:not(.reviews-page .general__inner, .about-page .general__inner, .results-page .general__inner, .privacy-page .general__inner, .general--short .general__inner) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 1rem;
+  }
+  .general--short {
+    padding-bottom: 3rem;
   }
   .about-page .general--big .general__content {
     gap: 2rem;

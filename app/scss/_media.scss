@@ -1710,6 +1710,10 @@
   }
 
   /* templates-short */
+  .general--short {
+    padding-bottom: 4rem;
+  }
+
   .general--short .general__inner {
     flex-direction: row;
     gap: 1rem;
@@ -1756,6 +1760,37 @@
   }
 
   .general__feat p {
+    font-size: 1.6rem;
+  }
+
+  .general__items {
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: calc(50% - 0.5rem);
+  }
+
+  .general__item {
+    width: calc(50% - 0.5rem);
+    padding-left: 0;
+    border: 0;
+    gap: 2rem;
+  }
+
+  .general__item-head {
+    display: flex;
+  }
+
+  .general__item-body {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+
+  .general__item-body p {
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+
+  .general__item-body h6 {
     font-size: 1.6rem;
   }
 
@@ -2689,6 +2724,10 @@
 }
 
 @media (max-width: 680px) {
+  .general--short .breadcrumbs {
+    margin: 3rem 0 4rem;
+  }
+
   .general--short .general__inner {
     flex-direction: column;
     gap: 3rem;
@@ -2701,6 +2740,10 @@
   .general__feat {
     width: 100%;
     margin-top: 0;
+  }
+
+  .general__items {
+    width: 100%;
   }
 
   /* insurance */
@@ -3452,10 +3495,14 @@
     // font-size: 3rem;
   }
 
-  .general__inner:not(.reviews-page .general__inner, .about-page .general__inner, .results-page .general__inner, .privacy-page .general__inner) {
+  .general__inner:not(.reviews-page .general__inner, .about-page .general__inner, .results-page .general__inner, .privacy-page .general__inner, .general--short .general__inner) {
     flex-direction: column;
     // gap: 0.5rem;
     gap: 1rem;
+  }
+
+  .general--short {
+    padding-bottom: 3rem;
   }
 
   .about-page .general--big .general__content {
