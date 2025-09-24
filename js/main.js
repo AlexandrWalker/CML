@@ -98,6 +98,8 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 4
       },
       navigation: {
         nextEl: ".reviews-button-next",
@@ -131,6 +133,8 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 4
       },
       navigation: {
         nextEl: ".articles-button-next",
@@ -161,6 +165,8 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 4
       },
       navigation: {
         nextEl: ".cases-button-next",
@@ -262,6 +268,29 @@
         menu.classList.toggle('mobile-menu--opened', isOpened);
         head.classList.toggle('head--active');
         lenis.stop();
+
+        const menuItems = document.querySelectorAll('.menu__body ul li.menu__list-item');
+        for (let i = 0; menuItems.length != menuItems[i]; i++) {
+          const menuItem = menuItems[i].querySelector('[data-transform="menuFade"]');
+          gsap.fromTo(menuItem,
+            {
+              y: '200',
+              opacity: 0,
+            },
+            {
+              y: '0',
+              opacity: 1,
+              duration: 0.5,
+              delay: 0.1 * i,
+              ease: "none",
+              scrollTrigger: {
+                trigger: '.mobile-menu--opened .menu__list',
+                start: 'top 100%',
+                end: 'bottom top',
+              }
+            }
+          );
+        }
 
         if (window.innerWidth < 769 && window.innerWidth !== 769) {
           const burgerOpened = document.querySelector('.burger.burger--opened');
@@ -1136,9 +1165,6 @@
 
 
 
-
-
-
     const head = this.document.querySelector('.head');
     const hFirstSection = document.getElementById('first-section');
     const hCalc = document.getElementById('calc');
@@ -1281,40 +1307,43 @@
 
     // }
     // accordionFunc();
+    const accordionParents = document.querySelectorAll('.accordion-parent');
 
-    document.querySelectorAll('.accordion-parent').forEach((accordionContainer) => {
+    if (accordionParents.length > 0) {
+      accordionParents.forEach((accordionContainer) => {
 
-      var accordionHead = accordionContainer.querySelectorAll('.accordion'),
-        accordionActive = accordionContainer.getElementsByClassName('accordion-active');
+        var accordionHead = accordionContainer.querySelectorAll('.accordion'),
+          accordionActive = accordionContainer.getElementsByClassName('accordion-active');
 
-      Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
-        accordionItem.addEventListener('click', function (e) {
+        Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
+          accordionItem.addEventListener('click', function (e) {
 
-          if (accordionActive.length > 0 && accordionActive[0] !== this) {
-            accordionActive[0].classList.remove('accordion-active');
+            if (accordionActive.length > 0 && accordionActive[0] !== this) {
+              accordionActive[0].classList.remove('accordion-active');
+            }
+            this.classList.toggle('accordion-active');
+
+            ScrollTrigger.refresh();
+          });
+        });
+
+      });
+
+      var preAccordionHead = document.querySelectorAll('.pre-accordion'),
+        preAccordionActive = document.getElementsByClassName('pre-accordion-active');
+
+      Array.from(preAccordionHead).forEach(function (preAccordionItem, i, preAccordionHead) {
+        preAccordionItem.addEventListener('click', function (e) {
+
+          if (preAccordionActive.length > 0 && preAccordionActive[0] !== this) {
+            preAccordionActive[0].classList.remove('pre-accordion-active');
           }
-          this.classList.toggle('accordion-active');
+          this.classList.toggle('pre-accordion-active');
 
           ScrollTrigger.refresh();
         });
       });
-
-    });
-
-    var preAccordionHead = document.querySelectorAll('.pre-accordion'),
-      preAccordionActive = document.getElementsByClassName('pre-accordion-active');
-
-    Array.from(preAccordionHead).forEach(function (preAccordionItem, i, preAccordionHead) {
-      preAccordionItem.addEventListener('click', function (e) {
-
-        if (preAccordionActive.length > 0 && preAccordionActive[0] !== this) {
-          preAccordionActive[0].classList.remove('pre-accordion-active');
-        }
-        this.classList.toggle('pre-accordion-active');
-
-        ScrollTrigger.refresh();
-      });
-    });
+    }
 
 
 

@@ -266,6 +266,18 @@ h1, h2, h3, h4, h5, h6 {
   background-color: transparent;
 }
 
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  -webkit-transform: unset;
+      -ms-transform: unset;
+          transform: unset;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+}
+
 .fraction {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1264,6 +1276,16 @@ ol li::after {
   pointer-events: none;
 }
 
+[data-transform=menuFade] {
+  will-change: transform;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  opacity: 0;
+}
+
 @-webkit-keyframes moveLight {
   from {
     -webkit-transform: translateX(-4rem) skewX(-45deg);
@@ -2183,9 +2205,6 @@ ol li::after {
 .menu.mobile-menu--opened {
   pointer-events: all;
 }
-.menu.mobile-menu--opened .menu__inner {
-  right: 0;
-}
 .menu.mobile-menu--opened .menu__overlay {
   opacity: 1;
   visibility: visible;
@@ -2233,7 +2252,7 @@ ol li::after {
   position: fixed;
   top: 0;
   bottom: 0;
-  right: -100%;
+  right: 0;
   z-index: 102;
   height: 100vh;
   max-width: 81rem;
@@ -2242,6 +2261,12 @@ ol li::after {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   overflow-y: scroll;
+  -webkit-clip-path: inset(0% 0% 0% 100%);
+          clip-path: inset(0% 0% 0% 100%);
+}
+.menu.mobile-menu--opened .menu__inner {
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
 }
 .menu__list-item {
   padding-bottom: 2rem;
@@ -2386,6 +2411,15 @@ ol li::after {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  -webkit-transition: all 0.5s ease 0.25s;
+  -o-transition: all 0.5s ease 0.25s;
+  transition: all 0.5s ease 0.25s;
+  -webkit-clip-path: inset(0% 0% 0% 100%);
+          clip-path: inset(0% 0% 0% 100%);
+}
+.menu.mobile-menu--opened .menu__foot {
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
 }
 .menu__foot-container {
   display: -webkit-box;
@@ -9005,6 +9039,8 @@ ol li::after {
     right: 0;
     padding: 11rem 0 0;
     gap: 2rem;
+    -webkit-clip-path: inset(0% 0% 100% 0%);
+            clip-path: inset(0% 0% 100% 0%);
   }
   .menu.mobile-menu--opened .menu__inner {
     top: 0;
@@ -9024,6 +9060,8 @@ ol li::after {
   }
   .menu__foot {
     padding: 2rem 0;
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
   }
   .menu__foot-title {
     font-size: 1.4rem;
