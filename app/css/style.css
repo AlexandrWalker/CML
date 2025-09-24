@@ -1031,6 +1031,10 @@ ol li::after {
   right: 0;
   z-index: 10;
   height: 14.4rem;
+  transition: transform 0.5s ease;
+}
+.head.out {
+  transform: translateY(-100%);
 }
 
 .header {
@@ -1290,6 +1294,10 @@ ol li::after {
   align-items: center;
   gap: 2rem;
   width: fit-content;
+  /**/
+  width: 15.6rem;
+  justify-content: flex-end;
+  /**/
   height: 6rem;
   padding: 1rem 2rem;
   background-color: transparent;
@@ -1329,6 +1337,8 @@ ol li::after {
   font-size: 1.6rem;
   line-height: 100%;
   text-transform: uppercase;
+  width: 100%;
+  text-align: center;
 }
 .burger span {
   position: relative;
@@ -1340,6 +1350,7 @@ ol li::after {
   height: 0.2rem;
   background-color: var(--primary-accent);
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 .burger span::before {
   content: "";
@@ -1800,6 +1811,7 @@ ol li::after {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  justify-content: flex-end;
 }
 .menu__head-link {
   width: auto;
@@ -1904,11 +1916,13 @@ ol li::after {
 }
 .menu .container {
   padding: 0 9rem 0 14rem;
+  padding: 0 13rem 0 14rem;
 }
 .menu .header__btn {
   justify-content: space-between;
   width: 100%;
   border-color: var(--primary-black-50);
+  max-width: 30.8rem;
 }
 .menu .header__btn-head {
   color: var(--primary-black);
@@ -2801,7 +2815,7 @@ ol li::after {
 }
 .hero__container {
   height: calc(100% - 1rem);
-  background-image: url(./../images/main/hero-bg.png);
+  background-image: url(./../images/main/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -6219,7 +6233,7 @@ ol li::after {
 }
 .general--big {
   background-color: var(--primary-black);
-  background-image: url(./../images/main/hero-bg.png);
+  background-image: url(./../images/main/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;

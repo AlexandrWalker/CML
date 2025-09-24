@@ -7,6 +7,12 @@
   right: 0;
   z-index: 10;
   height: 14.4rem;
+
+  transition: transform 0.5s ease;
+
+  &.out {
+    transform: translateY(-100%);
+  }
 }
 
 .header {
@@ -309,6 +315,12 @@
   align-items: center;
   gap: 2rem;
   width: fit-content;
+
+  /**/
+  width: 15.6rem;
+  justify-content: flex-end;
+  /**/
+
   height: 6rem;
   padding: 1rem 2rem;
   background-color: transparent;
@@ -358,6 +370,9 @@
     font-size: 1.6rem;
     line-height: 100%;
     text-transform: uppercase;
+
+    width: 100%;
+    text-align: center;
   }
 
   span {
@@ -370,6 +385,8 @@
     height: 0.2rem;
     background-color: var(--primary-accent);
     transition: all 0.3s ease;
+
+    flex-shrink: 0;
 
     &::before {
       content: "";

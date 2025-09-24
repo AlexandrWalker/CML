@@ -270,7 +270,7 @@
         lenis.stop();
 
         const menuItems = document.querySelectorAll('.menu__body ul li.menu__list-item');
-        for (let i = 0; menuItems.length != menuItems[i]; i++) {
+        for (let i = 0; menuItems.length != i; i++) {
           const menuItem = menuItems[i].querySelector('[data-transform="menuFade"]');
           gsap.fromTo(menuItem,
             {
@@ -1205,6 +1205,28 @@
         });
       }
     });
+
+
+
+    /**
+     * Управляет поведением хедером.
+     */
+    function headerFunc() {
+      const header = document.querySelector('header');
+      const firstSection = document.querySelector('section');
+      let lastScrollTop = 1;
+      const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+
+      window.addEventListener('scroll', () => {
+        if (scrollPosition() > lastScrollTop && scrollPosition() > firstSection.offsetHeight) {
+          header.classList.add('out');
+        } else {
+          header.classList.remove('out');
+        }
+        lastScrollTop = scrollPosition();
+      })
+    }
+    headerFunc();
 
 
 
