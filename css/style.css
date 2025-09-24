@@ -1322,6 +1322,16 @@ ol li::after {
   right: 0;
   z-index: 10;
   height: 14.4rem;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.head.out {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .header {
@@ -1703,6 +1713,12 @@ ol li::after {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  /**/
+  width: 15.6rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  /**/
   height: 6rem;
   padding: 1rem 2rem;
   background-color: transparent;
@@ -1748,6 +1764,8 @@ ol li::after {
   font-size: 1.6rem;
   line-height: 100%;
   text-transform: uppercase;
+  width: 100%;
+  text-align: center;
 }
 .burger span {
   position: relative;
@@ -1770,6 +1788,8 @@ ol li::after {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .burger span::before {
   content: "";
@@ -2377,6 +2397,9 @@ ol li::after {
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 2rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .menu__head-link {
   width: auto;
@@ -2521,6 +2544,7 @@ ol li::after {
 }
 .menu .container {
   padding: 0 9rem 0 14rem;
+  padding: 0 13rem 0 14rem;
 }
 .menu .header__btn {
   -webkit-box-pack: justify;
@@ -2528,6 +2552,7 @@ ol li::after {
           justify-content: space-between;
   width: 100%;
   border-color: var(--primary-black-50);
+  max-width: 30.8rem;
 }
 .menu .header__btn-head {
   color: var(--primary-black);
@@ -3705,7 +3730,7 @@ ol li::after {
 }
 .hero__container {
   height: calc(100% - 1rem);
-  background-image: url(./../images/main/hero-bg.png);
+  background-image: url(./../images/main/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -8333,7 +8358,7 @@ ol li::after {
 }
 .general--big {
   background-color: var(--primary-black);
-  background-image: url(./../images/main/hero-bg.png);
+  background-image: url(./../images/main/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
