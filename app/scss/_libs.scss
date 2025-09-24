@@ -141,6 +141,14 @@
   }
 }
 
+.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  transform: unset;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: unset;
+}
+
 .fraction {
   display: flex;
   justify-content: center;

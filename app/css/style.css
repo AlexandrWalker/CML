@@ -234,6 +234,14 @@ h1, h2, h3, h4, h5, h6 {
   background-color: transparent;
 }
 
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  transform: unset;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: unset;
+}
+
 .fraction {
   display: flex;
   justify-content: center;
@@ -999,6 +1007,12 @@ ol li::after {
   pointer-events: none;
 }
 
+[data-transform=menuFade] {
+  will-change: transform;
+  transition: transform 0.3s ease;
+  opacity: 0;
+}
+
 @keyframes moveLight {
   from {
     transform: translateX(-4rem) skewX(-45deg);
@@ -1657,9 +1671,6 @@ ol li::after {
 .menu.mobile-menu--opened {
   pointer-events: all;
 }
-.menu.mobile-menu--opened .menu__inner {
-  right: 0;
-}
 .menu.mobile-menu--opened .menu__overlay {
   opacity: 1;
   visibility: visible;
@@ -1699,13 +1710,17 @@ ol li::after {
   position: fixed;
   top: 0;
   bottom: 0;
-  right: -100%;
+  right: 0;
   z-index: 102;
   height: 100vh;
   max-width: 81rem;
   width: 100%;
   transition: all 0.5s ease;
   overflow-y: scroll;
+  clip-path: inset(0% 0% 0% 100%);
+}
+.menu.mobile-menu--opened .menu__inner {
+  clip-path: inset(0 0 0 0);
 }
 .menu__list-item {
   padding-bottom: 2rem;
@@ -1811,6 +1826,11 @@ ol li::after {
   color: var(--white);
   padding: 3rem 0 5rem;
   flex: 0 0 auto;
+  transition: all 0.5s ease 0.25s;
+  clip-path: inset(0% 0% 0% 100%);
+}
+.menu.mobile-menu--opened .menu__foot {
+  clip-path: inset(0 0 0 0);
 }
 .menu__foot-container {
   display: flex;
@@ -6843,6 +6863,7 @@ ol li::after {
     right: 0;
     padding: 11rem 0 0;
     gap: 2rem;
+    clip-path: inset(0% 0% 100% 0%);
   }
   .menu.mobile-menu--opened .menu__inner {
     top: 0;
@@ -6862,6 +6883,7 @@ ol li::after {
   }
   .menu__foot {
     padding: 2rem 0;
+    clip-path: inset(0 0 0 0);
   }
   .menu__foot-title {
     font-size: 1.4rem;

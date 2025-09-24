@@ -872,6 +872,12 @@ ol {
   }
 }
 
+[data-transform="menuFade"] {
+  will-change: transform;
+  transition: transform 0.3s ease;
+  opacity: 0;
+}
+
 @keyframes moveLight {
   from {
     transform: translateX(-4rem) skewX(-45deg);

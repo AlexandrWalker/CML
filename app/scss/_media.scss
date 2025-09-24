@@ -509,6 +509,8 @@
     right: 0;
     padding: 11rem 0 0;
     gap: 2rem;
+
+    clip-path: inset(0% 0% 100% 0%);
   }
 
   .menu.mobile-menu--opened .menu__inner {
@@ -534,6 +536,7 @@
 
   .menu__foot {
     padding: 2rem 0;
+    clip-path: inset(0 0 0 0);
   }
 
   .menu__foot-title {

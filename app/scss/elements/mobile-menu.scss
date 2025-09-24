@@ -19,7 +19,7 @@
     pointer-events: all;
 
     .menu__inner {
-      right: 0;
+      // right: 0;
     }
 
     .menu__overlay {
@@ -72,13 +72,20 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -100%;
+    right: 0;
+    // right: -100%;
     z-index: 102;
     height: 100vh;
     max-width: 81rem;
     width: 100%;
     transition: all 0.5s ease;
     overflow-y: scroll;
+
+    clip-path: inset(0% 0% 0% 100%);
+
+    .menu.mobile-menu--opened & {
+      clip-path: inset(0 0 0 0)
+    }
   }
 
   &__list {
@@ -223,6 +230,13 @@
     color: var(--white);
     padding: 3rem 0 5rem;
     flex: 0 0 auto;
+
+    transition: all 0.5s ease 0.25s;
+    clip-path: inset(0% 0% 0% 100%);
+
+    .menu.mobile-menu--opened & {
+      clip-path: inset(0 0 0 0)
+    }
 
     &-container {
       display: flex;
