@@ -170,23 +170,20 @@
 }
 
 .story {
-  // overflow: visible;
-  // overflow-y: hidden;
+  overflow: clip;
 
-  &__inner {}
-
-  &__slider {
-    // overflow-x: visible;
+  &__inner {
+    width: 100%;
   }
 
   &__slide {
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    // width: 65rem;
     width: 56rem;
 
     &:last-child {
+      width: fit-content;
 
       .story__item-arrow {
         display: none;
@@ -195,26 +192,10 @@
 
     &.swiper-slide-active {
 
-      .story__item-head {
-        // background-color: var(--primary-accent);
-      }
-
       .story__item-year {
-        // color: var(--white);
         color: var(--primary-accent);
       }
     }
-
-    // &-active {
-
-    //   .story__item-head {
-    //     background-color: var(--primary-accent);
-    //   }
-
-    //   .story__item-year {
-    //     color: var(--white);
-    //   }
-    // }
   }
 
   &__item {
@@ -477,5 +458,12 @@
         gap: 0.4rem 1rem;
       }
     }
+  }
+}
+
+.about-page {
+
+  .general {
+    overflow: hidden;
   }
 }

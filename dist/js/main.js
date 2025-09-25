@@ -223,7 +223,10 @@
         onComplete: () => {
           console.log('scrolled to anchor')
         }
-      }
+      },
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true
     });
 
     lenis.on('scroll', ScrollTrigger.update);
@@ -746,128 +749,137 @@
     const timeline = document.querySelector('.timeline');
     if (timeline) {
 
-      const timeline = document.querySelector('.timeline-container');
-      const timelineWrapper = timeline.querySelector('.timeline-wrapper');
-      const items = gsap.utils.toArray('.timeline-item', timeline);
-      // const btnPrev = timeline.querySelector('.timeline-button-prev');
-      // const btnNext = timeline.querySelector('.timeline-button-next');
+      const timelinePlaceholder = document.querySelector('.timeline-placeholder');
+      const timelineContainer = document.querySelector('.timeline-container');
+      const timelineWrapper = document.querySelector('.timeline-wrapper');
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      // const btnPrev = document.querySelector('.timeline-button-prev');
+      // const btnNext = document.querySelector('.timeline-button-next');
 
-      // const itemWidth = 400 + 20;
-      const itemWidth = items[1].offsetWidth;
-      const totalItems = items.length;
-      const totalWidth = itemWidth * totalItems;
-      const containerWidth = timeline.offsetWidth;
+      let itemWidth = 0;
+      let containerWidth = 0;
+      let totalWidth = 0;
+      let maxScroll = 0;
+      let placeholderHeight = 0;
+      let containerHeight = 0;
+      let scrollDistance = 0;
 
-      const pauseDuration = 1;
-      const scrollDuration = 2;
-      const totalDuration = pauseDuration + scrollDuration + pauseDuration;
-
-      const maxShift = totalWidth - containerWidth;
-
+      let timelineProgress = 0;
       let currentIndex = 0;
       let isAnimating = false;
-
       let startX = 0;
+      let startY = 0;
       let currentX = 0;
       let isDragging = false;
       let startScroll = 0;
+      let xSwipe = false;
 
-      const tl = ScrollTrigger.create({
-        trigger: timeline,
-        start: 'top top',
-        end: () => `+=${totalDuration * itemWidth}`,
-        pin: true,
-        onUpdate: self => {
-          if (isAnimating || isDragging) return;
+      function calculatePlaceholderHeight() {
+        containerHeight = timelineContainer.offsetHeight;
 
-          const progress = self.progress;
-          let x = 0;
+        itemWidth = timelineItems[0].clientWidth;
+        console.log(itemWidth);
+        containerWidth = timelineContainer.offsetWidth;
+        totalWidth = itemWidth * timelineItems.length + ((timelineItems.length - 1) * 20);
+        maxScroll = Math.max(0, totalWidth - containerWidth);
 
-          if (progress < pauseDuration / totalDuration) {
-            currentIndex = 0;
-            x = 0;
-          } else if (progress > (pauseDuration + scrollDuration) / totalDuration) {
-            currentIndex = totalItems - 1;
-            x = -maxShift;
-          } else {
-            const horProgress = (progress - pauseDuration / totalDuration) / (scrollDuration / totalDuration);
-            const exactIndex = horProgress * (totalItems - 1);
-            currentIndex = Math.round(exactIndex);
-            x = -horProgress * maxShift;
-          }
+        const horizontalScrollSpace = (totalWidth / containerWidth) * containerHeight;
+        placeholderHeight = containerHeight + horizontalScrollSpace;
+        scrollDistance = placeholderHeight - containerHeight;
 
-          gsap.set(timelineWrapper, { x });
-          updateActiveClass(currentIndex);
-        },
-        invalidateOnRefresh: true
-      });
-
-      function updateActiveClass(index) {
-        items.forEach((item, i) => {
-          item.classList.toggle('timeline-active', i === index);
-        });
+        timelinePlaceholder.style.height = `${placeholderHeight}px`;
       }
 
-      function getScrollYForIndex(index) {
-        const startScroll = tl.start;
-        const scrollLength = totalDuration * itemWidth;
-        const progress = getProgressForIndex(index);
-
-        return startScroll + progress * scrollLength;
-      }
-
-      function getProgressForIndex(index) {
-        if (index === 0) return 0;
-        if (index === totalItems - 1) return 1;
-        return pauseDuration / totalDuration + (index / (totalItems - 1)) * (scrollDuration / totalDuration);
-      }
+      // function updateButtons() {
+      //   btnPrev.disabled = currentIndex === 0;
+      //   btnNext.disabled = currentIndex === timelineItems.length - 1;
+      // }
 
       function goToIndex(index) {
-        index = Math.min(Math.max(index, 0), totalItems - 1);
-        if (index === currentIndex || isAnimating) return;
+        if (isAnimating) return;
+
+        index = Math.max(0, Math.min(index, timelineItems.length - 1));
+        if (index === currentIndex) return;
 
         isAnimating = true;
-        const targetProgress = getProgressForIndex(index);
-        let targetX = 0;
 
-        if (targetProgress < pauseDuration / totalDuration) {
-          targetX = 0;
-        } else if (targetProgress > (pauseDuration + scrollDuration) / totalDuration) {
-          targetX = -maxShift;
-        } else {
-          const horProgress = (targetProgress - pauseDuration / totalDuration) / (scrollDuration / totalDuration);
-          targetX = -horProgress * maxShift;
-        }
+        const targetProgress = index / (timelineItems.length - 1);
+        const containerTop = timelinePlaceholder.offsetTop;
+        const targetScroll = containerTop + (targetProgress * scrollDistance);
 
-        gsap.to(timelineWrapper, {
-          x: targetX,
+        lenis.scrollTo(targetScroll, {
           duration: 0.7,
-          ease: 'power2.out',
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           onComplete: () => {
-            currentIndex = index;
-            updateActiveClass(currentIndex);
             isAnimating = false;
           }
         });
-
-        const targetScroll = tl.start + targetProgress * (tl.end - tl.start);
-        gsap.to(window, {
-          scrollTo: { y: targetScroll, autoKill: false },
-          duration: 0.7,
-          ease: 'power2.out'
-        });
       }
+
+      function updateTimeline(scrollY) {
+        const containerTop = timelinePlaceholder.offsetTop;
+
+        let scrollProgress = (scrollY - containerTop) / scrollDistance;
+        scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+
+        if (scrollY >= containerTop && scrollY <= containerTop + scrollDistance) {
+          timelineProgress = scrollProgress;
+
+          const translateX = -timelineProgress * maxScroll;
+          timelineWrapper.style.transform = `translateX(${translateX}px)`;
+
+          updateActiveItem(timelineProgress);
+
+        } else {
+          if (scrollY < containerTop) {
+            timelineProgress = 0;
+            timelineWrapper.style.transform = 'translateX(0px)';
+            updateActiveItem(0);
+          }
+
+          else if (scrollY > containerTop + scrollDistance) {
+            timelineProgress = 1;
+            timelineWrapper.style.transform = `translateX(${-maxScroll}px)`;
+            updateActiveItem(1);
+          }
+        }
+      }
+
+      function updateActiveItem(progress) {
+        const newIndex = Math.min(
+          timelineItems.length - 1,
+          Math.floor(progress * timelineItems.length)
+        );
+
+        if (newIndex !== currentIndex) {
+          currentIndex = newIndex;
+
+          timelineItems.forEach((item, index) => {
+            item.classList.toggle('timeline-active', index === currentIndex);
+          });
+
+          // updateButtons();
+        }
+      }
+
+      // btnPrev.addEventListener('click', () => {
+      //   goToIndex(currentIndex - 1);
+      // });
+
+      // btnNext.addEventListener('click', () => {
+      //   goToIndex(currentIndex + 1);
+      // });
 
       function handleTouchStart(e) {
         if (isAnimating) return;
 
         startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+        startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
         currentX = parseInt(gsap.getProperty(timelineWrapper, 'x') || 0, 10);
-        startScroll = window.scrollY;
+        startScroll = lenis.scroll;
         isDragging = true;
+        xSwipe = false;
         timelineWrapper.classList.add('grabbing');
-
-        ScrollTrigger.getById('timeline')?.disable();
       }
 
       function handleTouchMove(e) {
@@ -875,14 +887,35 @@
         e.preventDefault();
 
         const x = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-        const diff = x - startX;
-        let newX = currentX + diff;
+        const y = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
 
-        newX = Math.min(Math.max(newX, -maxShift), 0);
+        if (!xSwipe) {
+          const diffX = Math.abs(x - startX);
+          const diffY = Math.abs(y - startY);
 
-        gsap.set(timelineWrapper, { x: newX });
+          if (diffY > diffX && diffY > 10) {
+            isDragging = false;
+            timelineWrapper.classList.remove('grabbing');
+            return;
+          }
 
-        window.scrollTo(0, startScroll);
+          if (diffX > 10) {
+            xSwipe = true;
+            e.preventDefault();
+          }
+        }
+
+        if (xSwipe) {
+          const diff = x - startX;
+
+          let newX = currentX + diff;
+
+          newX = Math.min(Math.max(newX, -maxScroll), 0);
+
+          timelineWrapper.style.transform = `translateX(${newX}px)`;
+
+          lenis.scrollTo(startScroll, { immediate: true });
+        }
       }
 
       function handleTouchEnd(e) {
@@ -903,8 +936,6 @@
         } else {
           goToIndex(currentIndex);
         }
-
-        ScrollTrigger.getById('timeline')?.enable();
       }
 
       timelineWrapper.addEventListener('touchstart', handleTouchStart, { passive: false });
@@ -917,23 +948,30 @@
       timelineWrapper.addEventListener('mouseup', handleTouchEnd);
       timelineWrapper.addEventListener('mouseleave', handleTouchEnd);
 
-      // btnPrev.addEventListener('click', () => {
-      //   if (isAnimating) return;
-      //   if (currentIndex > 0) {
-      //     goToIndex(currentIndex - 1);
-      //   }
-      // });
+      lenis.on('scroll', ({ scroll }) => {
+        if (!isDragging) { // Не обновляем во время свайпа
+          updateTimeline(scroll);
+        }
+      });
 
-      // btnNext.addEventListener('click', () => {
-      //   if (isAnimating) return;
-      //   if (currentIndex < totalItems - 1) {
-      //     goToIndex(currentIndex + 1);
-      //   }
-      // });
+      window.addEventListener('resize', () => {
+        calculatePlaceholderHeight();
+        updateTimeline(lenis.scroll);
+        // updateButtons();
+      });
 
-      updateActiveClass(currentIndex);
+      calculatePlaceholderHeight();
+      // updateButtons();
 
-      tl.id = 'timeline';
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+
+      updateActiveItem(0);
+
     }
 
 
@@ -1389,341 +1427,6 @@
       tgPlateClose.addEventListener('click', e => {
         tgPlate.classList.remove(tgPlateClassName);
       })
-    }
-
-
-
-    /**
-     * Карта
-     */
-    if (document.getElementById('tagCloud')) {
-      const map = [
-        { name: 'Россия', size: 'extraBig', opacity: 1, static: true },
-        { name: 'ОАЭ', size: 'big', opacity: 1 },
-        { name: 'Турция', size: 'big', opacity: 1 },
-        { name: 'Иран', size: 'big', opacity: 1 },
-        { name: 'Израиль', size: 'big', opacity: 1 },
-        { name: 'Япония', size: 'big', opacity: 1 },
-        { name: 'Гонконг', size: 'big', opacity: 1 },
-        { name: 'Малайзия', size: 'big', opacity: 1 },
-        { name: 'Индонезия', size: 'big', opacity: 1 },
-        { name: 'Китай', size: 'big', opacity: 1 },
-        { name: 'Индия', size: 'big', opacity: 1 },
-        { name: 'ЮАР', size: 'big', opacity: 1 },
-        { name: 'Польша', size: 'big', opacity: 1 },
-        { name: 'Египет', size: 'big', opacity: 1 },
-        { name: 'Таиланд', size: 'big', opacity: 1 },
-        { name: 'Вьетнам', size: 'big', opacity: 1 },
-        { name: 'Корея', size: 'big', opacity: 1 },
-        { name: 'Сербия', size: 'mid', opacity: 0.8 },
-        { name: 'Мьянма', size: 'mid', opacity: 0.8 },
-        { name: 'Мексика', size: 'mid', opacity: 0.8 },
-        { name: 'Камбоджа', size: 'mid', opacity: 0.8 },
-        { name: 'Канада', size: 'mid', opacity: 0.8 },
-        { name: 'Испания', size: 'mid', opacity: 0.8 },
-        { name: 'Чехия', size: 'mid', opacity: 0.8 },
-        { name: 'США', size: 'mid', opacity: 0.8 },
-        { name: 'Оман', size: 'mid', opacity: 0.8 },
-        { name: 'Германия', size: 'mid', opacity: 0.8 },
-        { name: 'Франция', size: 'mid', opacity: 0.8 },
-        { name: 'Латвия', size: 'mid', opacity: 0.8 },
-        { name: 'Италия', size: 'mid', opacity: 0.8 },
-        { name: 'Тунис', size: 'mid', opacity: 0.8 },
-        { name: 'Литва', size: 'mid', opacity: 0.8 },
-        { name: 'Великобритания', size: 'mid', opacity: 0.8 },
-        { name: 'Эстония', size: 'mid', opacity: 0.8 },
-        { name: 'Швеция', size: 'small', opacity: 0.7 },
-        { name: 'Австрия', size: 'small', opacity: 0.7 },
-        { name: 'Дания', size: 'small', opacity: 0.7 },
-        { name: 'Кения', size: 'small', opacity: 0.7 },
-        { name: 'Шри-Ланка', size: 'small', opacity: 0.7 },
-        { name: 'Кот-д’Ивуар', size: 'small', opacity: 0.7 },
-        { name: 'Аргентина', size: 'small', opacity: 0.7 },
-        { name: 'Австралия', size: 'small', opacity: 0.7 },
-        { name: 'Йемен', size: 'small', opacity: 0.7 },
-        { name: 'Бангладеш', size: 'small', opacity: 0.7 },
-        { name: 'Бельгия', size: 'small', opacity: 0.7 },
-        { name: 'Эквадор', size: 'small', opacity: 0.7 },
-        { name: 'Катар', size: 'small', opacity: 0.7 },
-        { name: 'Нидерланды', size: 'small', opacity: 0.7 },
-        { name: 'Швейцария', size: 'small', opacity: 0.7 },
-        { name: 'Марокко', size: 'small', opacity: 0.7 },
-        { name: 'Португалия', size: 'small', opacity: 0.7 },
-        { name: 'Венгрия', size: 'small', opacity: 0.7 },
-        { name: 'Бразилия', size: 'small', opacity: 0.7 },
-        { name: 'Сингапур', size: 'small', opacity: 0.7 },
-        { name: 'Словакия', size: 'small', opacity: 0.7 },
-        { name: 'Греция', size: 'small', opacity: 0.7 },
-        { name: 'Болгария', size: 'small', opacity: 0.7 },
-        { name: 'Словения', size: 'small', opacity: 0.7 },
-        { name: 'Саудовская Аравия', size: 'small', opacity: 0.7 },
-        { name: 'Нигерия', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Новая Зеландия', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Папуа — Новая Гвинея', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Чили', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Бахрейн', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Нигер', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Норвегия', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Маврикий', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Мальта', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Перу', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Сьерра-Леоне', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Непал', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Бруней', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Ангола', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Гана', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Сирия', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Доминиканка', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Мадагаскар', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Ливия', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Венесуэла', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Ливан', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Кипр Иордания', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Филиппины', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Панама', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Эфиопия', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Лаос', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Гватемала', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Уругвай', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Ирландия', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Гвинея', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Танзания', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Камерун', size: 'extraSmall', opacity: 0.5 },
-        { name: 'Кувейт', size: 'extraSmall', opacity: 0.5 },
-      ];
-
-      class TagCloud {
-        constructor() {
-
-          this.cloud = document.getElementById('tagCloud');
-          this.tags = [];
-          this.animationId = null;
-          this.lastTime = 0;
-          this.center = { x: 50, y: 50 };
-          this.speedFactor = 0.12;
-          this.collisionCheckInterval = 10;
-          this.frameCount = 0;
-          this.fadeStartDistance = 14;
-          this.fadeEndDistance = 2;
-
-          this.init();
-        }
-
-        init() {
-          this.createTags();
-          this.startAnimation();
-          window.addEventListener('resize', this.handleResize.bind(this));
-        }
-
-        createTags() {
-          this.cloud.innerHTML = '';
-          this.tags = [];
-
-          const staticTag = map.find(tag => tag.static);
-          if (staticTag) {
-            const staticElement = document.createElement('div');
-            staticElement.className = `tag ${staticTag.size}`;
-            staticElement.textContent = staticTag.name;
-            staticElement.style.opacity = staticTag.opacity;
-            staticElement.style.left = `${this.center.x}%`;
-            staticElement.style.top = `${this.center.y}%`;
-            staticElement.style.transform = 'translate(-50%, -50%)';
-            this.cloud.appendChild(staticElement);
-
-            this.staticTag = {
-              element: staticElement,
-              x: this.center.x,
-              y: this.center.y,
-              size: 1,
-              opacity: staticTag.opacity
-            };
-          }
-
-          const sortedTags = map.filter(tag => !tag.static).sort((a, b) => {
-            const sizes = { 'extraBig': 4, 'big': 3, 'mid': 2, 'small': 1, 'extraSmall': 0 };
-            return sizes[b.size] - sizes[a.size];
-          });
-
-          sortedTags.forEach((tag, index) => {
-            const tagElement = document.createElement('div');
-            tagElement.className = `tag ${tag.size}`;
-            tagElement.textContent = tag.name;
-            tagElement.style.opacity = tag.opacity;
-
-            tagElement.style.visibility = 'hidden';
-            this.cloud.appendChild(tagElement);
-
-            const tagRect = tagElement.getBoundingClientRect();
-            const tagWidth = tagRect.width;
-            const tagHeight = tagRect.height;
-
-            this.cloud.removeChild(tagElement);
-
-            const angle = Math.random() * Math.PI * 2;
-            const distance = 0.7 + Math.random() * 0.2;
-            const left = this.center.x + Math.cos(angle) * distance * 50;
-            const top = this.center.y + Math.sin(angle) * distance * 50;
-
-            tagElement.style.left = `${left}%`;
-            tagElement.style.top = `${top}%`;
-            tagElement.style.visibility = 'visible';
-            tagElement.style.animation = `floatIn ${0.3 + Math.random() * 0.4}s ease-out forwards`;
-
-            this.cloud.appendChild(tagElement);
-
-            // Уменьшил время затухания до 0.5-1 секунды
-            const fadeDuration = 500 + Math.random() * 500;
-
-            this.tags.push({
-              element: tagElement,
-              originalSize: tag.size,
-              x: left,
-              y: top,
-              speed: (0.3 + Math.random() * 0.45) * this.speedFactor,
-              size: 1,
-              opacity: tag.opacity,
-              width: tagWidth,
-              height: tagHeight,
-              sizeValue: this.getSizeValue(tag.size),
-              fadeDuration: fadeDuration,
-              fadeStartTime: 0,
-              isFading: false
-            });
-          });
-        }
-
-        getSizeValue(size) {
-          const sizes = { 'extraBig': 4, 'big': 3, 'mid': 2, 'small': 1, 'extraSmall': 0 };
-          return sizes[size];
-        }
-
-        startAnimation() {
-          if (this.animationId) {
-            cancelAnimationFrame(this.animationId);
-          }
-
-          const animate = (time) => {
-            if (!this.lastTime) this.lastTime = time;
-            const deltaTime = Math.min(time - this.lastTime, 100) / 1000;
-            this.lastTime = time;
-
-            this.updateTags(deltaTime, time);
-
-            this.frameCount++;
-            if (this.frameCount % this.collisionCheckInterval === 0) {
-              this.checkCollisions();
-            }
-
-            this.animationId = requestAnimationFrame(animate);
-          };
-
-          this.animationId = requestAnimationFrame(animate);
-        }
-
-        updateTags(deltaTime, currentTime) {
-          this.tags.forEach(tag => {
-            const dx = this.center.x - tag.x;
-            const dy = this.center.y - tag.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            // Сначала затухание
-            if (distance < this.fadeStartDistance && !tag.isFading) {
-              tag.isFading = true;
-              tag.fadeStartTime = currentTime;
-            }
-
-            if (tag.isFading) {
-              const fadeProgress = Math.min((currentTime - tag.fadeStartTime) / tag.fadeDuration, 1);
-              tag.opacity = 1 - fadeProgress;
-              tag.element.style.opacity = tag.opacity;
-            }
-
-            // Затем движение (если ещё виден)
-            if (tag.opacity > 0.01) {
-              const directionX = dx / distance;
-              const directionY = dy / distance;
-
-              tag.x += directionX * tag.speed * 50 * deltaTime;
-              tag.y += directionY * tag.speed * 50 * deltaTime;
-
-              const progress = distance / 50;
-              tag.size = progress * 0.8 + 0.2;
-
-              tag.element.style.left = `${tag.x}%`;
-              tag.element.style.top = `${tag.y}%`;
-              tag.element.style.transform = `translate(-50%, -50%) scale(${tag.size})`;
-            }
-
-            if (tag.opacity <= 0.01 || distance < this.fadeEndDistance) {
-              this.resetTag(tag, currentTime);
-            }
-          });
-        }
-
-        checkCollisions() {
-          const sortedTags = [...this.tags].sort((a, b) => a.sizeValue - b.sizeValue);
-
-          sortedTags.forEach(tag => {
-            tag.element.classList.remove('hidden');
-          });
-
-          for (let i = 0; i < sortedTags.length; i++) {
-            for (let j = i + 1; j < sortedTags.length; j++) {
-              const tag1 = sortedTags[i];
-              const tag2 = sortedTags[j];
-
-              if (this.isColliding(tag1, tag2)) {
-                const smallerTag = tag1.sizeValue < tag2.sizeValue ? tag1 : tag2;
-                smallerTag.element.classList.add('hidden');
-              }
-            }
-          }
-        }
-
-        isColliding(tag1, tag2) {
-          const rect1 = tag1.element.getBoundingClientRect();
-          const rect2 = tag2.element.getBoundingClientRect();
-
-          return !(
-            rect1.right < rect2.left ||
-            rect1.left > rect2.right ||
-            rect1.bottom < rect2.top ||
-            rect1.top > rect2.bottom
-          );
-        }
-
-        resetTag(tag, currentTime) {
-          const angle = Math.random() * Math.PI * 2;
-          const distance = 0.7 + Math.random() * 0.2;
-
-          tag.x = this.center.x + Math.cos(angle) * distance * 50;
-          tag.y = this.center.y + Math.sin(angle) * distance * 50;
-          tag.size = 1;
-          tag.opacity = 1;
-          tag.isFading = false;
-          tag.fadeStartTime = 0;
-
-          tag.element.style.left = `${tag.x}%`;
-          tag.element.style.top = `${tag.y}%`;
-          tag.element.style.transform = `translate(-50%, -50%) scale(1)`;
-          tag.element.style.opacity = 1;
-          tag.element.classList.remove('hidden');
-
-          tag.element.style.animation = 'none';
-          tag.element.style.animation = `floatIn ${0.3 + Math.random() * 0.3}s ease-out forwards`;
-        }
-
-        handleResize() {
-          clearTimeout(this.resizeTimeout);
-          this.resizeTimeout = setTimeout(() => {
-            this.createTags();
-          }, 200);
-        }
-      }
-
-      window.addEventListener('load', () => {
-        new TagCloud();
-      });
     }
 
 

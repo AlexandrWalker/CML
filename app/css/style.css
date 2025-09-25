@@ -2759,16 +2759,21 @@ ol li::after {
 }
 
 .timeline {
-  width: 100dvw;
-  padding: 0 var(--container-padding);
-  margin-left: calc(var(--container-padding) * -1);
+  width: 100%;
+}
+.timeline-placeholder {
+  position: relative;
+  height: 0;
+  overflow: visible;
 }
 .timeline-container {
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  position: relative;
 }
 .timeline-wrapper {
   display: flex;
@@ -2780,7 +2785,7 @@ ol li::after {
   cursor: grabbing;
 }
 .timeline-item {
-  flex: 0 0 var(--history-item-width);
+  flex: 0 0 auto;
   flex-shrink: 0;
 }
 .timeline-button-prev, .timeline-button-next {
@@ -4351,11 +4356,20 @@ ol li::after {
   gap: 2rem;
 }
 
+.story {
+  overflow: clip;
+}
+.story__inner {
+  width: 100%;
+}
 .story__slide {
   display: flex;
   flex-direction: row;
   gap: 2rem;
   width: 56rem;
+}
+.story__slide:last-child {
+  width: fit-content;
 }
 .story__slide:last-child .story__item-arrow {
   display: none;
@@ -4559,6 +4573,10 @@ ol li::after {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem 1rem;
+}
+
+.about-page .general {
+  overflow: hidden;
 }
 
 .offers {
