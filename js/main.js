@@ -629,10 +629,10 @@
               e.stopPropagation();
               if (headerActive.length > 0 && headerActive[0] !== this) {
                 headerActive[0].classList.remove('header__btn-active');
-                document.querySelector('.menu__body').classList.remove('down');
+                // document.querySelector('.menu__body').classList.remove('down');
               }
               this.classList.add('header__btn-active');
-              document.querySelector('.menu__body').classList.add('down');
+              // document.querySelector('.menu__body').classList.add('down');
 
               window.addEventListener('keydown', (e) => {
                 if (e.key === "Escape") {
@@ -645,10 +645,10 @@
                 if (!hItem.querySelector('.header__dropdown').contains(event.target)) {
                   hItem.classList.remove("header__btn-active");
 
-                  const menuBody = document.querySelector('.menu__body');
-                  if (menuBody.classList.contains('down')) {
-                    menuBody.classList.remove('down')
-                  }
+                  // const menuBody = document.querySelector('.menu__body');
+                  // if (menuBody.classList.contains('down')) {
+                  //   menuBody.classList.remove('down')
+                  // }
                 }
               });
 
@@ -657,10 +657,10 @@
 
                 hItem.classList.remove("header__btn-active");
 
-                const menuBody = document.querySelector('.menu__body');
-                if (menuBody.classList.contains('down')) {
-                  menuBody.classList.remove('down')
-                }
+                // const menuBody = document.querySelector('.menu__body');
+                // if (menuBody.classList.contains('down')) {
+                //   menuBody.classList.remove('down')
+                // }
               });
 
             });
@@ -671,21 +671,21 @@
 
               if (headerActive.length > 0 && headerActive[0] !== this) {
                 headerActive[0].classList.remove('header__btn-active');
-                document.querySelector('.menu__body').classList.remove('down');
+                // document.querySelector('.menu__body').classList.remove('down');
               }
 
               this.classList.add('header__btn-active');
-              document.querySelector('.menu__body').classList.add('down');
+              // document.querySelector('.menu__body').classList.add('down');
 
               // Закрытие меню при клике вне области
               this.addEventListener('mouseleave', (event) => {
                 if (!hItem.querySelector('.header__dropdown').contains(event.target)) {
                   hItem.classList.remove("header__btn-active");
 
-                  const menuBody = document.querySelector('.menu__body');
-                  if (menuBody.classList.contains('down')) {
-                    menuBody.classList.remove('down')
-                  }
+                  // const menuBody = document.querySelector('.menu__body');
+                  // if (menuBody.classList.contains('down')) {
+                  //   menuBody.classList.remove('down')
+                  // }
                 }
               });
 
@@ -694,10 +694,10 @@
 
                 hItem.classList.remove("header__btn-active");
 
-                const menuBody = document.querySelector('.menu__body');
-                if (menuBody.classList.contains('down')) {
-                  menuBody.classList.remove('down')
-                }
+                // const menuBody = document.querySelector('.menu__body');
+                // if (menuBody.classList.contains('down')) {
+                //   menuBody.classList.remove('down')
+                // }
               });
 
             });
@@ -1261,7 +1261,7 @@
         } else {
           header.classList.remove('out');
         }
-        lastScrollTop = scrollPosition();
+        lastScrollTop = scrollPosition() + 0.13;
       })
     }
     headerFunc();
@@ -1420,13 +1420,19 @@
       const tgPlateClassName = 'show';
       const delay = 3000;
 
-      setTimeout(() => {
-        tgPlate.classList.add(tgPlateClassName);
-      }, delay);
+      const hasSeenPlate = localStorage.getItem('tgPlateSeen');
+
+      if (!hasSeenPlate) {
+        setTimeout(() => {
+          tgPlate.classList.add(tgPlateClassName);
+
+          localStorage.setItem('tgPlateSeen', 'true');
+        }, delay);
+      }
 
       tgPlateClose.addEventListener('click', e => {
         tgPlate.classList.remove(tgPlateClassName);
-      })
+      });
     }
 
 
