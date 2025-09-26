@@ -2832,8 +2832,17 @@
     padding: 1rem 2rem;
   }
 
+  .menu__body {
+    transition: margin-top 0s;
+  }
+
+  .menu .header__btn-head {
+    transition-duration: 0s;
+  }
+
   .menu__body.down {
     margin-top: 33rem;
+    margin-top: 4.4rem;
   }
 
   .menu__foot-link {
@@ -2849,7 +2858,12 @@
   }
 
   .menu .header__btn {
+    max-width: 100%;
     display: flex;
+  }
+
+  .onlyClick.header__btn-active {
+    height: 4.4rem;
   }
 
   .menu .header__btn:hover {

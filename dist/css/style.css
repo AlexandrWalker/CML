@@ -11190,8 +11190,19 @@ ol li::after {
     display: none;
     padding: 1rem 2rem;
   }
+  .menu__body {
+    -webkit-transition: margin-top 0s;
+    -o-transition: margin-top 0s;
+    transition: margin-top 0s;
+  }
+  .menu .header__btn-head {
+    -webkit-transition-duration: 0s;
+         -o-transition-duration: 0s;
+            transition-duration: 0s;
+  }
   .menu__body.down {
     margin-top: 33rem;
+    margin-top: 4.4rem;
   }
   .menu__foot-link {
     white-space: unset;
@@ -11203,9 +11214,13 @@ ol li::after {
     height: 6.4rem;
   }
   .menu .header__btn {
+    max-width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .onlyClick.header__btn-active {
+    height: 4.4rem;
   }
   .menu .header__btn:hover {
     border-color: inherit;
