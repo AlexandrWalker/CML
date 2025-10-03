@@ -1233,7 +1233,6 @@
     /**
      * Таймлайн
      */
-    // if (document.getElementById('timelinePlaceholder')) {
     // можно вынести в отдельный файл - НАЧАЛО
     const TimelineScroll = {
 
@@ -1675,8 +1674,6 @@
     if (document.getElementById('timelinePlaceholder')) {
       const timeline = TimelineScroll.create('#timelinePlaceholder');
     }
-    // const timeline2 = TimelineScroll.create('#timelinePlaceholder2');
-    // }
 
 
 

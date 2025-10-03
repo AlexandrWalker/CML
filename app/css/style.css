@@ -2767,26 +2767,25 @@ ol li::after {
 
 .timeline-container {
   position: sticky;
-  top: 0;
+  top: 5rem;
   left: 0;
   width: 100%;
   height: 100vh;
+  height: auto;
   display: flex;
-  align-items: center;
-  background-color: #f0f0f0;
 }
 
 /* Мобильная версия - убираем фиксацию */
 @media (max-width: 768px) {
   .timeline-container {
     position: relative;
+    top: 0;
     height: auto;
   }
 }
 .timeline {
   position: relative;
   width: 100%;
-  overflow: hidden;
   padding: 0 13rem;
   margin-right: -13rem;
   margin-left: -13rem;
