@@ -186,11 +186,12 @@
       width: fit-content;
 
       .story__item-arrow {
-        display: none;
+        // display: none;
+        opacity: 0;
       }
     }
 
-    &.swiper-slide-active {
+    &.timeline-active {
 
       .story__item-year {
         color: var(--primary-accent);

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   /* color */
   --primary-accent: #C62826;
@@ -2758,56 +2759,99 @@ ol li::after {
   background-color: var(--white);
 }
 
-.timeline {
-  width: 100%;
-}
+/* timeline style */
 .timeline-placeholder {
   position: relative;
   height: 0;
-  overflow: visible;
 }
+
 .timeline-container {
   position: sticky;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  background-color: #f0f0f0;
 }
+
+/* Мобильная версия - убираем фиксацию */
+@media (max-width: 768px) {
+  .timeline-container {
+    position: relative;
+    height: auto;
+  }
+}
+.timeline {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 13rem;
+  margin-right: -13rem;
+  margin-left: -13rem;
+  width: calc(100% + 26rem);
+}
+
 .timeline-wrapper {
   display: flex;
-  flex-direction: row;
-  will-change: transform;
-  cursor: grab;
+  transition: transform 0.1s linear;
+}
+
+/* На мобильных устройствах - свободный скролл */
+@media (max-width: 768px) {
+  .timeline {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding: 0 2rem;
+    margin-right: -2rem;
+    margin-left: -2rem;
+    width: calc(100% + 4rem);
+  }
+  .timeline-wrapper {
+    padding: 2rem 0;
+    width: max-content;
+    transition: none;
+    gap: 1.5rem;
+  }
+  /* Скрываем scrollbar для лучшего UX */
+  .timeline::-webkit-scrollbar {
+    display: none;
+  }
+  .timeline {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 .timeline-wrapper.grabbing {
   cursor: grabbing;
+  transition: none;
 }
+
 .timeline-item {
-  flex: 0 0 auto;
+  transition: all 0.3s ease;
   flex-shrink: 0;
 }
-.timeline-button-prev, .timeline-button-next {
-  width: 5rem;
-  height: 5rem;
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
-  user-select: none;
-  font-size: 5rem;
-  transition: all 0.3s ease;
+
+/* Скрываем кнопки на мобильных устройствах */
+@media (max-width: 768px) {
+  .timeline-button-prev,
+  .timeline-button-next {
+    display: none;
+  }
 }
-.timeline-button-prev:hover, .timeline-button-next:hover {
-  color: var(--white);
-  background-color: var(--accent);
+.timeline-button-prev:disabled,
+.timeline-button-next:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: translateY(-50%) scale(1);
 }
-.timeline-button-prev i, .timeline-button-next i {
-  --font-size: 5rem;
-  color: var(--gray);
+
+.timeline-button-prev:disabled:hover,
+.timeline-button-next:disabled:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1);
 }
 
 /* main page */
@@ -4372,9 +4416,9 @@ ol li::after {
   width: fit-content;
 }
 .story__slide:last-child .story__item-arrow {
-  display: none;
+  opacity: 0;
 }
-.story__slide.swiper-slide-active .story__item-year {
+.story__slide.timeline-active .story__item-year {
   color: var(--primary-accent);
 }
 .story__item {
@@ -6517,11 +6561,6 @@ ol li::after {
 @media (min-width: 1921px) {
   html {
     font-size: calc(10px + 0 * (100vw - var(--refRes) * 1px) / var(--refRes));
-  }
-}
-@media (min-width: 1440px) {
-  .timeline.swiper {
-    overflow: unset;
   }
 }
 @media (max-width: 1440px) {
