@@ -1233,7 +1233,6 @@
     /**
      * Таймлайн
      */
-    // можно вынести в отдельный файл - НАЧАЛО
     const TimelineScroll = {
 
       defaultConfig: {
@@ -1285,7 +1284,13 @@
           xSwipe: false,
 
           scrollTimeout: null,
-          isScrolling: false
+          isScrolling: false,
+
+          buttonHoldInterval: null,
+          buttonHoldDirection: null,
+          buttonHoldDelay: 300,
+          buttonHoldSpeed: 100,
+          initialButtonPress: true
         };
 
         this.setRootElement(placeholderSelector);
@@ -1312,6 +1317,7 @@
 
       destroy() {
         window.removeEventListener('resize', this.onResize.bind(this));
+        this.stopButtonHold();
       },
 
       next() {
@@ -1328,6 +1334,45 @@
 
       getCurrentIndex() {
         return this.state.currentIndex;
+      },
+
+      startButtonHold(direction) {
+        const s = this.state;
+
+        if (s.buttonHoldInterval) {
+          clearInterval(s.buttonHoldInterval);
+        }
+
+        s.buttonHoldDirection = direction;
+        s.initialButtonPress = true;
+
+        if (direction === 'next') {
+          this.next();
+        } else {
+          this.prev();
+        }
+
+        s.buttonHoldInterval = setTimeout(() => {
+          s.initialButtonPress = false;
+          s.buttonHoldInterval = setInterval(() => {
+            if (s.buttonHoldDirection === 'next') {
+              this.next();
+            } else {
+              this.prev();
+            }
+          }, s.buttonHoldSpeed);
+        }, s.buttonHoldDelay);
+      },
+
+      stopButtonHold() {
+        const s = this.state;
+
+        if (s.buttonHoldInterval) {
+          clearTimeout(s.buttonHoldInterval);
+          clearInterval(s.buttonHoldInterval);
+          s.buttonHoldInterval = null;
+          s.buttonHoldDirection = null;
+        }
       },
 
       cacheElements() {
@@ -1381,14 +1426,12 @@
         }
 
         s.containerHeight = s.timelineContainer.offsetHeight;
-        s.itemWidth = s.timelineItems[0].offsetWidth + 20;
-        s.containerWidth = s.timelineContainer.offsetWidth;
+        s.itemWidth = s.timelineItems[0].offsetWidth;
+        s.containerWidth = s.timeline.offsetWidth;
         s.totalWidth = s.itemWidth * s.timelineItems.length;
         s.maxScroll = Math.max(0, s.totalWidth - s.containerWidth);
-
-        const horizontalScrollSpace = (s.totalWidth / s.containerWidth) * s.containerHeight;
-        s.placeholderHeight = s.containerHeight + horizontalScrollSpace;
-        s.scrollDistance = s.placeholderHeight - s.containerHeight;
+        s.scrollDistance = s.maxScroll;
+        s.placeholderHeight = s.containerHeight + s.scrollDistance;
 
         s.timelinePlaceholder.style.height = `${s.placeholderHeight}px`;
       },
@@ -1414,12 +1457,13 @@
 
         s.isAnimating = true;
 
-        const targetProgress = index / (s.timelineItems.length - 1);
+        const maxIndex = s.timelineItems.length - 1;
+        const targetProgress = index / maxIndex;
         const containerTop = s.timelinePlaceholder.offsetTop;
         const targetScroll = containerTop + (targetProgress * s.scrollDistance);
 
         lenis.scrollTo(targetScroll, {
-          duration: 0.7,
+          duration: 0.4, // Было 0.7, стало 0.4
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           onComplete: () => {
             s.isAnimating = false;
@@ -1477,9 +1521,10 @@
 
       updateActiveItem(progress) {
         const s = this.state;
+        const maxIndex = s.timelineItems.length - 1;
         const newIndex = Math.min(
-          s.timelineItems.length - 1,
-          Math.floor(progress * s.timelineItems.length)
+          maxIndex,
+          Math.round(progress * maxIndex)
         );
 
         if (newIndex !== s.currentIndex) {
@@ -1632,13 +1677,61 @@
           s.btnPrev.addEventListener('click', () => {
             this.goToIndex(s.currentIndex - 1);
           });
+
+          s.btnPrev.addEventListener('mousedown', () => {
+            this.startButtonHold('prev');
+          });
+
+          s.btnPrev.addEventListener('touchstart', () => {
+            this.startButtonHold('prev');
+          });
+
+          s.btnPrev.addEventListener('mouseup', () => {
+            this.stopButtonHold();
+          });
+
+          s.btnPrev.addEventListener('touchend', () => {
+            this.stopButtonHold();
+          });
+
+          s.btnPrev.addEventListener('mouseleave', () => {
+            this.stopButtonHold();
+          });
         }
 
         if (s.btnNext) {
           s.btnNext.addEventListener('click', () => {
             this.goToIndex(s.currentIndex + 1);
           });
+
+          s.btnNext.addEventListener('mousedown', () => {
+            this.startButtonHold('next');
+          });
+
+          s.btnNext.addEventListener('touchstart', () => {
+            this.startButtonHold('next');
+          });
+
+          s.btnNext.addEventListener('mouseup', () => {
+            this.stopButtonHold();
+          });
+
+          s.btnNext.addEventListener('touchend', () => {
+            this.stopButtonHold();
+          });
+
+          s.btnNext.addEventListener('mouseleave', () => {
+            this.stopButtonHold();
+          });
         }
+
+        document.addEventListener('mouseup', () => {
+          this.stopButtonHold();
+        });
+
+        document.addEventListener('touchend', () => {
+          this.stopButtonHold();
+        });
 
         if (!this.isMobileDevice()) {
           s.timelineWrapper.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: false });
