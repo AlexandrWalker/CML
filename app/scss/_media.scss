@@ -1348,7 +1348,7 @@
   }
 
   .management__item-img img {
-    height: auto;
+    // height: auto;
   }
 
   .management__item-wrap {
@@ -3463,6 +3463,10 @@
   .info .about__feat-item {}
 
   /* templates */
+  .general--big .container {
+    min-height: 62.7rem;
+  }
+
   .directory-page .general--big .general__inner {
     gap: 2rem !important;
   }
@@ -3476,7 +3480,8 @@
   }
 
   .directory-page .general--big .general__img {
-    margin-top: 0;
+    // margin-top: 0;
+    margin-top: 3rem;
   }
 
   .general--big .general__head-title h1 {
@@ -4058,6 +4063,11 @@
 
   .story__item-arrow {
     display: none;
+  }
+
+  .story__item-year {
+    font-size: 8rem;
+    bottom: -1.4rem;
   }
 
   /* new */
