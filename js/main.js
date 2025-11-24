@@ -995,7 +995,7 @@
 
         $('resize load', function (event) {
           if (window.innerWidth < 769 && window.innerWidth !== 769) {
-            tgPlate.style.bottom = '8rem';
+            infoPlate.style.bottom = '8rem';
           }
         });
       } else {
@@ -1003,7 +1003,7 @@
 
         $('resize load', function (event) {
           if (window.innerWidth < 769 && window.innerWidth !== 769) {
-            tgPlate.style.bottom = '1.5rem';
+            infoPlate.style.bottom = '1.5rem';
           }
         });
       }
@@ -1177,28 +1177,47 @@
       fixedBtn.parentNode.classList.toggle('fixed-btns--active');
     });
 
-
-
-    const tgPlate = document.getElementById('telegram-plate');
-    if (tgPlate) {
-      const tgPlateClose = document.getElementById('telegram-close');
-      const tgPlateClassName = 'show';
+    const infoPlate = document.getElementById('info-plate');
+    if (infoPlate) {
+      const infoPlateClose = document.getElementById('info-close');
+      const infoPlateClassName = 'show';
       const delay = 3000;
 
-      const hasSeenPlate = localStorage.getItem('tgPlateSeen');
+      const hasSeenPlate = localStorage.getItem('infoPlateSeen');
 
       if (!hasSeenPlate) {
         setTimeout(() => {
-          tgPlate.classList.add(tgPlateClassName);
+          infoPlate.classList.add(infoPlateClassName);
 
-          localStorage.setItem('tgPlateSeen', 'true');
+          localStorage.setItem('infoPlateSeen', 'true');
         }, delay);
       }
 
-      tgPlateClose.addEventListener('click', e => {
-        tgPlate.classList.remove(tgPlateClassName);
+      infoPlateClose.addEventListener('click', e => {
+        infoPlate.classList.remove(infoPlateClassName);
       });
     }
+
+    // const tgPlate = document.getElementById('telegram-plate');
+    // if (tgPlate) {
+    //   const tgPlateClose = document.getElementById('telegram-close');
+    //   const tgPlateClassName = 'show';
+    //   const delay = 3000;
+
+    //   const hasSeenPlate = localStorage.getItem('tgPlateSeen');
+
+    //   if (!hasSeenPlate) {
+    //     setTimeout(() => {
+    //       tgPlate.classList.add(tgPlateClassName);
+
+    //       localStorage.setItem('tgPlateSeen', 'true');
+    //     }, delay);
+    //   }
+
+    //   tgPlateClose.addEventListener('click', e => {
+    //     tgPlate.classList.remove(tgPlateClassName);
+    //   });
+    // }
 
 
 
