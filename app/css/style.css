@@ -2572,6 +2572,113 @@ ol li::after {
   font-size: 1.6rem;
 }
 
+.plate-info__plate {
+  position: fixed;
+  bottom: 12rem;
+  left: 0;
+  right: 0;
+  z-index: 400;
+  margin: 0;
+  color: var(--white);
+  pointer-events: none;
+  overflow: visible;
+  transform: translateY(200%);
+  transition: transform 1s linear, bottom 0.3s ease;
+}
+.plate-info__plate.show {
+  transform: translateY(0);
+}
+.plate-info__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+.plate-info__close::before {
+  content: "";
+  display: block;
+  width: 1.8rem;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+  background-color: var(--primary-black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transition: all 0.3s ease;
+}
+.plate-info__close::after {
+  content: "";
+  display: block;
+  width: 1.8rem;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+  background-color: var(--primary-black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-135deg);
+  transition: all 0.3s ease;
+}
+.plate-info__close:hover::before, .plate-info__close:hover::after {
+  background-color: var(--primary-accent);
+}
+.plate-info__inner {
+  display: flex;
+  flex-direction: row;
+  max-width: 78rem;
+  height: 27.5rem;
+  margin: 0 auto 0 0;
+  background-color: var(--white);
+  pointer-events: all;
+  position: relative;
+  box-shadow: 0px 34px 54px rgba(0, 0, 0, 0.09);
+}
+.plate-info__img {
+  aspect-ratio: 315/275;
+}
+.plate-info__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.plate-info__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 3rem 3rem 2rem;
+}
+.plate-info__title p {
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--primary-black);
+}
+.plate-info__btn {
+  --button-padding-x: 7rem;
+}
+.plate-info__btn i {
+  margin-top: -0.2rem;
+}
+.plate-info__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 36rem;
+  margin-top: 1rem;
+}
+.plate-info__wrap .telegram__text p {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
 .dropdown {
   background: transparent;
   position: relative;
@@ -8611,6 +8718,32 @@ ol li::after {
   }
   .contacts__item-requisite p:not(:last-child) {
     margin-bottom: 1.4rem;
+  }
+  /* info plate */
+  .plate-info__plate {
+    bottom: 1.5rem;
+  }
+  .plate-info__close {
+    right: 2rem;
+  }
+  .plate-info__inner {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .plate-info__content {
+    padding: 2rem 5rem 2rem 2rem;
+  }
+  .plate-info__img {
+    width: 100%;
+    height: calc((100vw - 4rem) / 1.9831460674);
+    aspect-ratio: 353/178;
+  }
+  .plate-info__title p {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .plate-info__btn {
+    --button-padding-x: 3rem;
   }
   /* telegram plate */
   .telegram__plate {

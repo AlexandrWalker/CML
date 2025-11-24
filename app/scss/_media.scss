@@ -2674,6 +2674,39 @@
     margin-bottom: 1.4rem;
   }
 
+  /* info plate */
+  .plate-info__plate {
+    bottom: 1.5rem;
+  }
+
+  .plate-info__close {
+    right: 2rem;
+  }
+
+  .plate-info__inner {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .plate-info__content {
+    padding: 2rem 5rem 2rem 2rem;
+  }
+
+  .plate-info__img {
+    width: 100%;
+    height: calc((100vw - 4rem)/(353/178));
+    aspect-ratio: 353/178;
+  }
+
+  .plate-info__title p {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .plate-info__btn {
+    --button-padding-x: 3rem;
+  }
+
   /* telegram plate */
   .telegram__plate {
     bottom: 1.5rem;
