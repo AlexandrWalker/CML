@@ -245,6 +245,32 @@
     }
   }
 
+  &__download {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-weight: 700;
+    margin-bottom: 3rem;
+
+    &:hover {
+
+      span {
+        text-decoration: none;
+      }
+    }
+
+    i {
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+
+    span {
+      text-decoration: underline
+    }
+  }
+
   .table-row {
 
     li {

@@ -4213,6 +4213,24 @@ ol li::after {
 .news__side-btn {
   width: 100%;
 }
+.news__download {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.news__download:hover span {
+  text-decoration: none;
+}
+.news__download i {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.news__download span {
+  text-decoration: underline;
+}
 .news .table-row li {
   flex-direction: row;
   gap: 0;
@@ -8110,8 +8128,12 @@ ol li::after {
   .news__content {
     width: 100%;
   }
+  .news__download {
+    margin-bottom: 2rem;
+  }
   .news__content time {
     margin-bottom: 2rem;
+    font-size: 1.6rem;
   }
   .news__content p {
     font-size: 1.4rem;
