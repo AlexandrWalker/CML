@@ -2642,6 +2642,8 @@ ol li::after {
   box-shadow: 0px 34px 54px rgba(0, 0, 0, 0.09);
 }
 .plate-info__img {
+  width: 31.5rem;
+  height: 100%;
   aspect-ratio: 315/275;
 }
 .plate-info__img img {
@@ -2655,6 +2657,7 @@ ol li::after {
   justify-content: space-between;
   gap: 2rem;
   padding: 3rem 3rem 3rem 2rem;
+  width: calc(100% - 31.5rem);
 }
 .plate-info__title p {
   font-weight: 700;
@@ -8754,6 +8757,7 @@ ol li::after {
   }
   .plate-info__content {
     padding: 2rem 5rem 2rem 2rem;
+    width: 100%;
   }
   .plate-info__img {
     width: 100%;
