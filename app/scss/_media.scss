@@ -2685,7 +2685,12 @@
   }
 
   .plate-info__close {
-    right: 2rem;
+    top: 0;
+    right: 0;
+    background-color: var(--white);
+    width: 4rem;
+    height: 4rem;
+    padding: 0.8rem;
   }
 
   .plate-info__inner {
