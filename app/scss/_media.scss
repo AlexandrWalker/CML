@@ -2747,6 +2747,21 @@
   .telegram__wrap .telegram__btn {
     max-width: 25rem;
   }
+
+  .delivery-calc-page .general,
+  .site-map-page .general {
+    margin-bottom: 2rem;
+  }
+
+  .delivery-calc-page .general .breadcrumbs,
+  .site-map-page .general .breadcrumbs {
+    margin: 2rem 0;
+  }
+
+  .delivery-calc__items,
+  .site-map__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 601px) {
@@ -4215,6 +4230,27 @@
 
   .contacts__item:last-child .contacts__item-wrap>span {
     margin-bottom: 1.5rem;
+  }
+
+  .delivery-calc__items,
+  .site-map__content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .delivery-calc__item,
+  .site-map__item {
+    gap: 1rem;
+  }
+
+  .delivery-calc__item-title a,
+  .site-map__item-title a {
+    font-size: 2rem;
+  }
+
+  .delivery-calc__item-list a,
+  .site-map__item-list a {
+    font-size: 1.4rem;
   }
 }
 

@@ -1,0 +1,65 @@
+.site-map {
+
+  &-page {
+
+    .general {
+      margin-bottom: 4rem;
+
+      .breadcrumbs {
+        margin: 4rem 0 2rem;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-title {
+
+      a {
+        font-weight: 800;
+        font-size: 2.4rem;
+        line-height: 120%;
+        text-decoration: underline;
+        text-transform: uppercase;
+        color: var(--primary-accent);
+
+        &:hover {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 200%;
+        color: inherit;
+
+        &:hover {
+          color: var(--primary-accent);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
