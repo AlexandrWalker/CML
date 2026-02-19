@@ -16,7 +16,6 @@
   &__item {
     display: flex;
     flex-direction: column;
-    // justify-content: flex-end;
     gap: 3rem;
     width: calc(25% - 1.5rem);
     padding: 3rem;
@@ -34,7 +33,7 @@
       visibility: hidden;
     }
 
-    h4 {
+    span {
       font-weight: 800;
       font-size: 2.6rem;
     }
@@ -105,7 +104,8 @@
         top: 0;
         right: 0;
 
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 4.5rem;
         line-height: 115%;
         text-align: center;
@@ -157,14 +157,15 @@
       color: var(--white);
     }
 
-    h4 {
+    &-title {
       font-weight: 800;
       font-size: 2.6rem;
       line-height: 120%;
     }
 
     p {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 1.8rem;
       line-height: 110%;
     }
@@ -200,7 +201,7 @@
         background-color: var(--primary-accent);
       }
 
-      h6 {
+      .included__item-title {
         color: var(--primary-accent);
       }
     }
@@ -211,7 +212,7 @@
       padding: 2.5rem 0;
       margin-bottom: 3rem;
       background-color: var(--primary-black);
-      font-weight: 400;;
+      font-weight: 400;
       font-size: 8rem;
       line-height: 105%;
       text-transform: uppercase;
@@ -220,7 +221,7 @@
       transition: all 0.3s ease;
     }
 
-    h6 {
+    &-title {
       font-weight: 700;
       font-size: 2.6rem;
       line-height: 120%;
@@ -230,7 +231,8 @@
     }
 
     p {
-      font-weight: 400;;
+      font-weight: 400;
+      ;
       font-size: 1.8rem;
       line-height: 120%;
       transition: all 0.3s ease;

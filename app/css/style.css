@@ -763,17 +763,18 @@ a:hover {
   flex-direction: column;
   gap: 1rem;
 }
-.section__head h3 {
+.section__head p {
   font-weight: 400;
   font-size: 2.6rem;
   line-height: 120%;
   text-transform: uppercase;
+  margin-bottom: 0 !important;
 }
-.section__head h3 a {
+.section__head p a {
   text-decoration: underline;
   color: inherit;
 }
-.section__head h3 a:hover {
+.section__head p a:hover {
   text-decoration: none;
 }
 .section__head h2 {
@@ -2986,14 +2987,14 @@ ol li::after {
   padding-top: 5rem;
   padding-bottom: 4rem;
 }
-.hero__item h2 {
+.hero__item h1 {
   font-weight: 800;
   font-size: 8rem;
   line-height: 100%;
   text-transform: uppercase;
   margin-bottom: 5rem;
 }
-.hero__item h2 span {
+.hero__item h1 span {
   font-weight: 400;
   font-size: 5rem;
   margin-bottom: 1rem;
@@ -3555,10 +3556,11 @@ ol li::after {
   position: relative;
   z-index: 2;
 }
-.banner h3 {
+.banner span {
   font-weight: 800;
   font-size: 4.4rem;
   line-height: 100%;
+  display: block;
   margin-bottom: 1.5rem;
 }
 .banner p {
@@ -3773,7 +3775,7 @@ ol li::after {
 .faq__item.accordion-active .faq__item-count {
   color: var(--primary-black);
 }
-.faq__item.accordion-active h2 {
+.faq__item.accordion-active .faq__item-head p {
   color: var(--primary-accent);
 }
 .faq__item.accordion-active .faq__item-btn i {
@@ -3786,7 +3788,7 @@ ol li::after {
 .faq__item:hover .faq__item-count {
   color: var(--primary-black);
 }
-.faq__item:hover h2 {
+.faq__item:hover .faq__item-head p {
   color: var(--primary-accent);
 }
 .faq__item:hover .faq__item-btn i {
@@ -3797,6 +3799,12 @@ ol li::after {
   align-items: center;
   gap: 2rem;
 }
+.faq__item-head p {
+  font-weight: 800;
+  font-size: 2.6rem;
+  line-height: 120%;
+  transition: all 0.3s ease;
+}
 .faq__item-count {
   font-weight: 400;
   font-size: 4.5rem;
@@ -3806,12 +3814,6 @@ ol li::after {
   color: var(--primary-accent);
   width: 5.2rem;
   min-width: 5.2rem;
-  transition: all 0.3s ease;
-}
-.faq__item h2 {
-  font-weight: 800;
-  font-size: 2.6rem;
-  line-height: 120%;
   transition: all 0.3s ease;
 }
 .faq__item-btn {
@@ -3836,14 +3838,14 @@ ol li::after {
   overflow: hidden;
   transition: all 0.3s ease;
 }
-.faq__item-content {
-  padding: 0 0 0 7.2rem;
-  overflow: hidden;
-}
-.faq__item p {
+.faq__item-body p {
   font-weight: 400;
   font-size: 2.6rem;
   line-height: 120%;
+}
+.faq__item-content {
+  padding: 0 0 0 7.2rem;
+  overflow: hidden;
 }
 
 .request__inner {
@@ -5085,7 +5087,7 @@ ol li::after {
   top: 16rem;
   height: fit-content;
 }
-.reasons__head h2 {
+.reasons__head p {
   font-weight: 400;
   font-size: 2.6rem;
   line-height: 120%;
@@ -5139,6 +5141,7 @@ ol li::after {
   height: 100%;
   background-color: #ebebf1;
   opacity: 0;
+  pointer-events: none;
 }
 .reasons__item-content {
   display: flex;
@@ -5163,7 +5166,7 @@ ol li::after {
   max-width: 68rem;
   margin-bottom: 2rem;
 }
-.reasons__item-title h6 {
+.reasons__item-title span {
   font-weight: 800;
   font-size: 3.4rem;
   line-height: 120%;
@@ -5215,7 +5218,7 @@ ol li::after {
   object-fit: cover;
   visibility: hidden;
 }
-.cargo__item h4 {
+.cargo__item span {
   font-weight: 800;
   font-size: 2.6rem;
 }
@@ -5314,7 +5317,7 @@ ol li::after {
   text-align: center;
   color: var(--white);
 }
-.solutions__item h4 {
+.solutions__item-title {
   font-weight: 800;
   font-size: 2.6rem;
   line-height: 120%;
@@ -5347,7 +5350,7 @@ ol li::after {
 .included__item:hover span {
   background-color: var(--primary-accent);
 }
-.included__item:hover h6 {
+.included__item:hover .included__item-title {
   color: var(--primary-accent);
 }
 .included__item span {
@@ -5364,7 +5367,7 @@ ol li::after {
   color: var(--white);
   transition: all 0.3s ease;
 }
-.included__item h6 {
+.included__item-title {
   font-weight: 700;
   font-size: 2.6rem;
   line-height: 120%;
@@ -6888,7 +6891,7 @@ ol li::after {
   section {
     margin-bottom: 3rem;
   }
-  .section__head h3 {
+  .section__head p {
     font-size: 1.6rem;
   }
   .wrapper {
@@ -7248,10 +7251,10 @@ ol li::after {
     position: relative;
     z-index: 2;
   }
-  .hero__item h2 span {
+  .hero__item h1 span {
     font-size: 3rem;
   }
-  .hero__item h2 {
+  .hero__item h1 {
     font-size: 5rem;
     margin-bottom: 3rem;
   }
@@ -7418,7 +7421,7 @@ ol li::after {
   .banner__inner {
     max-width: 38.8rem;
   }
-  .banner h3 {
+  .banner span {
     font-size: 2.4rem;
     margin-bottom: 1rem;
   }
@@ -8373,7 +8376,7 @@ ol li::after {
     grid-column: 1/2;
     grid-row: 2/3;
   }
-  .reasons__item-title h6 {
+  .reasons__item-title span {
     font-size: 2rem;
   }
   .reasons__item-text {
@@ -8565,7 +8568,7 @@ ol li::after {
   .solutions__item {
     width: calc(50% - 3.5rem);
   }
-  .solutions__item h4 {
+  .solutions__item-title {
     font-size: 2rem;
   }
   .solutions__item p {
@@ -9036,11 +9039,11 @@ ol li::after {
     padding: 3rem 0 1.5rem;
     max-width: 100%;
   }
-  .hero__item h2 {
+  .hero__item h1 {
     font-size: 4rem;
     margin-bottom: 2rem;
   }
-  .hero__item h2 span {
+  .hero__item h1 span {
     font-size: 3rem;
   }
   .hero__item-btn {
@@ -9239,7 +9242,7 @@ ol li::after {
   .banner__inner {
     max-width: 100%;
   }
-  .banner h3 {
+  .banner span {
     margin-bottom: 2rem;
   }
   .banner p {
@@ -9843,7 +9846,7 @@ ol li::after {
   .solutions__item {
     width: calc(50% - 0.5rem);
   }
-  .solutions__item h4 {
+  .solutions__item-title {
     font-size: 1.6rem;
   }
   .included__item {
@@ -9853,7 +9856,7 @@ ol li::after {
     padding: 0;
     border: 0;
   }
-  .included__item h6 {
+  .included__item-title {
     font-size: 1.6rem;
     min-height: unset;
   }
@@ -10038,7 +10041,7 @@ ol li::after {
   .menu__list-wrap {
     gap: 1rem;
   }
-  .hero__item h2 {
+  .hero__item h1 {
     word-break: break-word;
   }
   .hero__img {
