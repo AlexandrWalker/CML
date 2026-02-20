@@ -1359,7 +1359,7 @@ ol li::after {
 }
 .header__logo {
   width: auto;
-  height: 6rem;
+  height: 5rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -9327,7 +9327,7 @@ ol li::after {
     height: 8rem;
   }
   .header__logo {
-    height: 3rem;
+    height: 3.5rem;
   }
   .header__btn {
     height: 4.4rem;
