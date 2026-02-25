@@ -1219,36 +1219,6 @@
     //   });
     // }
 
-
-
-    /**
-     * Анимация блока задач
-     */
-    window.addEventListener('scroll', function () {
-      const reasons = document.querySelector('.reasons');
-      if (reasons) {
-        const reasonsItems = document.querySelectorAll('.task__item');
-        const reasonsRect = reasons.getBoundingClientRect();
-        // Проверяем, достиг ли блок reasons верхнего края окна
-        if (reasonsRect.top <= 0) {
-          reasons.classList.add('fixed'); // Закрепляем блок
-          // Уменьшаем и перекрываем блоки reasons__items при прокрутке
-          reasonsItems.forEach((item, index) => {
-            const offset = window.scrollY - reasons.offsetHeight;
-            const scale = Math.max(0.5, 1 - (offset / 500) + (index * 0.1)); // Уменьшаем размер
-            item.style.transform = `scale(${scale}) translateY(${index * 20}px)`; // Перекрытие
-          });
-        } else {
-          reasons.classList.remove('fixed'); // Сбрасываем закрепление
-          reasonsItems.forEach(item => {
-            item.style.transform = 'scale(1) translateY(0)'; // Возвращаем в исходное состояние
-          });
-        }
-      }
-    });
-
-
-
     /**
      * Таймлайн
      */
@@ -1787,7 +1757,171 @@
       const timeline = TimelineScroll.create('#timelinePlaceholder');
     }
 
+    (function () {
+      const reasons = document.querySelector('.reasons');
+      if (!reasons) return;
 
+      const reasonsItems = Array.from(document.querySelectorAll('.reasons__item'));
+      const len = reasonsItems.length;
+      const reasonsHead = $('.reasons__head');
+
+      // Устанавливаем начальный scale = 1 для всех
+      reasonsItems.forEach(item => {
+        item.dataset.scale = 1;
+        const index = parseInt(item.dataset.index);
+        let minScale = 1;
+        if (index === 1) minScale = 0.83;
+        if (index === 2) minScale = 0.86;
+        if (index === 3) minScale = 0.89;
+        if (index === 4) minScale = 0.92;
+        item.dataset.minScale = minScale;
+        item.style.transform = 'scale(1)';
+      });
+
+      let scrollPos = window.pageYOffset;
+      let inc = 0.006;
+      let inc2 = 0.008;
+
+      function handleScroll() {
+        const top = window.pageYOffset;
+        const isMobile = window.innerWidth < 767;
+        const activeBlock = $('.active');
+        const element = activeBlock[0];
+        if (!element) return;
+
+        const distanceToTop = activeBlock.offset().top - $(window).scrollTop() - (isMobile ? 0 : 160);
+        const dataIndex = parseInt(activeBlock.attr('data-index'));
+        const h = element.clientHeight / 200;
+
+        if (isMobile) {
+          inc = 0.06;
+          inc2 = 0.06;
+
+          if (scrollPos > top) { // Скролл вверх
+            if (dataIndex != 1 && distanceToTop > h) {
+              const prev = activeBlock.prev();
+              if (prev.length && prev[0]) {
+                activeBlock.removeClass('active');
+                prev.addClass('active');
+                prev.css('transform', `scale(${prev[0].dataset.scale})`);
+              }
+            }
+
+            const prevBlock = activeBlock.prev();
+            if (prevBlock.length && prevBlock[0]) {
+              let blockScale = parseFloat(prevBlock[0].dataset.scale || 1);
+              blockScale += inc2 / 0.006;
+              blockScale = Math.min(blockScale, 1);
+              prevBlock.css('transform', `scale(${blockScale})`);
+              prevBlock[0].dataset.scale = blockScale;
+
+              const newOpacity = Math.max(0, 1 - (distanceToTop / h));
+              prevBlock.find('.over').css('opacity', newOpacity);
+            }
+          } else { // Скролл вниз
+            if (distanceToTop < 200 && dataIndex != len) {
+              const next = activeBlock.next();
+              if (next.length && next[0]) {
+                activeBlock.removeClass('active');
+                next.addClass('active');
+              }
+            }
+
+            const prevBlock = activeBlock.prev();
+            if (prevBlock.length && prevBlock[0]) {
+              let blockScale = parseFloat(prevBlock[0].dataset.scale || 1);
+              blockScale -= inc * 0.06;
+
+              const minScale = parseFloat(prevBlock[0].dataset.minScale || 1);
+              blockScale = Math.max(minScale, blockScale);
+
+              prevBlock.css('transform', `scale(${blockScale})`);
+              prevBlock[0].dataset.scale = blockScale;
+
+              const newOpacity = Math.min(0.6, distanceToTop / h + 0.02);
+              prevBlock.find('.over').css('opacity', newOpacity);
+            }
+          }
+        } else { // Десктоп
+          inc = 0.006;
+          inc2 = 0.008;
+
+          if (reasonsHead.length) {
+            setTimeout(() => {
+              reasonsHead.find('span').html(dataIndex < 10 ? `0${dataIndex}` : dataIndex);
+            }, 200);
+          }
+
+          if (scrollPos > top) { // Скролл вверх
+            if (dataIndex != 1 && distanceToTop > h * 200) {
+              const prev = activeBlock.prev();
+              if (prev.length && prev[0]) {
+                activeBlock.removeClass('active');
+                prev.addClass('active');
+                prev.css('transform', `scale(${prev[0].dataset.scale})`);
+              }
+            }
+
+            const prevBlock = activeBlock.prev();
+            if (prevBlock.length && prevBlock[0]) {
+              let blockScale = parseFloat(prevBlock[0].dataset.scale || 1);
+              blockScale += inc2;
+              blockScale = Math.min(blockScale, 1);
+
+              prevBlock.css('transform', `scale(${blockScale})`);
+              prevBlock[0].dataset.scale = blockScale;
+
+              const newOpacity = Math.max(0, 1 - (distanceToTop / h));
+              prevBlock.find('.over').css('opacity', newOpacity);
+            }
+          } else { // Скролл вниз
+            if (distanceToTop < h && dataIndex != len) {
+              const next = activeBlock.next();
+              if (next.length && next[0]) {
+                activeBlock.removeClass('active');
+                next.addClass('active');
+                next[0].dataset.scale = parseFloat(next[0].dataset.scale || 1);
+              }
+            }
+
+            const prevBlock = activeBlock.prev();
+            if (prevBlock.length && prevBlock[0]) {
+              let blockScale = parseFloat(prevBlock[0].dataset.scale || 1);
+              blockScale -= inc;
+
+              const minScale = parseFloat(prevBlock[0].dataset.minScale || 1);
+              blockScale = Math.max(minScale, blockScale);
+
+              prevBlock.css('transform', `scale(${blockScale})`);
+              prevBlock[0].dataset.scale = blockScale;
+
+              const newOpacity = Math.min(0.6, distanceToTop / h);
+              prevBlock.find('.over').css('opacity', newOpacity);
+            }
+          }
+        }
+
+        scrollPos = top;
+      }
+
+      function onScroll() {
+        const reasonsRect = reasons.getBoundingClientRect();
+        if (reasonsRect.top <= 0) {
+          reasons.classList.add('fixed');
+        } else {
+          reasons.classList.remove('fixed');
+        }
+
+        handleScroll();
+      }
+
+      function scrollLoop() {
+        onScroll();
+        requestAnimationFrame(scrollLoop);
+      }
+
+      requestAnimationFrame(scrollLoop);
+    })();
 
     window.addEventListener('resize', function () { ScrollTrigger.refresh() });
 
@@ -1797,209 +1931,4 @@
 function checkCookies() {
   document.cookie = 'COOKIE_ACCEPT=1;path=\'/\';expires:' + (new Date(new Date().getTime() + 86400e3 * 365).toUTCString());
   document.getElementById('warning-plate').remove();
-}
-
-/*=================Скрипт для блока со скролом=====================*/
-const reasons = document.querySelector('.reasons');
-
-if (reasons) {
-  var len = $('.reasons__item').length;
-  $(window).on('resize load', function () {
-
-    if (window.innerWidth < "767") {
-      scroll = 0;
-      inc = 0.06; // speed down
-      inc2 = 0.06; // speed up
-      scale = 1;
-      var wH = document.documentElement.clientWidth
-
-
-      $(window).on('scroll', function () {
-        // Find the active element
-        var $activeBlock = $('.active');
-        var element = document.querySelector('.active');
-        var h = element.clientHeight / 200;
-        var distanceToTop = $activeBlock.offset().top - $(window).scrollTop();
-        var top = window.pageYOffset;
-
-        // Scroll direction checks
-        if (scroll > top) {
-          // Scrolling up
-          if ($activeBlock.attr('data-index') != 1) {
-            h = h * 200;
-            if (distanceToTop > h) {
-              var $prevBlock = $activeBlock.prev();
-              $activeBlock.removeClass('active');
-              $prevBlock.addClass('active');
-              $($prevBlock).css('transform', 'scale(1)');
-              scale = 0.90; // set initial scale
-            }
-          }
-        } else if (scroll < top) {
-          // Scrolling down
-
-          if (distanceToTop < 200 && $activeBlock.attr('data-index') != len) {
-            var $nextBlock = $activeBlock.next();
-            $activeBlock.removeClass('active');
-            $nextBlock.addClass('active');
-          }
-
-          if ($activeBlock.attr('data-index') == len && distanceToTop <= 0) {
-            var $prevBlock = $activeBlock.prev();
-            $($prevBlock).css('transform', 'scale(0.90)');
-            scale = 0.90;
-          }
-        }
-
-        // Scaling effect
-        if (scroll > top) {
-          // Scrolling up
-          if (distanceToTop > 50) {
-            var $activeBlock = $('.active');
-            var prevCurrentBlock = $($activeBlock).prev();
-
-            scale += inc2 / 0.006; // Increase scale on scroll up
-            scale = Math.min(scale, 1); // Ensure max scale is 1
-
-            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(1, scale) + ')');
-
-            // Adjust opacity of the over block
-            var $overBlock = $(prevCurrentBlock).find('.over');
-            var newOpacity = Math.max(0, 1 - (distanceToTop / h)); // Calculate new opacity
-            $overBlock.css('opacity', newOpacity);
-          }
-        } else if (scroll < top) {
-          // Scrolling down
-          var $activeBlock = $('.active');
-          var prevCurrentBlock = $($activeBlock).prev();
-
-          scale -= inc * 0.06; // Decrease scale on scroll down
-          if ($(prevCurrentBlock).attr('data-index') == 1) {
-            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.83, scale) + ')');
-          }
-          if ($(prevCurrentBlock).attr('data-index') == 2) {
-            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.86, scale) + ')');
-          }
-          if ($(prevCurrentBlock).attr('data-index') == 3) {
-            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.89, scale) + ')');
-          }
-          if ($(prevCurrentBlock).attr('data-index') == 4) {
-            $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.92, scale) + ')');
-          }
-
-          // Adjust opacity of the over block
-          var $overBlock = $(prevCurrentBlock).find('.over');
-          var newOpacity = Math.min(0.6, (distanceToTop / h + 0.02)); // Calculate new opacity
-          $overBlock.css('opacity', newOpacity);
-        }
-
-        if (distanceToTop < 0) {
-          var $prevBlock = $activeBlock.prev();
-          $($prevBlock).css('transform', 'scale(0.90)');
-          scale = 0.90;
-        }
-
-        scroll = top; // Update scroll position
-      });
-    } else {
-
-      scroll = 0;
-      inc = 0.006; // speed down
-      inc2 = 0.008; // speed up
-      scale = 1;
-      var wH = document.documentElement.clientWidth
-
-      $(window).on('scroll', function () {
-        // Find the active element
-        var $activeBlock = $('.active');
-        var element = reasons.querySelector('.active');
-        var h = element.clientHeight / 200;
-        var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 160;
-        var top = window.pageYOffset;
-
-        const reasonsHead = $('.reasons__head');
-
-        if (reasonsHead) {
-
-          const dataIndex = $activeBlock.attr('data-index');
-
-          setTimeout(() => {
-            reasonsHead.find('span').html(dataIndex < 10 ? `0${dataIndex}` : dataIndex); // Изменяем текст
-          }, 200); // Задержка должна соответствовать длительности transition
-
-        }
-
-        // Scroll direction checks
-        if (scroll > top) {
-          // Scrolling up
-          if ($activeBlock.attr('data-index') != 1) {
-            h = h * 200;
-            if (distanceToTop > h) {
-              var $prevBlock = $activeBlock.prev();
-              $activeBlock.removeClass('active');
-              $prevBlock.addClass('active');
-              $($prevBlock).css('transform', 'scale(1)');
-              scale = 0.92; // set initial scale
-            }
-          }
-        } else if (scroll < top) {
-
-          // Scrolling down
-          if (distanceToTop < h && $activeBlock.attr('data-index') != len) {
-            var $nextBlock = $activeBlock.next();
-            $activeBlock.removeClass('active');
-            $nextBlock.addClass('active');
-            if (scale !== 1) {
-              scale = 1; // set to 1 when scrolling down
-            }
-          }
-
-          if ($activeBlock.attr('data-index') == len && distanceToTop <= 0) {
-            var $prevBlock = $activeBlock.prev();
-            $($prevBlock).css('transform', 'scale(0.92)');
-            scale = 0.92;
-          }
-        }
-
-        // Scaling effect
-        if (scroll > top) {
-          // Scrolling up
-          var $activeBlock = $('.active');
-          var prevCurrentBlock = $($activeBlock).prev();
-
-          scale += inc2; // Increase scale on scroll up
-          scale = Math.min(scale, 1); // Ensure max scale is 1
-
-          $(prevCurrentBlock).css('transform', 'scale(' + Math.max(1, scale) + ')');
-
-          // Adjust opacity of the over block
-          var $overBlock = $(prevCurrentBlock).find('.over');
-          var newOpacity = Math.max(0, 1 - (distanceToTop / h)); // Calculate new opacity
-          $overBlock.css('opacity', newOpacity);
-        } else if (scroll < top) {
-          // Scrolling down
-          var $activeBlock = $('.active');
-          var prevCurrentBlock = $($activeBlock).prev();
-
-          scale -= inc; // Decrease scale on scroll down
-
-          $(prevCurrentBlock).css('transform', 'scale(' + Math.max(0.90, scale) + ')');
-
-          // Adjust opacity of the over block
-          var $overBlock = $(prevCurrentBlock).find('.over');
-          var newOpacity = Math.min(0.6, (distanceToTop / h)); // Calculate new opacity
-          $overBlock.css('opacity', newOpacity);
-        }
-
-        if (distanceToTop < 0) {
-          var $prevBlock = $activeBlock.prev();
-          $($prevBlock).css('transform', 'scale(0.92)');
-          scale = 0.92;
-        }
-
-        scroll = top; // Update scroll position
-      });
-
-    }
-  });
 }
