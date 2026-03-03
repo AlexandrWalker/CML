@@ -2987,14 +2987,14 @@ ol li::after {
   padding-top: 5rem;
   padding-bottom: 4rem;
 }
-.hero__item h1 {
+.hero__item h2 {
   font-weight: 800;
   font-size: 8rem;
   line-height: 100%;
   text-transform: uppercase;
   margin-bottom: 5rem;
 }
-.hero__item h1 span {
+.hero__item h2 span {
   font-weight: 400;
   font-size: 5rem;
   margin-bottom: 1rem;
@@ -4050,6 +4050,14 @@ ol li::after {
   flex-direction: row;
   gap: 2rem;
 }
+.news__result {
+  font-weight: 800;
+  font-size: 2.2rem;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: var(--primary-accent);
+  margin-bottom: 2rem;
+}
 .news__content {
   display: flex;
   flex-direction: column;
@@ -4058,14 +4066,6 @@ ol li::after {
 .news__content h2 {
   font-weight: 800;
   font-size: 2.6rem;
-  line-height: 110%;
-  text-transform: uppercase;
-  color: var(--primary-accent);
-  margin-bottom: 2rem;
-}
-.news__content h3 {
-  font-weight: 800;
-  font-size: 2.2rem;
   line-height: 110%;
   text-transform: uppercase;
   color: var(--primary-accent);
@@ -4100,7 +4100,10 @@ ol li::after {
   margin-bottom: 2rem;
   margin-bottom: 3rem;
 }
-.news__content li h6 {
+.news__content li span {
+  font-weight: 800;
+  font-size: 1.8rem;
+  line-height: 110%;
   width: 100%;
 }
 .news__content li p {
@@ -4588,7 +4591,7 @@ ol li::after {
   flex-direction: column;
   gap: 2rem;
 }
-.story__item h4 {
+.story__item-title {
   font-weight: 800;
   font-size: 2.6rem;
   line-height: 100%;
@@ -4899,6 +4902,12 @@ ol li::after {
   margin-bottom: 3rem;
 }
 .desc__inner h4 {
+  font-weight: 800;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.desc__inner .desc__title {
   font-weight: 800;
   font-size: 2.6rem;
   text-transform: uppercase;
@@ -5599,7 +5608,7 @@ ol li::after {
   position: sticky;
   top: 16.4rem;
 }
-.directory__side h3 {
+.directory__side-title {
   font-weight: 800;
   font-size: 2.6rem;
   text-transform: uppercase;
@@ -5729,7 +5738,7 @@ ol li::after {
   flex-direction: column;
   gap: 3rem;
 }
-.directory__wrap h3 {
+.directory__wrap-title {
   font-weight: 800;
   font-size: 2.6rem;
   line-height: 110%;
@@ -5763,7 +5772,10 @@ ol li::after {
 .directory__wrap li:not(:last-child) {
   margin-bottom: 2rem;
 }
-.directory__wrap li h6 {
+.directory__wrap li span {
+  font-weight: 800;
+  font-size: 1.8rem;
+  line-height: 110%;
   width: 100%;
 }
 .directory__wrap img {
@@ -5774,7 +5786,7 @@ ol li::after {
   margin-right: 2rem;
   float: left;
 }
-.directory h5 {
+.directory__bottom-text {
   font-weight: 800;
   font-size: 2.6rem;
   line-height: 110%;
@@ -5843,7 +5855,7 @@ ol li::after {
   overflow: hidden;
   transition: all 0.3s ease;
 }
-.directory__list-wrap li:hover h3 {
+.directory__list-wrap li:hover .directory__list-title {
   color: var(--primary-accent);
 }
 .directory__list-wrap li:hover i {
@@ -5855,28 +5867,18 @@ ol li::after {
 .directory__list-wrap li.accordion-active div {
   grid-template-rows: 1fr;
 }
-.directory__list-wrap li.accordion-active h3 {
+.directory__list-wrap li.accordion-active .directory__list-title {
   color: var(--primary-accent);
 }
 .directory__list-wrap li.accordion-active i {
   color: var(--primary-accent);
   transform: scale(-1, -1);
 }
-.directory__list-wrap h3 {
-  display: flex;
-  align-items: center;
-  gap: 1.7rem;
-  font-weight: 800;
-  font-size: 2.6rem;
-  line-height: 120%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 .directory__list-wrap i {
   font-weight: 900;
   transition: all 0.3s ease;
 }
-.directory__list-wrap div {
+.directory__list-wrap div:not(.directory__list-title) {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
@@ -5888,16 +5890,21 @@ ol li::after {
   line-height: 120%;
   overflow: hidden;
 }
+.directory__list-title {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  font-weight: 800;
+  font-size: 2.6rem;
+  line-height: 120%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 .directory__img {
   width: 100%;
   height: auto;
   object-fit: cover;
   aspect-ratio: 1240/536;
-}
-.directory h6 {
-  font-weight: 800;
-  font-size: 1.8rem;
-  line-height: 110%;
 }
 .directory p {
   font-weight: 400;
@@ -6495,7 +6502,7 @@ ol li::after {
   flex-direction: column;
   gap: 1rem;
 }
-.general__item-body h6 {
+.general__item-body span {
   font-weight: 400;
   font-size: 2.4rem;
 }
@@ -7251,10 +7258,10 @@ ol li::after {
     position: relative;
     z-index: 2;
   }
-  .hero__item h1 span {
+  .hero__item h2 span {
     font-size: 3rem;
   }
-  .hero__item h1 {
+  .hero__item h2 {
     font-size: 5rem;
     margin-bottom: 3rem;
   }
@@ -8139,7 +8146,7 @@ ol li::after {
     font-weight: 400;
     font-size: 1.4rem;
   }
-  .general__item-body h6 {
+  .general__item-body span {
     font-size: 1.6rem;
   }
   .case-page .section__head h2 {
@@ -8234,7 +8241,7 @@ ol li::after {
     margin-bottom: 2rem;
   }
   .news__content h2,
-  .news__content h3,
+  .news__result,
   .news__content blockquote {
     font-size: 2rem;
   }
@@ -8523,7 +8530,7 @@ ol li::after {
     height: 8.2rem;
     top: 14.9rem;
   }
-  .story__item h4 {
+  .story__item-title {
     font-size: 2rem;
   }
   .story__item p {
@@ -8687,7 +8694,7 @@ ol li::after {
     width: 100%;
     padding-bottom: 1.5rem;
   }
-  .directory__side h3 {
+  .directory__side-title {
     font-size: 2rem;
   }
   .directory__side-head {
@@ -8700,7 +8707,7 @@ ol li::after {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
-  .directory .desc__inner h4 {
+  .directory .desc__title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
@@ -8760,7 +8767,7 @@ ol li::after {
     width: calc(100% - 9rem);
     gap: 2rem;
   }
-  .directory__list-wrap h3 {
+  .directory__list-title {
     gap: 0.8rem;
     font-size: 2rem;
   }
@@ -9039,11 +9046,11 @@ ol li::after {
     padding: 3rem 0 1.5rem;
     max-width: 100%;
   }
-  .hero__item h1 {
+  .hero__item h2 {
     font-size: 4rem;
     margin-bottom: 2rem;
   }
-  .hero__item h1 span {
+  .hero__item h2 span {
     font-size: 3rem;
   }
   .hero__item-btn {
@@ -9952,7 +9959,7 @@ ol li::after {
   .directory__side {
     padding: 2rem 1rem;
   }
-  .directory__side h3 {
+  .directory__side-title {
     display: none;
   }
   .directory__side-item {
@@ -9975,7 +9982,7 @@ ol li::after {
     gap: 1.5rem;
     padding: 0;
   }
-  .directory__list-wrap h3 {
+  .directory__list-title {
     font-size: 1.6rem;
   }
   .directory__list-wrap ul {
@@ -9989,7 +9996,7 @@ ol li::after {
   .directory__block p {
     font-size: 1.4rem;
   }
-  .directory h5 {
+  .directory__bottom-text {
     font-size: 2rem;
   }
   /* results */
@@ -10041,7 +10048,7 @@ ol li::after {
   .menu__list-wrap {
     gap: 1rem;
   }
-  .hero__item h1 {
+  .hero__item h2 {
     word-break: break-word;
   }
   .hero__img {

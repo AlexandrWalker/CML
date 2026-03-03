@@ -641,11 +641,11 @@
     z-index: 2;
   }
 
-  .hero__item h1 span {
+  .hero__item h2 span {
     font-size: 3rem;
   }
 
-  .hero__item h1 {
+  .hero__item h2 {
     font-size: 5rem;
     margin-bottom: 3rem;
   }
@@ -1790,7 +1790,7 @@
     font-size: 1.4rem;
   }
 
-  .general__item-body h6 {
+  .general__item-body span {
     font-size: 1.6rem;
   }
 
@@ -1913,7 +1913,7 @@
   }
 
   .news__content h2,
-  .news__content h3,
+  .news__result,
   .news__content blockquote {
     font-size: 2rem;
   }
@@ -2287,7 +2287,7 @@
     top: 14.9rem;
   }
 
-  .story__item h4 {
+  .story__item-title {
     font-size: 2rem;
   }
 
@@ -2495,7 +2495,7 @@
     padding-bottom: 1.5rem;
   }
 
-  .directory__side h3 {
+  .directory__side-title {
     font-size: 2rem;
   }
 
@@ -2512,7 +2512,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .directory .desc__inner h4 {
+  .directory .desc__title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
@@ -2586,7 +2586,7 @@
     gap: 2rem;
   }
 
-  .directory__list-wrap h3 {
+  .directory__list-title {
     gap: 0.8rem;
     font-size: 2rem;
   }
@@ -2951,12 +2951,12 @@
     // height: fit-content;
   }
 
-  .hero__item h1 {
+  .hero__item h2 {
     font-size: 4rem;
     margin-bottom: 2rem;
   }
 
-  .hero__item h1 span {
+  .hero__item h2 span {
     font-size: 3rem;
   }
 
@@ -4144,7 +4144,7 @@
     padding: 2rem 1rem;
   }
 
-  .directory__side h3 {
+  .directory__side-title {
     display: none;
   }
 
@@ -4174,7 +4174,7 @@
     padding: 0;
   }
 
-  .directory__list-wrap h3 {
+  .directory__list-title {
     font-size: 1.6rem;
   }
 
@@ -4192,7 +4192,7 @@
     font-size: 1.4rem;
   }
 
-  .directory h5 {
+  .directory__bottom-text {
     font-size: 2rem;
   }
 
@@ -4261,7 +4261,7 @@
     gap: 1rem;
   }
 
-  .hero__item h1 {
+  .hero__item h2 {
     word-break: break-word;
   }
 

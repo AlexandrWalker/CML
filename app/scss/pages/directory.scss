@@ -68,7 +68,7 @@
     position: sticky;
     top: 16.4rem;
 
-    h3 {
+    &-title {
       font-weight: 800;
       font-size: 2.6rem;
       text-transform: uppercase;
@@ -199,7 +199,8 @@
       }
 
       a {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 1.8rem;
         color: inherit;
 
@@ -224,7 +225,7 @@
     flex-direction: column;
     gap: 3rem;
 
-    h3 {
+    &-title {
       font-weight: 800;
       font-size: 2.6rem;
       line-height: 110%;
@@ -263,7 +264,11 @@
         margin-bottom: 2rem;
       }
 
-      h6 {
+      span {
+        font-weight: 800;
+        font-size: 1.8rem;
+        line-height: 110%;
+
         width: 100%;
       }
     }
@@ -280,7 +285,7 @@
 
   &__block {}
 
-  h5 {
+  &__bottom-text {
     font-weight: 800;
     font-size: 2.6rem;
     line-height: 110%;
@@ -306,7 +311,8 @@
       }
 
       a {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 2.6rem;
         line-height: 120%;
         color: var(--primary-black);
@@ -335,7 +341,8 @@
       border-bottom: 0.1rem solid var(--primary-black-10);
 
       span {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 4.5rem;
         line-height: 105%;
         text-transform: uppercase;
@@ -359,7 +366,8 @@
         transition: all 0.3s ease;
 
         &:hover {
-          h3 {
+
+          .directory__list-title {
             color: var(--primary-accent);
           }
 
@@ -375,7 +383,7 @@
             grid-template-rows: 1fr;
           }
 
-          h3 {
+          .directory__list-title {
             color: var(--primary-accent);
           }
 
@@ -386,23 +394,12 @@
         }
       }
 
-      h3 {
-        display: flex;
-        align-items: center;
-        gap: 1.7rem;
-        font-weight: 800;
-        font-size: 2.6rem;
-        line-height: 120%;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
       i {
         font-weight: 900;
         transition: all 0.3s ease;
       }
 
-      div {
+      div:not(.directory__list-title) {
         display: grid;
         grid-template-rows: 0fr;
         overflow: hidden;
@@ -410,11 +407,23 @@
       }
 
       p {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 1.8rem;
         line-height: 120%;
         overflow: hidden;
       }
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 1.7rem;
+      font-weight: 800;
+      font-size: 2.6rem;
+      line-height: 120%;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
   }
 
@@ -425,14 +434,9 @@
     aspect-ratio: 1240/536;
   }
 
-  h6 {
-    font-weight: 800;
-    font-size: 1.8rem;
-    line-height: 110%;
-  }
-
   p {
-    font-weight: 400;;
+    font-weight: 400;
+    ;
     font-size: 1.8rem;
     line-height: 120%;
     margin-bottom: 2rem;
