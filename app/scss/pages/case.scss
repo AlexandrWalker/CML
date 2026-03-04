@@ -101,16 +101,16 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-    }
 
-    h5 {
-      font-weight: 800;
-      font-size: 2.6rem;
-      line-height: 110%;
+      span {
+        font-weight: 800;
+        font-size: 2.6rem;
+        line-height: 110%;
+      }
     }
 
     p {
-      font-weight: 400;;
+      font-weight: 400;
       font-size: 1.8rem;
       line-height: 120%;
     }
@@ -129,7 +129,8 @@
       gap: 0.5rem 1rem;
 
       span {
-        font-weight: 400;;
+        font-weight: 400;
+        ;
         font-size: 1.8rem;
         line-height: 110%;
         color: var(--primary-accent);

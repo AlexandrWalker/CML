@@ -59,7 +59,6 @@
 
   &__item {
     display: grid;
-    // grid-template-columns: 1fr 1fr;
     grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
     grid-template-rows: 1fr 0fr;
     gap: 0 2rem;
@@ -80,9 +79,6 @@
 
     &-content {
       width: calc(50% - 1rem);
-      // height: 58.6rem;
-      // height: 57rem;
-      // height: 61rem;
       height: 68rem;
       position: relative;
       z-index: 1;
@@ -96,21 +92,10 @@
         height: fit-content;
       }
 
-      h3 {
-        font-weight: 800;
-        font-size: 3.4rem;
-        line-height: 120%;
-        text-transform: uppercase;
-        margin-bottom: 2rem;
-        transition: all 0.3s ease;
-        width: min-content;
-      }
-
       p {
         font-weight: 400;
         font-size: 1.8rem;
         line-height: 110%;
-        overflow: hidden;
 
         &:not(:last-child, .certificates .assortment__item-head p) {
           margin-bottom: 2rem;
@@ -127,6 +112,21 @@
       i {
         display: none;
       }
+    }
+
+    &-title {
+      font-weight: 800;
+      font-size: 3.4rem;
+      line-height: 120%;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+      width: min-content;
+    }
+
+    &-text {
+      margin-bottom: 2rem;
+      overflow: hidden;
     }
 
     &-body {

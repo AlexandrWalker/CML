@@ -91,14 +91,12 @@
         color: var(--white);
       }
 
-      h4 {
+      &-title {
         font-weight: 800;
         font-size: 2.6rem;
         line-height: 120%;
         color: var(--primary-accent);
       }
-
-      p {}
     }
   }
 }

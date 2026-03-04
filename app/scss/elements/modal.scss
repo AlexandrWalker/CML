@@ -24,6 +24,7 @@
   }
 
   &__list {
+
     .header__contact-item {
       padding: 0;
     }
@@ -167,11 +168,6 @@
           color: var(--primary-black);
         }
       }
-
-      // &:invalid {
-      //   color: var(--primary-accent);
-      //   border-color: var(--primary-accent);
-      // }
     }
 
     &-checkbox {
