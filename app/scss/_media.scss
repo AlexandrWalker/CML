@@ -71,11 +71,6 @@
   .directory-page .general--big .general__body {
     max-width: 63rem;
   }
-
-  /* news */
-  .news table {
-    // display: none;
-  }
 }
 
 @media (max-width: 991px) {}
@@ -1891,7 +1886,6 @@
 
   .news__content {
     width: 100%;
-    // gap: 2rem;
   }
 
   .news__download {
@@ -1912,7 +1906,14 @@
     margin-bottom: 2rem;
   }
 
-  .news__content h2,
+  .news__content h2 {
+    font-size: 2.6rem;
+  }
+
+  .news__content h3,
+  .news__content h4,
+  .news__content h5,
+  .news__content h6,
   .news__result,
   .news__content blockquote {
     font-size: 2rem;
@@ -1947,18 +1948,14 @@
     margin-bottom: 2rem;
   }
 
-  .news__content h5 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
   .news__side {
     width: 100%;
     padding: 3rem 2rem;
     gap: 2rem;
   }
 
-  .news__side h2 {
+  .news__side h2,
+  .news__side h3 {
     font-size: 2rem;
   }
 
