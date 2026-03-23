@@ -407,6 +407,10 @@
 
       &__content {
         gap: 2rem;
+
+        .customs & {
+          max-width: 88rem;
+        }
       }
 
       &__img {
