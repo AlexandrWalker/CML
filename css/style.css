@@ -6654,7 +6654,6 @@ ol li::after {
   margin-bottom: 3rem;
   overflow: hidden;
 }
-
 .assortment {
   overflow: visible;
 }
@@ -8882,6 +8881,9 @@ ol li::after {
 .general--sample .general__content {
   gap: 2rem;
 }
+.customs .general--sample .general__content {
+  max-width: 88rem;
+}
 .general--sample .general__img {
   height: 69.2rem;
   margin: auto 0;
@@ -10391,6 +10393,9 @@ ol li::after {
   .general--sample .general__content {
     max-width: 50rem;
     gap: 1.6rem;
+  }
+  .customs .general--sample .general__content {
+    max-width: 50rem;
   }
   .general--sample h2 {
     gap: 1rem;
