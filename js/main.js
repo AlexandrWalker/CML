@@ -1173,9 +1173,28 @@
 
 
     const fixedBtn = document.getElementById('fixed-btn');
-    fixedBtn.addEventListener('click', function () {
-      fixedBtn.parentNode.classList.toggle('fixed-btns--active');
-    });
+    const fixedBlock = document.getElementById('fixed-block');
+
+    if (fixedBlock) {
+      fixedBlock.style.display = 'none';
+
+      setTimeout(() => {
+        fixedBlock.style.display = 'flex';
+      }, 15000);
+
+      const fixedBlockBtn = fixedBlock.querySelector('.fixed-btns__block-btn');
+
+      fixedBlockBtn.addEventListener('click', () => {
+        fixedBlock.style.display = 'none';
+      })
+    }
+
+    if (fixedBtn) {
+      fixedBtn.addEventListener('click', function () {
+        fixedBtn.parentNode.classList.toggle('fixed-btns--active');
+        fixedBlock.style.display = 'none';
+      });
+    }
 
     const infoPlate = document.getElementById('info-plate');
     if (infoPlate) {
@@ -1197,6 +1216,8 @@
         infoPlate.classList.remove(infoPlateClassName);
       });
     }
+
+
 
     // const tgPlate = document.getElementById('telegram-plate');
     // if (tgPlate) {
