@@ -156,14 +156,17 @@
 .fixed-btns {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 1rem;
   position: fixed;
   top: 50%;
   right: 2rem;
   z-index: 10;
   transform: translateY(-50%);
+  transition: transform 0.3s ease;
 
   &--active {
+    // transform: translateY(100%);
 
     .fixed-btns__items {
       opacity: 1;
@@ -201,6 +204,7 @@
 
         i,
         &.telegram i,
+        &.max i,
         &.whatsapp i {
           color: var(--white);
           transform: scale(1.2);
@@ -253,6 +257,95 @@
 
       i {
         color: var(--primary-accent);
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1.9rem 0 1.1rem 1.3rem;
+    background-color: var(--white);
+    border-radius: 0.8rem;
+    width: 19.4rem;
+    height: 7rem;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0px 4px 21px rgba(0, 0, 0, 0.13));
+
+    position: absolute;
+    bottom: 8rem;
+    right: 0;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 2.2rem;
+      height: 2.2rem;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMCAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik05LjUyNTM5IDE2LjVMMTkuMDUxNyAwSC0wLjAwMDg4ODgyNEw5LjUyNTM5IDE2LjVaIiBmaWxsPSJ3aGl0ZSIvPg0KPC9zdmc+DQo=);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+      position: absolute;
+      bottom: -1.1rem;
+      right: 1.9rem;
+      z-index: 1;
+    }
+
+    &-img {
+      width: auto;
+      height: 4rem;
+
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-text {
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 120%;
+    }
+
+    &-btn {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background-color: var(--primary-accent);
+      cursor: pointer;
+
+      position: absolute;
+      top: -1.2rem;
+      right: -1.2rem;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1.3rem;
+        height: 0.2rem;
+        background-color: var(--white);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 1.3rem;
+        height: 0.2rem;
+        background-color: var(--white);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
       }
     }
   }

@@ -3410,6 +3410,10 @@
     text-align: left;
   }
 
+  .footer .telegram__text br {
+    display: none;
+  }
+
   .footer .telegram__btn {
     max-width: 100%;
     height: 4rem;

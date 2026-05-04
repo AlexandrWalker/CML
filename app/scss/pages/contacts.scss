@@ -149,6 +149,13 @@
     }
   }
 
+  .telegram__text {
+    
+    p {
+      color: var(--primary-accent);
+    }
+  }
+
   .telegram__btns {
     display: flex;
     flex-direction: row;
