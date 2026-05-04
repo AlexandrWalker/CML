@@ -234,7 +234,14 @@
     color: var(--white);
   }
 
-  .telegram__btn{
+  .telegram__btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .telegram__btn {
     max-width: 26rem;
   }
 }

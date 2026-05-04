@@ -227,14 +227,15 @@ a {
 
 .btn-telegram {
   --button-font-size: 1.4rem;
+  --button-padding-x: 1.7rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   width: 100%;
   height: 5rem;
-  border-radius: 0.5rem;
+  // border-radius: 0.5rem;
   border: 0;
   color: var(--white);
   background: transparent;
@@ -263,7 +264,7 @@ a {
     opacity: 1;
     transition: opacity 0.5s ease;
     pointer-events: none;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
   }
 
   &::after {
@@ -280,11 +281,76 @@ a {
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
   }
 
   i {
-    font-size: 3rem;
+    font-size: 2.4rem;
+  }
+
+}
+
+.btn-max {
+  --button-font-size: 1.4rem;
+  --button-padding-x: 1.7rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 5rem;
+  // border-radius: 0.5rem;
+  border: 0;
+  color: var(--white);
+  background: transparent;
+
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #2AA8FC 0%, #7E3FE4 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    // border-radius: 0.5rem;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #7E3FE4 0%, #2AA8FC 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    // border-radius: 0.5rem;
+  }
+
+  i {
+    font-size: 2rem;
   }
 
 }
