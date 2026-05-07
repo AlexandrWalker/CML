@@ -4281,6 +4281,10 @@
 
   .plate__btns .fixed-btns__block {
     display: flex;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
   }
 }
 
