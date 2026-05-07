@@ -2358,6 +2358,7 @@ ol li::after {
   width: 100%;
 }
 .plate__btns .fixed-btns__block {
+  display: none;
   right: unset;
   left: 2rem;
   bottom: 6.7rem;
@@ -10258,6 +10259,9 @@ ol li::after {
   .delivery-calc__item-list a,
   .site-map__item-list a {
     font-size: 1.4rem;
+  }
+  .plate__btns .fixed-btns__block {
+    display: flex;
   }
 }
 @media (max-width: 370px) {
