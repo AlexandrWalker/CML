@@ -13,6 +13,8 @@
   transform: translateY(10rem);
   transition: all 0.3s linear;
 
+  overflow: visible;
+
   &.show {
     opacity: 1;
     visibility: visible;
@@ -29,6 +31,18 @@
     flex-direction: row;
     gap: 1rem;
     width: 100%;
+
+    .fixed-btns__block {
+      right: unset;
+      left: 2rem;
+      bottom: 6.7rem;
+      z-index: 1;
+    }
+
+    .fixed-btns__block::before {
+      right: unset;
+      left: 1.9rem;
+    }
   }
 
   &__btn {
@@ -49,6 +63,7 @@
 
       i,
       &.telegram i,
+      &.max i,
       &.whatsapp i {
         color: var(--white);
       }
@@ -58,13 +73,17 @@
       color: #2CAFE8;
     }
 
+    &.max i {
+      color: #7E3FE4;
+    }
+
     &.whatsapp i {
       color: #3FD01A;
     }
 
     i {
       color: var(--primary-accent);
-      font-size: 2.4rem;
+      font-size: 3.4rem;
       line-height: 1;
     }
 

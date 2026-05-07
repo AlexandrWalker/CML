@@ -1087,10 +1087,6 @@ ol li::after {
   height: 14.4rem;
   transition: transform 0.5s ease;
 }
-.head.out {
-  transform: translateY(-100%);
-}
-
 .header {
   background-color: var(--primary-black);
   padding: 2rem 0;
@@ -2344,6 +2340,7 @@ ol li::after {
   pointer-events: none;
   transform: translateY(10rem);
   transition: all 0.3s linear;
+  overflow: visible;
 }
 .plate.show {
   opacity: 1;
@@ -2360,6 +2357,16 @@ ol li::after {
   gap: 1rem;
   width: 100%;
 }
+.plate__btns .fixed-btns__block {
+  right: unset;
+  left: 2rem;
+  bottom: 6.7rem;
+  z-index: 1;
+}
+.plate__btns .fixed-btns__block::before {
+  right: unset;
+  left: 1.9rem;
+}
 .plate__btn {
   --button-font-size: 1rem;
   flex-direction: column;
@@ -2374,18 +2381,21 @@ ol li::after {
 .plate__btn:hover {
   color: var(--white);
 }
-.plate__btn:hover i, .plate__btn:hover.telegram i, .plate__btn:hover.whatsapp i {
+.plate__btn:hover i, .plate__btn:hover.telegram i, .plate__btn:hover.max i, .plate__btn:hover.whatsapp i {
   color: var(--white);
 }
 .plate__btn.telegram i {
   color: #2CAFE8;
+}
+.plate__btn.max i {
+  color: #7E3FE4;
 }
 .plate__btn.whatsapp i {
   color: #3FD01A;
 }
 .plate__btn i {
   color: var(--primary-accent);
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   line-height: 1;
 }
 .plate__btn:last-child i {
