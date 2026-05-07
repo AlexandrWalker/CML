@@ -1173,26 +1173,33 @@
 
 
     const fixedBtn = document.getElementById('fixed-btn');
-    const fixedBlock = document.getElementById('fixed-block');
+    const fixedBlocks = document.querySelectorAll('.fixed-btns__block');
 
-    if (fixedBlock) {
-      fixedBlock.style.display = 'none';
+    if (fixedBlocks.length) {
 
-      setTimeout(() => {
-        fixedBlock.style.display = 'flex';
-      }, 15000);
+      fixedBlocks.forEach(fixedBlock => {
 
-      const fixedBlockBtn = fixedBlock.querySelector('.fixed-btns__block-btn');
-
-      fixedBlockBtn.addEventListener('click', () => {
         fixedBlock.style.display = 'none';
-      })
+
+        setTimeout(() => {
+          fixedBlock.style.display = 'flex';
+        }, 15000);
+
+        const fixedBlockBtn = fixedBlock.querySelector('.fixed-btns__block-btn');
+
+        fixedBlockBtn.addEventListener('click', () => {
+          fixedBlock.style.display = 'none';
+        })
+
+        fixedBtn.addEventListener('click', function () {
+          fixedBlock.style.display = 'none';
+        });
+      });
     }
 
     if (fixedBtn) {
       fixedBtn.addEventListener('click', function () {
         fixedBtn.parentNode.classList.toggle('fixed-btns--active');
-        fixedBlock.style.display = 'none';
       });
     }
 
