@@ -227,8 +227,15 @@
     }
   }
 
-  .section__head h2 {
-    margin-bottom: 0;
+  .section__head {
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 2.4rem;
+    }
   }
 }
 
@@ -240,6 +247,7 @@
   }
 }
 
+#modal-call,
 #modal-bid {
   .modal__box {
     max-width: 50.4rem;
@@ -326,7 +334,8 @@
 
 .modal .form-btn {
   width: calc(50% - 0.5rem);
-  height: 5rem;
+  // height: 5rem;
+  height: 6rem;
 }
 
 .modal .form-bottom {
@@ -344,7 +353,8 @@
 
 .modal .form-input {
   font-size: 1.6rem;
-  height: 5.4rem;
+  // height: 5.4rem;
+  height: 6rem;
 }
 
 .modal .form-textarea {

@@ -510,15 +510,17 @@
               document.getElementById(modalId).classList.add('open');
 
               if (openButton.hasAttribute('data-value')) {
-                document.getElementById(modalId).querySelector('.dropdown--js').classList.add('check');
-                document.getElementById(modalId).querySelector('.dropdown__selected--js span').innerHTML = modalValue;
-                document.getElementById(modalId).querySelector('.dropdown__value').dataset.value = modalValue;
-                const dropdownRadios = document.getElementById(modalId).querySelectorAll('.dropdown__radio');
-                dropdownRadios.forEach(dropdownRadio => {
-                  if (dropdownRadio.value == modalValue) {
-                    dropdownRadio.checked = true;
-                  }
-                });
+                if (document.getElementById(modalId).querySelector('.dropdown--js')) {
+                  document.getElementById(modalId).querySelector('.dropdown--js').classList.add('check');
+                  document.getElementById(modalId).querySelector('.dropdown__selected--js span').innerHTML = modalValue;
+                  document.getElementById(modalId).querySelector('.dropdown__value').dataset.value = modalValue;
+                  const dropdownRadios = document.getElementById(modalId).querySelectorAll('.dropdown__radio');
+                  dropdownRadios.forEach(dropdownRadio => {
+                    if (dropdownRadio.value == modalValue) {
+                      dropdownRadio.checked = true;
+                    }
+                  });
+                }
               }
 
               document.body.classList.add('no-scroll');

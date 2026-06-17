@@ -341,5 +341,35 @@
         object-fit: contain;
       }
     }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      position: absolute;
+      bottom: 5rem;
+      left: 5rem;
+
+      &--block {
+        width: fit-content;
+        padding: 0.6rem 1.4rem 0.5rem 1.5rem;
+        background-color: var(--primary-accent);
+
+        font-weight: 800;
+        font-size: 2.4rem;
+        line-height: 120%;
+        color: var(--white);
+      }
+
+      &--text {
+        max-width: 25rem;
+
+        font-weight: 800;
+        font-size: 2rem;
+        line-height: 125%;
+        color: var(--primary-black);
+      }
+    }
   }
 }

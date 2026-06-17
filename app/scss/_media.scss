@@ -193,6 +193,7 @@
 
   .modal#modal-result .modal__box {
     padding: 6rem 2rem 4rem;
+    max-width: 37.7rem;
   }
 
   #modal-result .modal__bid-text {
@@ -213,6 +214,15 @@
 
   .modal .calc__inner {
     padding: 0;
+  }
+
+  .modal .section__head p {
+    font-size: 1.6rem;
+  }
+
+  .modal .form-input {
+    height: 5rem;
+    font-size: 1.4rem;
   }
 
   .calc__inner {
@@ -310,10 +320,15 @@
   .modal .form-btn {
     width: calc(50% - 0.5rem);
     height: 5rem;
+    font-size: 1.4rem;
   }
 
   .modal .form-title {
     top: 1rem;
+  }
+
+  .modal .form-text {
+    font-size: 1rem;
   }
 
   .service__items {
@@ -2103,7 +2118,7 @@
   .reasons__item-text {
     max-width: 100%;
     grid-column: 1/2;
-    grid-row: 3/6;
+    grid-row: 3/5;
   }
 
   .reasons__item-text p {
@@ -2120,6 +2135,28 @@
     // height: 20.8rem;
     width: 100%;
     height: auto;
+  }
+
+  .reasons__item-text {
+    margin-bottom: 2.5rem;
+  }
+
+  .reasons__item-wrap {
+    gap: 1.5rem;
+    grid-column: 1/2;
+    grid-row: 5/6;
+
+    position: static;
+  }
+
+  .reasons__item-wrap--block {
+    padding: 0.5rem 1.1rem 0.5rem 1.2rem;
+
+    font-size: 2rem;
+  }
+
+  .reasons__item-wrap--text {
+    font-size: 1.4rem;
   }
 
   .offers__items {
@@ -2856,6 +2893,10 @@
   .modal .form-group,
   .form-group {
     width: 100%;
+  }
+
+  .form-col-2.calc__body {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .modal .form-btn,
@@ -3966,6 +4007,10 @@
   .reasons__item-content {
     display: flex;
     flex-direction: column;
+  }
+
+  .reasons__item-wrap {
+    margin-bottom: 3rem;
   }
 
   .offers__items {
