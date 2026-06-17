@@ -287,6 +287,10 @@
                 Рассчитайте стоимость
                 <i class="icon-calc"></i>
               </button>
+              <button class="header__calc btn btn-call modal__btn blik" data-id="modal-call">
+                Бесплатный звонок
+                <i class="icon-plate-phone"></i>
+              </button>
               <div class="header__btn">
                 <div class="header__btn-head">
                   Свяжитесь с нами
@@ -471,7 +475,7 @@
                 <span class="calc__head-count">1</span>
                 <p class="calc__head-text">Информация о&nbsp;грузе</p>
               </div>
-              <div class="calc__body">
+              <div class="calc__body form-col-2">
                 <div class="form-group dots">
                   <label class="form-title">Страна, Город</label>
                   <input class="form-input" type="text" placeholder="Место отгрузки" required>
@@ -486,7 +490,7 @@
                     Поле заполнено неверно
                   </span>
                 </div>
-                <div class="form-group dots">
+                <!-- <div class="form-group dots">
                   <div class="dropdown dropdown--js check">
                     <div class="dropdown__selected toggle--label dropdown__selected-label--js dropdown__selected--js">
                       <span>Контейнерная доставка</span>
@@ -524,7 +528,7 @@
                     </div>
                     <input class="dropdown__value" type="hidden" data-value="Контейнерная доставка">
                   </div>
-                </div>
+                </div> -->
                 <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Масса, кг" required>
                   <span class="error">
@@ -537,13 +541,13 @@
                     Поле заполнено неверно
                   </span>
                 </div>
-                <div class="form-group dots">
+                <!-- <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Наименование" required>
                   <span class="error">
                     Поле заполнено неверно
                   </span>
                 </div>
-                <textarea class="form-textarea" name="comments" placeholder="Описание груза"></textarea>
+                <textarea class="form-textarea" name="comments" placeholder="Описание груза"></textarea> -->
               </div>
             </div>
             <div class="calc__block">
@@ -568,7 +572,7 @@
                 </div>
                 <div class="form-group">
                   <input class="form-input" type="text" placeholder="Эл.почта" pattern="^\S+@\S+\.\S+$" minlength="2"
-                    maxlength="40" required>
+                    maxlength="40">
                   <span class="error">
                     Поле заполнено неверно
                   </span>
@@ -875,6 +879,14 @@
                     товаров для сертификации
                   </p>
                 </div>
+                <div class="reasons__item-wrap">
+                  <div class="reasons__item-wrap--block">
+                    50+ стран
+                  </div>
+                  <div class="reasons__item-wrap--text">
+                    Разветвленная сеть партнеров по всему миру
+                  </div>
+                </div>
                 <div class="reasons__item-img">
                   <img src="./images/international/prichina-1.png" alt="">
                 </div>
@@ -898,6 +910,14 @@
                     Максимально быстрый способ доставки грузов разного вида и&nbsp;объёма, начиная от&nbsp;образцов
                     товаров для сертификации
                   </p>
+                </div>
+                <div class="reasons__item-wrap">
+                  <div class="reasons__item-wrap--block">
+                    от 3 дней
+                  </div>
+                  <div class="reasons__item-wrap--text">
+                    Экспресс-доставка авиа- и автотранспортом
+                  </div>
                 </div>
                 <div class="reasons__item-img">
                   <img src="./images/international/prichina-1.png" alt="">
@@ -923,6 +943,14 @@
                     товаров для сертификации
                   </p>
                 </div>
+                <div class="reasons__item-wrap">
+                  <div class="reasons__item-wrap--block">
+                    1 500+ грузов
+                  </div>
+                  <div class="reasons__item-wrap--text">
+                    Успешно доставленных ежегодно
+                  </div>
+                </div>
                 <div class="reasons__item-img">
                   <img src="./images/international/prichina-1.png" alt="">
                 </div>
@@ -947,6 +975,14 @@
                     товаров для сертификации
                   </p>
                 </div>
+                <div class="reasons__item-wrap">
+                  <div class="reasons__item-wrap--block">
+                    0% предоплаты
+                  </div>
+                  <div class="reasons__item-wrap--text">
+                    Для постоянных клиентов (постоплата)
+                  </div>
+                </div>
                 <div class="reasons__item-img">
                   <img src="./images/international/prichina-1.png" alt="">
                 </div>
@@ -970,6 +1006,14 @@
                     Максимально быстрый способ доставки грузов разного вида и&nbsp;объёма, начиная от&nbsp;образцов
                     товаров для сертификации
                   </p>
+                </div>
+                <div class="reasons__item-wrap">
+                  <div class="reasons__item-wrap--block">
+                    60 минут
+                  </div>
+                  <div class="reasons__item-wrap--text">
+                    Среднее время расчета стоимости менеджером
+                  </div>
                 </div>
                 <div class="reasons__item-img">
                   <img src="./images/international/prichina-1.png" alt="">
@@ -1011,7 +1055,7 @@
           </h2>
         </div>
 
-                <div class="cargo__items">
+        <div class="cargo__items">
           <div class="cargo__item">
             <div class="cargo__item-wrap">
               <img src="" alt="">
@@ -1267,7 +1311,7 @@
                   <div class="work__item-content">
                     <div class="work__item-title">
                       Индивидуальный подход
-                    </div >
+                    </div>
                     <p class="work__item-text">
                       мы предлагаем индивидуальный подход к каждому клиенту. Мы понимаем, что все компании уникальны,
                       и адаптируем наши услуги к вашим конкретным потребностям, что позволяет обеспечить максимальную
@@ -1288,7 +1332,7 @@
                   <div class="work__item-content">
                     <div class="work__item-title">
                       Готовим документы для таможенного оформления
-                    </div >
+                    </div>
                     <p class="work__item-text">
                       Мы, самостоятельно не обременяя клиента форма
                     </p>
@@ -1307,7 +1351,7 @@
                   <div class="work__item-content">
                     <div class="work__item-title">
                       Учитываем все риски на этапе расчета
-                    </div >
+                    </div>
                     <p class="work__item-text">
                       На этапе предварительного расчёта мы анализируем все аспекты транспортировки и таможенного
                       оформления
@@ -1330,7 +1374,7 @@
                   <div class="work__item-content">
                     <div class="work__item-title">
                       Возим всеми видами транспорта
-                    </div >
+                    </div>
                     <p class="work__item-text">
                       Мы можем предложить различные варианты перевозки вашего груза с разной стоимостью и сроками
                       доставки
@@ -1350,7 +1394,7 @@
                   <div class="work__item-content">
                     <div class="work__item-title">
                       Конкурентные цены
-                    </div >
+                    </div>
                     <p class="work__item-text">
                       У нас конкурентоспособные цены на услуги логистики. Благодаря налаженным партнерским отношениям с
                       транспортными компаниями и большому опыту мы можем предложить выгодные тарифы, что поможет вам
@@ -2595,7 +2639,7 @@
                     Поле заполнено неверно
                   </span>
                 </div>
-                <div class="form-group dots">
+                <!-- <div class="form-group dots">
                   <div class="dropdown dropdown--js">
                     <div class="dropdown__selected toggle--label dropdown__selected-label--js dropdown__selected--js">
                       <span>Тип перевозки</span>
@@ -2633,7 +2677,7 @@
                     </div>
                     <input class="dropdown__value" type="hidden">
                   </div>
-                </div>
+                </div> -->
                 <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Масса, кг" required>
                   <span class="error">
@@ -2646,13 +2690,13 @@
                     Поле заполнено неверно
                   </span>
                 </div>
-                <div class="form-group dots">
+                <!-- <div class="form-group dots">
                   <input class="form-input" type="text" placeholder="Наименование" required>
                   <span class="error">
                     Поле заполнено неверно
                   </span>
                 </div>
-                <textarea class="form-textarea" name="comments" placeholder="Описание груза"></textarea>
+                <textarea class="form-textarea" name="comments" placeholder="Описание груза"></textarea> -->
               </div>
             </div>
             <div class="calc__block">
@@ -2677,7 +2721,7 @@
                 </div>
                 <div class="form-group">
                   <input class="form-input" type="text" placeholder="Эл.почта" pattern="^\S+@\S+\.\S+$" minlength="2"
-                    maxlength="40" required>
+                    maxlength="40">
                   <span class="error">
                     Поле заполнено неверно
                   </span>
@@ -2728,7 +2772,7 @@
           <div class="form-group">
             <input class="form-input" type="text" placeholder="Эл.почта">
           </div>
-          <button class="form-btn btn btn-red">
+          <button class="form-btn btn btn-red modal__btn" data-id="modal-result">
             Получить консультацию
           </button>
           <div class="form-bottom">
@@ -2760,6 +2804,50 @@
         <p class="modal__bid-text">
           В ближайшее время мы свяжемся с Вами!
         </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modal-call" class="modal" data-lenis-prevent>
+  <div class="modal__box">
+    <button class="modal__close-btn">
+    </button>
+    <div class="modal__content">
+      <div class="section__head">
+        <p>Обратная связь</p>
+        <h2>
+          Заявку
+          <div>на бесплатную</div> консультацию
+        </h2>
+      </div>
+      <div class="modal__bid">
+        <p class="modal__bid-text">
+          Отправьте сообщение и наш менеджер свяжется с вами в ближайшее время для консультации
+        </p>
+        <form action="#" method="get">
+
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Название компании" required>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Имя" required>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Номер телефона" required>
+          </div>
+          <button class="form-btn btn btn-red modal__btn" data-id="modal-result">
+            Получить консультацию
+          </button>
+          <div class="form-bottom">
+            <input class="form-checkbox" type="checkbox" required>
+            <p class="form-text">
+              Нажимая кнопку &laquo;Получить консультацию&raquo;, я&nbsp;соглашаюсь с&nbsp;<a
+                href="/CML/policy.html">обработкой персональных данных</a> и с&nbsp;<a
+                href="/CML/agreement.html">пользовательским соглашением</a>
+            </p>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -2852,7 +2940,7 @@
     </div>
     <div class="fixed-btns__item">
       <a class="btn fixed-btns__item-btn" href="tel:+79538877200">
-        <i class="icon-phone"></i>
+        <i class="icon-plate-phone"></i>
       </a>
     </div>
   </div>
