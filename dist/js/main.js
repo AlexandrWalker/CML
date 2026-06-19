@@ -196,6 +196,38 @@
       },
     });
 
+    const caseSlider = new Swiper(".case__slider", {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 10,
+      speed: 600,
+      loop: true,
+      // loopAdditionalSlides: 6,
+      mousewheel: {
+        forceToAxis: true,
+      },
+      breakpoints: {
+        361: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        769: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 4
+      },
+      navigation: {
+        nextEl: ".case-button-next",
+        prevEl: ".case-button-prev",
+      },
+    });
+
 
     const cargofeatSlider = new Swiper(".cargo-feat__slider", {
       slidesPerView: 'auto',

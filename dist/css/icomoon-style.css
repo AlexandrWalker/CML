@@ -1,17 +1,16 @@
 @font-face {
   font-family: 'CmlIconFont';
-  src: url('./../fonts/icomoon/CmlIconFont.eot?44dcek');
-  src: url('./../fonts/icomoon/CmlIconFont.eot?44dcek#iefix') format('embedded-opentype'),
-    url('./../fonts/icomoon/CmlIconFont.ttf?44dcek') format('truetype'),
-    url('./../fonts/icomoon/CmlIconFont.woff?44dcek') format('woff'),
-    url('./../fonts/icomoon/CmlIconFont.svg?44dcek#CmlIconFont') format('svg');
+  src:  url('./../fonts/icomoon/CmlIconFont.eot?uvohjh');
+  src:  url('./../fonts/icomoon/CmlIconFont.eot?uvohjh#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon/CmlIconFont.ttf?uvohjh') format('truetype'),
+    url('./../fonts/icomoon/CmlIconFont.woff?uvohjh') format('woff'),
+    url('./../fonts/icomoon/CmlIconFont.svg?uvohjh#CmlIconFont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'CmlIconFont' !important;
   speak: never;
@@ -26,98 +25,81 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-plate-phone:before {
-  content: "\e900";
-}
-
-.icon-plate-max:before {
+.icon-plate-pochta:before {
   content: "\e901";
 }
-
-.icon-plate-telegram:before {
+.icon-phone-fill:before {
   content: "\e902";
 }
-
-.icon-plate-whatsapp:before {
+.icon-plate-phone:before {
   content: "\e903";
 }
-
-.icon-max-color:before {
+.icon-plate-max:before {
   content: "\e904";
 }
-
-.icon-max-big:before {
+.icon-plate-telegram:before {
   content: "\e905";
 }
-
-.icon-max:before {
+.icon-plate-whatsapp:before {
   content: "\e906";
 }
-
-.icon-wchat:before {
+.icon-max-color:before {
   content: "\e907";
 }
-
-.icon-download:before {
+.icon-max-big:before {
+  content: "\e908";
+}
+.icon-max:before {
   content: "\e909";
 }
-
-.icon-angle:before {
+.icon-wchat:before {
   content: "\e90a";
 }
-
-.icon-calc:before {
-  content: "\e90b";
-}
-
-.icon-chevron-down:before {
+.icon-download:before {
   content: "\e90c";
 }
-
-.icon-circle-chevron-down:before {
+.icon-angle:before {
   content: "\e90d";
 }
-
-.icon-file-pdf:before {
+.icon-calc:before {
   content: "\e90e";
 }
-
-.icon-headphones:before {
+.icon-chevron-down:before {
   content: "\e90f";
 }
-
-.icon-home:before {
+.icon-circle-chevron-down:before {
   content: "\e910";
 }
-
-.icon-minus:before {
+.icon-file-pdf:before {
   content: "\e911";
 }
-
-.icon-phone:before {
+.icon-headphones:before {
   content: "\e912";
 }
-
-.icon-plus:before {
+.icon-home:before {
   content: "\e913";
 }
-
-.icon-pochta:before {
+.icon-minus:before {
   content: "\e914";
 }
-
-.icon-telegram:before {
+.icon-phone:before {
   content: "\e915";
 }
-
-.icon-telegram-color:before {
+.icon-plus:before {
   content: "\e916";
 }
-
-.icon-whatsapp:before {
+.icon-pochta:before {
   content: "\e917";
 }
-
-.icon-whatsapp-color:before {
+.icon-telegram:before {
   content: "\e918";
+}
+.icon-telegram-color:before {
+  content: "\e919";
+}
+.icon-whatsapp:before {
+  content: "\e91a";
+}
+.icon-whatsapp-color:before {
+  content: "\e91b";
 }
