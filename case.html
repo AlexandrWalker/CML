@@ -19,6 +19,10 @@
   <link rel="manifest" href="./images/favicon/site.webmanifest" />
   <!-- title -->
   <title>CML Company</title>
+  <!-- Шрифт для эмодзи -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/lenis/lenis.min.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -498,7 +502,7 @@
       </div>
     </div>
   </section>
-  <!--  -->
+  <!-- made -->
   <section class="made">
     <div class="container">
       <div class="made__inner">
@@ -673,8 +677,46 @@
       </div>
     </div>
   </section>
+  <!-- capture  -->
+  <section class="capture">
+    <div class="container">
+      <div class="capture__inner">
+
+        <div class="capture__block">
+          <div class="capture__content">
+            <div class="capture__title">
+              ХОТИТЕ ТАКОЙ ЖЕ РЕЗУЛЬТАТ?
+            </div>
+            <div class="capture__text">
+              Наши логисты подберут оптимальный маршрут и рассчитают стоимость за 60 минут.
+            </div>
+            <div class="capture__subtitle">
+              <i class="icon-gift"></i>
+              <p>
+                Бесплатный бонус: чек-лист "Как подготовить груз к морской перевозке" 
+              </p>
+            </div>
+          </div>
+          <a class="capture__btn btn btn-white" href="/">
+            Получить расчет
+          </a>
+          <!-- <div class="capture__bg">
+            <picture>
+              <source media="(min-width: 601px)" srcset="./images/temp/capture-bg.jpg">
+              <source media="(max-width: 600px)" srcset="./images/temp/capture-bg-mob.jpg">
+              <img src="./images/temp/capture-bg.jpg" alt="">
+            </picture>
+          </div> -->
+          <div class="capture__cover">
+            <img src="./../images/temp/capture-cover.png" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
   <!-- Кейсы -->
-  <section class="cases">
+  <section class="cases none">
     <div class="container">
       <div class="cases__inner">
         <div class="section__head">
@@ -861,11 +903,9 @@
     <div class="container">
       <div class="cases__inner">
         <div class="section__head">
-          <p>Выполненные проекты</p>
+          <p>кейсы</p>
           <h2>
-            <span>
-              Кейсы
-            </span>
+            Другие проекты
           </h2>
         </div>
         <div class="swiper-control">
@@ -1222,7 +1262,7 @@
     </div>
   </section>
   <!-- Отзывы -->
-  <section class="reviews">
+  <section class="reviews none">
     <div class="container">
       <div class="reviews__inner">
         <div class="section__head">
@@ -1569,7 +1609,7 @@
     </div>
   </section>
   <!-- Обратная связь -->
-  <section class="request">
+  <section class="request none">
     <div class="container request__container">
       <div class="request__inner">
         <div class="section__head">
@@ -2199,15 +2239,20 @@
     </button>
     <div class="modal__content">
       <div class="section__head">
+        <i class="icon-gift"></i>
         <h2>
-          🎁 Подождите!
+          Подождите!
         </h2>
       </div>
       <div class="modal__bid">
-        <p class="modal__bid-text">
-          <span>Заберите бесплатно чек-лист «10 ошибок при растаможке из Китая в 2026 году»</span> и получите скидку 10% на первую доставку
-        </p>
+        <div class="modal__bid-text">
+          <span>Заберите бесплатно чек-лист «10 ошибок при растаможке из Китая в 2026 году»</span> и получите скидку 10%
+          на первую доставку
+        </div>
         <form action="#" method="get">
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Имя" required>
+          </div>
           <div class="form-group">
             <input class="form-input" type="email" placeholder="Эл. почта" required>
           </div>
@@ -2221,9 +2266,9 @@
                 href="/CML/policy.html">обработкой персональных данных</a> и с&nbsp;<a
                 href="/CML/agreement.html">пользовательским соглашением</a>
             </p>
-            <p>
-              Мы не спамим. Только полезная информация о логистике.
-            </p>
+          </div>
+          <div class="form-bottom-text">
+            Мы не спамим. Только полезная информация о логистике.
           </div>
         </form>
       </div>
