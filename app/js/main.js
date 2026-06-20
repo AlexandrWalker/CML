@@ -883,6 +883,7 @@
 
     const faqItems = document.querySelectorAll(".faq__item");
     const serviceItems = document.querySelectorAll(".service__item");
+    const uslugiItems = document.querySelectorAll(".uslugi__item");
     const calcItems = document.querySelectorAll(".calc__block");
     const aboutItem = document.querySelector(".about__img");
     const bannerItem = document.querySelector(".banner");
@@ -931,6 +932,20 @@
         duration: 0.3,
         scrollTrigger: {
           trigger: serviceItems[i],
+          start: "top 95%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+        }
+      });
+    }
+
+    for (let i = 0; i < uslugiItems.length; i++) {
+      gsap.from(uslugiItems[i], {
+        opacity: 0,
+        x: -50,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: uslugiItems[i],
           start: "top 95%",
           end: "bottom 20%",
           toggleActions: "play none none none",

@@ -247,6 +247,7 @@
   }
 }
 
+#modal-wait,
 #modal-call,
 #modal-bid {
   .modal__box {
@@ -279,6 +280,55 @@
   .form-bottom {
     width: 100%;
   }
+}
+
+#modal-wait {
+
+  .modal__box {
+    padding: 5.8rem 3rem 5.1rem 3rem;
+  }
+
+  .modal__content {
+
+    .section__head {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+
+      i {
+        font-size: 5rem;
+        color: var(--primary-accent);
+      }
+    }
+
+    .modal__bid-text {
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 140%;
+
+      span {
+        color: var(--primary-accent);
+      }
+    }
+  }
+
+  .form-input {
+    text-align: center;
+
+    &::placeholder {
+      text-align: center;
+    }
+  }
+}
+
+.form-bottom-text {
+  margin-top: 1rem;
+
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 120%;
 }
 
 #modal-callback {

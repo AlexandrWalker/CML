@@ -19,6 +19,10 @@
   <link rel="manifest" href="./images/favicon/site.webmanifest" />
   <!-- title -->
   <title>CML Company</title>
+  <!-- Шрифт для эмодзи -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/lenis/lenis.min.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -506,24 +510,6 @@
       </div>
     </div>
   </section>
-  <!-- Виды транспорта -->
-  <section class="transport" style="display: none;">
-    <div class="container">
-      <div class="transport__inner">
-        <div class="section__head">
-          <p>География</p>
-          <h2>
-            Объединяем страны,
-            <br>
-            <span>преодолеваем границы</span>
-          </h2>
-        </div>
-
-        <div class="tag-cloud" id="tagCloud"></div>
-
-      </div>
-    </div>
-  </section>
   <!-- Калькулятор -->
   <section id="calc" class="calc none">
     <div class="container calc__container">
@@ -674,39 +660,55 @@
           </h2>
         </div>
         <div class="assortment__items accordion-parent">
+
           <div class="assortment__item-content accordion accordion-active">
             <div class="assortment__item">
               <div class="assortment__item-head">
                 <div class="assortment__item-title">
-                  Автоперевозки
+                  <span>
+                    АВТОДОСТАВКА ИЗ КИТАЯ
+                  </span>
+                  <i class="icon-circle-chevron-down"></i>
                 </div>
                 <div class="assortment__item-text">
-                  <p>
-                    Автомобильные перевозки&nbsp;— это надежный и&nbsp;популярный способ доставки грузов. Благодаря
-                    гибким маршрутам мы&nbsp;можем оптимально подбирать время и&nbsp;стоимость перевозки, учитывая
-                    потребности наших клиентов.
-                  </p>
+                  Оптимально для малого бизнеса и маркетплейсов
                 </div>
-                <img src="./images/international/assortment-avto.png" alt="">
-                <i class="icon-circle-chevron-down"></i>
+                <div class="assortment__item-head--img">
+                  <img src="./images/international/assortment-avto.png" alt="">
+                </div>
               </div>
               <div class="assortment__item-body">
                 <div class="assortment__item-wrap">
-                  <span>50</span>
-                  <p>минимальный вес груза</p>
+                  <span>ОТ 50КГ</span>
                 </div>
                 <div class="assortment__item-wrap">
-                  <span>150$</span>
-                  <p>начальная стоимость за куб</p>
+                  <span>От 150$ за куб</span>
                 </div>
                 <div class="assortment__item-wrap">
-                  <span>7 дней</span>
-                  <p>минимальный срок доставки</p>
+                  <span>ОТ 18 ДНЕЙ</span>
+                </div>
+                <div class="assortment__item-block">
+                  <p>
+                    <b>
+                      Идеально для
+                    </b>
+                  </p>
+                  <ul>
+                    <li>
+                      Товаров для Wildberries/Ozon
+                    </li>
+                    <li>
+                      Средних партий до 20 тонн
+                    </li>
+                    <li>
+                      Срочных грузов
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div class="assortment__item-foot">
                 <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Авто доставка">
-                  Заказать доставку
+                  Рассчитать стоимость
                 </button>
                 <a class="btn btn-outline" href="/CML/auto_delivery.html">
                   Узнать подробнее
@@ -714,117 +716,52 @@
               </div>
             </div>
           </div>
+
           <div class="assortment__item-content accordion">
             <div class="assortment__item">
               <div class="assortment__item-head">
                 <div class="assortment__item-title">
-                  авиаперевозки
+                  <span>
+                    КОНТЕЙНЕРНЫЕ ПЕРЕВОЗКИ
+                  </span>
+                  <i class="icon-circle-chevron-down"></i>
                 </div>
                 <div class="assortment__item-text">
                   <p>
-                    Авиационные услуги&nbsp;— это самый быстрый способ доставки грузов на&nbsp;большие расстояния.
-                    Мы&nbsp;предлагаем надежные воздушные перевозки, которые обеспечивают быструю и&nbsp;безопасную
-                    транспортировку ваших товаров. Наши эксперты помогут выбрать оптимальный маршрут и&nbsp;условия
-                    перевозки, учитывая особенности вашего заказа.
+                    Выгодный способ для крупных партий
                   </p>
                 </div>
-                <img src="./images/international/assortment-avia.png" alt="">
-                <i class="icon-circle-chevron-down"></i>
+                <div class="assortment__item-head--img">
+                  <img src="./images/international/assortment-container.png" alt="">
+                </div>
               </div>
               <div class="assortment__item-body">
                 <div class="assortment__item-wrap">
-                  <span>50</span>
-                  <p>минимальный вес груза</p>
+                  <span>Выделенный контейнер (20-40 футов)</span>
                 </div>
                 <div class="assortment__item-wrap">
-                  <span>150$</span>
-                  <p>начальная стоимость за куб</p>
+                  <span>100$ за куб</span>
                 </div>
                 <div class="assortment__item-wrap">
-                  <span>7 дней</span>
-                  <p>минимальный срок доставки</p>
+                  <span>ОТ 15 ДНЕЙ</span>
                 </div>
-              </div>
-              <div class="assortment__item-foot">
-                <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Авиа доставка">
-                  Заказать доставку
-                </button>
-                <a class="btn btn-outline" href="/CML/air_delivery.html">
-                  Узнать подробнее
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="assortment__item-content accordion">
-            <div class="assortment__item">
-              <div class="assortment__item-head">
-                <div class="assortment__item-title">
-                  Железнодорожные перевозки
-                </div>
-                <div class="assortment__item-text">
+                <div class="assortment__item-block">
                   <p>
-                    Железнодорожные перевозки — это экономичный и надежный способ доставки грузов на большие расстояния.
-                    Мы предлагаем широкий спектр услуг, включая организацию контейнерных и универсальных перевозок.
-                    Используя современные технологии и обширную сеть маршрутов, мы обеспечиваем безопасную и
-                    своевременную транспортировку.
+                    <b>
+                      Идеально для
+                    </b>
                   </p>
-                </div>
-                <img src="./images/international/assortment-train.png" alt="">
-                <i class="icon-circle-chevron-down"></i>
-              </div>
-              <div class="assortment__item-body">
-                <div class="assortment__item-wrap">
-                  <span>50</span>
-                  <p>минимальный вес груза</p>
-                </div>
-                <div class="assortment__item-wrap">
-                  <span>150$</span>
-                  <p>начальная стоимость за куб</p>
-                </div>
-                <div class="assortment__item-wrap">
-                  <span>7 дней</span>
-                  <p>минимальный срок доставки</p>
-                </div>
-              </div>
-              <div class="assortment__item-foot">
-                <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Железнодорожная доставка">
-                  Заказать доставку
-                </button>
-                <a class="btn btn-outline" href="/CML/railway_delivery.html">
-                  Узнать подробнее
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="assortment__item-content accordion">
-            <div class="assortment__item">
-              <div class="assortment__item-head">
-                <div class="assortment__item-title">
-                  Контейнерные перевозки
-                </div>
-                <div class="assortment__item-text">
-                  <p>
-                    Контейнерные перевозки&nbsp;— это современный и&nbsp;эффективный способ транспортировки грузов,
-                    который обеспечивает высокую степень защиты и&nbsp;гибкость в&nbsp;логистике. Мы&nbsp;предлагаем
-                    услуги по&nbsp;перевозке контейнеров по&nbsp;всем основным транспортным артериям, используя как
-                    морской, так и&nbsp;наземный транспорт.
-                  </p>
-                </div>
-                <img src="./images/international/assortment-container.png" alt="">
-                <i class="icon-circle-chevron-down"></i>
-              </div>
-              <div class="assortment__item-body">
-                <div class="assortment__item-wrap">
-                  <span>50</span>
-                  <p>минимальный вес груза</p>
-                </div>
-                <div class="assortment__item-wrap">
-                  <span>150$</span>
-                  <p>начальная стоимость за куб</p>
-                </div>
-                <div class="assortment__item-wrap">
-                  <span>7 дней</span>
-                  <p>минимальный срок доставки</p>
+                  <ul>
+                    <li>
+                      Производственного оборудования
+                    </li>
+                    <li>
+                      Крупных оптовых партий
+                    </li>
+                    <li>
+                      Регулярных поставок
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div class="assortment__item-foot">
@@ -837,34 +774,168 @@
               </div>
             </div>
           </div>
+
           <div class="assortment__item-content accordion">
             <div class="assortment__item">
               <div class="assortment__item-head">
                 <div class="assortment__item-title">
-                  Сборные грузы
+                  <span>
+                    ЭКСПРЕСС-ДОСТАВКА АВИА
+                  </span>
+                  <i class="icon-circle-chevron-down"></i>
                 </div>
                 <div class="assortment__item-text">
                   <p>
-                    Услуга сборных грузов позволяет объединить небольшие партии товаров от&nbsp;различных отправителей
-                    для совместной транспортировки. Это оптимальный способ сэкономить на&nbsp;расходах и&nbsp;эффективно
-                    организовать логистику.
+                    Самый быстрый способ — для срочных грузов
                   </p>
                 </div>
-                <img src="./images/international/assortment-boxs.png" alt="">
-                <i class="icon-circle-chevron-down"></i>
+                <div class="assortment__item-head--img">
+                  <img src="./images/international/assortment-avia.png" alt="">
+                </div>
               </div>
               <div class="assortment__item-body">
                 <div class="assortment__item-wrap">
-                  <span>50</span>
-                  <p>минимальный вес груза</p>
+                  <span>От 0,5 кг</span>
                 </div>
                 <div class="assortment__item-wrap">
-                  <span>150$</span>
-                  <p>начальная стоимость за куб</p>
+                  <span>От 2,5$ за кг</span>
                 </div>
                 <div class="assortment__item-wrap">
-                  <span>7 дней</span>
-                  <p>минимальный срок доставки</p>
+                  <span>ОТ 3 ДНЕЙ</span>
+                </div>
+                <div class="assortment__item-block">
+                  <p>
+                    <b>
+                      Идеально для
+                    </b>
+                  </p>
+                  <ul>
+                    <li>
+                      Срочных образцов и документов
+                    </li>
+                    <li>
+                      Дорогостоящих товаров
+                    </li>
+                    <li>
+                      Запчастей для производства
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="assortment__item-foot">
+                <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Железнодорожная доставка">
+                  Заказать доставку
+                </button>
+                <a class="btn btn-outline" href="/CML/railway_delivery.html">
+                  Узнать подробнее
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="assortment__item-content accordion">
+            <div class="assortment__item">
+              <div class="assortment__item-head">
+                <div class="assortment__item-title">
+                  <span>
+                    Ж/Д ПЕРЕВОЗКИ
+                  </span>
+                  <i class="icon-circle-chevron-down"></i>
+                </div>
+                <div class="assortment__item-text">
+                  <p>
+                    Золотая середина между ценой и сроком
+                  </p>
+                </div>
+                <div class="assortment__item-head--img">
+                  <img src="./images/international/assortment-train.png" alt="">
+                </div>
+              </div>
+              <div class="assortment__item-body">
+                <div class="assortment__item-wrap">
+                  <span>От 50 кг</span>
+                </div>
+                <div class="assortment__item-wrap">
+                  <span>От 130$ за куб</span>
+                </div>
+                <div class="assortment__item-wrap">
+                  <span>От 21 дня</span>
+                </div>
+                <div class="assortment__item-block">
+                  <p>
+                    <b>
+                      Идеально для
+                    </b>
+                  </p>
+                  <ul>
+                    <li>
+                      Оптимального баланса цены и срока
+                    </li>
+                    <li>
+                      Регулярных поставок
+                    </li>
+                    <li>
+                      Тяжелых грузов
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="assortment__item-foot">
+                <button class="btn btn-red modal__btn" data-id="modal-calc" data-value="Контейнерная доставка">
+                  Заказать доставку
+                </button>
+                <a class="btn btn-outline" href="/CML/sea_delivery.html">
+                  Узнать подробнее
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="assortment__item-content accordion">
+            <div class="assortment__item">
+              <div class="assortment__item-head">
+                <div class="assortment__item-title">
+                  <span>
+                    СБОРНЫЕ ГРУЗЫ
+                  </span>
+                  <i class="icon-circle-chevron-down"></i>
+                </div>
+                <div class="assortment__item-text">
+                  <p>
+                    Экономичная доставка малых партий
+                  </p>
+                </div>
+                <div class="assortment__item-head--img">
+                  <img src="./images/international/assortment-boxs.png" alt="">
+                </div>
+              </div>
+              <div class="assortment__item-body">
+                <div class="assortment__item-wrap">
+                  <span>От 10 кг</span>
+                </div>
+                <div class="assortment__item-wrap">
+                  <span>От 120$ за куб</span>
+                </div>
+                <div class="assortment__item-wrap">
+                  <span>От 20 дней</span>
+                </div>
+                <div class="assortment__item-block">
+                  <p>
+                    <b>
+                      Идеально для
+                    </b>
+                  </p>
+                  <ul>
+                    <li>
+                      Тестирования ниши
+                    </li>
+                    <li>
+                      Малого бизнеса
+                    </li>
+                    <li>
+                      Стартапов на маркетплейсах
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div class="assortment__item-foot">
@@ -877,6 +948,55 @@
               </div>
             </div>
           </div>
+
+          <div class="assortment__form">
+            <div class="assortment__form-head">
+              <div class="assortment__form-title">
+                НУЖНА ПОМОЩЬ С ВЫБОРОМ?
+              </div>
+              <div class="assortment__form-text">
+                Наши логисты подберут оптимальный маршрут и рассчитают стоимость за 60 минут
+              </div>
+            </div>
+            <div class="assortment__form-wrap">
+              <div class="form-group">
+                <input class="form-input" type="text" placeholder="Имя" required>
+                <span class="error">
+                  Поле заполнено неверно
+                </span>
+              </div>
+              <div class="form-group">
+                <input class="form-input" type="text" placeholder="Телефон"
+                  pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"
+                  maxlength="12" required>
+                <span class="error">
+                  Поле заполнено неверно
+                </span>
+              </div>
+              <div class="form-group">
+                <input class="form-input" type="text" placeholder="Эл.почта" pattern="^\S+@\S+\.\S+$" minlength="2"
+                  maxlength="40" required>
+                <span class="error">
+                  Поле заполнено неверно
+                </span>
+              </div>
+              <button class="form-btn btn btn-white" type="submit">
+                Получить консультацию
+              </button>
+              <div class="form-bottom">
+                <input class="form-checkbox" type="checkbox" required>
+                <p class="form-text">
+                  Нажимая кнопку &laquo;Получить консультацию&raquo;, я&nbsp;соглашаюсь с&nbsp;<a
+                    href="/CML/policy.html">обработкой персональных данных</a> и с&nbsp;<a
+                    href="/CML/agreement.html">пользовательским соглашением</a>
+                </p>
+              </div>
+            </div>
+            <div class="assortment__form-cover">
+              <img src="./../images/temp/capture-cover.png" alt="">
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -2335,15 +2455,20 @@
     </button>
     <div class="modal__content">
       <div class="section__head">
+        <i class="icon-gift"></i>
         <h2>
-          🎁 Подождите!
+          Подождите!
         </h2>
       </div>
       <div class="modal__bid">
-        <p class="modal__bid-text">
-          <span>Заберите бесплатно чек-лист «10 ошибок при растаможке из Китая в 2026 году»</span> и получите скидку 10% на первую доставку
-        </p>
+        <div class="modal__bid-text">
+          <span>Заберите бесплатно чек-лист «10 ошибок при растаможке из Китая в 2026 году»</span> и получите скидку 10%
+          на первую доставку
+        </div>
         <form action="#" method="get">
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Имя" required>
+          </div>
           <div class="form-group">
             <input class="form-input" type="email" placeholder="Эл. почта" required>
           </div>
@@ -2357,9 +2482,9 @@
                 href="/CML/policy.html">обработкой персональных данных</a> и с&nbsp;<a
                 href="/CML/agreement.html">пользовательским соглашением</a>
             </p>
-            <p>
-              Мы не спамим. Только полезная информация о логистике.
-            </p>
+          </div>
+          <div class="form-bottom-text">
+            Мы не спамим. Только полезная информация о логистике.
           </div>
         </form>
       </div>

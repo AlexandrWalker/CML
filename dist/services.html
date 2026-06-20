@@ -19,6 +19,10 @@
   <link rel="manifest" href="./images/favicon/site.webmanifest" />
   <!-- title -->
   <title>CML Company</title>
+  <!-- Шрифт для эмодзи -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
   <!-- styles -->
   <link rel="stylesheet" href="./libs/lenis/lenis.min.css">
   <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
@@ -1268,15 +1272,20 @@
     </button>
     <div class="modal__content">
       <div class="section__head">
+        <i class="icon-gift"></i>
         <h2>
-          🎁 Подождите!
+          Подождите!
         </h2>
       </div>
       <div class="modal__bid">
-        <p class="modal__bid-text">
-          <span>Заберите бесплатно чек-лист «10 ошибок при растаможке из Китая в 2026 году»</span> и получите скидку 10% на первую доставку
-        </p>
+        <div class="modal__bid-text">
+          <span>Заберите бесплатно чек-лист «10 ошибок при растаможке из Китая в 2026 году»</span> и получите скидку 10%
+          на первую доставку
+        </div>
         <form action="#" method="get">
+          <div class="form-group">
+            <input class="form-input" type="text" placeholder="Имя" required>
+          </div>
           <div class="form-group">
             <input class="form-input" type="email" placeholder="Эл. почта" required>
           </div>
@@ -1290,9 +1299,9 @@
                 href="/CML/policy.html">обработкой персональных данных</a> и с&nbsp;<a
                 href="/CML/agreement.html">пользовательским соглашением</a>
             </p>
-            <p>
-              Мы не спамим. Только полезная информация о логистике.
-            </p>
+          </div>
+          <div class="form-bottom-text">
+            Мы не спамим. Только полезная информация о логистике.
           </div>
         </form>
       </div>

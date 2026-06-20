@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'CmlIconFont';
-  src:  url('./../fonts/icomoon/CmlIconFont.eot?uvohjh');
-  src:  url('./../fonts/icomoon/CmlIconFont.eot?uvohjh#iefix') format('embedded-opentype'),
-    url('./../fonts/icomoon/CmlIconFont.ttf?uvohjh') format('truetype'),
-    url('./../fonts/icomoon/CmlIconFont.woff?uvohjh') format('woff'),
-    url('./../fonts/icomoon/CmlIconFont.svg?uvohjh#CmlIconFont') format('svg');
+  src:  url('./../fonts/icomoon/CmlIconFont.eot?w4iiwz');
+  src:  url('./../fonts/icomoon/CmlIconFont.eot?w4iiwz#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon/CmlIconFont.ttf?w4iiwz') format('truetype'),
+    url('./../fonts/icomoon/CmlIconFont.woff?w4iiwz') format('woff'),
+    url('./../fonts/icomoon/CmlIconFont.svg?w4iiwz#CmlIconFont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,81 +25,96 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-plate-pochta:before {
+.icon-gift:before {
+  content: "\e900";
+}
+.icon-sale:before {
   content: "\e901";
 }
-.icon-phone-fill:before {
+.icon-raketa:before {
   content: "\e902";
 }
-.icon-plate-phone:before {
+.icon-star:before {
   content: "\e903";
 }
-.icon-plate-max:before {
+.icon-phone-2-fill:before {
   content: "\e904";
 }
-.icon-plate-telegram:before {
+.icon-plate-pochta:before {
   content: "\e905";
 }
-.icon-plate-whatsapp:before {
+.icon-phone-fill:before {
   content: "\e906";
 }
-.icon-max-color:before {
+.icon-plate-phone:before {
   content: "\e907";
 }
-.icon-max-big:before {
+.icon-plate-max:before {
   content: "\e908";
 }
-.icon-max:before {
+.icon-plate-telegram:before {
   content: "\e909";
 }
-.icon-wchat:before {
+.icon-plate-whatsapp:before {
   content: "\e90a";
 }
-.icon-download:before {
+.icon-max-color:before {
+  content: "\e90b";
+}
+.icon-max-big:before {
   content: "\e90c";
 }
-.icon-angle:before {
+.icon-max:before {
   content: "\e90d";
 }
-.icon-calc:before {
+.icon-wchat:before {
   content: "\e90e";
 }
-.icon-chevron-down:before {
-  content: "\e90f";
-}
-.icon-circle-chevron-down:before {
+.icon-download:before {
   content: "\e910";
 }
-.icon-file-pdf:before {
+.icon-angle:before {
   content: "\e911";
 }
-.icon-headphones:before {
+.icon-calc:before {
   content: "\e912";
 }
-.icon-home:before {
+.icon-chevron-down:before {
   content: "\e913";
 }
-.icon-minus:before {
+.icon-circle-chevron-down:before {
   content: "\e914";
 }
-.icon-phone:before {
+.icon-file-pdf:before {
   content: "\e915";
 }
-.icon-plus:before {
+.icon-headphones:before {
   content: "\e916";
 }
-.icon-pochta:before {
+.icon-home:before {
   content: "\e917";
 }
-.icon-telegram:before {
+.icon-minus:before {
   content: "\e918";
 }
-.icon-telegram-color:before {
+.icon-phone:before {
   content: "\e919";
 }
-.icon-whatsapp:before {
+.icon-plus:before {
   content: "\e91a";
 }
-.icon-whatsapp-color:before {
+.icon-pochta:before {
   content: "\e91b";
+}
+.icon-telegram:before {
+  content: "\e91c";
+}
+.icon-telegram-color:before {
+  content: "\e91d";
+}
+.icon-whatsapp:before {
+  content: "\e91e";
+}
+.icon-whatsapp-color:before {
+  content: "\e91f";
 }
