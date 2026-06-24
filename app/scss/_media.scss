@@ -842,7 +842,7 @@
   }
 
   .hero__desc {
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 2rem;
   }
 
@@ -855,12 +855,18 @@
   }
 
   .hero__item--new.hero__item h2 {
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+
+  .hero__desc-text--italic {
+    font-size: 1.6rem;
   }
 
   .hero__item-subtitle {
+    margin-top: 1rem;
     margin-bottom: auto;
-    color: var(--white);
+
+    font-size: 1rem;
   }
 
   .hero .canvas-wrap {
