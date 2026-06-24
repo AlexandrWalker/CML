@@ -808,7 +808,8 @@
   .hero__item {
     max-width: 42.3rem;
     width: 100%;
-    padding-bottom: 3rem;
+    // padding-bottom: 3rem;
+    padding-bottom: 40rem;
     position: relative;
     z-index: 2;
   }
@@ -3436,7 +3437,8 @@
   }
 
   .hero__item {
-    padding: 3rem 0 1.5rem;
+    // padding: 3rem 0 1.5rem;
+    padding: 3rem 0 25.8rem;
     max-width: 100%;
     // height: fit-content;
   }
@@ -3522,7 +3524,8 @@
     width: 25rem;
     height: 26.9rem;
     right: 6rem;
-    bottom: 3.5rem;
+    // bottom: 3.5rem;
+    bottom: 1.5rem;
 
     &.flag,
     &.cube {

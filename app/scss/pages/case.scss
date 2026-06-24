@@ -393,6 +393,11 @@
 
     position: relative;
     z-index: 2;
+
+    &:hover {
+      --button-bgcolor: var(--primary-black);
+      --button-border-color: var(--primary-black);
+    }
   }
 
   &__bg {

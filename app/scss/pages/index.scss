@@ -4,10 +4,22 @@
 
   .swiper-slide {
     height: auto;
+    pointer-events: all;
+  }
+
+  .swiper-pagination {
+    display: none !important;
+  }
+
+  .fraction {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 
   &__container {
-    height: calc(100% - 1rem);
+    // height: calc(100% - 1rem);
+    height: 100%;
     background-image: url(./../images/main/hero-bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -59,7 +71,7 @@
       // margin-bottom: 6.4rem;
       // transform: translateY(5rem);
       transition: all 0.5s ease;
-      opacity: 0;
+      // opacity: 0;
 
       margin-top: auto;
 
