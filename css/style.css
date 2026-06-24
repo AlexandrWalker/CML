@@ -4240,9 +4240,18 @@ ol li::after {
 }
 .hero .swiper-slide {
   height: auto;
+  pointer-events: all;
+}
+.hero .swiper-pagination {
+  display: none !important;
+}
+.hero .fraction {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 .hero__container {
-  height: calc(100% - 1rem);
+  height: 100%;
   background-image: url(./../images/main/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -4290,7 +4299,6 @@ ol li::after {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  opacity: 0;
   margin-top: auto;
 }
 .hero__item--new .hero__item-btn {
@@ -6946,6 +6954,10 @@ ol li::after {
   min-width: 22.8rem;
   position: relative;
   z-index: 2;
+}
+.capture__btn:hover {
+  --button-bgcolor: var(--primary-black);
+  --button-border-color: var(--primary-black);
 }
 .capture__bg {
   width: 100%;
@@ -11007,7 +11019,7 @@ ol li::after {
   .hero__item {
     max-width: 42.3rem;
     width: 100%;
-    padding-bottom: 3rem;
+    padding-bottom: 40rem;
     position: relative;
     z-index: 2;
   }
@@ -13346,7 +13358,7 @@ ol li::after {
     margin: 0;
   }
   .hero__item {
-    padding: 3rem 0 1.5rem;
+    padding: 3rem 0 25.8rem;
     max-width: 100%;
   }
   .hero__item h2 {
@@ -13415,7 +13427,7 @@ ol li::after {
     width: 25rem;
     height: 26.9rem;
     right: 6rem;
-    bottom: 3.5rem;
+    bottom: 1.5rem;
   }
   .hero__img.flag, .hero__img.cube {
     width: 30rem;
