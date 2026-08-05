@@ -2296,9 +2296,8 @@
   }
 
   /* news */
-  .news li,
-  .news p {
-    font-size: 1.4rem;
+  .news {
+    overflow: hidden;
   }
 
   .news-page .general {
@@ -2318,56 +2317,102 @@
     margin-bottom: 2rem;
   }
 
-  .news__content time {
+  .news__wrapper time {
     margin-bottom: 2rem;
-    font-size: 1.6rem;
-  }
 
-  .news__content p {
     font-size: 1.4rem;
+  }
+
+  .news__wrapper p {
+    margin-bottom: 1.5rem;
+
+    font-size: 1.4rem;
+  }
+
+  .news__wrapper img {
     margin-bottom: 2rem;
   }
 
-  .news__content img {
-    margin-bottom: 2rem;
-  }
-
-  .news__content h2 {
+  .news__wrapper h2 {
     font-size: 2.6rem;
   }
 
-  .news__content h3,
-  .news__content h4,
-  .news__content h5,
-  .news__content h6,
-  .news__result,
-  .news__content blockquote {
+  .news__wrapper h3,
+  .news__wrapper h4,
+  .news__wrapper h5,
+  .news__wrapper h6,
+  .news__result {
+    margin-bottom: 1.5rem;
+
     font-size: 2rem;
   }
 
-  .news__content blockquote {
-    padding: 2rem;
+  .news__wrapper table th,
+  .news__wrapper table td {
+    font-size: 1.4rem;
   }
 
-  .news__content blockquote::before,
-  .news__content blockquote::after {
-    height: 1.5rem;
+  .news__wrapper .quote__head p {
+    font-size: 2rem;
+  }
+
+  .news__wrapper .quote__body p {
+    font-size: 1.4rem;
   }
 
   ol {
     margin-bottom: 2rem;
   }
 
-  .news__content ul {
+  .news__wrapper ul {
     margin-bottom: 2rem;
   }
 
-  .news__content li {
+  .news__wrapper ul li {
     gap: 1.5rem;
+
+    font-size: 1.4rem;
   }
 
-  .news__content li:not(:last-child) {
+  .news__wrapper ul li:not(:last-child) {
     margin-bottom: 1.5rem;
+  }
+
+  .news__wrapper img {
+    margin-bottom: 1.5rem;
+  }
+
+  .news__wrapper .quote {
+    padding: 2rem;
+  }
+
+  .news__wrapper div p:has(strong, b) {
+    padding-top: 0;
+  }
+
+  .author {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .author h3 {
+    font-size: 2rem;
+  }
+
+  .author p {
+    font-size: 1.4rem;
+  }
+
+  .news__content .faq__items {
+    margin-bottom: 2rem;
+  }
+
+  .news__check {
+    padding: 1.5rem 2rem;
+  }
+
+  .news__check p {
+    font-size: 2rem;
   }
 
   .news__solution li:not(:last-child) {
@@ -2378,6 +2423,8 @@
     width: 100%;
     padding: 3rem 2rem;
     gap: 2rem;
+
+    position: static;
   }
 
   .news__side h2,
@@ -4474,6 +4521,11 @@
 
   .news__side-btn {
     margin: 0;
+  }
+
+  .news__wrapper .quote__head p {
+    font-size: 1.6rem;
+    line-height: 110%;
   }
 
   .assortment__items {
